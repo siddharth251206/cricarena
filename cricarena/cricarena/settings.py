@@ -110,7 +110,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home/static'),
     os.path.join(BASE_DIR, 'news/static'),
+    BASE_DIR / "stadium/static",
 ]
+TEMPLATES[0]['DIRS'] += [BASE_DIR / "stadium/templates"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files

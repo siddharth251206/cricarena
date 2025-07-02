@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRICARENA</title>
+  <link rel="stylesheet" href="{% static 'css/h_style.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo"><a href="#">CRICARENA</a></div>
+    <ul class="navbar-links">
+      <li><a href="#">Archive</a></li>
+      <li><a href="#">Quiz</a></li>
+      <li><a href="#">Calendar</a></li>
+      <li><a href="#">Comparison</a></li>
+      <li><a href="#">Tactics</a></li>
+      <li><a href="#">Stadium</a></li>
+      <li><a href="#">News</a></li>
+      <li class="dropdown">
+        <a href="#">IPL ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">CSK</a></li>
+          <li><a href="#">MI</a></li>
+          <li><a href="#">RCB</a></li>
+          <li><a href="#">KKR</a></li>
+          <li><a href="#">RR</a></li>
+          <li><a href="#">DC</a></li>
+          <li><a href="#">PBKS</a></li>
+          <li><a href="#">SRH</a></li>
+          <li><a href="#">LSG</a></li>
+          <li><a href="#">GT</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="navbar-search">
+      <input type="text" placeholder="Search...">
+    </div>
+  </nav>
+
+  <!-- Live Score Carousel -->
+  <div class="live-carousel">
+    <button class="live-prev">&#10094;</button>
+    <div class="live-wrapper">
+      <div class="live-track" id="liveTrack">
+        <!-- Live match boxes injected by JS -->
+      </div>
+    </div>
+    <button class="live-next">&#10095;</button>
+  </div>
+
+  <!-- Image Carousel -->
+  <div class="carousel">
+    <div class="slides">
+      <div class="slide active">
+        <img src="{% static 'images/sa.png' %}" alt="SA win" />
+        <div class="caption">SA lifts World Cup for the first time</div>
+      </div>
+
+      <div class="slide">
+        <img src="{% static 'images/rcb.png' %}" alt="RCB win" />
+        <div class="caption">RCB lifts IPL trophy</div>
+      </div>
+
+      <div class="slide">
+        <img src="{% static 'images/ind.png' %}" alt="India T20" />
+        <div class="caption">1 year completed since India won T20 WC</div>
+      </div>
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+  </div>
+
+  <!-- Gallery Section -->
+  <!-- Gallery Section -->
+<section class="gallery-section">
+  <h2>Gallery</h2>
+
+  <div class="gallery">
+    <div class="gallery-item"><img src="{% static 'images/sa.png' %}" alt="SA Win" /></div>
+    <div class="gallery-item"><img src="{% static 'images/rcb.png' %}" alt="RCB Win" /></div>
+    <div class="gallery-item"><img src="{% static 'images/ind.png' %}" alt="India T20" /></div>
+    <div class="gallery-item"><img src="{% static 'images/eng.jpg' %}" alt="ENG WC" /></div>
+    <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="Stokes" /></div>
+    <div class="gallery-item"><img src="{% static 'images/2011.jpeg' %}" alt="India 2011" /></div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>CRICARENA</h3>
+        <p>Your one-stop destination for live scores, cricket quizzes, stats, and match insights.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Archive</a></li>
+          <li><a href="#">Quiz</a></li>
+          <li><a href="#">Calendar</a></li>
+          <li><a href="#">Comparison</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><img src="{% static 'images/facebook.svg' %}" alt="Facebook" /></a>
+          <a href="#"><img src="{% static 'images/instagram.svg' %}" alt="Instagram" /></a>
+          <a href="#"><img src="{% static 'images/twitter.svg' %}" alt="Twitter" /></a>
+          <a href="#"><img src="{% static 'images/youtube.svg' %}" alt="YouTube" /></a>
+        </div>
+      </div>
+      <div class="footer-section contact">
+        <h4>Contact</h4>
+        <p>Email: info@cricarena.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div class="footer-section newsletter">
+        <h4>Newsletter</h4>
+        <form>
+          <input type="email" placeholder="Your email" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CRICARENA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/h_script.js' %}"></script>
+</body>
+</html>

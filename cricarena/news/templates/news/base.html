@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cricket News</title>
+  <link rel="stylesheet" href="{% static 'news/css/styles.css' %}">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+
+  {% comment %} <header>
+    <h1>📰 Cricket News Portal</h1>
+  </header> {% endcomment %}
+
+  {% include 'news/navbar.html' %}
+
+  <main class="main-content" >
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CricketNews</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

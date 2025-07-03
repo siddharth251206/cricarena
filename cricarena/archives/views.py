@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def react_page(request):
+    return render(request, 'archives/react.html')

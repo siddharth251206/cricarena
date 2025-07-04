@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'news',
-    'quiz',
     
     'django_social_share',
     'django.contrib.sites',
@@ -112,6 +111,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home/static'),
     os.path.join(BASE_DIR, 'news/static'),
     BASE_DIR / "stadium/static",
+    BASE_DIR / 'archives' / 'static',
 ]
 TEMPLATES[0]['DIRS'] += [BASE_DIR / "stadium/templates"]
 STATIC_ROOT = BASE_DIR / "staticfiles"

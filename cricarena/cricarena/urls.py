@@ -22,5 +22,4 @@ urlpatterns = [
     path('', include('home.urls')),      # Home page
     path('news/', include('news.urls')), # News page
     path('stadium/', include('stadium.urls')), 
-    path('quiz/', include('quiz.urls')), 
 ]

@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'news',
+    'quiz',
     
-    # Third-party
     'django_social_share',
     'django.contrib.sites',
     'django_crontab',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

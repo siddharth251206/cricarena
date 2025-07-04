@@ -1,0 +1,224 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        :root {
+            {% comment %} --primary: #1e3a8a; {% endcomment %}
+            --primary: white;
+            --secondary: #f59e0b;
+            {% comment %} --light: #f8fafc; {% endcomment %}
+            --light: rgb(30, 30, 30);
+            {% comment %} --dark: #1e293b; {% endcomment %}
+            --dark: #f8fafc ;
+
+            --correct: #10b981;
+            --incorrect: #ef4444;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            {% comment %} background-color: #f1f5f9; {% endcomment %}
+            background-color: rgb(18, 18, 18);
+            color: var(--dark);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .results-container {
+            max-width: 600px;
+            width: 100%;
+            {% comment %} background: white; {% endcomment %}
+            background: rgb(30, 30, 30);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .score-display {
+            font-size: 72px;
+            font-weight: bold;
+            color: var(--secondary);
+            margin: 20px 0;
+        }
+        
+        .total-questions {
+            font-size: 24px;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+        
+        .message {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .retry-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            {% comment %} background-color: var(--primary); {% endcomment %}
+            background-color: rgb(30, 195, 88);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+        }
+        
+        .retry-btn:hover {
+            {% comment %} background-color: #1e40af; {% endcomment %}
+            background-color: rgb(30, 195, 88);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 20px;
+            background-color: #e2e8f0;
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--secondary);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        
+        /* For showing correct/incorrect answers */
+
+        .question-card {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--light);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Add to your <style> in result.html */
+        .answered-results {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .question-card {
+            flex: 1 1 320px;
+            max-width: 350px;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        {% comment %} .correct-answer {
+            background-color: var(--correct);
+            color: white;
+            border-color: var(--correct);
+        }
+        
+        .incorrect-answer {
+            background-color: var(--incorrect);
+            color: white;
+            border-color: var(--incorrect);
+        } {% endcomment %}
+        
+        @media (max-width: 600px) {
+            .results-container {
+                padding: 20px;
+            }
+            
+            .score-display {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+      {% include 'quiz/navbar.html' %}
+
+    <div class="results-container">
+        <h1>Your Quiz Results</h1>
+        
+        <div class="score-display">{{ score }}</div>
+        <div class="total-questions">out of {{ total_questions }}</div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" style="width: {{ percentage }}%"></div>
+        </div>
+        
+        <div class="message">
+            {% if percentage >= 80 %}
+                Excellent! You're a cricket expert!
+            {% elif percentage >= 60 %}
+                Good job! You know your cricket!
+            {% elif percentage >= 40 %}
+                Not bad! Keep learning about cricket!
+            {% else %}
+                Keep practicing! You'll improve!
+            {% endif %}
+        </div>
+        
+        <a href="{% url 'cricket_quiz' %}" class="retry-btn">Try Again</a>
+    </div>
+
+
+<div class="answered-results">
+{% for result in results %}
+    <div class="question-card">
+        <div class="question-text">{{ forloop.counter }}. {{ result.question }}</div>
+        <div>
+            Your answer:
+            <span class="{% if result.is_correct %}correct-answer{% else %}incorrect-answer{% endif %}">
+                {{ result.user_answer|default:"No answer" }}
+            </span>
+        </div>
+        {% if not result.is_correct %}
+        <div>
+            Correct answer:
+            <span class="correct-answer">{{ result.correct_answer }}</span>
+        </div>
+        {% endif %}
+    </div>
+{% endfor %}
+</div>
+
+    <script>
+        // Animate the progress bar
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.progress-bar');
+            const percentage = {{ percentage }};
+            setTimeout(() => {
+                progressBar.style.width = percentage + '%';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'news',
     'stadium',
     'archives',
+    'sportscal',
+    
     
     
     # Third-party

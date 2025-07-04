@@ -23,4 +23,5 @@ urlpatterns = [
     path('news/', include('news.urls')), # News page
     path('stadium/', include('stadium.urls')), 
     path('archives/', include('archives.urls')), 
+    path('sportscal/', include('sportscal.urls')),
 ]

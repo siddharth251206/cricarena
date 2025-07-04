@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'news',
-    
+    'quiz',
+    'stadium',
+    'archives',
+    'sportscal',
     'django_social_share',
     'django.contrib.sites',
     'django_crontab',

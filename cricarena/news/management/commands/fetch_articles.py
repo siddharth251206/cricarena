@@ -16,7 +16,8 @@ class Command(BaseCommand):
 
         url = 'https://newsapi.org/v2/everything'
         params = {
-            'q': 'cricket',
+            # 'q': 'cricket','match': 'cricket','sport': 'cricket',
+            'q': 'cricket OR cricket match OR cricket sport',
             'language': 'en',
             'sortBy': 'publishedAt',
             'apiKey': NEWSAPI_KEY,

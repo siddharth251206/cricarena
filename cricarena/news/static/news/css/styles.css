@@ -1,8 +1,5 @@
 /* NAVBAR */
 
-navbar css
-
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -119,9 +116,13 @@ h2 {
   box-shadow: 0 4px 18px rgba(30,144,255,0.10), 0 1.5px 6px rgba(0,255,127,0.08);
   margin: 0 12px; /* horizontal space between slides */
   padding: 1.2rem 1rem 1.5rem 1rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: stretch;  /* Important */
   transition: transform 0.18s, box-shadow 0.18s;
 }
 

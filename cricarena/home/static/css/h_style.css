@@ -279,12 +279,14 @@ body::before {
   width: 24px;
   height: 24px;
   margin-right: 10px;
-  filter: invert(70%);
-  transition: filter 0.3s;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  transition: transform 0.3s;
 }
 
 .social-icons a:hover img {
-  filter: invert(100%);
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .footer-section form {

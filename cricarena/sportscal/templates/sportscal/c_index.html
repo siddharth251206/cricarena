@@ -1,0 +1,43 @@
+{% load static %}
+{% load calendar_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ month_name }} {{ year }} - Cricket Calendar</title>
+  <link rel="stylesheet" href="{% static 'sportscal/css/c_style.css' %}" />
+</head>
+<body>
+  <header>
+    <h1>🏏 {{ month_name }} {{ year }}</h1>
+  </header>
+
+  <div class="calendar-grid">
+    <div class="day-header">Sun</div>
+    <div class="day-header">Mon</div>
+    <div class="day-header">Tue</div>
+    <div class="day-header">Wed</div>
+    <div class="day-header">Thu</div>
+    <div class="day-header">Fri</div>
+    <div class="day-header">Sat</div>
+
+    {% for day in calendar_days %}
+      {% if forloop.first %}
+        {% for _ in day.weekday|get_range %}
+          <div class="day empty"></div>
+        {% endfor %}
+      {% endif %}
+
+      <div class="day">
+        <div class="date-number">{{ day.day }}</div>
+        {% for match in match_days|get_item:day %}
+          <div class="match">
+            <span class="teams">{{ match.teams }}</span>
+            <span class="status">{{ match.status }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

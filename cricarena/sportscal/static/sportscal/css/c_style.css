@@ -1,0 +1,149 @@
+/* === Base Styles === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Header Section === */
+header {
+  background-color: #191919;
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #1db954;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1db954;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons a {
+  background-color: #1db954;
+  color: black;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-buttons a:hover {
+  background-color: #1ed760;
+}
+
+/* === Calendar Grid === */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #1f1f1f;
+  padding: 1rem;
+  gap: 6px;
+  max-width: 1400px;
+  margin: 1rem auto;
+  border-radius: 12px;
+}
+
+/* === Day Headers (Sun, Mon...) === */
+.day-header {
+  text-align: center;
+  padding: 0.75rem 0;
+  background: #181818;
+  font-weight: 600;
+  color: #1db954;
+  border-radius: 6px;
+}
+
+/* === Calendar Cells === */
+.day {
+  background: #202020;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  padding: 0.5rem;
+  position: relative;
+  min-height: 140px;
+  overflow: auto;
+  transition: background-color 0.2s;
+}
+
+.day:hover {
+  background-color: #2a2a2a;
+}
+
+.day.empty {
+  background: #161616;
+  border: none;
+}
+
+/* === Date number in top-right === */
+.date-number {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* === Match Block Styling === */
+.match {
+  margin-top: 25px;
+  padding: 0.5rem;
+  background-color: #1db9541a; /* subtle green tint */
+  border-left: 4px solid #1db954;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.teams {
+  font-weight: 600;
+  display: block;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.status {
+  font-size: 0.75rem;
+  color: #b3b3b3;
+}
+
+/* === Scroll inside day cell if many matches === */
+.day {
+  scrollbar-width: thin;
+  scrollbar-color: #1db954 #2c2c2c;
+}
+
+.day::-webkit-scrollbar {
+  width: 6px;
+}
+.day::-webkit-scrollbar-thumb {
+  background-color: #1db954;
+  border-radius: 5px;
+}
+
+/* === Responsive Helper (optional) === */
+@media (max-width: 1200px) {
+  .calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

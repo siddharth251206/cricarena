@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trending Cricket Polls</title>
+    <link rel="stylesheet" href="{% static 'quiz/poll.css' %}">
+
+</head>
+<body>
+
+      {% include 'quiz/navbar.html' %}
+
+
+<h2  class = "center-heading" >🔥 Trending Cricket Polls</h2>
+<div class="poll-slider">
+    {% for poll in polls %}
+    <div class="poll-card" id="poll-{{ poll.id }}">
+        <h3>{{ poll.question }}</h3>
+        {% for option in poll.options.all %}
+            <!-- <button class="option-button" onclick="vote({{ option.id }}, {{ poll.id }})"> -->
+                <button class="option-button" onclick="vote('{{ option.id }}', '{{ poll.id }}')">
+                {{ option.text }}
+            </button>
+        {% endfor %}
+        <div class="results" style="display: none;">
+            {% for option in poll.options.all %}
+            <div>
+                <div>{{ option.text }}</div>
+                <div class="result-bar">
+                    <div class="fill" style="width:0%; background: #1db954;">0%</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Include the quiz -->
+<div class="quiz-section">
+  {% include 'quiz/quiz.html' %}
+</div>
+
+<!-- <script src="{% static 'quiz/poll.js' %}"></script> -->    
+
+<script>
+function vote(optionId, pollId) {
+    // fetch(`/vote/${optionId}/`)
+    fetch(`/quiz/vote/${optionId}/`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                showResults(pollId, data.results);
+            }
+        });
+}
+
+function showResults(pollId, results) {
+    const pollCard = document.getElementById(`poll-${pollId}`);
+    const resultsDiv = pollCard.querySelector('.results');
+    const buttons = pollCard.querySelectorAll('.option-button');
+
+    // Hide buttons
+    buttons.forEach(btn => btn.style.display = 'none');
+
+    // Show results
+    resultsDiv.style.display = 'block';
+
+    // Update result bars
+    const fills = resultsDiv.querySelectorAll('.fill');
+    results.forEach((result, idx) => {
+        fills[idx].style.width = result.percent + '%';
+        // fills[idx].textContent = `${result.votes} (${result.percent.toFixed(1)}%)`;
+        fills[idx].textContent = ` (${result.percent.toFixed(1)}%)`;
+    });
+}
+</script>
+
+
+</div><!-- In your page.html -->
+</body>
+</html>

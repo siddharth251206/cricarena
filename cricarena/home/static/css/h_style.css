@@ -563,8 +563,8 @@ body::before {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 130%;
-  left: 0;
+  top: 100%;
+  left: -110%;
   background-color: #1b1b1b;
   border: 1px solid #19e68c;
   border-radius: 6px;

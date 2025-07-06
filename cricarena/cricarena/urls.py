@@ -21,9 +21,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),      # Home page
     path('news/', include('news.urls')), # News page
+<<<<<<< HEAD
     path('stadium/', include('stadium.urls')), 
     path('archives/', include('archives.urls')),
     path('ipl/', include('ipl.urls')), 
     path('sportscal/', include('sportscal.urls')),
     path('quiz/', include('quiz.urls')),
+=======
+    path('stadium/', include('stadium.urls')),
+    path('quiz/', include('quiz.urls')),       # Quiz page
+    path('archives/', include('archives.urls')), # Archives page
+    path('sportscal/',include('sportscal.urls')),
+
+>>>>>>> 3d5362657e1c33732e948881948c7336918280cf
 ]

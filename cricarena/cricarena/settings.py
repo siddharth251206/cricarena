@@ -39,17 +39,23 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'news',
+    'quiz',
     'stadium',
     'archives',
+<<<<<<< HEAD
     'ipl',
     'sportscal',
     'quiz',
     
     
     # Third-party
+=======
+    'sportscal',
+>>>>>>> 3d5362657e1c33732e948881948c7336918280cf
     'django_social_share',
     'django.contrib.sites',
     'django_crontab',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

@@ -2,6 +2,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+    .ranking-section {
+      background-color: #121212;
+      padding: 50px 20px;
+      color: #ffffff;
+      border-top: 2px solid #19e68c;
+      border-bottom: 2px solid #19e68c;
+      margin-top: 30px;
+    }
+
+    .ranking-section h2 {
+      color: #19e68c;
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .ranking-category {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .ranking-category h3 {
+      font-size: 22px;
+      color: #19e68c;
+      margin-bottom: 15px;
+      font-weight: 600;
+      padding-left: 10px;
+    }
+
+    .ranking-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .ranking-card {
+      background-color: #181818;
+      border: 1px solid #19e68c;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .ranking-card:hover {
+      transform: scale(1.02);
+      border-color: #12b06d;
+    }
+
+    .ranking-card h4 {
+      color: #19e68c;
+      font-size: 18px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid #19e68c;
+      padding-bottom: 5px;
+    }
+
+    .ranking-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ranking-card li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #202020;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #eaeaea;
+      transition: background-color 0.2s;
+    }
+
+    .ranking-card li:hover {
+      background-color: #292929;
+    }
+
+    .ranking-card li span {
+      background-color: #19e68c;
+      color: #000;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .ranking-card li strong {
+      flex: 1;
+      text-align: left;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .ranking-card li::after {
+      content: attr(data-score);
+      font-weight: 600;
+      color: #19e68c;
+      text-align: right;
+      min-width: 30px;
+
+    }
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CRICARENA</title>
@@ -21,20 +138,19 @@
       <li><a href="/stadium/">Stadium</a></li>
       <li><a href="/news/">News</a></li>
       <li class="dropdown">
-       <a href="#">IPL ▼</a>
-<ul class="dropdown-menu">
-  <li><a href="/ipl/?team=csk">CSK</a></li>
-  <li><a href="/ipl/?team=mi">MI</a></li>
-  <li><a href="/ipl/?team=rcb">RCB</a></li>
-  <li><a href="/ipl/?team=kkr">KKR</a></li>
-  <li><a href="/ipl/?team=rr">RR</a></li>
-  <li><a href="/ipl/?team=dc">DC</a></li>
-  <li><a href="/ipl/?team=pbks">PBKS</a></li>
-  <li><a href="/ipl/?team=srh">SRH</a></li>
-  <li><a href="/ipl/?team=lsg">LSG</a></li>
-  <li><a href="/ipl/?team=gt">GT</a></li>
-</ul>
-
+        <a href="#">IPL ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="/ipl/?team=csk">CSK</a></li>
+          <li><a href="/ipl/?team=mi">MI</a></li>
+          <li><a href="/ipl/?team=rcb">RCB</a></li>
+          <li><a href="/ipl/?team=kkr">KKR</a></li>
+          <li><a href="/ipl/?team=rr">RR</a></li>
+          <li><a href="/ipl/?team=dc">DC</a></li>
+          <li><a href="/ipl/?team=pbks">PBKS</a></li>
+          <li><a href="/ipl/?team=srh">SRH</a></li>
+          <li><a href="/ipl/?team=lsg">LSG</a></li>
+          <li><a href="/ipl/?team=gt">GT</a></li>
+        </ul>
       </li>
     </ul>
     <div class="navbar-search">
@@ -57,43 +173,110 @@
   <div class="carousel">
     <div class="slides">
       <div class="slide active">
-        <img src="{% static 'images/gill.jpg' %}" alt="SA win" />
-        <div class="caption">Gill smashes 2nd century as captain</div>
+        <img src="{% static 'images/1.png' %}" alt="SA win" />
       </div>
-
       <div class="slide">
-        <img src="{% static 'images/virat.webp' %}" alt="RCB win" />
-        <div class="caption">Virat retires from red ball</div>
+        <img src="{% static 'images/2.png' %}" alt="RCB win" />
       </div>
-
-      
-
       <div class="slide">
-        <img src="{% static 'images/t20.jpg' %}" alt="India T20" />
-        <div class="caption">1 year completed since India won T20 WC</div>
+        <img src="{% static 'images/3.png' %}" alt="India T20" />
       </div>
     </div>
-
-
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
     <div class="dots"></div>
   </div>
 
-  <!-- Gallery Section -->
-  <!-- Gallery Section -->
-<section class="gallery-section">
-  <h2>Gallery</h2>
+  <section class="ranking-section">
+  <h2>🏏 ICC Rankings</h2>
 
-  <div class="gallery">
-    <div class="gallery-item"><img src="{% static 'images/sa.png' %}" alt="SA Win" /></div>
-    <div class="gallery-item"><img src="{% static 'images/rcb.png' %}" alt="RCB Win" /></div>
-    <div class="gallery-item"><img src="{% static 'images/ind.png' %}" alt="India T20" /></div>
-    <div class="gallery-item"><img src="{% static 'images/eng.jpg' %}" alt="ENG WC" /></div>
-    <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="Stokes" /></div>
-    <div class="gallery-item"><img src="{% static 'images/2011.jpeg' %}" alt="India 2011" /></div>
+  <!-- Team Rankings -->
+  <div class="ranking-category">
+    <h3>Team Rankings</h3>
+    <div class="ranking-cards">
+      <div class="ranking-card">
+        <h4>Test</h4>
+        <ul>
+          <li data-score="123"><span>1</span> <strong>Australia</strong></li>
+          <li data-score="114"><span>2</span> <strong>South Africa</strong></li>
+          <li data-score="113"><span>3</span> <strong>England</strong></li>
+          <li data-score="105"><span>4</span> <strong>India</strong></li>
+          <li data-score="95"><span>5</span> <strong>New Zealand</strong></li>
+        </ul>
+      </div>
+      <div class="ranking-card">
+        <h4>ODI</h4>
+        <ul>
+          <li data-score="124"><span>1</span> <strong>India</strong></li>
+          <li data-score="109"><span>2</span> <strong>New Zealand</strong></li>
+          <li data-score="109"><span>3</span> <strong>Australia</strong></li>
+          <li data-score="104"><span>4</span> <strong>Pakistan</strong></li>
+          <li data-score="102"><span>5</span> <strong>Sri Lanka</strong></li>
+        </ul>
+      </div>
+      <div class="ranking-card">
+        <h4>T20</h4>
+        <ul>
+          <li data-score="271"><span>1</span> <strong>India</strong></li>
+          <li data-score="262"><span>2</span> <strong>Australia</strong></li>
+          <li data-score="257"><span>3</span> <strong>England</strong></li>
+          <li data-score="249"><span>4</span> <strong>New Zealand</strong></li>
+          <li data-score="245"><span>5</span> <strong>South Africa</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player Rankings -->
+  <div class="ranking-category">
+    <h3>Player Rankings (ODI)</h3>
+    <div class="ranking-cards">
+      <div class="ranking-card">
+        <h4>Batsmen</h4>
+        <ul>
+          <li data-score="784"><span>1</span> <strong>Shubman Gill</strong></li>
+          <li data-score="766"><span>2</span> <strong>Babar Azam</strong></li>
+          <li data-score="756"><span>3</span> <strong>Rohit Sharma</strong></li>
+          <li data-score="736"><span>4</span> <strong>Virat Kohli</strong></li>
+          <li data-score="720"><span>5</span> <strong>Daryl Mitchell</strong></li>
+        </ul>
+      </div>
+      <div class="ranking-card">
+        <h4>Bowler</h4>
+        <ul>
+          <li data-score="680"><span>1</span> <strong>Maheesh Theekshana</strong></li>
+          <li data-score="650"><span>2</span> <strong>Kuldeep Yadav</strong></li>
+          <li data-score="648"><span>3</span> <strong>Keshav Maharaj</strong></li>
+          <li data-score="644"><span>4</span> <strong>Bernard Scholtz</strong></li>
+          <li data-score="640"><span>5</span> <strong>Rashid Khan</strong></li>
+        </ul>
+      </div>
+      <div class="ranking-card">
+        <h4>All-Rounder</h4>
+        <ul>
+          <li data-score="296"><span>1</span> <strong>Azmatullah Omarzai</strong></li>
+          <li data-score="292"><span>2</span> <strong>Mohammad Nabi</strong></li>
+          <li data-score="290"><span>3</span> <strong>Sikandar Raza</strong></li>
+          <li data-score="248"><span>4</span> <strong>Mehidy Hasan Miraz</strong></li>
+          <li data-score="246"><span>5</span> <strong>Michael Bracewell</strong></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item"><img src="{% static 'images/sa.png' %}" alt="SA Win" /></div>
+      <div class="gallery-item"><img src="{% static 'images/rcb.png' %}" alt="RCB Win" /></div>
+      <div class="gallery-item"><img src="{% static 'images/ind.png' %}" alt="India T20" /></div>
+      <div class="gallery-item"><img src="{% static 'images/eng.jpg' %}" alt="ENG WC" /></div>
+      <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="Stokes" /></div>
+      <div class="gallery-item"><img src="{% static 'images/2011.jpeg' %}" alt="India 2011" /></div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">

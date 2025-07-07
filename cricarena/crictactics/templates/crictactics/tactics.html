@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cricket Tactics</title>
+  <link rel="stylesheet" href="{% static 'crictactics/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>🏏 Cricket Tactics: Shots, Fielding & Swing</h1>
+  </header>
+
+  <main>
+    <!-- Batting Shots -->
+    <section class="tactic-section">
+      <h2>Batting Shots</h2>
+      <div class="image-box">
+        <img src="{% static 'crictactics/images/shots.jpg' %}" alt="Batting Shots" class="tactic-img">
+        <button class="toggle-btn" onclick="toggleInfo('shots-details')">Show/Hide Details</button>
+        <div class="details" id="shots-details">
+          <ul>
+            <li><strong>Bye Area</strong>: When batter misses the ball and runs are scored as byes.</li>
+            <li><strong>Late Cut</strong>: Finessed cut played late toward third man.</li>
+            <li><strong>Leg Glance</strong>: Redirecting a leg-side ball with wrists to fine leg.</li>
+            <li><strong>Hook</strong>: Short ball pulled in the air to leg side, often square leg.</li>
+            <li><strong>Pull</strong>: Horizontal shot to short deliveries, directed to mid-wicket.</li>
+            <li><strong>Big Shot</strong>: Aerial shot played to score a boundary or six.</li>
+            <li><strong>On Drive</strong>: Elegant ground shot toward mid-on.</li>
+            <li><strong>Straight Drive</strong>: Driven past the bowler down the ground.</li>
+            <li><strong>Off Drive</strong>: Classic drive through extra cover region.</li>
+            <li><strong>Cover Drive</strong>: Stylish shot through the covers region.</li>
+            <li><strong>Square Cut</strong>: Square shot to short, wide deliveries outside off.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fielding Positions -->
+    <section class="tactic-section">
+      <h2>Fielding Positions</h2>
+      <div class="image-box">
+        <img src="{% static 'crictactics/images/field.png' %}" alt="Fielding Positions" class="tactic-img">
+        <button class="toggle-btn" onclick="toggleInfo('field-details')">Show/Hide Details</button>
+        <div class="details" id="field-details">
+          <ul>
+            <li><strong>Slips/Gully</strong>: Catch edges off seamers/spinners.</li>
+            <li><strong>Point/Cover/Mid-off</strong>: Block drives and cut shots on off-side.</li>
+            <li><strong>Square Leg/Fine Leg</strong>: Trap sweep/pull/hook shots.</li>
+            <li><strong>Mid-on/Mid-wicket</strong>: On-side drive intercepts and catches.</li>
+            <li><strong>Deep Fielders</strong>: Positioned near boundary for big shots.</li>
+            <li><strong>Close-in (Silly Point, Short Leg)</strong>: Aggressive catching positions in Tests.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Swing Bowling -->
+    <section class="tactic-section">
+      <h2>Swing Bowling Techniques</h2>
+      <div class="image-box">
+        <img src="{% static 'crictactics/images/swing.webp' %}" alt="Swing Bowling Types" class="tactic-img">
+        <button class="toggle-btn" onclick="toggleInfo('swing-details')">Show/Hide Details</button>
+        <div class="details" id="swing-details">
+          <ul>
+            <li><strong>Normal Swing</strong>:
+              <ul>
+                <li>Grip: Seam angled with shiny side facing slip or leg.</li>
+                <li>Mechanism: Ball swings in direction of seam due to pressure difference.</li>
+                <li>Optimum speed: ~70 mph</li>
+              </ul>
+            </li>
+            <li><strong>Reverse Swing</strong>:
+              <ul>
+                <li>Grip: Same as normal, but roughness on both sides aids swing in reverse.</li>
+                <li>Mechanism: Ball swings opposite to seam direction.</li>
+                <li>Optimum speed: ~90 mph</li>
+              </ul>
+            </li>
+            <li><strong>Contrast Swing</strong>:
+              <ul>
+                <li>At low speed: Ball swings toward smooth side.</li>
+                <li>At high speed: Ball swings toward shiny side (if seam is upright).</li>
+                <li>Optimum speed: 70–80 mph depending on seam and speed.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{% static 'crictactics/js/script.js' %}"></script>
+</body>
+</html>

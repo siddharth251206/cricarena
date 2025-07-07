@@ -24,6 +24,9 @@ urlpatterns = [
     path('stadium/', include('stadium.urls')), 
     path('archives/', include('archives.urls')),
     path('ipl/', include('ipl.urls')), 
+     path('calender/', include('sportscal.urls')),
     path('sportscal/', include('sportscal.urls')),
     path('quiz/', include('quiz.urls')),
+     path('tactics/', include('crictactics.urls')),
+    
 ]

@@ -126,7 +126,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'sportscal' / 'static',
     BASE_DIR / 'quiz' / 'static',
     BASE_DIR / 'crictactics' / 'static',
-
 ]
 
 TEMPLATES[0]['DIRS'] += [BASE_DIR / 'stadium' / 'templates']

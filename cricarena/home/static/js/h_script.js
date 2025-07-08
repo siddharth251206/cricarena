@@ -55,13 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.transform = `translateX(-${scrollIndex * boxWidth}px)`;
   }
 
-  // Fetch and Display Live Matches
-  fetch("https://api.cricapi.com/v1/currentMatches?apikey=cbf98794-920a-4c3d-93d2-551987040cca&offset=0")
+  // ✅ Updated Fetch: Get live matches from your own Django backend
+  fetch("/live-matches/")
     .then(res => res.json())
     .then(data => {
-      const matches = data.data.filter(
-        match => match.matchType === "odi" || match.matchType === "t20" || match.matchType === "test"
-      );
+      const matches = data.matches;
 
       if (!matches.length) {
         track.innerHTML = `<div class="live-box">No live ICC matches</div>`;
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const div = document.createElement("div");
         div.className = "live-box";
 
-        const [team1, team2] = match.teamInfo;
+        const [team1, team2] = match.teamInfo || [];
         const [score1, score2] = match.score || [];
 
         div.innerHTML = `
@@ -100,3 +98,54 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error(err);
     });
 });
+// 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
+async function askGroq() {
+  const prompt = document.getElementById("groqPrompt").value.trim();
+  const responseDiv = document.getElementById("groqResponse");
+
+  const cricketKeywords = ["cricket", "odi", "t20", "ipl", "test", "batsman", "bowler", "world cup", "innings", "wicket"];
+  if (!cricketKeywords.some(word => prompt.toLowerCase().includes(word))) {
+    responseDiv.innerHTML = "❌ Please ask only cricket-related questions.";
+    return;
+  }
+
+  const API_KEY = "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";  // 🔁 Replace this with your real Groq key
+
+  const headers = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${API_KEY}`
+  };
+
+  const body = {
+    model: "llama3-70b-8192",
+    messages: [
+      {
+        role: "system",
+        content: "You are a cricket expert. Only answer cricket-related questions. If the question is not about cricket, politely refuse."
+      },
+      {
+        role: "user",
+        content: prompt
+      }
+    ]
+  };
+
+  responseDiv.innerHTML = "⏳ Thinking...";
+
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body)
+    });
+
+    const data = await res.json();
+    console.log("Groq response:", data);
+
+    const answer = data?.choices?.[0]?.message?.content;
+    responseDiv.innerHTML = answer || "❌ No response.";
+  } catch (err) {
+    console.error("Groq error:", err);
+    responseDiv.innerHTML = "❌ Error talking to Groq AI.";
+  }
+}

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ipl',
     'sportscal',
     'crictactics',
+    'comparison',
     
     
     

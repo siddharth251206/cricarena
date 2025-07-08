@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ipl',
     'sportscal',
     'quiz',
+    'comparison',
     
     
     # Third-party
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'cricarena.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

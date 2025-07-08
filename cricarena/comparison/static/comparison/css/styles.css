@@ -1,0 +1,1043 @@
+/* Dark Theme Conversion - Cricket Player Comparison */
+/* Primary: #141414, Accent: #19e68c */
+
+/* Added fixes for dropdown issue */
+.dropdownComp {
+    position: relative;
+    z-index: 1; /* Create stacking context */
+}
+
+.dropdownComp.open {
+    z-index: 1000; /* Bring dropdown to front when open */
+}
+
+.dropdownComp-menu {
+    z-index: 1001; /* Ensure menu appears above everything */
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #141414; /* Changed to dark background */
+    min-height: 100vh;
+    line-height: 1.6;
+    color: #e0e0e0; /* Light text for dark background */
+}
+
+.navbar {
+   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(25, 230, 140, 0.15);
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(29, 185, 84, 0.2);
+}
+
+.navbar-logo a {
+  color: #19e68c;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.navbar-links li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s;
+  position: relative;
+}
+
+.navbar-links li a:hover {
+  color: #19e68c;
+  transform: translateY(-2px);
+}
+
+/* Search Box */
+.navbar-search input {
+  padding: 7px 14px;
+  border: 2px solid #19e68c;
+  border-radius: 6px;
+  outline: none;
+  background-color: #101010;
+  color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-search input:focus {
+  box-shadow: 0 0 8px rgba(25, 230, 140, 0.4);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: -110%;
+  background-color: #1b1b1b;
+  border: 1px solid #19e68c;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #ddd;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #19e68c;
+  color: #000;
+  border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* Header */
+.header {
+    background: rgba(30, 30, 30, 0.9); /* Dark header */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2a2a2a; /* Dark border */
+    position: sticky;
+    /* top: 0; */
+    margin-top: 70px;
+    z-index: 50;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    background: linear-gradient(135deg, #19e68c, #0c9469); /* Updated to accent color */
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    color: #141414; /* Dark text on accent background */
+    font-size: 2rem;
+}
+
+.header-text h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+}
+
+.header-text p {
+    font-size: 0.875rem;
+    color: #aaaaaa; /* Light gray text */
+}
+
+.header-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #aaaaaa; /* Light gray text */
+    font-size: 0.875rem;
+}
+
+/* Main Content */
+.main {
+    padding: 2rem 0;
+}
+
+/* Selection Card */
+.selection-card {
+    background: #1a1a1a; /* Dark card */
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    border: 1px solid #2a2a2a; /* Dark border */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: #19e68c; /* Accent color */
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .selection-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.player-selection h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #e0e0e0; /* Light text */
+    border-bottom: 1px solid #2a2a2a; /* Dark border */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.selector-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Dropdown Styles */
+.dropdownComp {
+    position: relative;
+}
+
+.dropdownComp label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e0e0e0; /* Light text */
+    margin-bottom: 0.5rem;
+}
+
+.dropdownComp-btn {
+    width: 100%;
+    background: #222222; /* Dark button */
+    border: 2px solid #333333; /* Dark border */
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text */
+}
+
+.dropdownComp-btn:hover:not(.disabled) {
+    border-color: #19e68c; /* Accent color */
+}
+
+.dropdownComp-btn:focus {
+    outline: none;
+    border-color: #19e68c; /* Accent color */
+    box-shadow: 0 0 0 3px rgba(25, 230, 140, 0.1); /* Accent shadow */
+}
+
+.dropdownComp-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.dropdownComp-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #e0e0e0; /* Light text */
+}
+
+.dropdownComp-content.placeholder {
+    color: #777777; /* Medium gray */
+}
+
+.dropdownComp-btn i.fa-chevron-down {
+    color: #777777; /* Medium gray */
+    transition: transform 0.2s;
+}
+
+.dropdownComp.open .dropdownComp-btn i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdownComp-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #222222; /* Dark menu */
+    border: 1px solid #333333; /* Dark border */
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    max-height: 20rem;
+    overflow-y: auto;
+    z-index: 10;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.dropdownComp.open .dropdownComp-menu {
+    display: block;
+}
+
+.dropdownComp-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text */
+}
+
+.dropdownComp-item:hover {
+    background-color: #2a2a2a; /* Dark hover */
+}
+
+.dropdownComp-item:first-child {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.dropdownComp-item:last-child {
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+.team-logo {
+    font-size: 1.5rem;
+}
+
+.player-photo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #ffffff; /* White text */
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.role-badge {
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+.role-batsman { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated to accent */
+.role-bowler { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated to accent */
+.role-all-rounder { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated to accent */
+.role-wicket-keeper { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated to accent */
+
+.item-country {
+    font-size: 0.875rem;
+    color: #aaaaaa; /* Light gray text */
+}
+
+/* Comparison Area */
+.comparison-area {
+    margin-bottom: 2rem;
+}
+
+.comparison-card {
+    background: #1a1a1a; /* Dark card */
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    border: 1px solid #2a2a2a; /* Dark border */
+    overflow: hidden;
+}
+
+.comparison-header {
+    background: linear-gradient(135deg, #0c9469, #19e68c); /* Updated to accent colors */
+    padding: 1.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.comparison-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: headerShine 2s ease-out;
+}
+
+@keyframes headerShine {
+    to {
+        left: 100%;
+    }
+}
+
+.comparison-players {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.player-info.animate-left {
+    animation: slideInLeft 0.7s ease-out;
+}
+
+.player-info.animate-right {
+    animation: slideInRight 0.7s ease-out 0.1s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.player-avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.player-avatar:hover {
+    transform: scale(1.1);
+}
+
+.player-details h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.player-details p {
+    opacity: 0.9;
+    font-size: 0.875rem;
+}
+
+.team-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.team-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    background-color: #19e68c; /* Accent color */
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.vs-indicator {
+    text-align: center;
+    animation: scaleIn 0.7s ease-out 0.3s both;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.vs-icon {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.vs-icon:hover {
+    transform: scale(1.1) rotate(12deg);
+}
+
+.vs-text {
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+/* Stats Comparison */
+.stats-comparison {
+    padding: 2rem;
+}
+
+.stats-section {
+    margin-bottom: 2rem;
+}
+
+.stats-section:last-child {
+    margin-bottom: 0;
+}
+
+.stats-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #e0e0e0; /* Light text */
+    opacity: 0;
+    transform: translateY(1rem);
+    animation: fadeInUp 0.7s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #2a2a2a; /* Dark border */
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-value {
+    width: 5rem;
+    text-align: right;
+    font-size: 1.125rem;
+    font-weight: bold;
+    transition: all 0.5s;
+    opacity: 0;
+    transform: translateX(-1rem);
+    color: #19e68c; /* Accent color */
+}
+
+.stat-value.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.stat-value.better {
+    color: #19e68c; /* Accent color */
+    transform: scale(1.1);
+}
+
+.stat-value.worse {
+    color: #777777; /* Medium gray */
+}
+
+.stat-value.right {
+    text-align: left;
+    transform: translateX(1rem);
+}
+
+.stat-value.right.animate {
+    transform: translateX(0);
+}
+
+.stat-progress {
+    flex: 1;
+    margin: 0 1.5rem;
+}
+
+.stat-label {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e0e0e0; /* Light text */
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition: all 0.5s;
+}
+
+.stat-label.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.progress-container {
+    position: relative;
+    background-color: #2a2a2a; /* Dark background */
+    border-radius: 9999px;
+    height: 0.75rem;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 1s ease-out;
+    border-radius: 9999px;
+    background-color: #19e68c; /* Accent color */
+}
+
+.progress-bar.left {
+    left: 0;
+    border-radius: 9999px 0 0 9999px;
+}
+
+.progress-bar.right {
+    right: 0;
+    border-radius: 0 9999px 9999px 0;
+}
+
+.progress-bar.full-left {
+    border-radius: 9999px;
+}
+
+.progress-bar.full-right {
+    border-radius: 9999px;
+}
+
+.progress-highlight {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: transform 1.5s ease-out;
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+.progress-highlight.animate {
+    transform: translateX(333%);
+}
+
+.progress-percentages {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #aaaaaa; /* Light gray text */
+}
+
+.progress-percent {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+    transition: all 0.7s ease-out;
+}
+
+.progress-percent.right {
+    transform: translateX(0.5rem);
+}
+
+.progress-percent.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Player Cards */
+.player-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .player-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.player-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.player-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #e0e0e0; /* Light text */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-card {
+    background: #1a1a1a; /* Dark card */
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    border: 1px solid #2a2a2a; /* Dark border */
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.player-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.player-card-header {
+    height: 6rem;
+    position: relative;
+    background: #222222; /* Dark header */
+}
+
+.player-card-avatar {
+    position: absolute;
+    bottom: -2rem;
+    left: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 4px solid #1a1a1a; /* Dark border */
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pressure-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.pressure-elite { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated */
+.pressure-excellent { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated */
+.pressure-good { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated */
+.pressure-average { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated */
+.pressure-below-par { color: #19e68c; background-color: rgba(25, 230, 140, 0.15); } /* Updated */
+
+.player-card-content {
+    padding: 3rem 1.5rem 1.5rem;
+}
+
+.player-card-info {
+    margin-bottom: 1rem;
+}
+
+.player-card-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    margin-bottom: 0.25rem;
+}
+
+.player-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.player-card-role {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    background: rgba(25, 230, 140, 0.15); /* Accent background */
+    color: #19e68c; /* Accent text */
+}
+
+.player-card-details {
+    font-size: 0.875rem;
+    color: #aaaaaa; /* Light gray text */
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stats-grid.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.stat-card {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    text-align: center;
+    background: #222222; /* Dark background */
+    border-color: #333333; /* Dark border */
+}
+
+.stat-card.pressure {
+    border-color: #19e68c; /* Accent border */
+}
+
+.stat-card.knockout {
+    border-color: #19e68c; /* Accent border */
+}
+
+.stat-card.vs-top4 {
+    border-color: #19e68c; /* Accent border */
+}
+
+.stat-card.death-overs {
+    border-color: #19e68c; /* Accent border */
+}
+
+.stat-card.general {
+    border-color: #333333; /* Dark border */
+}
+
+.stat-value-large {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #19e68c; /* Accent color */
+}
+
+.stat-value-medium {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #19e68c; /* Accent color */
+}
+
+.stat-label-small {
+    font-size: 0.75rem;
+    color: #aaaaaa; /* Light gray text */
+    margin-top: 0.25rem;
+}
+
+.stats-section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e0e0e0; /* Light text */
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.empty-icon {
+    background: linear-gradient(135deg, #0c9469, #19e68c); /* Updated to accent */
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: #141414; /* Dark text */
+    font-size: 2rem;
+}
+
+.empty-state h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff; /* White text */
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: #aaaaaa; /* Light gray text */
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+    background: #0d0d0d; /* Dark footer */
+    color: #e0e0e0; /* Light text */
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.footer p {
+    color: #777777; /* Medium gray */
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-stats {
+        display: none;
+    }
+    
+    .comparison-players {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .vs-indicator {
+        order: 2;
+    }
+    
+    .player-info:last-child {
+        order: 3;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid.three-col {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Team logo adjustments */
+.team-logo-img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    margin-right: 0.75rem;
+}
+
+/* For the dropdown button */
+.dropdownComp-btn .team-logo-img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Add to your CSS file */
+.cancel-option {
+    color: #e53e3e;
+    font-weight: 500;
+}
+
+.cancel-option:hover {
+    background-color: #fff5f5;
+}
+
+.cancel-option i {
+    color: #e53e3e;
+    margin-right: 8px;
+}
+
+.dropdownComp-divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 4px 0;
+}

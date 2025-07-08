@@ -26,4 +26,5 @@ urlpatterns = [
     path('ipl/', include('ipl.urls')), 
     path('sportscal/', include('sportscal.urls')),
     path('quiz/', include('quiz.urls')),
+    path('comparison/', include('comparison.urls')),
 ]

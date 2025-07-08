@@ -28,5 +28,6 @@ urlpatterns = [
     path('sportscal/', include('sportscal.urls')),
     path('quiz/', include('quiz.urls')),
      path('tactics/', include('crictactics.urls')),
+     path('comparison/', include('comparison.urls')),
     
 ]

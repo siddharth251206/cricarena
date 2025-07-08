@@ -17,12 +17,207 @@ body::before {
   height: 60px;
 }
 
+/* Navbar */
+.navbar {
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(25, 230, 140, 0.15);
+}
 
-/* Live Score Box Carousel */
+.navbar-logo a {
+  color: #19e68c;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.navbar-links li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.navbar-links li a:hover {
+  color: #19e68c;
+  transform: translateY(-2px);
+}
+
+.navbar-search input {
+  padding: 7px 14px;
+  border: 2px solid #19e68c;
+  border-radius: 6px;
+  outline: none;
+  background-color: #101010;
+  color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-search input:focus {
+  box-shadow: 0 0 8px rgba(25, 230, 140, 0.4);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -110%;
+  background-color: #1b1b1b;
+  border: 1px solid #19e68c;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #ddd;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #19e68c;
+  color: #000;
+  border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Image Carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(25, 230, 140, 0.15);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #19e68c;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-left: 4px solid #19e68c;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Carousel Controls */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #19e68c;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 10;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.dots span {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: #444;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background-color: #19e68c;
+  transform: scale(1.2);
+}
+
+/* Live Score Carousel */
 .live-carousel {
   position: relative;
-  background-color: #000;
-  padding: 10px 0;
+  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+  padding: 12px 0;
   overflow: hidden;
   border-top: 2px solid #19e68c;
   border-bottom: 2px solid #19e68c;
@@ -31,6 +226,7 @@ body::before {
   justify-content: center;
   gap: 10px;
   margin-top: 60px;
+  box-shadow: 0 0 10px rgba(25, 230, 140, 0.2);
 }
 
 .live-wrapper {
@@ -40,104 +236,153 @@ body::before {
 
 .live-track {
   display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
+  gap: 24px;
+  transition: transform 0.5s ease-in-out;
+  min-width: max-content;
 }
 
 .live-box {
-  background-color: #111;
-  border: 2px solid #19e68c;
-  padding: 15px;
-  /* color: #19e68c; */
-  color: rgb(126, 221, 200);
-  min-width: 250px;
-  border-radius: 8px;
+  background: #1e1e1e;
+  border: 1.5px solid #19e68c;
+  padding: 18px 15px;
+  color: #d3fbe8;
+  min-width: 260px;
+  border-radius: 12px;
   flex-shrink: 0;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 500;
   text-align: center;
+  box-shadow: 0 0 8px rgba(25, 230, 140, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Arrows */
-.live-prev, .live-next {
+.live-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(25, 230, 140, 0.25);
+}
+
+.live-box img {
+  border-radius: 50%;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  border: 1px solid #19e68c;
+}
+
+.live-prev,
+.live-next {
   background-color: transparent;
   color: #19e68c;
   border: none;
   font-size: 28px;
   cursor: pointer;
   padding: 10px;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* Carousel */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  max-height: 500px;
-  margin-top: 20px;
+.live-prev:hover,
+.live-next:hover {
+  transform: scale(1.2);
+  color: #12b06d;
 }
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 300%;
+.ranking-section {
+  background: linear-gradient(145deg, #121212, #1e1e1e);
+  padding: 50px 20px;
+  color: #ffffff;
+  text-align: center;
+  border-top: 2px solid #19e68c;
+  border-bottom: 2px solid #19e68c;
+  margin-top: 30px;
 }
-.slide {
-  min-width: 100%;
-  position: relative;
-}
-.slide img {
-  width: 1400px;
-  height: 500px;
-  object-fit: cover;
-}
-.caption {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  background: rgba(0,0,0,0.6);
+
+.ranking-section h2 {
   color: #19e68c;
-  padding: 10px 20px;
-  font-size: 22px;
-  border-left: 4px solid #19e68c;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ranking-category {
+  margin-bottom: 40px;
+}
+
+.ranking-category h3 {
+  font-size: 24px;
+  color: #12b06d;
+  margin-bottom: 20px;
+  text-shadow: 0 0 3px #19e68c;
+}
+
+.ranking-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ranking-card {
+  background-color: #181818;
+  border: 1.5px solid #19e68c;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(25, 230, 140, 0.2);
+  transition: transform 0.3s;
+}
+
+.ranking-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(25, 230, 140, 0.4);
+}
+
+.ranking-card h4 {
+  color: #19e68c;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #19e68c;
+  padding-bottom: 5px;
+}
+
+.ranking-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.ranking-card li {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.ranking-card li span {
+  background-color: #19e68c;
+  color: black;
+  border-radius: 50%;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 13px;
+  text-align: center;
+  margin-right: 10px;
   font-weight: bold;
 }
 
-/* Carousel Controls */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.4);
-  color: white;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1;
+.ranking-card li strong {
+  color: #ffffff;
+  font-weight: bold;
 }
-.prev { left: 10px; }
-.next { right: 10px; }
 
-/* Dots */
-.dots {
-  text-align: center;
-  margin: 15px 0;
-}
-.dots span {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s;
-}
-.dots span.active {
-  background-color: #19e68c;
-}
+
 /* Gallery Section */
 .gallery-section {
   padding: 40px 20px;
-  background-color: #000;
+  background-color: #141414;
   text-align: center;
 }
 
@@ -182,6 +427,7 @@ body::before {
 .gallery-item:hover {
   transform: scale(1.05);
 }
+
 /* Footer */
 .footer {
   background-color: #141414;
@@ -228,8 +474,7 @@ body::before {
   height: 24px;
   margin-right: 10px;
   opacity: 0.5;
-  transition: opacity 0.3s;
-  transition: transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .social-icons a:hover img {

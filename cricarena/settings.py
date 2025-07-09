@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'sportscal',
     'quiz',
     'comparison',
+    'crictactics',
     
     
     # Third-party
@@ -122,6 +123,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'ipl' / 'static',
     BASE_DIR / 'sportscal' / 'static',
     BASE_DIR / 'quiz' / 'static',
+    BASE_DIR / 'crictatics' / 'static',
+    BASE_DIR / 'comparison' / 'static',
 ]
 
 TEMPLATES[0]['DIRS'] += [BASE_DIR / 'stadium' / 'templates']

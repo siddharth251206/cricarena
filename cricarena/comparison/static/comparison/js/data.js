@@ -17,7 +17,7 @@ const teams = [
         id: 'gt',
         name: 'Gujarat Titans',
         shortName: 'GT',
-        color: '#1B2133',
+        color: '#D4AF37',
         logo: 'https://ssl.gstatic.com/onebox/media/sports/logos/aTE8G7q-OcAobWvDd6sizQ_48x48.png'
     },
     {
@@ -31,7 +31,7 @@ const teams = [
         id: 'lsg',
         name: 'Lucknow Super Giants',
         shortName: 'LSG',
-        color: '#0057E2',
+        color: '#00FFFF',
         logo: 'https://ssl.gstatic.com/onebox/media/sports/logos/82AP_EDcTMdcVlCqM4NgMg_48x48.png'
     },
     {
@@ -45,7 +45,7 @@ const teams = [
         id: 'pbks',
         name: 'Punjab Kings',
         shortName: 'PBKS',
-        color: '#ED1B24',
+        color: '#FF474C',
         logo: 'https://ssl.gstatic.com/onebox/media/sports/logos/XUAb4iA3XozYbH_cXQCryQ_48x48.png'
     },
     {
@@ -59,7 +59,7 @@ const teams = [
         id: 'rcb',
         name: 'Royal Challengers Bangalore',
         shortName: 'RCB',
-        color: '#CC1213',
+        color: '#8B0000',
         logo: 'https://ssl.gstatic.com/onebox/media/sports/logos/xUS54-BA0dFZPMtbCiHkzQ_48x48.png'
     },
     {

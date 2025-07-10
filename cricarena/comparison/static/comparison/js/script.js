@@ -122,17 +122,6 @@ class IPLComparison {
 
     menu.innerHTML = '';
 
-    // Add Cancel option at the top
-    const cancelItem = document.createElement('button');
-    cancelItem.className = 'dropdownComp-item cancel-option';
-    cancelItem.innerHTML = `
-        <i class="fas fa-times-circle"></i>
-        <div class="item-info">
-            <div class="item-name">Cancel Selection</div>
-        </div>
-    `;
-    cancelItem.addEventListener('click', () => this.cancelPlayerSelection(playerType));
-    menu.appendChild(cancelItem);
 
     // Add divider
     const divider = document.createElement('div');
@@ -151,7 +140,6 @@ class IPLComparison {
                 <div class="item-name">${player.name}</div>
                 <div class="item-details">
                     <span class="role-badge role-${player.role.toLowerCase().replace('-', '-')}">${player.role}</span>
-                    <span class="item-country">${player.country}</span>
                 </div>
             </div>
         `;
@@ -202,7 +190,6 @@ cancelPlayerSelection(playerType) {
                 <div class="item-name">${player.name}</div>
                 <div class="item-details">
                     <span class="role-badge role-${player.role.toLowerCase().replace('-', '-')}">${player.role}</span>
-                    <span class="item-country">${player.country}</span>
                 </div>
             </div>
         `;
@@ -278,7 +265,7 @@ cancelPlayerSelection(playerType) {
                     <img src="${player1.photo}" alt="${player1.name}" class="player-avatar">
                     <div class="player-details">
                         <h3>${player1.name}</h3>
-                        <p>${player1.role} • ${player1.country}</p>
+                        <p>${player1.role}</p>
                         ${this.selectedTeam1 ? `
                             <div class="team-indicator">
                                 <div class="team-dot" style="background-color: ${team1Color}"></div>
@@ -298,7 +285,7 @@ cancelPlayerSelection(playerType) {
                 <div class="player-info animate-right">
                     <div class="player-details" style="text-align: right;">
                         <h3>${player2.name}</h3>
-                        <p>${player2.role} • ${player2.country}</p>
+                        <p>${player2.role}</p>
                         ${this.selectedTeam2 ? `
                             <div class="team-indicator" style="justify-content: flex-end;">
                                 <span>${this.selectedTeam2.name}</span>
@@ -563,7 +550,7 @@ cancelPlayerSelection(playerType) {
                         <h3 class="player-card-name">${player.name}</h3>
                         <div class="player-card-meta">
                             <span class="player-card-role ${getRoleClass(player.role)}">${player.role}</span>
-                            <span class="player-card-details">${player.country} • ${player.age} years</span>
+                            <span class="player-card-details">${player.age} years</span>
                         </div>
                     </div>
                     

@@ -1041,3 +1041,7 @@ body {
     background-color: #e2e8f0;
     margin: 4px 0;
 }
+
+.team-card {
+  background: var(--team-gradient);
+}

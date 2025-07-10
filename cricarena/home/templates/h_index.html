@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CRICARENA</title>
   <link rel="stylesheet" href="{% static 'css/h_style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="navbar-logo"><a href="#">CRICARENA</a></div>
+    <div class="navbar-logo"><a href="#"><img src="{% static 'images/logo2.png' %}" alt="CRICARENA Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;">   CRICARENA</a></div>
     <ul class="navbar-links">
       <li><a href="/archives/">Archive</a></li>
       <li><a href="/quiz/">Quiz</a></li>
@@ -20,6 +22,7 @@
       <li><a href="/tactics/">Tactics</a></li>
       <li><a href="/stadium/">Stadiums</a></li>
       <li><a href="/news/">News</a></li>
+     
       <li class="dropdown">
         <a href="#">IPL ▼</a>
         <ul class="dropdown-menu">
@@ -37,23 +40,23 @@
       </li>
     </ul>
     <div class="navbar-search">
-      <input type="text" placeholder="Search...">
+       <li><a href="/about/">About Us</a></li>
     </div>
   </nav>
 
   <!-- Live Score Carousel -->
-  <div class="live-carousel">
+  <div class="live-carousel reveal">
     <button class="live-prev">&#10094;</button>
     <div class="live-wrapper">
       <div class="live-track" id="liveTrack">
-        <!-- Live match boxes injected by JS -->
+        <!-- Injected by JS -->
       </div>
     </div>
     <button class="live-next">&#10095;</button>
   </div>
 
   <!-- Image Carousel -->
-  <div class="carousel">
+  <div class="carousel reveal">
     <div class="slides">
       <div class="slide active">
         <img src="{% static 'images/1.png' %}" alt="SA win" />
@@ -69,109 +72,117 @@
     <button class="next">&#10095;</button>
     <div class="dots"></div>
   </div>
-<section class="groq-section">
-  <h2>ASK ANY QUESTION ON CRICKET🏏</h2>
-  <div class="groq-box">
-    <input type="text" id="groqPrompt" placeholder="Ask a cricket question..." />
-    <button onclick="askGroq()">Ask</button>
-    <div id="groqResponse"></div>
-  </div>
-</section>
 
+  <!-- Groq AI Section -->
+  <section class="groq-section reveal">
+    <h2>ASK ANY QUESTION ON CRICKET🏏</h2>
+    <div class="groq-box">
+      <input type="text" id="groqPrompt" placeholder="Ask a cricket question..." />
+      <button onclick="askGroq()">Ask</button>
+      <div id="groqResponse"></div>
+    </div>
+  </section>
 
-  <section class="ranking-section">
-  <h2>🏏 ICC Rankings</h2>
+  <!-- ICC Rankings -->
+  <section class="ranking-section reveal">
+    <h2>🏏 ICC Rankings</h2>
 
-  <!-- Team Rankings -->
-  <div class="ranking-category">
-    <h3>Team Rankings</h3>
-    <div class="ranking-cards">
-      <div class="ranking-card">
-        <h4>Test</h4>
-        <ul>
-          <li data-score="123"><span>1</span> <strong>Australia</strong></li>
-          <li data-score="114"><span>2</span> <strong>South Africa</strong></li>
-          <li data-score="113"><span>3</span> <strong>England</strong></li>
-          <li data-score="105"><span>4</span> <strong>India</strong></li>
-          <li data-score="95"><span>5</span> <strong>New Zealand</strong></li>
-        </ul>
-      </div>
-      <div class="ranking-card">
-        <h4>ODI</h4>
-        <ul>
-          <li data-score="124"><span>1</span> <strong>India</strong></li>
-          <li data-score="109"><span>2</span> <strong>New Zealand</strong></li>
-          <li data-score="109"><span>3</span> <strong>Australia</strong></li>
-          <li data-score="104"><span>4</span> <strong>Pakistan</strong></li>
-          <li data-score="102"><span>5</span> <strong>Sri Lanka</strong></li>
-        </ul>
-      </div>
-      <div class="ranking-card">
-        <h4>T20</h4>
-        <ul>
-          <li data-score="271"><span>1</span> <strong>India</strong></li>
-          <li data-score="262"><span>2</span> <strong>Australia</strong></li>
-          <li data-score="257"><span>3</span> <strong>England</strong></li>
-          <li data-score="249"><span>4</span> <strong>New Zealand</strong></li>
-          <li data-score="245"><span>5</span> <strong>South Africa</strong></li>
-        </ul>
+    <!-- Team Rankings -->
+    <div class="ranking-category">
+      <h3>Team Rankings</h3>
+      <div class="ranking-cards">
+        <!-- Test -->
+        <div class="ranking-card">
+          <h4>Test</h4>
+          <ul>
+            <li><span>1</span> <strong>Australia</strong></li>
+            <li><span>2</span> <strong>South Africa</strong></li>
+            <li><span>3</span> <strong>England</strong></li>
+            <li><span>4</span> <strong>India</strong></li>
+            <li><span>5</span> <strong>New Zealand</strong></li>
+          </ul>
+        </div>
+        <!-- ODI -->
+        <div class="ranking-card">
+          <h4>ODI</h4>
+          <ul>
+            <li><span>1</span> <strong>India</strong></li>
+            <li><span>2</span> <strong>New Zealand</strong></li>
+            <li><span>3</span> <strong>Australia</strong></li>
+            <li><span>4</span> <strong>Pakistan</strong></li>
+            <li><span>5</span> <strong>Sri Lanka</strong></li>
+          </ul>
+        </div>
+        <!-- T20 -->
+        <div class="ranking-card">
+          <h4>T20</h4>
+          <ul>
+            <li><span>1</span> <strong>India</strong></li>
+            <li><span>2</span> <strong>Australia</strong></li>
+            <li><span>3</span> <strong>England</strong></li>
+            <li><span>4</span> <strong>New Zealand</strong></li>
+            <li><span>5</span> <strong>South Africa</strong></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Player Rankings -->
-  <div class="ranking-category">
-    <h3>Player Rankings (ODI)</h3>
-    <div class="ranking-cards">
-      <div class="ranking-card">
-        <h4>Batsmen</h4>
-        <ul>
-          <li data-score="784"><span>1</span> <strong>Shubman Gill</strong></li>
-          <li data-score="766"><span>2</span> <strong>Babar Azam</strong></li>
-          <li data-score="756"><span>3</span> <strong>Rohit Sharma</strong></li>
-          <li data-score="736"><span>4</span> <strong>Virat Kohli</strong></li>
-          <li data-score="720"><span>5</span> <strong>Daryl Mitchell</strong></li>
-        </ul>
-      </div>
-      <div class="ranking-card">
-        <h4>Bowler</h4>
-        <ul>
-          <li data-score="680"><span>1</span> <strong>Maheesh Theekshana</strong></li>
-          <li data-score="650"><span>2</span> <strong>Kuldeep Yadav</strong></li>
-          <li data-score="648"><span>3</span> <strong>Keshav Maharaj</strong></li>
-          <li data-score="644"><span>4</span> <strong>Bernard Scholtz</strong></li>
-          <li data-score="640"><span>5</span> <strong>Rashid Khan</strong></li>
-        </ul>
-      </div>
-      <div class="ranking-card">
-        <h4>All-Rounder</h4>
-        <ul>
-          <li data-score="296"><span>1</span> <strong>Azmatullah Omarzai</strong></li>
-          <li data-score="292"><span>2</span> <strong>Mohammad Nabi</strong></li>
-          <li data-score="290"><span>3</span> <strong>Sikandar Raza</strong></li>
-          <li data-score="248"><span>4</span> <strong>Mehidy Hasan Miraz</strong></li>
-          <li data-score="246"><span>5</span> <strong>Michael Bracewell</strong></li>
-        </ul>
+    <!-- Player Rankings -->
+    <div class="ranking-category">
+      <h3>Player Rankings (ODI)</h3>
+      <div class="ranking-cards">
+        <!-- Batsmen -->
+        <div class="ranking-card">
+          <h4>Batsmen</h4>
+          <ul>
+            <li><span>1</span> <strong>Shubman Gill</strong></li>
+            <li><span>2</span> <strong>Babar Azam</strong></li>
+            <li><span>3</span> <strong>Rohit Sharma</strong></li>
+            <li><span>4</span> <strong>Virat Kohli</strong></li>
+            <li><span>5</span> <strong>Daryl Mitchell</strong></li>
+          </ul>
+        </div>
+        <!-- Bowlers -->
+        <div class="ranking-card">
+          <h4>Bowlers</h4>
+          <ul>
+            <li><span>1</span> <strong>Maheesh Theekshana</strong></li>
+            <li><span>2</span> <strong>Kuldeep Yadav</strong></li>
+            <li><span>3</span> <strong>Keshav Maharaj</strong></li>
+            <li><span>4</span> <strong>Bernard Scholtz</strong></li>
+            <li><span>5</span> <strong>Rashid Khan</strong></li>
+          </ul>
+        </div>
+        <!-- All-Rounders -->
+        <div class="ranking-card">
+          <h4>All-Rounders</h4>
+          <ul>
+            <li><span>1</span> <strong>Azmatullah Omarzai</strong></li>
+            <li><span>2</span> <strong>Mohammad Nabi</strong></li>
+            <li><span>3</span> <strong>Sikandar Raza</strong></li>
+            <li><span>4</span> <strong>Mehidy Hasan Miraz</strong></li>
+            <li><span>5</span> <strong>Michael Bracewell</strong></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Gallery Section -->
-  <section class="gallery-section">
+  <!-- Gallery -->
+  <section class="gallery-section reveal">
     <h2>Gallery</h2>
     <div class="gallery">
-      <div class="gallery-item"><img src="{% static 'images/sa.png' %}" alt="SA Win" /></div>
-      <div class="gallery-item"><img src="{% static 'images/rcb.png' %}" alt="RCB Win" /></div>
-      <div class="gallery-item"><img src="{% static 'images/ind.png' %}" alt="India T20" /></div>
+      <div class="gallery-item"><img src="{% static 'images/82.jpg' %}" alt="SA Win" /></div>
+      <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="RCB Win" /></div>
+      <div class="gallery-item"><img src="{% static 'images/maxi.webp' %}" alt="India T20" /></div>
       <div class="gallery-item"><img src="{% static 'images/eng.jpg' %}" alt="ENG WC" /></div>
-      <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="Stokes" /></div>
+      <div class="gallery-item"><img src="{% static 'images/rohirat.webp' %}" alt="Stokes" /></div>
       <div class="gallery-item"><img src="{% static 'images/2011.jpeg' %}" alt="India 2011" /></div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer reveal">
     <div class="footer-container">
       <div class="footer-section about">
         <h3>CRICARENA</h3>
@@ -213,6 +224,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript File -->
   <script src="{% static 'js/h_script.js' %}"></script>
 </body>
 </html>

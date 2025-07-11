@@ -136,41 +136,40 @@ async function askGroq() {
   const prompt = document.getElementById("groqPrompt").value.trim();
   //groq na response ne responseDiv ma store karva mate
   const responseDiv = document.getElementById("groqResponse");
+//aa keywords cricket na related hoy te check karva mate
+  const cricketKeywords = ["cricket", "odi", "t20", "ipl", "test", "batsman", "bowler", "world cup", "innings", "wicket","Virat Kohli","Rohit Sharma","MS Dhoni","Sachin Tendulkar","AB de Villiers",
+"Jacques Kallis","Kane Williamson","Steve Smith","Joe Root","Babar Azam",
+"Shubman Gill","Ruturaj Gaikwad","Faf du Plessis","David Warner","Ricky Ponting",
+"Glenn Maxwell","Yuvraj Singh","Rahul Dravid","Suresh Raina","Hardik Pandya",
+"Ben Stokes","Jos Buttler","KL Rahul","Quinton de Kock","Mohammad Rizwan",
+"Suryakumar Yadav","Rashid Khan","Sanju Samson","Dinesh Karthik","Andre Russell",
+"Kieron Pollard","Shakib Al Hasan","Mohammed Shami","Jasprit Bumrah","Trent Boult",
+"Pat Cummins","Shaheen Afridi","Mitchell Starc","Brett Lee","Zaheer Khan",
+"Irfan Pathan","Wasim Akram","Muttiah Muralitharan","Shane Warne","Anil Kumble",
+"Ravindra Jadeja","Yuzvendra Chahal","Ravi Bishnoi","Kuldeep Yadav","Harbhajan Singh",
+"Varun Chakravarthy","Umesh Yadav","Bhuvneshwar Kumar","Lungi Ngidi","Kagiso Rabada",
+"Tim Southee","James Anderson","Stuart Broad","Nathan Lyon","R Ashwin",
+"Alastair Cook","Hashim Amla","Michael Hussey","Matthew Hayden","Adam Gilchrist",
+"Kumar Sangakkara","Mahela Jayawardene","Inzamam-ul-Haq","Shoaib Malik","Imran Khan",
+"Saqlain Mushtaq","Ajinkya Rahane","Cheteshwar Pujara","Marnus Labuschagne","Usman Khawaja",
+"Dean Elgar","Tamim Iqbal","Fakhar Zaman","Imam-ul-Haq","Litton Das",
+"Paul Stirling","Mohammad Nabi","Najibullah Zadran","Hazratullah Zazai","Sam Curran",
+"Chris Woakes","Mark Wood","Jonny Bairstow","Rassie van der Dussen","Heinrich Klaasen",
+"Rilee Rossouw","David Miller","Tim David","Marcus Stoinis","Mitchell Marsh",
+"Aaron Finch","Jason Roy","Alex Hales","Phil Salt","Liam Livingstone","cricket","bat","ball","wicket","umpire","batsman","bowler","allrounder","fielder","catch",
+"run","boundary","six","four","over","maiden","no ball","wide","free hit","innings",
+"powerplay","super over","duck","golden duck","century","half-century","double century","not out","strike rate","average",
+"economy rate","yorker","bouncer","googly","doosra","leg spin","off spin","arm ball","reverse swing","seam",
+"slip","gully","point","cover","mid off","mid on","long off","long on","third man","fine leg",
+"square leg","deep mid wicket","deep cover","silly point","short leg","wicketkeeper","stumps","bails","crease","pitch",
+"leg side","off side","front foot","back foot","lbw","appeal","review","DRS","umpire's call","ball tracking",
+"hotspot","snickometer","helmet","pads","gloves","jersey","match","toss","captain","vice-captain",
+"team","scorecard","live score","scoreboard","runs per over","overs remaining","required run rate","net run rate","test match","odi",
+"t20","ipl","bbl","psl","cpl","asia cup","world cup","super six","qualifier","eliminator","trophies","trophy","age","birthday","birthdate"
 
-  //aa keywords cricket na related hoy te check karva mate
-  const cricketKeywords = ["cricket", "odi", "t20", "ipl", "test", "batsman", "bowler", "world cup", "innings", "wicket",
-    "Virat Kohli","Rohit Sharma","MS Dhoni","Sachin Tendulkar","AB de Villiers",
-    "Jacques Kallis","Kane Williamson","Steve Smith","Joe Root","Babar Azam",
-    "Shubman Gill","Ruturaj Gaikwad","Faf du Plessis","David Warner","Ricky Ponting",
-    "Glenn Maxwell","Yuvraj Singh","Rahul Dravid","Suresh Raina","Hardik Pandya",
-    "Ben Stokes","Jos Buttler","KL Rahul","Quinton de Kock","Mohammad Rizwan",
-    "Suryakumar Yadav","Rashid Khan","Sanju Samson","Dinesh Karthik","Andre Russell",
-    "Kieron Pollard","Shakib Al Hasan","Mohammed Shami","Jasprit Bumrah","Trent Boult",
-    "Pat Cummins","Shaheen Afridi","Mitchell Starc","Brett Lee","Zaheer Khan",
-    "Irfan Pathan","Wasim Akram","Muttiah Muralitharan","Shane Warne","Anil Kumble",
-    "Ravindra Jadeja","Yuzvendra Chahal","Ravi Bishnoi","Kuldeep Yadav","Harbhajan Singh",
-    "Varun Chakravarthy","Umesh Yadav","Bhuvneshwar Kumar","Lungi Ngidi","Kagiso Rabada",
-    "Tim Southee","James Anderson","Stuart Broad","Nathan Lyon","R Ashwin",
-    "Alastair Cook","Hashim Amla","Michael Hussey","Matthew Hayden","Adam Gilchrist",
-    "Kumar Sangakkara","Mahela Jayawardene","Inzamam-ul-Haq","Shoaib Malik","Imran Khan",
-    "Saqlain Mushtaq","Ajinkya Rahane","Cheteshwar Pujara","Marnus Labuschagne","Usman Khawaja",
-    "Dean Elgar","Tamim Iqbal","Fakhar Zaman","Imam-ul-Haq","Litton Das",
-    "Paul Stirling","Mohammad Nabi","Najibullah Zadran","Hazratullah Zazai","Sam Curran",
-    "Chris Woakes","Mark Wood","Jonny Bairstow","Rassie van der Dussen","Heinrich Klaasen",
-    "Rilee Rossouw","David Miller","Tim David","Marcus Stoinis","Mitchell Marsh",
-    "Aaron Finch","Jason Roy","Alex Hales","Phil Salt","Liam Livingstone","bat","ball","wicket","umpire","batsman","bowler","allrounder","fielder","catch",
-    "run","boundary","six","four","over","maiden","no ball","wide","free hit","innings",
-    "powerplay","super over","duck","golden duck","century","half-century","double century","not out","strike rate","average",
-    "economy rate","yorker","bouncer","googly","doosra","leg spin","off spin","arm ball","reverse swing","seam",
-    "slip","gully","point","cover","mid off","mid on","long off","long on","third man","fine leg",
-    "square leg","deep mid wicket","deep cover","silly point","short leg","wicketkeeper","stumps","bails","crease","pitch",
-    "leg side","off side","front foot","back foot","lbw","appeal","review","DRS","umpire's call","ball tracking",
-    "hotspot","snickometer","helmet","pads","gloves","jersey","match","toss","captain","vice-captain",
-    "team","scorecard","live score","scoreboard","runs per over","overs remaining","required run rate","net run rate","test match","bbl","psl","cpl","asia cup","super six","qualifier","eliminator"
-  ];
-
-  //If none match, it shows a warning and exits the function early using return
-  if (!cricketKeywords.some(word => prompt.toLowerCase().includes(word.toLowerCase()))) {
+];
+//If none match, it shows a warning and exits the function early using return
+  if (!cricketKeywords.some(word => prompt.toLowerCase().includes(word))) {
     responseDiv.innerHTML = "❌ Please ask only cricket-related questions.";
     return;
   }

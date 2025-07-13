@@ -14,12 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from entrance.views import entrance_view
+from home.views import home_view
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),      # Home page
+   path('', entrance_view, name='entrance'),     # Default: /
+    path('home/', home_view, name='h_index'),      # After clicking "Enter Arena"
     path('news/', include('news.urls')), # News page
     path('stadium/', include('stadium.urls')), 
     path('archives/', include('archives.urls')),

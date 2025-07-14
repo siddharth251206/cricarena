@@ -44,21 +44,18 @@
   </header>
 
   <div class="calendar-grid">
-    <div class="day-header">Sun</div>
-    <div class="day-header">Mon</div>
-    <div class="day-header">Tue</div>
-    <div class="day-header">Wed</div>
-    <div class="day-header">Thu</div>
-    <div class="day-header">Fri</div>
-    <div class="day-header">Sat</div>
+  <div class="day-header">Sun</div>
+  <div class="day-header">Mon</div>
+  <div class="day-header">Tue</div>
+  <div class="day-header">Wed</div>
+  <div class="day-header">Thu</div>
+  <div class="day-header">Fri</div>
+  <div class="day-header">Sat</div>
 
-    {% for day in calendar_days %}
-      {% if forloop.first %}
-        {% for _ in day.weekday|get_range %}
-          <div class="day empty"></div>
-        {% endfor %}
-      {% endif %}
-
+  {% for day in calendar_days %}
+    {% if day is None %}
+      <div class="day empty"></div>
+    {% else %}
       <div class="day">
         <div class="date-number">{{ day.day }}</div>
         {% for match in match_days|get_item:day %}
@@ -68,7 +65,8 @@
           </div>
         {% endfor %}
       </div>
-    {% endfor %}
-  </div>
+    {% endif %}
+  {% endfor %}
+</div>
 </body>
 </html>

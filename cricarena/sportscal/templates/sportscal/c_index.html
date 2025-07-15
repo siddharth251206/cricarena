@@ -13,11 +13,11 @@
 <body>
   <nav class="navbar">
   <div class="navbar-logo">
-    <a href="#"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+    <a href="/home/"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
   </div>
 
   <ul class="navbar-links">
-    <li><a href="/">Home</a></li>
+    <li><a href="/home/">Home</a></li>
     <li><a href="/archives/">Archive</a></li>
     <li><a href="/quiz/">Quiz</a></li>
     <li><a href="/sportscal/">Calendar</a></li>
@@ -61,7 +61,7 @@
   </div>
 
   <ul>
-    <li><a href="/">Home</a></li>
+    <li><a href="/home/">Home</a></li>
     <li><a href="/archives/">Archive</a></li>
     <li><a href="/quiz/">Quiz</a></li>
     <li><a href="/sportscal/">Calendar</a></li>
@@ -101,13 +101,10 @@
     <div class="day-header">Fri</div>
     <div class="day-header">Sat</div>
 
-    {% for day in calendar_days %}
-      {% if forloop.first %}
-        {% for _ in day.weekday|get_range %}
-          <div class="day empty"></div>
-        {% endfor %}
-      {% endif %}
-
+{% for day in calendar_days %}
+    {% if day is None %}
+      <div class="day empty"></div>
+    {% else %}
       <div class="day">
         <div class="date-number">{{ day.day }}</div>
         {% for match in match_days|get_item:day %}
@@ -117,7 +114,8 @@
           </div>
         {% endfor %}
       </div>
-    {% endfor %}
+    {% endif %}
+  {% endfor %}
   </div>
   <button id="scrollToTopBtn" class="back-to-top">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
@@ -170,3 +168,5 @@
   </script>
 </body>
 </html>
+
+

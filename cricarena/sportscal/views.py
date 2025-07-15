@@ -21,7 +21,7 @@ def calendar_view(request, year=None, month=None):
     days_in_month = monthrange(year, month)[1]
     month_end = month_start + timedelta(days=days_in_month - 1)
 
-    # Get up to 100 matches
+    # Get matches
     all_matches = []
     offset = 0
     while offset < 100:
@@ -41,7 +41,7 @@ def calendar_view(request, year=None, month=None):
             break
         offset += 20
 
-    # Filter only for current month
+    # Process matches
     match_days = defaultdict(list)
     for match in all_matches:
         dt_str = match.get("dateTimeGMT")
@@ -61,7 +61,32 @@ def calendar_view(request, year=None, month=None):
                 "status": match.get("status", "")
             })
 
-    calendar_days = [month_start + timedelta(days=i) for i in range(days_in_month)]
+    # Calculate padding for the calendar grid
+    first_weekday = month_start.weekday()  # Monday=0, Sunday=6
+    
+    # Calculate days to pad at start (to make first day Sunday)
+    # If month starts on Sunday (6), no padding needed
+    # If month starts on Monday (0), pad 1 day (Sunday)
+    # If month starts on Tuesday (1), pad 2 days (Sunday, Monday), etc.
+    start_padding = (first_weekday + 1) % 7
+    
+    # Generate calendar days (only current month, with empty slots)
+    calendar_days = []
+    
+    # Add empty days at the beginning
+    for _ in range(start_padding):
+        calendar_days.append(None)
+    
+    # Add actual days of the month
+    for i in range(days_in_month):
+        day_date = month_start + timedelta(days=i)
+        calendar_days.append(day_date)
+    
+    # Add empty days at the end to complete the grid
+    total_days = len(calendar_days)
+    remaining = (7 - (total_days % 7)) % 7  # Days needed to complete last week
+    for _ in range(remaining):
+        calendar_days.append(None)
 
     context = {
         "calendar_days": calendar_days,

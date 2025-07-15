@@ -464,3 +464,8 @@ button:hover {
   background: #444;
   border-radius: 10px;
 }
+
+
+body::-webkit-scrollbar {
+  display: none;              
+}

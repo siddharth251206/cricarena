@@ -69,3 +69,7 @@ background: #1ed760;
   color: white;
   line-height: 22px;
 }
+
+/* .poll-slider::-webkit-scrollbar {
+  display: none;              
+} */

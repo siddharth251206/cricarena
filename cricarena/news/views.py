@@ -5,50 +5,12 @@ from django.views.decorators.http import require_POST
 
 from .models import Article
 
-
-# def fetch_cricket_articles():
-#     import requests
-
-#     API_URL = "https://your-api.com/news"
-#     NEWSAPI_KEY = "your_api_key"
-
-#     headers = {
-#         "Authorization": f"Bearer {NEWSAPI_KEY}",
-#     }
-
-#     params = {
-#         "category": "cricket",  # Make sure your API supports this
-#         "pageSize": 50,         # Fetch more so we can filter
-#         "language": "en"
-#     }
-
-#     response = requests.get(API_URL, headers=headers, params=params)
-
-#     if response.status_code == 200:
-#         raw_articles = response.json().get("articles", [])
-#         cricket_articles = []
-
-#         for article in raw_articles:
-#             # if ("cricket" in article.get("title", "").lower() or 
-#             #     "cricket" in article.get("description", "").lower()):
-#             if ("cricket" in article.get("title", "").lower() ): 
-#                 if article.get("image_url"):  # Ensure image is present
-#                     cricket_articles.append(article)
-
-#         return cricket_articles  # Limit to 30 accurate articles
-
-#     return []
-
-
 def news_home(request):
     q = request.GET.get('q', '')
     team = request.GET.get('team', '')
     from_date = request.GET.get('from')  
     to_date = request.GET.get('to')      
 
-    # articles = Article.objects.all()
-    # Only show articles where category is cricket
-    # articles = Article.objects.filter(category__iexact="cricket")
     articles = Article.objects.filter(
         category__iexact="cricket",
     ).exclude(

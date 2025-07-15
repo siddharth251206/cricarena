@@ -61,6 +61,7 @@ def calendar_view(request, year=None, month=None):
                 "status": match.get("status", "")
             })
 
+
     # Calculate padding for the calendar grid
     first_weekday = month_start.weekday()  # Monday=0, Sunday=6
     

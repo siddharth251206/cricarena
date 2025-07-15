@@ -4,41 +4,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ month_name }} {{ year }} - Cricket Calendar</title>
   <link rel="stylesheet" href="{% static 'sportscal/css/c_style.css' %}" />
+   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <nav class="navbar">
-    <div class="navbar-logo"><a href="#">CRICARENA</a></div>
-    <ul class="navbar-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/archives/">Archive</a></li>
-      <li><a href="/quiz/">Quiz</a></li>
-      <li><a href="/sportscal/">Calendar</a></li>
-      <li><a href="/comparison/">Comparison</a></li>
-      <li><a href="/tactics/">Tactics</a></li>
-      <li><a href="/stadium/">Stadiums</a></li>
-      <li><a href="/news/">News</a></li>
-      <li class="dropdown">
-       <a href="#">IPL ▼</a>
-<ul class="dropdown-menu">
-  <li><a href="/ipl/?team=csk">CSK</a></li>
-  <li><a href="/ipl/?team=mi">MI</a></li>
-  <li><a href="/ipl/?team=rcb">RCB</a></li>
-  <li><a href="/ipl/?team=kkr">KKR</a></li>
-  <li><a href="/ipl/?team=rr">RR</a></li>
-  <li><a href="/ipl/?team=dc">DC</a></li>
-  <li><a href="/ipl/?team=pbks">PBKS</a></li>
-  <li><a href="/ipl/?team=srh">SRH</a></li>
-  <li><a href="/ipl/?team=lsg">LSG</a></li>
-  <li><a href="/ipl/?team=gt">GT</a></li>
-</ul>
-      </li>
-    </ul>
-    <div class="navbar-search">
-      <input type="text" placeholder="Search...">
+  <div class="navbar-logo">
+    <a href="#"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+  </div>
+
+  <ul class="navbar-links">
+    <li><a href="/home/">Home</a></li>
+    <li><a href="/archives/">Archive</a></li>
+    <li><a href="/quiz/">Quiz</a></li>
+    <li><a href="/sportscal/">Calendar</a></li>
+    <li><a href="/comparison/">Comparison</a></li>
+    <li><a href="/tactics/">Tactics</a></li>
+    <li><a href="/stadium/">Stadiums</a></li>
+    <li><a href="/news/">News</a></li>
+
+    <li class="dropdown">
+      <a href="#" class="ipl-desktop-toggle">IPL ▼</a>
+      <ul class="dropdown-menu">
+        <li class="team-item"><a href="/ipl/?team=csk"><img src="https://documents.iplt20.com/ipl/CSK/Logos/Logooutline/CSKoutline.png" alt=""> CSK</a></li>
+        <li class="team-item"><a href="/ipl/?team=mi"><img src="https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png" alt=""> MI</a></li>
+        <li class="team-item"><a href="/ipl/?team=rcb"><img src="https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png" alt=""> RCB</a></li>
+        <li class="team-item"><a href="/ipl/?team=kkr"><img src="https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png" alt=""> KKR</a></li>
+        <li class="team-item"><a href="/ipl/?team=rr"><img src="https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png" alt=""> RR</a></li>
+        <li class="team-item"><a href="/ipl/?team=dc"><img src="https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png" alt=""> DC</a></li>
+        <li class="team-item"><a href="/ipl/?team=pbks"><img src="https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png" alt=""> PBKS</a></li>
+        <li class="team-item"><a href="/ipl/?team=srh"><img src="https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png" alt=""> SRH</a></li>
+        <li class="team-item"><a href="/ipl/?team=lsg"><img src="https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png" alt=""> LSG</a></li>
+        <li class="team-item"><a href="/ipl/?team=gt"><img src="https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png" alt=""> GT</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="about-us"><li><a href="/aboutus">About Us</a></li></div>
+
+  <div class="toggle-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" fill="#19e86c">
+      <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+    </svg>
+  </div>
+</nav>
+
+<!-- Hamburger Menu -->
+<div class="hamburger">
+  <div class="ham-top">
+    <div class="navbar-logo">
+      <a href="#"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
     </div>
-  </nav>
+    <div class="close-btn" style="align-self: flex-end; font-size: 28px; cursor: pointer; color: #19e86c;">✕</div>
+  </div>
+
+  <ul>
+    <li><a href="/home/">Home</a></li>
+    <li><a href="/archives/">Archive</a></li>
+    <li><a href="/quiz/">Quiz</a></li>
+    <li><a href="/sportscal/">Calendar</a></li>
+    <li><a href="/comparison/">Comparison</a></li>
+    <li><a href="/tactics/">Tactics</a></li>
+    <li><a href="/stadium/">Stadiums</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="/aboutus">About Us</a></li>
+    <li class="dropdown">
+      <div class="hamburger-ipl-toggle">IPL <span class="dropdown-arrow">▼</span></div>
+      <ul class="dropdown-menu">
+        <li class="team-item"><a href="/ipl/?team=csk"><img src="https://documents.iplt20.com/ipl/CSK/Logos/Logooutline/CSKoutline.png" alt=""> CSK</a></li>
+        <li class="team-item"><a href="/ipl/?team=mi"><img src="https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png" alt=""> MI</a></li>
+        <li class="team-item"><a href="/ipl/?team=rcb"><img src="https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png" alt=""> RCB</a></li>
+        <li class="team-item"><a href="/ipl/?team=kkr"><img src="https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png" alt=""> KKR</a></li>
+        <li class="team-item"><a href="/ipl/?team=rr"><img src="https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png" alt=""> RR</a></li>
+        <li class="team-item"><a href="/ipl/?team=dc"><img src="https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png" alt=""> DC</a></li>
+        <li class="team-item"><a href="/ipl/?team=pbks"><img src="https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png" alt=""> PBKS</a></li>
+        <li class="team-item"><a href="/ipl/?team=srh"><img src="https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png" alt=""> SRH</a></li>
+        <li class="team-item"><a href="/ipl/?team=lsg"><img src="https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png" alt=""> LSG</a></li>
+        <li class="team-item"><a href="/ipl/?team=gt"><img src="https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png" alt=""> GT</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
   <header>
     <h1>🏏 {{ month_name }} {{ year }}</h1>
   </header>
@@ -52,13 +101,10 @@
     <div class="day-header">Fri</div>
     <div class="day-header">Sat</div>
 
-    {% for day in calendar_days %}
-      {% if forloop.first %}
-        {% for _ in day.weekday|get_range %}
-          <div class="day empty"></div>
-        {% endfor %}
-      {% endif %}
-
+{% for day in calendar_days %}
+    {% if day is None %}
+      <div class="day empty"></div>
+    {% else %}
       <div class="day">
         <div class="date-number">{{ day.day }}</div>
         {% for match in match_days|get_item:day %}
@@ -68,7 +114,59 @@
           </div>
         {% endfor %}
       </div>
-    {% endfor %}
+    {% endif %}
+  {% endfor %}
   </div>
+  <button id="scrollToTopBtn" class="back-to-top">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
+        </button>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  
+    const toggleBtn = document.querySelector(".toggle-btn");
+  const hamburger = document.querySelector(".hamburger");
+  const closeBtn = document.querySelector(".close-btn");
+  const iplToggle = document.querySelector(".hamburger-ipl-toggle");
+  const iplDropdown = document.querySelector(".hamburger .dropdown-menu");
+  const arrow = document.querySelector(".dropdown-arrow");
+
+  toggleBtn?.addEventListener("click", () => {
+    console.log("Opening hamburger");
+    hamburger?.classList.add("open");
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    console.log("Closing hamburger");
+    hamburger?.classList.remove("open");
+    document.body.style.overflow = 'auto';
+  });
+
+  iplToggle?.addEventListener("click", () => {
+    iplDropdown?.classList.toggle("open");
+    arrow?.classList.toggle("rotate");
+  });
+ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  // Show/hide button on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  // Smooth scroll to top
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+  </script>
 </body>
 </html>
+
+

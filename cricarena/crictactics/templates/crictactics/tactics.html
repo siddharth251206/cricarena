@@ -3,171 +3,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cricket Tactics</title>
-  <link rel="stylesheet" href="{% static 'crictactics/css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cricket Calendar</title>
+  <link rel="stylesheet" href="{% static 'sportscal/css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-  <div class="navbar-logo">
-    <a href="/home/"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
-  </div>
+  <header class="calendar-header">
+    <h1>📅 Cricket Calendar – July 2025</h1>
+  </header>
 
-  <ul class="navbar-links">
-    <li><a href="/home/">Home</a></li>
-    <li><a href="/archives/">Archive</a></li>
-    <li><a href="/quiz/">Quiz</a></li>
-    <li><a href="/sportscal/">Calendar</a></li>
-    <li><a href="/comparison/">Comparison</a></li>
-    <li><a href="/tactics/">Tactics</a></li>
-    <li><a href="/stadium/">Stadiums</a></li>
-    <li><a href="/news/">News</a></li>
+  <div class="calendar-container">
+    <div class="calendar-grid">
+      <!-- Weekday Headers -->
+      <div class="day-header">Sun</div>
+      <div class="day-header">Mon</div>
+      <div class="day-header">Tue</div>
+      <div class="day-header">Wed</div>
+      <div class="day-header">Thu</div>
+      <div class="day-header">Fri</div>
+      <div class="day-header">Sat</div>
 
-    <li class="dropdown">
-      <a href="#" class="ipl-desktop-toggle">IPL ▼</a>
-      <ul class="dropdown-menu">
-        <li class="team-item"><a href="/ipl/?team=csk"><img src="https://documents.iplt20.com/ipl/CSK/Logos/Logooutline/CSKoutline.png" alt=""> CSK</a></li>
-        <li class="team-item"><a href="/ipl/?team=mi"><img src="https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png" alt=""> MI</a></li>
-        <li class="team-item"><a href="/ipl/?team=rcb"><img src="https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png" alt=""> RCB</a></li>
-        <li class="team-item"><a href="/ipl/?team=kkr"><img src="https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png" alt=""> KKR</a></li>
-        <li class="team-item"><a href="/ipl/?team=rr"><img src="https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png" alt=""> RR</a></li>
-        <li class="team-item"><a href="/ipl/?team=dc"><img src="https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png" alt=""> DC</a></li>
-        <li class="team-item"><a href="/ipl/?team=pbks"><img src="https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png" alt=""> PBKS</a></li>
-        <li class="team-item"><a href="/ipl/?team=srh"><img src="https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png" alt=""> SRH</a></li>
-        <li class="team-item"><a href="/ipl/?team=lsg"><img src="https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png" alt=""> LSG</a></li>
-        <li class="team-item"><a href="/ipl/?team=gt"><img src="https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png" alt=""> GT</a></li>
-      </ul>
-    </li>
-  </ul>
-  <div class="about-us"><li><a href="/aboutus">About Us</a></li></div>
+      <!-- Days of the Month (example static) -->
+      <div class="day-cell"></div> <!-- Sunday 29 June -->
+      <div class="day-cell"></div>
+      <div class="day-cell"></div>
+      <div class="day-cell">
+        <span class="date-number">1</span>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">2</span>
+        <div class="match-card">India vs England –<br>2nd Test</div>
+      </div>
+      <div class="day-cell"><span class="date-number">3</span></div>
+      <div class="day-cell">
+        <span class="date-number">4</span>
+      </div>
 
-  <div class="toggle-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" fill="#19e86c">
-      <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-    </svg>
-  </div>
-</nav>
+      <!-- Week 2 -->
+      <div class="day-cell">
+        <span class="date-number">5</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">6</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+        <div class="match-card">Indonesia Tri-Series (T20I)</div>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">7</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+        <div class="match-card">Indonesia Tri-Series (T20I)</div>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">8</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+        <div class="match-card">Indonesia Tri-Series (T20I)</div>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">9</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+        <div class="match-card">Indonesia Tri-Series (T20I)</div>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">10</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+        <div class="match-card">Indonesia Tri-Series (T20I)</div>
+        <div class="match-card">Bulgaria Tri-Series (T20I)</div>
+      </div>
+      <div class="day-cell">
+        <span class="date-number">11</span>
+        <div class="match-card">Malawi 4-nation T20I</div>
+        <div class="match-card">Indonesia Tri-Series (T20I)</div>
+        <div class="match-card">Bulgaria Tri-Series (T20I)</div>
+      </div>
 
-<!-- Hamburger Menu -->
-<div class="hamburger">
-  <div class="ham-top">
-    <div class="navbar-logo">
-      <a href="#"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+      <!-- More weeks as needed... -->
     </div>
-    <div class="close-btn" style="align-self: flex-end; font-size: 28px; cursor: pointer; color: #19e86c;">✕</div>
   </div>
+  <script src="{% static 'sportscal/js/script.js' %}"></script>
 
-  <ul>
-    <li><a href="/home/">Home</a></li>
-    <li><a href="/archives/">Archive</a></li>
-    <li><a href="/quiz/">Quiz</a></li>
-    <li><a href="/sportscal/">Calendar</a></li>
-    <li><a href="/comparison/">Comparison</a></li>
-    <li><a href="/tactics/">Tactics</a></li>
-    <li><a href="/stadium/">Stadiums</a></li>
-    <li><a href="/news/">News</a></li>
-    <li><a href="/aboutus">About Us</a></li>
-    <li class="dropdown">
-      <div class="hamburger-ipl-toggle">IPL <span class="dropdown-arrow">▼</span></div>
-      <ul class="dropdown-menu">
-        <li class="team-item"><a href="/ipl/?team=csk"><img src="https://documents.iplt20.com/ipl/CSK/Logos/Logooutline/CSKoutline.png" alt=""> CSK</a></li>
-        <li class="team-item"><a href="/ipl/?team=mi"><img src="https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png" alt=""> MI</a></li>
-        <li class="team-item"><a href="/ipl/?team=rcb"><img src="https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png" alt=""> RCB</a></li>
-        <li class="team-item"><a href="/ipl/?team=kkr"><img src="https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png" alt=""> KKR</a></li>
-        <li class="team-item"><a href="/ipl/?team=rr"><img src="https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png" alt=""> RR</a></li>
-        <li class="team-item"><a href="/ipl/?team=dc"><img src="https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png" alt=""> DC</a></li>
-        <li class="team-item"><a href="/ipl/?team=pbks"><img src="https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png" alt=""> PBKS</a></li>
-        <li class="team-item"><a href="/ipl/?team=srh"><img src="https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png" alt=""> SRH</a></li>
-        <li class="team-item"><a href="/ipl/?team=lsg"><img src="https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png" alt=""> LSG</a></li>
-        <li class="team-item"><a href="/ipl/?team=gt"><img src="https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png" alt=""> GT</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
-<h1>🏏 Cricket Tactics: Shots, Fielding & Swing</h1>
-<main>
-    <!-- Batting Shots -->
-    <section class="tactic-section">
-      <h2>Batting Shots</h2>
-      <div class="image-box">
-        <img src="{% static 'crictactics/images/shots.jpg' %}" alt="Batting Shots" class="tactic-img">
-        <button class="toggle-button" onclick="toggleInfo('shots-details')">Show/Hide Details</button>
-        <div class="details" id="shots-details">
-          <ul>
-            <li><strong>Bye Area</strong>: When batter misses the ball and runs are scored as byes.</li>
-            <li><strong>Late Cut</strong>: Finessed cut played late toward third man.</li>
-            <li><strong>Leg Glance</strong>: Redirecting a leg-side ball with wrists to fine leg.</li>
-            <li><strong>Hook</strong>: Short ball pulled in the air to leg side, often square leg.</li>
-            <li><strong>Pull</strong>: Horizontal shot to short deliveries, directed to mid-wicket.</li>
-            <li><strong>Big Shot</strong>: Aerial shot played to score a boundary or six.</li>
-            <li><strong>On Drive</strong>: Elegant ground shot toward mid-on.</li>
-            <li><strong>Straight Drive</strong>: Driven past the bowler down the ground.</li>
-            <li><strong>Off Drive</strong>: Classic drive through extra cover region.</li>
-            <li><strong>Cover Drive</strong>: Stylish shot through the covers region.</li>
-            <li><strong>Square Cut</strong>: Square shot to short, wide deliveries outside off.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Fielding Positions -->
-    <section class="tactic-section">
-      <h2>Fielding Positions</h2>
-      <div class="image-box">
-        <img src="{% static 'crictactics/images/field.png' %}" alt="Fielding Positions" class="tactic-img">
-        <button class="toggle-button" onclick="toggleInfo('field-details')">Show/Hide Details</button>
-        <div class="details" id="field-details">
-          <ul>
-            <li><strong>Slips/Gully</strong>: Catch edges off seamers/spinners.</li>
-            <li><strong>Point/Cover/Mid-off</strong>: Block drives and cut shots on off-side.</li>
-            <li><strong>Square Leg/Fine Leg</strong>: Trap sweep/pull/hook shots.</li>
-            <li><strong>Mid-on/Mid-wicket</strong>: On-side drive intercepts and catches.</li>
-            <li><strong>Deep Fielders</strong>: Positioned near boundary for big shots.</li>
-            <li><strong>Close-in (Silly Point, Short Leg)</strong>: Aggressive catching positions in Tests.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Swing Bowling -->
-    <section class="tactic-section">
-      <h2>Swing Bowling Techniques</h2>
-      <div class="image-box">
-        <img src="{% static 'crictactics/images/swing.webp' %}" alt="Swing Bowling Types" class="tactic-img">
-        <button class="toggle-button" onclick="toggleInfo('swing-details')">Show/Hide Details</button>
-        <div class="details" id="swing-details">
-          <ul>
-            <li><strong>Normal Swing</strong>:
-              <ul>
-                <li>Grip: Seam angled with shiny side facing slip or leg.</li>
-                <li>Mechanism: Ball swings in direction of seam due to pressure difference.</li>
-                <li>Optimum speed: ~70 mph</li>
-              </ul>
-            </li>
-            <li><strong>Reverse Swing</strong>:
-              <ul>
-                <li>Grip: Same as normal, but roughness on both sides aids swing in reverse.</li>
-                <li>Mechanism: Ball swings opposite to seam direction.</li>
-                <li>Optimum speed: ~90 mph</li>
-              </ul>
-            </li>
-            <li><strong>Contrast Swing</strong>:
-              <ul>
-                <li>At low speed: Ball swings toward smooth side.</li>
-                <li>At high speed: Ball swings toward shiny side (if seam is upright).</li>
-                <li>Optimum speed: 70–80 mph depending on seam and speed.</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-<button id="scrollToTopBtn" class="back-to-top">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
-        </button>
-  <script src="{% static 'crictactics/js/script.js' %}"></script>
 </body>
 </html>

@@ -4,7 +4,8 @@ from calendar import monthrange
 from django.shortcuts import render
 from collections import defaultdict
 
-CRICAPI_KEY = "cbf98794-920a-4c3d-93d2-551987040cca"
+# --- Remove API key and API usage ---
+# CRICAPI_KEY = "cbf98794-920a-4c3d-93d2-551987040cca"
 
 def calendar_view(request, year=None, month=None):
     today = datetime.utcnow().date()
@@ -21,71 +22,71 @@ def calendar_view(request, year=None, month=None):
     days_in_month = monthrange(year, month)[1]
     month_end = month_start + timedelta(days=days_in_month - 1)
 
-    # Get matches
-    all_matches = []
-    offset = 0
-    while offset < 100:
-        url = f"https://api.cricapi.com/v1/matches?apikey={CRICAPI_KEY}&offset={offset}"
-        response = requests.get(url)
-        try:
-            data = response.json()
-        except Exception:
-            break
+    # --- Hardcoded event data ---
+    events = [
+        {"start": "Jul 2", "end": "Jul 2", "teams": "India vs England – 2nd Test"},
+        {"start": "Jul 5", "end": "Jul 13", "teams": "Malawi 4‑nation T20I"},
+        {"start": "Jul 6", "end": "Jul 13", "teams": "Indonesia Tri‑Series (T20I)"},
+        {"start": "Jul 10", "end": "Jul 13", "teams": "Bulgaria Tri‑Series (T20I)"},
+        {"start": "Jul 10", "end": "Jul 14", "teams": "India vs England – 3rd Test"},
+        {"start": "Jul 14", "end": "Jul 26", "teams": "Zimbabwe T20I Tri‑Series"},
+        {"start": "Jul 17", "end": "Jul 27", "teams": "Pearl of Africa T20I Series"},
+        {"start": "Jul 18", "end": "Jul 23", "teams": "Saudi Arabia vs Qatar T20Is"},
+        {"start": "Jul 18", "end": "Jul 26", "teams": "Asia Pacific Champions Trophy"},
+        {"start": "Jul 20", "end": "Jul 24", "teams": "Pakistan vs Bangladesh – T20Is"},
+        {"start": "Jul 23", "end": "Jul 27", "teams": "India vs England – 4th Test"},
+        {"start": "Jul 25", "end": "Jul 27", "teams": "Finland vs Estonia T20Is"},
+        {"start": "Jul 30", "end": "Aug 11", "teams": "New Zealand in Zimbabwe Tests"},
+        {"start": "Jul 31", "end": "Aug 4", "teams": "India vs England – 5th Test continues"},
+        # --- August and September events ---
+        {"start": "Aug 1", "end": "Aug 12", "teams": "Pakistan in West Indies (3 T20Is, 3 ODIs)"},
+        {"start": "Aug 6", "end": "Aug 10", "teams": "Pakistan women in Ireland (3 WT20Is)"},
+        {"start": "Aug 7", "end": "Aug 11", "teams": "NZ Tests in Zimbabwe (2 Tests)"},
+        {"start": "Aug 10", "end": "Aug 24", "teams": "South Africa tour of Australia (3 T20Is, 3 ODIs)"},
+        {"start": "Aug 17", "end": "Aug 31", "teams": "India in Bangladesh (3 ODIs, 3 T20Is; see note on possible postponement)"},
+        {"start": "Aug 29", "end": "Aug 31", "teams": "Sri Lanka in Zimbabwe (2 ODIs)"},
+        {"start": "Sep 3", "end": "Sep 7", "teams": "Sri Lanka/Zimbabwe T20Is continue"},
+    ]
 
-        matches = data.get("data", [])
-        if not matches:
-            break
+    # Helper to parse date like 'Jul 2' or 'Aug 4' to date object for this year
+    def parse_event_date(s):
+        parts = s.split()
+        if len(parts) == 2:
+            month_str, day = parts
+            month_num = datetime.strptime(month_str, "%b").month
+            return date(year if month_num >= month_start.month else year + 1, month_num, int(day.replace('\u202f','').replace('\u2009','')))
+        return None
 
-        all_matches.extend(matches)
-        if len(matches) < 20:
-            break
-        offset += 20
-
-    # Process matches
+    # Map events to days in the current month
     match_days = defaultdict(list)
-    for match in all_matches:
-        dt_str = match.get("dateTimeGMT")
-        try:
-            match_date = datetime.strptime(dt_str, "%Y-%m-%dT%H:%M:%S").date()
-        except:
+    for event in events:
+        start_dt = parse_event_date(event["start"])
+        end_dt = parse_event_date(event["end"])
+        if not start_dt or not end_dt:
             continue
-
-        if month_start <= match_date <= month_end:
-            teams = match.get("teams", [])
-            team1 = teams[0] if len(teams) > 0 else "TBD"
-            team2 = teams[1] if len(teams) > 1 else "TBD"
-
-            match_days[match_date].append({
-                "teams": f"{team1} vs {team2}",
-                "venue": match.get("venue", "TBD"),
-                "status": match.get("status", "")
+        # Clamp event to current month
+        cur = max(start_dt, month_start)
+        last = min(end_dt, month_end)
+        while cur <= last:
+            match_days[cur].append({
+                "teams": event["teams"],
+                "venue": "",
+                "status": ""
             })
+            cur += timedelta(days=1)
 
 
     # Calculate padding for the calendar grid
     first_weekday = month_start.weekday()  # Monday=0, Sunday=6
-    
-    # Calculate days to pad at start (to make first day Sunday)
-    # If month starts on Sunday (6), no padding needed
-    # If month starts on Monday (0), pad 1 day (Sunday)
-    # If month starts on Tuesday (1), pad 2 days (Sunday, Monday), etc.
     start_padding = (first_weekday + 1) % 7
-    
-    # Generate calendar days (only current month, with empty slots)
     calendar_days = []
-    
-    # Add empty days at the beginning
     for _ in range(start_padding):
         calendar_days.append(None)
-    
-    # Add actual days of the month
     for i in range(days_in_month):
         day_date = month_start + timedelta(days=i)
         calendar_days.append(day_date)
-    
-    # Add empty days at the end to complete the grid
     total_days = len(calendar_days)
-    remaining = (7 - (total_days % 7)) % 7  # Days needed to complete last week
+    remaining = (7 - (total_days % 7)) % 7
     for _ in range(remaining):
         calendar_days.append(None)
 

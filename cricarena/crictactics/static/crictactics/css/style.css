@@ -566,3 +566,40 @@ box-shadow: 0 0 10px #1db954, 0 0 20px #1db954;
 .details {
   display: none;
 }
+/* ---- Match Card Styling for Calendar ---- */
+.match-card {
+  background-color: #12331f; /* Dark Spotify green */
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 6px 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(29, 185, 84, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.match-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.4);
+}
+
+.match-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background-color: #1db954; /* Neon green bar */
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* Optional: If match cards are stacked in a day container */
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

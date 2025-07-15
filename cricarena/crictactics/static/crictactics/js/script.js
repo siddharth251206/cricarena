@@ -49,4 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth"
     });
   });
+
+  // Image zoom on click
+  const tacticImages = document.querySelectorAll('.tactic-img');
+  tacticImages.forEach(img => {
+    img.addEventListener('click', function() {
+      // Remove zoom from any other image
+      tacticImages.forEach(other => {
+        if (other !== img) other.classList.remove('zoomed');
+      });
+      // Toggle zoom on this image
+      img.classList.toggle('zoomed');
+    });
+  });
 });

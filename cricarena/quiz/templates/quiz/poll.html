@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Trending Cricket Polls</title>
     <link rel="stylesheet" href="{% static 'quiz/poll.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 
 </head>
 <body>
@@ -14,29 +16,36 @@
 
 
 <h2  class = "center-heading" >🔥 Trending Cricket Polls</h2>
-<div class="poll-slider">
+
+<div class="swiper poll-slider">
+  <div class="swiper-wrapper">
     {% for poll in polls %}
-    <div class="poll-card" id="poll-{{ poll.id }}">
-        <h3>{{ poll.question }}</h3>
+    <div class="swiper-slide poll-card" id="poll-{{ poll.id }}">
+      <h3>{{ poll.question }}</h3>
+      {% for option in poll.options.all %}
+      <button class="option-button" onclick="vote('{{ option.id }}', '{{ poll.id }}')">
+        {{ option.text }}
+      </button>
+      {% endfor %}
+      <div class="results" style="display: none;">
         {% for option in poll.options.all %}
-            <!-- <button class="option-button" onclick="vote({{ option.id }}, {{ poll.id }})"> -->
-                <button class="option-button" onclick="vote('{{ option.id }}', '{{ poll.id }}')">
-                {{ option.text }}
-            </button>
-        {% endfor %}
-        <div class="results" style="display: none;">
-            {% for option in poll.options.all %}
-            <div>
-                <div>{{ option.text }}</div>
-                <div class="result-bar">
-                    <div class="fill" style="width:0%; background: #1db954;">0%</div>
-                </div>
-            </div>
-            {% endfor %}
+        <div>
+          <div>{{ option.text }}</div>
+          <div class="result-bar">
+            <div class="fill" style="width:0%; background: #1db954;">0%</div>
+          </div>
         </div>
+        {% endfor %}
+      </div>
     </div>
     {% endfor %}
+  </div>
+
+  <!-- Swiper arrows -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
+
 
 <!-- Include the quiz -->
 <div class="quiz-section">
@@ -45,7 +54,19 @@
 
 <!-- <script src="{% static 'quiz/poll.js' %}"></script> -->    
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
+
+    const swiper = new Swiper('.poll-slider', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+  });
+
 function vote(optionId, pollId) {
     // fetch(`/vote/${optionId}/`)
     fetch(`/quiz/vote/${optionId}/`)
@@ -71,13 +92,27 @@ function showResults(pollId, results) {
     // Update result bars
     const fills = resultsDiv.querySelectorAll('.fill');
     results.forEach((result, idx) => {
-        fills[idx].style.width = result.percent + '%';
-        // fills[idx].textContent = `${result.votes} (${result.percent.toFixed(1)}%)`;
-        fills[idx].textContent = ` (${result.percent.toFixed(1)}%)`;
+        const fill = fills[idx];
+
+        // Reset width to 0 to prepare for animation
+        fill.style.width = '0%';
+        fill.textContent = ''; // Hide text initially
+
+        // Force browser to render the initial state
+        void fill.offsetWidth;  // 👈 forces a reflow
+
+        setTimeout(() => {
+            fill.style.width = result.percent + '%';
+        }, 50);
+
+        // Show text after animation (match transition duration: 0.8s)
+        setTimeout(() => {
+            fill.textContent = ` (${result.percent.toFixed(1)}%)`;
+        }, 850);
     });
 }
-</script>
 
+</script>
 
 </div><!-- In your page.html -->
 </body>

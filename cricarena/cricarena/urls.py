@@ -21,16 +21,18 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('', entrance_view, name='entrance'),     # Default: /
+    path('', entrance_view, name='entrance'),     # Default: /
     path('home/', home_view, name='h_index'),      # After clicking "Enter Arena"
     path('news/', include('news.urls')), # News page
     path('stadium/', include('stadium.urls')), 
+    path('login/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
     path('archives/', include('archives.urls')),
     path('ipl/', include('ipl.urls')), 
-     path('calender/', include('sportscal.urls')),
+    path('calender/', include('sportscal.urls')),
     path('sportscal/', include('sportscal.urls')),
     path('quiz/', include('quiz.urls')),
-     path('tactics/', include('crictactics.urls')),
-     path('comparison/', include('comparison.urls')),
+    path('tactics/', include('crictactics.urls')),
+    path('comparison/', include('comparison.urls')),
     
 ]

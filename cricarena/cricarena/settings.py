@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'crictactics',
     'comparison',
     'entrance',
+    'accounts', 
     
     
     
@@ -129,7 +130,12 @@ STATICFILES_DIRS = [
     BASE_DIR / 'crictactics' / 'static',
     BASE_DIR / 'comparison' / 'static',
     BASE_DIR / 'entrance' / 'static',
+    BASE_DIR / 'accounts' / 'static',
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 TEMPLATES[0]['DIRS'] += [BASE_DIR / 'stadium' / 'templates']
 STATIC_ROOT = BASE_DIR / "staticfiles"

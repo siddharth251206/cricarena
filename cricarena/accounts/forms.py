@@ -14,3 +14,26 @@ class SignupForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ('username', 'nickname', 'email', 'password1', 'password2', 'fav_ipl_team')
+
+
+# This file defines two custom forms used for user login and signup in your project.
+
+# 1. LoginForm
+# Inherits from Django’s built-in AuthenticationForm.
+
+# Customizes the username and password fields with placeholders for a better UI.
+
+# Used to authenticate existing users.
+
+# 2. SignupForm
+# Inherits from Django’s UserCreationForm to simplify user registration.
+
+# Adds custom fields:
+
+# email
+
+# nickname
+
+# fav_ipl_team (as radio buttons, using choices from IPL_TEAMS)
+
+# Specifies that the form is tied to the CustomUser model and lists all required fields.

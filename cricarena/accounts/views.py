@@ -38,3 +38,41 @@ def login_signup(request):
     signup_form = SignupForm()
     nickname = request.session.pop('nickname', None)
     return render(request, 'accounts/login_signup.html', {'form': form, 'signup_form': signup_form, 'nickname': nickname, 'show_signup': show_signup})
+
+
+# View Function: login_signup(request)
+# Handles two modes:
+# Login: Authenticates existing users.
+
+# Signup: Registers new users using a custom user model (CustomUser).
+
+# Key Logic:
+# If POST request (form submitted):
+
+# Checks if it's a signup:
+
+# Uses SignupForm, saves the user if valid, logs them in, stores nickname in session, redirects to homepage.
+
+# If invalid, shows an error.
+
+# Otherwise, assumes it's a login:
+
+# Uses LoginForm, logs user in if valid, stores nickname in session, redirects to homepage.
+
+# If invalid, shows an error.
+
+# If GET request (initial page load or toggle):
+
+# Displays login form by default.
+
+# If query string has ?signup=1, shows signup form.
+
+# Data Passed to Template:
+# form: the current login or signup form
+
+# signup_form: empty signup form (for toggling)
+
+# nickname: popped from session (used for greeting popup)
+
+# show_signup: flag to toggle between login and signup views in the HTML
+

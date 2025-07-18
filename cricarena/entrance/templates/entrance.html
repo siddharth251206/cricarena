@@ -19,6 +19,10 @@
 
     <div id="canvas-container"></div>
 
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="{% static 'entrance/video/cricket balls.mp4' %}" type="video/mp4">
+  </video> 
+
     <div class="ui-overlay">
         <div class="logo">
             <h1 class="floating">CRICARENA</h1>
@@ -137,9 +141,9 @@
             </div>
 
         </div>
-    </section>
+    </section> 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> {% endcomment %}
      <script src="{% static 'entrance/js/entrance.js' %}"></script>
 </body>
 </html>

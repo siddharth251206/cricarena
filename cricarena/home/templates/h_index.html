@@ -14,7 +14,7 @@
   <!-- Navbar -->
 <nav class="navbar">
   <div class="navbar-logo">
-    <a href="#"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+    <a href="/home/"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
   </div>
 
   <ul class="navbar-links">
@@ -25,6 +25,16 @@
     <li><a href="/tactics/">Tactics</a></li>
     <li><a href="/stadium/">Stadiums</a></li>
     <li><a href="/news/">News</a></li>
+    <li><a href="/accounts/">Login/Signup</a></li>
+    {% if request.user.is_authenticated %}
+      <li class="dropdown user-dropdown">
+        <a href="#" class="user-toggle">{{ request.user.nickname }} ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="/accounts/logout/">Logout</a></li>
+        </ul>
+      </li>
+    {% endif %}
+    
 
     <li class="dropdown">
       <a href="#" class="ipl-desktop-toggle">IPL ▼</a>
@@ -68,6 +78,16 @@
     <li><a href="/tactics/">Tactics</a></li>
     <li><a href="/stadium/">Stadiums</a></li>
     <li><a href="/news/">News</a></li>
+    {% if request.user.is_authenticated %}
+      <li class="dropdown user-dropdown">
+        <a href="#" class="user-toggle">{{ request.user.nickname }} ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="/accounts/logout/">Logout</a></li>
+        </ul>
+      </li>
+    {% else %}
+      <li><a href="/accounts/">Login/Signup</a></li>
+    {% endif %}
     <li><a href="/aboutus">About Us</a></li>
     <li class="dropdown">
       <div class="hamburger-ipl-toggle">IPL <span class="dropdown-arrow">▼</span></div>
@@ -87,6 +107,11 @@
   </ul>
 </div>
 
+{% if nickname %}
+  <script>
+    alert("Hello {{ nickname }}!");
+  </script>
+{% endif %}
 
   <!-- Live Score Carousel -->
   <div class="live-carousel reveal">
@@ -235,10 +260,10 @@
       <div class="footer-section links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Archive</a></li>
-          <li><a href="#">Quiz</a></li>
-          <li><a href="#">Calendar</a></li>
-          <li><a href="#">Comparison</a></li>
+          <li><a href="/archives/">Archive</a></li>
+          <li><a href="/quiz/">Quiz</a></li>
+          <li><a href="/sportscal/">Calendar</a></li>
+          <li><a href="/comparison/">Comparison</a></li>
         </ul>
       </div>
       <div class="footer-section social">
@@ -253,7 +278,7 @@
       <div class="footer-section contact">
         <h4>Contact</h4>
         <p>Email: info@cricarena.com</p>
-        <p>Phone: +91 98765 43210</p>
+        {% comment %} <p>Phone: +91 98765 43210</p> {% endcomment %}
       </div>
       <div class="footer-section newsletter">
         <h4>Newsletter</h4>

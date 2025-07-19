@@ -495,8 +495,8 @@ style.textContent = `
       pointStyle: 'circle',
       borderWidth: 3,
       tension: 0.4,
-      pointHoverRadius: 8,
-      pointHoverBorderWidth: 4
+      pointHoverRadius: 6,
+      pointHoverBorderWidth: 3
   },
   {
     label: this.player2.name,
@@ -511,8 +511,8 @@ style.textContent = `
       pointStyle: 'triangle',
       borderWidth: 3,
       tension: 0.4,
-      pointHoverRadius: 8,
-      pointHoverBorderWidth: 4
+      pointHoverRadius: 6,
+      pointHoverBorderWidth: 3
   }
 ]
 
@@ -521,89 +521,11 @@ style.textContent = `
         responsive: true,
         maintainAspectRatio: false,
         interaction: { 
-          mode: 'point', 
+          mode: 'nearest', 
           intersect: true,
           axis: 'xy'
         },
-        hover: {
-          animationDuration: 300
-        },
-        animation: {
-          duration: 1200,
-          easing: 'easeOutBack',
-          onComplete: (animation) => {
-            const chart = animation.chart;
-            const ctx = chart.ctx;
-            
-            // Add pulsing animation to points
-            const points = chart.getDatasetMeta(0).data.concat(chart.getDatasetMeta(1).data);
-            points.forEach(point => {
-              point.custom = point.custom || {};
-              if (!point.custom.animationStarted) {
-                point.custom.animationStarted = true;
-                
-                // Create pulsing effect
-                const pulse = () => {
-                  if (!point.custom) return;
-                  
-                  const now = Date.now();
-                  const elapsed = now - point.custom.startTime;
-                  const progress = (elapsed % 2000) / 2000;
-                  const scale = 1 + 0.1 * Math.sin(progress * Math.PI * 2);
-                  const alpha = 0.7 + 0.3 * Math.sin(progress * Math.PI * 2);
-                  
-                  point.custom.scale = scale;
-                  point.custom.alpha = alpha;
-                  
-                  chart.draw();
-                  if (point.custom.animationStarted) {
-                    requestAnimationFrame(pulse);
-                  }
-                };
-                
-                point.custom.startTime = Date.now();
-                pulse();
-              }
-            });
-          },
-          afterRender: (animation) => {
-  const chart = animation.chart;
-  const ctx = chart.ctx;
-  
-  // Draw animated glow effects
-  const points = chart.getDatasetMeta(0).data.concat(chart.getDatasetMeta(1).data);
-  points.forEach(point => {
-    // Add safety checks for point coordinates
-    if (point && typeof point.x === 'number' && isFinite(point.x) && 
-        typeof point.y === 'number' && isFinite(point.y)) {
-      
-      if (point.custom) {
-        const { scale = 1, alpha = 0.7 } = point.custom;
-        const color = point.options.backgroundColor;
         
-        // Draw glow effect
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, 10 * scale, 0, Math.PI * 2);
-        
-        // Only create gradient if values are valid
-        if (isFinite(point.x) && isFinite(point.y) && isFinite(10 * scale)) {
-          const gradient = ctx.createRadialGradient(
-            point.x, point.y, 0, 
-            point.x, point.y, 10 * scale
-          );
-          gradient.addColorStop(0, color);
-          gradient.addColorStop(1, 'rgba(255,255,255,0)');
-          ctx.fillStyle = gradient;
-          ctx.globalAlpha = alpha * 0.5;
-          ctx.fill();
-        }
-        ctx.restore();
-      }
-    }
-  });
-}
-        },
         scales: {
           r: {
             suggestedMin: 0,

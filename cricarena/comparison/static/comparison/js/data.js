@@ -10,7 +10,7 @@ const teams = [
         id: 'dc',
         name: 'Delhi Capitals',
         shortName: 'DC',
-        color: '#0116CF',
+        color: '#1E90FF',
         logo: 'https://ssl.gstatic.com/onebox/media/sports/logos/HzUX6_c8j7pwBCetmct2FQ_48x48.png'
     },
     {
@@ -38,7 +38,7 @@ const teams = [
         id: 'mi',
         name: 'Mumbai Indians',
         shortName: 'MI',
-        color: '#004BA0',
+        color: '#0000FF',
         logo: 'https://ssl.gstatic.com/onebox/media/sports/logos/HmiWb77BmJDs6sHvn77v_Q_48x48.png'
     },
     {

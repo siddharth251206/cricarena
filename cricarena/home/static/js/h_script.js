@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", () => {
    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-  // Show/hide button on scroll
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
       scrollToTopBtn.style.display = "block";
@@ -288,4 +287,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   revealElements.forEach(el => observer.observe(el));
+  const userAvatar = document.getElementById("userAvatar");
+const userDropdown = document.getElementById("userDropdown");
+
+if (userAvatar && userDropdown) {
+  userAvatar.addEventListener("click", () => {
+    userDropdown.style.display = userDropdown.style.display === "block" ? "none" : "block";
+  });
+
+  // Optional: hide when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!userAvatar.contains(e.target) && !userDropdown.contains(e.target)) {
+      userDropdown.style.display = "none";
+    }
+  });
+}
+
 });

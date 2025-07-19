@@ -10,7 +10,7 @@
 <body>
     <div class="loading-screen" id="loadingScreen">
         <div>
-            <div class="loading-text">Loading CRICARENA...</div>
+            <div class="loading-text" id="loadingText">Loading CRICARENA... 0%</div>
             <div class="loading-bar">
                 <div class="loading-progress" id="loadingProgress"></div>
             </div>
@@ -18,10 +18,6 @@
     </div>
 
     <div id="canvas-container"></div>
-
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="{% static 'entrance/video/cricket balls.mp4' %}" type="video/mp4">
-  </video> 
 
     <div class="ui-overlay">
         <div class="logo">
@@ -141,9 +137,9 @@
             </div>
 
         </div>
-    </section> 
+    </section>
 
-    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
      <script src="{% static 'entrance/js/entrance.js' %}"></script>
 </body>
 </html>

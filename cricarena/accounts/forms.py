@@ -8,8 +8,13 @@ class LoginForm(AuthenticationForm):
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField()
-    nickname = forms.CharField()
-    fav_ipl_team = forms.ChoiceField(choices=IPL_TEAMS, widget=forms.RadioSelect)
+    nickname = forms.CharField(label="Nickname", widget=forms.TextInput(attrs={'placeholder': 'Nickname'}))
+    fav_ipl_team = forms.ChoiceField(
+    label="Favorite IPL Team",
+    choices=IPL_TEAMS,
+    widget=forms.RadioSelect
+)
+
 
     class Meta:
         model = CustomUser

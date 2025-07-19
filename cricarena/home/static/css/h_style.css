@@ -43,6 +43,28 @@ body::-webkit-scrollbar {
   letter-spacing: 1px;
 }
 
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-center {
+  flex: 2;
+  justify-content: center;
+}
+
+.navbar-right {
+  flex: 1;
+  justify-content: flex-end;
+  position: relative;
+}
+
 .navbar-logo a {
   color: #19e68c;
   font-size: 30px;
@@ -137,6 +159,29 @@ body::-webkit-scrollbar {
   background-color: #19e68c;
   color: #141414;
 }
+.logout-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #ffffff; /* Match your navbar text color */
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  color: #19e86c; /* Highlight on hover */
+  text-decoration: underline; /* Optional: add underline on hover only */
+}
+
+
 .navbar .toggle-btn{
   font-size: 1.5rem;
   cursor: pointer;
@@ -1121,6 +1166,110 @@ body::-webkit-scrollbar {
   transform: scale(1.1);
   background-color: #ffffff;
 }
+.navbar-user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.user-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #19e68c;
+  color: #141414;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.user-avatar:hover {
+  background-color: #12b06d;
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background-color: #1e1e1e;
+  border: 1px solid #19e68c;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.user-dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.user-dropdown-menu li a{
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 10px 16px;
+  transition: background 0.3s ease;
+}
+
+.user-dropdown-menu li a:hover {
+  background-color: #19e68c;
+  color: #141414;
+  border-radius: 4px;
+}
+.user-dropdown-menu li form {
+  margin: 0;
+  padding: 0;
+}
+
+.user-dropdown-menu li form .logout-btn {
+  background: none;
+  border: none;
+  color: #ddd;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  display: block;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-dropdown-menu li form .logout-btn:hover {
+  background-color: #19e68c;
+  color: #141414;
+  border-radius: 4px;
+}
+
+.login-btn {
+  color: #19e68c;
+  background-color: transparent;
+  padding: 8px 14px;
+  border: 1px solid #19e68c;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: #19e68c;
+  color: #000;
+}
+
 @media (max-width: 1200px) {
   .navbar-links, .about-us {
     display: none;

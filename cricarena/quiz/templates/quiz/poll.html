@@ -1,84 +1,116 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Trending Cricket Polls</title>
-    <link rel="stylesheet" href="{% static 'quiz/poll.css' %}">
-
+  <meta charset="UTF-8">
+  <title>Trending Cricket Polls</title>
+  <link rel="stylesheet" href="{% static 'quiz/poll.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-      {% include 'quiz/navbar.html' %}
+  {% include 'quiz/navbar.html' %}
 
+  <main>
+    <h2 class="center-heading">🔥 Trending Cricket Polls</h2>
 
-<h2  class = "center-heading" >🔥 Trending Cricket Polls</h2>
-<div class="poll-slider">
-    {% for poll in polls %}
-    <div class="poll-card" id="poll-{{ poll.id }}">
-        <h3>{{ poll.question }}</h3>
-        {% for option in poll.options.all %}
-            <!-- <button class="option-button" onclick="vote({{ option.id }}, {{ poll.id }})"> -->
-                <button class="option-button" onclick="vote('{{ option.id }}', '{{ poll.id }}')">
-                {{ option.text }}
-            </button>
-        {% endfor %}
-        <div class="results" style="display: none;">
+    <div class="poll-container">
+      {% for poll in polls %}
+        <div class="poll-card" id="poll-{{ poll.id }}">
+          <h3 class="poll-question">{{ poll.question }}</h3>
+
+          <div class="poll-options">
             {% for option in poll.options.all %}
-            <div>
-                <div>{{ option.text }}</div>
-                <div class="result-bar">
-                    <div class="fill" style="width:0%; background: #1db954;">0%</div>
-                </div>
-            </div>
+              <button 
+                class="option-button" 
+                data-option-id="{{ option.id }}" 
+                data-poll-id="{{ poll.id }}">
+                {{ option.text }}
+              </button>
             {% endfor %}
+          </div>
+
+          <div class="results" style="display: none;">
+            {% for option in poll.options.all %}
+              <div class="result-item">
+                <span class="result-text">{{ option.text }}</span>
+                <div class="result-bar">
+                  <div class="fill">0%</div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
         </div>
+      {% empty %}
+        <p>No polls available right now.</p>
+      {% endfor %}
     </div>
-    {% endfor %}
-</div>
 
-<!-- Include the quiz -->
-<div class="quiz-section">
-  {% include 'quiz/quiz.html' %}
-</div>
+    <div class="back-btn-container" style="display: flex; justify-content: center; margin: 40px;">
+      <a href="{% url 'quiz_home' %}" class="back-btn">← Back to Quiz Arena</a>
+    </div>
+  </main>
 
-<!-- <script src="{% static 'quiz/poll.js' %}"></script> -->    
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll('.option-button');
 
-<script>
-function vote(optionId, pollId) {
-    // fetch(`/vote/${optionId}/`)
-    fetch(`/quiz/vote/${optionId}/`)
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                showResults(pollId, data.results);
-            }
+    buttons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const optionId = button.dataset.optionId;
+        const pollId = button.dataset.pollId;
+        const pollCard = document.getElementById(`poll-${pollId}`);
+        const options = pollCard.querySelectorAll('.option-button');
+        const optionsDiv = pollCard.querySelector('.poll-options');
+        const resultsDiv = pollCard.querySelector('.results');
+
+        // Disable and hide options
+        options.forEach(btn => {
+          btn.disabled = true;
         });
-}
+        optionsDiv.style.display = 'none';
 
-function showResults(pollId, results) {
-    const pollCard = document.getElementById(`poll-${pollId}`);
-    const resultsDiv = pollCard.querySelector('.results');
-    const buttons = pollCard.querySelectorAll('.option-button');
+        const response = await fetch(`/quiz/vote/${optionId}/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}',
+          },
+        });
 
-    // Hide buttons
-    buttons.forEach(btn => btn.style.display = 'none');
+        const data = await response.json();
+        if (data.success) {
+          resultsDiv.innerHTML = '';
 
-    // Show results
-    resultsDiv.style.display = 'block';
+          data.results.forEach(result => {
+            const percentage = result.percent.toFixed(1);
 
-    // Update result bars
-    const fills = resultsDiv.querySelectorAll('.fill');
-    results.forEach((result, idx) => {
-        fills[idx].style.width = result.percent + '%';
-        // fills[idx].textContent = `${result.votes} (${result.percent.toFixed(1)}%)`;
-        fills[idx].textContent = ` (${result.percent.toFixed(1)}%)`;
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('result-item');
+            resultItem.innerHTML = `
+              <span class="result-text">${result.text}</span>
+              <div class="result-bar">
+                <div class="fill" style="width: 0%;">0%</div>
+              </div>
+            `;
+            resultsDiv.appendChild(resultItem);
+
+            const fillBar = resultItem.querySelector('.fill');
+            setTimeout(() => {
+              fillBar.style.transition = 'width 1s ease-in-out';
+              fillBar.style.backgroundColor = '#19e86c';  // Emerald green
+              fillBar.style.width = `${percentage}%`;
+              fillBar.textContent = `${percentage}%`;
+            }, 100);
+          });
+
+          resultsDiv.style.display = 'block';
+        }
+      });
     });
-}
+  });
 </script>
 
 
-</div><!-- In your page.html -->
 </body>
 </html>

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from achievements.models import Achievement
 
 IPL_TEAMS = [
     ('CSK', 'Chennai Super Kings'),
@@ -15,8 +16,11 @@ IPL_TEAMS = [
 ]
 
 class CustomUser(AbstractUser):
-    nickname = models.CharField(max_length=30)
-    fav_ipl_team = models.CharField(max_length=20, choices=IPL_TEAMS)
-
+    nickname = models.CharField(max_length=30, blank=True, null=True)
+    fav_ipl_team = models.CharField(max_length=20, choices=IPL_TEAMS, blank=True, null=True)
+    quiz_attempts = models.IntegerField(default=0)
+    highest_score = models.PositiveIntegerField(default=0)
     def __str__(self):
         return self.username
+# accounts/models.py
+

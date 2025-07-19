@@ -4,6 +4,7 @@ from .models import CustomUser
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
+    list_display = ['username', 'email', 'nickname', 'fav_ipl_team', 'is_staff']  # Add this!
     fieldsets = UserAdmin.fieldsets + (
         ('Extra Info', {'fields': ('nickname', 'fav_ipl_team')}),
     )

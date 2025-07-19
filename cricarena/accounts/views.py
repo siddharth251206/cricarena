@@ -3,6 +3,39 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import LoginForm, SignupForm
 from .models import CustomUser
+from django.contrib.auth.decorators import login_required
+from quiz.models import QuizAttempt
+from django.shortcuts import render
+from achievements.models import Achievement
+
+@login_required
+def profile_view(request):
+    user = request.user
+    all_attempts = QuizAttempt.objects.filter(user=user)
+    achievements = user.achievements.all()
+
+    # 🛠️ Recalculate stats properly
+    user.quiz_attempts = all_attempts.count()
+    user.highest_score = max((a.score for a in all_attempts), default=0)
+    user.save()
+
+    # Now fetch only the recent 5 for display
+    quizzes = all_attempts.order_by('-attempted_at')
+    total = quizzes.count()
+    avg = sum(q.score for q in quizzes) / total if total else 0
+
+    context = {
+        'user': user,
+        'quizzes': quizzes,
+        'total': total,
+        'avg_score': round(avg, 2),
+        'max_score': user.highest_score,  # ✅ Now correctly updated
+        'fav_team': user.fav_ipl_team,
+        "achievements": achievements,
+    }
+    return render(request, 'accounts/profile.html', context)
+
+
 
 def login_signup(request):
     show_signup = False
@@ -14,7 +47,9 @@ def login_signup(request):
                 user = form.save()
                 login(request, user)
                 request.session['nickname'] = user.nickname
-                return redirect('/home/')
+                next_url = request.GET.get('next') or request.POST.get('next') or '/home/'
+                return redirect(next_url)
+
             else:
                 messages.error(request, "Already registered or invalid info.")
         else:
@@ -23,7 +58,9 @@ def login_signup(request):
                 user = form.get_user()
                 login(request, user)
                 request.session['nickname'] = user.nickname
-                return redirect('/home/')
+                next_url = request.GET.get('next') or request.POST.get('next') or '/home/'
+                return redirect(next_url)
+
             else:
                 messages.error(request, "Invalid credentials.")
     else:

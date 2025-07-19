@@ -13,10 +13,13 @@
 
   <!-- Navbar -->
 <nav class="navbar">
-  <div class="navbar-logo">
-    <a href="/home/"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+  <div class="navbar-left">
+    <div class="navbar-logo">
+      <a href="/home/"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+    </div>
   </div>
 
+  <div class="navbar-center">
   <ul class="navbar-links">
     <li><a href="/archives/">Archive</a></li>
     <li><a href="/quiz/">Quiz</a></li>
@@ -25,15 +28,15 @@
     <li><a href="/tactics/">Tactics</a></li>
     <li><a href="/stadium/">Stadiums</a></li>
     <li><a href="/news/">News</a></li>
-    <li><a href="/accounts/">Login/Signup</a></li>
-    {% if request.user.is_authenticated %}
+    <!-- <li><a href="/accounts/">Login/Signup</a></li> -->
+    <!-- {% if request.user.is_authenticated %}
       <li class="dropdown user-dropdown">
         <a href="#" class="user-toggle">{{ request.user.nickname }} ▼</a>
         <ul class="dropdown-menu">
           <li><a href="/accounts/logout/">Logout</a></li>
         </ul>
       </li>
-    {% endif %}
+    {% endif %} -->
     
 
     <li class="dropdown">
@@ -51,8 +54,31 @@
         <li class="team-item"><a href="/ipl/?team=gt"><img src="https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png" alt=""> GT</a></li>
       </ul>
     </li>
-  </ul>
-  <div class="about-us"><li><a href="/aboutus">About Us</a></li></div>
+  </ul></div>
+  <div class="navbar-right">
+    {% if request.user.is_authenticated %}
+      <div class="user-avatar" id="userAvatar">
+  {{ request.user.nickname|default:request.user.username|slice:":1"|upper }}
+</div>
+        <div class="user-dropdown-menu" id="userDropdown">
+          <ul>
+            <li><a href="{% url 'profile' %}">My Profile</a></li>
+            <li><a href="/quiz/">My Quizzes</a></li>
+            <li><a href="/archives/">My Archives</a></li>
+            <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}">My Team</a></li>
+            <li><form method="post" action="{% url 'logout' %}" style="display:inline;">
+  {% csrf_token %}
+  <button type="submit" class="logout-btn">Logout</button>
+</form>
+</li>
+          </ul>
+        </div>
+      </div>
+    {% else %}
+      <a href="/accounts/" class="login-btn">Login/Signup</a>
+    {% endif %}
+  </div>
+
 
   <div class="toggle-btn">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" fill="#19e86c">

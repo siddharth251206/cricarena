@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Page</title>
+  {% comment %} <link rel="stylesheet" href="styles.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Review Blog</h1>
+    <div class="post-form">
+      <textarea id="postContent" placeholder="Write your review..."></textarea>
+      <button onclick="submitPost()">Post</button>
+    </div>
+
+    <div class="post-list" id="postList">
+      <!-- Posts will be added here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

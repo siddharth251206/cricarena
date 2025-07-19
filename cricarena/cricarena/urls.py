@@ -34,5 +34,6 @@ urlpatterns = [
     path('quiz/', include('quiz.urls')),
     path('tactics/', include('crictactics.urls')),
     path('comparison/', include('comparison.urls')),
-    
+    path('blogpage/', include('blogpage.urls')),
+    path('achievements/', include('achievements.urls')),
 ]

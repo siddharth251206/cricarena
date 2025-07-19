@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     'comparison',
     'entrance',
     'accounts', 
-    
-    
+    'blogpage',
+    'rest_framework',
+    'achievements',
     
     # Third-party
     'django_social_share',
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
@@ -131,11 +132,12 @@ STATICFILES_DIRS = [
     BASE_DIR / 'comparison' / 'static',
     BASE_DIR / 'entrance' / 'static',
     BASE_DIR / 'accounts' / 'static',
+    BASE_DIR / 'blogpage' / 'static',  
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL = '/home/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/home/'
 
 TEMPLATES[0]['DIRS'] += [BASE_DIR / 'stadium' / 'templates']
 STATIC_ROOT = BASE_DIR / "staticfiles"

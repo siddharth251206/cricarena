@@ -1,0 +1,12 @@
+<h2>Your Achievements</h2>
+<ul>
+  {% for achievement in achievements %}
+    <li>
+      <strong>{{ achievement.title }}</strong> - {{ achievement.description }}
+      <br>
+      <small>Earned on: {{ achievement.date_awarded }}</small>
+    </li>
+  {% empty %}
+    <li>No achievements yet 😶</li>
+  {% endfor %}
+</ul>

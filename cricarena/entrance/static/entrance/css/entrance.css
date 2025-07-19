@@ -11,7 +11,9 @@ body {
     /* overflow: hidden; */
     cursor: default;
 }
-
+body::-webkit-scrollbar {
+  display: none;              
+}
 #canvas-container {
     position: fixed;
     top: 0;
@@ -37,12 +39,13 @@ body {
 
 .logo {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     opacity: 0;
     animation: fadeInUp 2s ease-out 1s forwards;
+    
 }
 
 .logo h1 {
@@ -171,7 +174,7 @@ body {
 
 .features-section {
   max-width: 1200px;
-  margin: 480px auto 0 auto;
+  margin: 520px auto 0 auto;
   padding: 0 24px 60px 24px;
 }
 .features-title {
@@ -267,35 +270,4 @@ body {
         padding: 12px 30px;
         font-size: 1rem;
     }
-}
-
-/* FOR HIDING SCROOL BAR */
-
-body::-webkit-scrollbar {
-  display: none;              
-}
-
-/* BACKGROUND VIDEO */
-
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 1;
-  pointer-events: none; /* So it doesn’t block interactions */
-}
-
-#bg-video {
-  opacity: 0;
-  animation: fadeInVideo 2s ease-in-out forwards;
-}
-
-@keyframes fadeInVideo {
-  to {
-    opacity: 1;
-  }
 }

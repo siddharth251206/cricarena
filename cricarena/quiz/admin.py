@@ -17,9 +17,10 @@ admin.site.register(Option)
 
 
 class QuizQuestionAdmin(admin.ModelAdmin):
-    list_display = ('question_text', 'correct_option', 'created_at')
-    list_filter = ('created_at',)
+    list_display = ('question_text', 'correct_option', 'created_at', 'difficulty')
+    list_filter = ('created_at', 'difficulty')  # Combine both filters here
     search_fields = ('question_text',)
 
 admin.site.register(QuizQuestion, QuizQuestionAdmin)
 admin.site.register(QuizAttempt)
+

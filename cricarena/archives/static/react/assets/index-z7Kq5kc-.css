@@ -572,6 +572,14 @@ body {
   background-color: #ccfbf1;
 }
 
+.rcb-gradient {
+  background: linear-gradient(90deg, #b91c1c 0%, #1f2937 100%);
+}
+.rcb-bg {
+  background-color: #fee2e2;
+}
+
+
 .bottom-decoration {
   position: absolute;
   left: 50%;
@@ -1356,4 +1364,92 @@ body::-webkit-scrollbar {
   position: relative;
   padding: 40px 0 80px;
   overflow: visible;
+}
+
+/* ... existing styles ... */
+
+/* Video Controls */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+/* Show play button when video is paused */
+.play-button.paused {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Show controls on video hover */
+.video-container:hover .play-button {
+  opacity: 1;
+}
+
+/* Ensure play button remains visible when hovered */
+.play-button:hover {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.mute-button {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 20; /* Increased z-index */
+}
+
+/* Show mute button on video hover */
+.video-container:hover .mute-button {
+  opacity: 1;
+}
+
+/* Keep mute button visible when hovered */
+.mute-button:hover {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Remove hover scaling effect on video */
+.video-container:hover .video-player {
+  transform: none;
+}
+
+/* Maintain original video container height */
+.video-container {
+  height: 160px; /* Original height */
+}
+
+@media (min-width: 640px) {
+  .video-container {
+    height: 180px; /* Original media query height */
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-container {
+    height: 200px; /* Original media query height */
+  }
 }

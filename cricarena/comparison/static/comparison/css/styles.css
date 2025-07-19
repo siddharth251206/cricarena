@@ -1285,3 +1285,449 @@ body::-webkit-scrollbar {
 .team-card {
   background: var(--team-gradient);
 }
+
+
+/* Radar Charts Section */
+.radar-charts-section {
+  padding: 1.5rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.radar-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.radar-chart-container {
+  flex: 1;
+  min-width: 300px;
+  background: #222222;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #333333;
+}
+
+.radar-chart-container h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.radar-chart-container canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .radar-charts {
+    flex-direction: column;
+  }
+  
+  .radar-chart-container {
+    min-width: 100%;
+  }
+}
+
+/* Radar Chart Styles */
+.bg-gray-800 {
+    background-color: #1f2937;
+}
+
+.border-gray-700 {
+    border-color: #374151;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.chart-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+.chart-toggle button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #333;
+  color: white;
+}
+.chart-toggle button.active {
+  background: #19e68c;
+  color: #000;
+}
+
+.radar-charts-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}
+
+.chart-column {
+  flex: 1;
+  min-width: 350px;
+}
+
+@keyframes radarInnerGrow {
+  0% {
+    clip-path: circle(0% at center);
+    opacity: 0;
+  }
+  100% {
+    clip-path: circle(100% at center);
+    opacity: 1;
+  }
+}
+
+.radar-clip-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhanced Button Styles */
+.chart-toggle.compare-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #1f2937, #111827);
+  color: #e5e7eb;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent);
+  transition: 0.5s;
+}
+
+.toggle-btn:hover::before {
+  left: 100%;
+}
+
+.toggle-btn i {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 7px 14px rgba(0, 0, 0, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.toggle-btn:hover i {
+  transform: scale(1.2);
+}
+
+.toggle-btn.active {
+  background: linear-gradient(145deg, #10b981, #059669);
+  color: white;
+  box-shadow: 
+    0 0 15px rgba(16, 185, 129, 0.5),
+    0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.toggle-btn.active::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(145deg, #10b981, #059669);
+  z-index: -1;
+  border-radius: 12px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced Bar Styles */
+.stat-row .progress-container {
+  height: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(31, 41, 55, 0.7);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.stat-row .progress-bar {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.stat-row .progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.stat-row .progress-bar.left {
+  left: 0;
+  border-radius: 12px 0 0 12px;
+}
+
+.stat-row .progress-bar.right {
+  right: 0;
+  border-radius: 0 12px 12px 0;
+}
+
+.stat-row .progress-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-row .progress-highlight.animate {
+  opacity: 1;
+}
+
+/* Enhanced Button Styles */
+.chart-toggle.compare-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #1f2937, #111827);
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn.active {
+  background: linear-gradient(145deg, #10b981, #059669);
+  color: white;
+  border-color: #10b981;
+}
+
+.toggle-btn i {
+  font-size: 16px;
+}
+
+/* Enhanced Bar Styles */
+.stat-row .progress-container {
+  height: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.stat-row .progress-bar {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-row .progress-bar.left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(90deg, var(--color1), var(--color1-dark));
+}
+
+.stat-row .progress-bar.right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(90deg, var(--color2-dark), var(--color2));
+}
+
+.stat-row .progress-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-row .progress-highlight.animate {
+  opacity: 1;
+}
+
+/* Point Glow Effect */
+@keyframes pointPulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+.point-glow {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, rgba(255,255,255,0) 70%);
+  animation: pointPulse 2s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Point Animation */
+@keyframes pointPulse {
+  0% { 
+    transform: scale(1); 
+    opacity: 0.7; 
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% { 
+    transform: scale(1.2); 
+    opacity: 1; 
+    box-shadow: 0 0 20px currentColor;
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 0.7; 
+    box-shadow: 0 0 5px currentColor;
+  }
+}
+
+/* Apply pulse animation to radar points */
+canvas[data-chart="radar"] {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

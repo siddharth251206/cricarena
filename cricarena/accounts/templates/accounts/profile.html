@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="profile-container reveal">
+    <div class="profile-header">
+      <div class="profile-avatar">{{ user.nickname|default:user.username|slice:":1"|upper }}</div>
+      <div class="profile-info">
+        <h1>{{ user.nickname|default:user.username }}</h1>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Joined:</strong> {{ user.date_joined|date:"M d, Y" }}</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Favorite IPL Team 🏏</h2>
+    <div class="team-card">
+      <img src="https://documents.iplt20.com/ipl/{{ fav_team|upper }}/Logos/Logooutline/{{ fav_team|upper }}outline.png"
+        alt="{{ fav_team }} logo">
+      <div class="team-info">
+        <p><strong>Team:</strong> {{ fav_team|upper }}</p>
+        <a class="btn" href="/ipl/?team={{ fav_team|lower }}">View Team Page</a>
+      </div>
+    </div>
+
+    <h2>Quiz Performance 📊</h2>
+    <ul class="stats">
+      <li><strong>Total Quizzes:</strong> {{ total }}</li>
+      <li><strong>Average Score:</strong> {{ avg_score }}/10</li>
+      <li><strong>Highest Score:</strong> {{ max_score }}/10</li>
+    </ul>
+
+    <section class="achievements-section">
+  <h2 class="section-title">🏆 Achievements</h2>
+
+  {% if achievements %}
+    <div class="achievements-grid">
+      {% for achievement in achievements %}
+        <div class="achievement-card">
+          <img src="{{ achievement.icon.url }}" alt="{{ achievement.name }}" class="achievement-icon">
+          <h3 class="achievement-name">{{ achievement.name }}</h3>
+          <p class="achievement-desc">{{ achievement.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="no-achievements">No achievements unlocked yet. Let the grind begin. 💪</p>
+  {% endif %}
+
+  <div class="view-all-wrapper">
+    <a href="{% url 'achievements:user_achievements' %}" class="view-all-link">View All Achievements →</a>
+  </div>
+</section>
+
+
+
+    <h2 class="section-heading">Recent Quizzes 📝</h2>
+
+<div class="quiz-scroll-box">
+  {% for q in quizzes %}
+    <div class="quiz-card">
+      <div class="quiz-header">
+        <span class="quiz-id">{% cycle 'Brainwave' 'Mindstorm' 'QuizWhiz' 'The Grind' 'Curiosity Mode' 'Lightning Round' %}
+</span>
+        <span class="quiz-date">{{ q.attempted_at|date:"M d, Y h:i A" }}</span>
+      </div>
+      <div class="quiz-detail-row">
+        <div class="quiz-detail"><strong>Score</strong><span>{{ q.score }} / 10</span></div>
+        <div class="quiz-detail"><strong>Difficulty</strong><span>{{ q.difficulty|default:"N/A" }}</span></div>
+        <div class="quiz-detail"><strong>Time Taken</strong><span>{{ q.formatted_time_taken }}</span></div>
+      </div>
+    </div>
+  {% empty %}
+    <div class="quiz-card">
+      No quizzes taken yet.
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+    <h2>Fan Wall 💬</h2>
+    <div class="fan-wall">
+      <form method="POST" action="">
+        {% csrf_token %}
+        <textarea name="message" placeholder="Write your fan message..." rows="3"></textarea>
+        <button type="submit" class="btn">Post</button>
+      </form>
+      <!-- Loop latest 5 messages here -->
+      <div class="wall-posts">
+        <p><strong>GT_fan_69:</strong> GT forever 🐯🔥</p>
+        <p><strong>rcbrocks:</strong> Bleed red & gold!!</p>
+        <!-- Add real dynamic comments later -->
+      </div>
+    </div>
+  </div>
+  <script>
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      function checkReveal() {
+        for (let el of reveals) {
+          const windowHeight = window.innerHeight;
+          const elementTop = el.getBoundingClientRect().top;
+          const revealPoint = 80;
+          if (elementTop < windowHeight - revealPoint) {
+            el.classList.add('active');
+          }
+        }
+      }
+      window.addEventListener('scroll', checkReveal);
+      checkReveal();
+    }
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

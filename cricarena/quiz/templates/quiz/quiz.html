@@ -1,170 +1,44 @@
+{% extends 'quiz/page.html' %}
 {% load static %}
 
-<style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #f59e0b;
-            --correct: #10b981;
-            --incorrect: #ef4444;
-            --light: #f8fafc;
-            --dark: #1e293b;
-        }
-        
-        {% comment %} body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f1f5f9;
-            color: var(--dark);
-            margin: 0;
-            padding: 20px;
-        } {% endcomment %}
-        
-        .quiz-container {
-            color: var(--dark);
-            {% comment %} color : white; {% endcomment %}
-            max-width: 800px;
-            margin: 30px auto;
-            {% comment %} background: white; {% endcomment %}
-            background: rgb(30, 30, 30);
-            {% comment %} background-color: #121212; {% endcomment %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'quiz/quiz.css' %}">
 
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-        }
-        
-        h1 {
-            color: white;
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 10px;
-        }
-        
-        .question-card {
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 8px;
-            {% comment %} background-color: var(--light); {% endcomment %}
-            {% comment %} background-color: #121212; {% endcomment %}
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .question-text {
-            font-weight: 600;
-            margin-bottom: 15px;
-            {% comment %} color: var(--primary); {% endcomment %}
-            color: #FFFFFF;
-        }
-        
-        .options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        
-        .option {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            background: white;
-            border: 1px solid #cbd5e1;
-            {% comment %} border: 1px solid #0F4D92; {% endcomment %}
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .option:hover {
-            background: #f1f5f9;
-            border-color: var(--primary);
-        }
-        
-        .option input {
-            margin-right: 10px;
-        }
-        
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            margin-top: 20px;
-        }
-        
-        .submit-btn:hover {
-            background-color: #1e40af;
-        }
-        
-        /* For showing correct/incorrect answers */
-        
-        .correct-answer {
-            background-color: var(--correct);
-            color: white;
-            border-color: var(--correct);
-        }
-        
-        .incorrect-answer {
-            background-color: var(--incorrect);
-            color: white;
-            border-color: var(--incorrect);
-        }
-        
-        .feedback {
-            margin-top: 10px;
-            font-style: italic;
-            display: none;
-        }
-        
-        @media (max-width: 600px) {
-            .quiz-container {
-                padding: 15px;
-            }
-            
-            .question-card {
-                padding: 15px;
-            }
-        }
-    </style>
-
-<body>
 <div class="quiz-container">
-    <h1>Cricket Knowledge Challenge</h1>
-    <form id="quizForm" action="{% url 'submit_quiz' %}" method="POST">
-        {% csrf_token %}
-        {% for question in questions %}
-        <div class="question-card">
-            <div class="question-text">{{ forloop.counter }}. {{ question.question_text }}</div>
-            <div class="options">
-                <label class="option">
-                    <input type="radio" name="question_{{ question.id }}" value="1" required>
-                    {{ question.option1 }}
-                </label>
-                <label class="option">
-                    <input type="radio" name="question_{{ question.id }}" value="2">
-                    {{ question.option2 }}
-                </label>
-                <label class="option">
-                    <input type="radio" name="question_{{ question.id }}" value="3">
-                    {{ question.option3 }}
-                </label>
-                <label class="option">
-                    <input type="radio" name="question_{{ question.id }}" value="4">
-                    {{ question.option4 }}
-                </label>
-            </div>
-        </div>
-        {% endfor %}
-        <button type="submit" class="submit-btn">Submit Quiz</button>
-    </form>
-</div>
+  <h1>Cricket Knowledge Challenge 🧠</h1>
 
-</body>
-{% comment %} </body> {% endcomment %}
-{% comment %} </html> {% endcomment %}
+  {% if questions %}
+    <form id="quizForm" action="{% url 'submit_quiz' %}" method="POST">
+      {% csrf_token %}
+      {% for question in questions %}
+      <div class="question-card">
+        <div class="question-text">{{ forloop.counter }}. {{ question.question_text }}</div>
+        <div class="options">
+          <label class="option">
+            <input type="radio" name="question_{{ question.id }}" value="1" required>
+            {{ question.option1 }}
+          </label>
+          <label class="option">
+            <input type="radio" name="question_{{ question.id }}" value="2">
+            {{ question.option2 }}
+          </label>
+          <label class="option">
+            <input type="radio" name="question_{{ question.id }}" value="3">
+            {{ question.option3 }}
+          </label>
+          <label class="option">
+            <input type="radio" name="question_{{ question.id }}" value="4">
+            {{ question.option4 }}
+          </label>
+        </div>
+      </div>
+      {% endfor %}
+      <button type="submit" class="submit-btn">Submit Quiz</button>
+    </form>
+  {% else %}
+    <div class="no-questions">
+      <p>😕 No quiz questions available at the moment. Please check back later!</p>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

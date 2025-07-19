@@ -1,0 +1,32 @@
+{% extends 'quiz/page.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'quiz/style.css' %}">
+
+<div class="start-container">
+  <h1>Welcome to the Cricket Quiz Arena 🏏</h1>
+  <p>Test your cricket knowledge and climb the leaderboard!</p>
+
+  {% if user.is_authenticated %}
+  <form method="POST" action="{% url 'start_quiz' %}">
+  {% csrf_token %}
+  <label for="difficulty">Choose Difficulty:</label>
+  <select name="difficulty" id="difficulty" required>
+    <option value="" disabled selected>-- Select --</option>
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+  <button type="submit">Start Quiz 🚀</button>
+  </form>
+  {% else %}
+   <a href="/accounts/?next={% url 'quiz_home' %}" class="btn btn-primary">Login to Start Quiz</a>
+  {% endif %}
+
+  <!-- Inside landing.html -->
+  <a href="{% url 'poll_list' %}" class="explore-polls-btn">🗳️ Explore Fan Polls</a>
+  <a href="{% url 'leaderboard' %}" class="leaderboard-btn">🏆 View Leaderboard</a>
+
+</div>
+{% endblock %}

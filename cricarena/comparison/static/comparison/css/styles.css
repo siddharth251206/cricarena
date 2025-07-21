@@ -166,28 +166,37 @@ body::-webkit-scrollbar {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(15, 15, 15, 0.98);
+  background: #0f0f0ffa;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 2000;
   transform: translateX(100%);
-  transition: transform 0.4s ease;
-  padding: 15px 25px; 
+  transition: transform .4s ease;
+  padding: 15px 25px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   overflow-y: auto;
-   font-family: 'Rajdhani', 'Urbanist', sans-serif;
+  font-family: Rajdhani, Urbanist, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
 }
-.ham-top{
+
+.ham-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #19e86c;
+}
+
 .hamburger.open {
-  transform: translateX(0%);
+  transform: translateX(0);
 }
 
 .hamburger ul {
@@ -207,10 +216,9 @@ body::-webkit-scrollbar {
 .hamburger ul li a {
   color: #e0e0e0;
   text-decoration: none;
-  font-size: 22px;
+  font-size: clamp(18px, 4vw, 22px);
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s;
-
+  transition: color .3s ease, transform .2s;
 }
 
 .hamburger ul li a:hover {
@@ -226,83 +234,45 @@ body::-webkit-scrollbar {
   border: none;
   box-shadow: none;
 }
+
 .hamburger-ipl-toggle {
-  font-size: 22px;
+  font-size: clamp(18px, 4vw, 22px);
   font-weight: 500;
   color: #e0e0e0;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color .3s ease;
 }
 
 .hamburger-ipl-toggle:hover {
   color: #19e68c;
 }
 
-/* Default hidden state */
 .hamburger .dropdown-menu {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
   padding: 0;
 }
 
-/* Visible state */
 .hamburger .dropdown-menu.open {
   max-height: 100%;
   opacity: 1;
   transform: translateY(0);
   padding: 10px 0;
 }
-.hamburger .dropdown-menu.closed {
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
-  padding: 0;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
+
 .dropdown-arrow {
   display: inline-block;
   margin-left: 6px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 
 .dropdown-arrow.rotate {
   transform: rotate(180deg);
 }
 
-
-.hamburger .dropdown-menu li {
-  margin: 6px 0;
-}
-.hamburger .dropdown-menu.open li {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: slideInUp 0.4s ease forwards;
-}
-.hamburger .dropdown-menu.open li:nth-child(1) { animation-delay: 0.05s; }
-.hamburger .dropdown-menu.open li:nth-child(2) { animation-delay: 0.10s; }
-.hamburger .dropdown-menu.open li:nth-child(3) { animation-delay: 0.15s; }
-.hamburger .dropdown-menu.open li:nth-child(4) { animation-delay: 0.20s; }
-.hamburger .dropdown-menu.open li:nth-child(5) { animation-delay: 0.25s; }
-.hamburger .dropdown-menu.open li:nth-child(6) { animation-delay: 0.30s; }
-.hamburger .dropdown-menu.open li:nth-child(7) { animation-delay: 0.35s; }
-.hamburger .dropdown-menu.open li:nth-child(8) { animation-delay: 0.40s; }
-.hamburger .dropdown-menu.open li:nth-child(9) { animation-delay: 0.45s; }
-.hamburger .dropdown-menu.open li:nth-child(10) { animation-delay: 0.50s; }
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .dropdown-menu .team-item {
   border-bottom: 1px solid #19e68c33;
 }
@@ -316,9 +286,9 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 12px;
   padding: 10px 16px;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: 500;
-  transition: background 0.3s, transform 0.3s;
+  transition: background .3s, transform .3s;
   position: relative;
 }
 
@@ -331,7 +301,7 @@ body::-webkit-scrollbar {
 }
 
 .dropdown-menu .team-item a:hover {
-  animation: pulseBG 0.4s ease forwards;
+  animation: pulseBG .4s ease forwards;
   color: #000;
 }
 
@@ -1244,6 +1214,8 @@ body::-webkit-scrollbar {
 
   .navbar .toggle-btn {
     display: block;
+    background: none;
+    border: none;
   }
 }
 
@@ -1685,42 +1657,7 @@ body::-webkit-scrollbar {
   opacity: 1;
 }
 
-/* Point Glow Effect */
-@keyframes pointPulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
-}
 
-.point-glow {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 0%, rgba(255,255,255,0) 70%);
-  animation: pointPulse 2s infinite ease-in-out;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Point Animation */
-@keyframes pointPulse {
-  0% { 
-    transform: scale(1); 
-    opacity: 0.7; 
-    box-shadow: 0 0 5px currentColor;
-  }
-  50% { 
-    transform: scale(1.2); 
-    opacity: 1; 
-    box-shadow: 0 0 20px currentColor;
-  }
-  100% { 
-    transform: scale(1); 
-    opacity: 0.7; 
-    box-shadow: 0 0 5px currentColor;
-  }
-}
 
 /* Apply pulse animation to radar points */
 canvas[data-chart="radar"] {
@@ -1731,3 +1668,4 @@ canvas[data-chart="radar"] {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+

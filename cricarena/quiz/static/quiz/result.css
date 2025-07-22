@@ -348,6 +348,98 @@ h1 {
   line-height: 1.7;
   flex: 1;
 }
+.toast-container{
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e1e1e;
+  color: #e6ffe6;
+  border: 2px solid #34d399;
+  border-radius: 12px;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  z-index: 9999;
+  animation: fadeSlideDown 0.6s ease-out, fadeSlideUp 0.6s ease-in 2.8s forwards;
+  box-shadow: 0 4px 12px rgba(52, 211, 153, 0.2);
+  width: max-content;
+  max-width: 90%;
+  min-width: 320px; /* ⬅️ Added this line for width boost */
+  justify-content: center;
+}
+
+.toast-text {
+  font-size: 1rem;
+}
+
+.toast-text strong {
+  color: #10b981;
+  font-size: 1.1rem;
+}
+
+.toast-text ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1rem;
+}
+
+.toast-text li {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+/* ✅ Checkmark animation */
+.checkmark {
+  width: 40px;
+  height: 40px;
+  stroke: #10b981;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: strokeCircle 0.6s ease-out forwards;
+}
+
+.checkmark-check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: strokeCheck 0.4s 0.6s ease-out forwards;
+}
+
+/* ✅ Slide animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ✅ Tick stroke animation */
+@keyframes strokeCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes strokeCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
 
 /* Fixed Leaderboard Panel */
 

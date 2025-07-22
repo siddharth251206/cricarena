@@ -11,6 +11,7 @@ from .models import LeaderboardProfile
 import random
 from django.db.models import Q
 from achievements.utils import award_achievement
+from django.db.models import F
 
     # existing quiz logic
 
@@ -59,7 +60,7 @@ def vote(request, option_id):
 
 def calculate_quiz_rating(score, total, time_taken, difficulty):
     accuracy = score / total if total else 0
-    avg_time = time_taken.total_seconds() / total if total else 0
+    avg_time = time_taken.total_seconds() / total if time_taken and total else 0
 
     difficulty_weights = {
         'easy': 1,
@@ -139,17 +140,24 @@ def cricket_quiz(request):
 
     return redirect('quiz_home')
 
-
 def leaderboard_view(request):
-    # Only include users who still have quiz attempts
     active_user_ids = QuizAttempt.objects.values_list('user_id', flat=True).distinct()
-    leaderboard = LeaderboardProfile.objects.filter(user__id__in=active_user_ids).select_related('user').order_by('-average_rating')
-    return render(request, 'quiz/leaderboard.html', {'leaderboard': leaderboard})
+    leaderboard = LeaderboardProfile.objects.filter(
+        user__id__in=active_user_ids
+    ).select_related('user').order_by('-average_rating')
+
+    return render(request, 'quiz/leaderboard.html', {
+        'leaderboard': leaderboard,
+    })
+
 
 
 @login_required
 def submit_quiz(request):
     if request.method == 'POST':
+        from datetime import timedelta
+
+        unlocked = []
         questions = QuizQuestion.objects.filter(id__in=request.session.get('attempted_questions', []))
         results = []
         score = 0
@@ -170,12 +178,10 @@ def submit_quiz(request):
             attempted_question_ids.append(question.id)
 
         results = [r for r in results if r['user_answer']]
-        total_questions = 10  # Because we're always using 10 questions per quiz
+        total_questions = 10
         correct_answers = score
         wrong_answers = total_questions - correct_answers
         percentage = round((correct_answers / total_questions) * 100, 2)
-
-        from datetime import timedelta
 
         def format_time_taken(td):
             total_seconds = int(td.total_seconds())
@@ -192,15 +198,6 @@ def submit_quiz(request):
             formatted_time_taken = format_time_taken(time_taken)
             request.session.pop('quiz_start_time', None)
 
-        if percentage >= 90:
-            performance_level = "Legend"
-        elif percentage >= 75:
-            performance_level = "Pro"
-        elif percentage >= 50:
-            performance_level = "Intermediate"
-        else:
-            performance_level = "Beginner"
-
         difficulty = request.session.get('selected_difficulty', 'N/A')
         request.session.pop('selected_difficulty', None)
 
@@ -211,63 +208,70 @@ def submit_quiz(request):
             difficulty=difficulty,
             time_taken=time_taken,
         )
+
+        def award(name):
+            from achievements.utils import award_achievement
+            unlocked_name = award_achievement(request.user, name)
+            if unlocked_name:
+                unlocked.append(unlocked_name)
+
         # Milestones
         total_attempts = QuizAttempt.objects.filter(user=request.user).count()
         if total_attempts == 1:
-            award_achievement(request.user, "First Blood")
+            award("First Blood")
         elif total_attempts == 5:
-            award_achievement(request.user, "Quiz Grinder")
+            award("Quiz Grinder")
         elif total_attempts == 20:
-            award_achievement(request.user, "Quiz Addict")
+            award("Quiz Addict")
 
-# Performance
+        # Performance
         if score >= 8:
-            award_achievement(request.user, "Quiz Master")
+            award("Quiz Master")
         if score == 10:
-            award_achievement(request.user, "Quiz God")
+            award("Quiz God")
         if score == 0:
-            award_achievement(request.user, "Flop Show")
+            award("Flop Show")
 
-# Streaks
+        # Streaks
         last_attempts = QuizAttempt.objects.filter(user=request.user).order_by('-attempted_at')[:5]
         high_scores = [a.score for a in last_attempts if a.score >= 8]
         if len(high_scores) >= 3:
-            award_achievement(request.user, "On Fire")
+            award("On Fire")
         if len(high_scores) == 5:
-            award_achievement(request.user, "Unstoppable")
+            award("Unstoppable")
 
-# Comeback logic
+        # Comeback logic
         if last_attempts.count() >= 2:
             prev_score = last_attempts[1].score
             if prev_score < 5 and score == 10:
-             award_achievement(request.user, "Comeback King")
+                award("Comeback King")
             if prev_score < 4 and score > 8:
-                award_achievement(request.user, "Bounce Back")
+                award("Bounce Back")
 
-# Difficulty-based
+        # Difficulty-based
         easy_quizzes = QuizAttempt.objects.filter(user=request.user, difficulty='Easy').count()
         hard_quizzes = QuizAttempt.objects.filter(user=request.user, difficulty='Hard').count()
         if easy_quizzes >= 5:
-            award_achievement(request.user, "Easy Peasy")
+            award("Easy Peasy")
         if hard_quizzes >= 5:
-            award_achievement(request.user, "Tough Cookie")
+            award("Tough Cookie")
 
-# Failure streak 😭
+        # Failure streak
         low_scores = QuizAttempt.objects.filter(user=request.user, score__lte=6).count()
         if total_attempts >= 10 and low_scores == total_attempts:
-            award_achievement(request.user, "Never Give Up")
+            award("Never Give Up")
+
+        # Leaderboard update
         quiz_rating = calculate_quiz_rating(score, total_questions, time_taken, difficulty)
-        lb, created = LeaderboardProfile.objects.get_or_create(user=request.user)
+        lb, _ = LeaderboardProfile.objects.get_or_create(user=request.user)
         user_attempts = QuizAttempt.objects.filter(user=request.user)
 
         if not user_attempts.exists():
             lb.quizzes_taken = 1
             lb.average_rating = quiz_rating
             lb.accuracy = round((score / total_questions) * 100, 2)
-
             request.user.quiz_attempts = 1
             request.user.highest_score = score
-            request.user.save()
         else:
             lb.quizzes_taken = user_attempts.count()
             total_rating = sum(
@@ -279,27 +283,63 @@ def submit_quiz(request):
             total_correct = sum(a.score for a in user_attempts)
             total_questions_done = sum(a.total for a in user_attempts)
             lb.accuracy = round((total_correct / total_questions_done) * 100, 2) if total_questions_done else 0
-
             request.user.quiz_attempts = lb.quizzes_taken
             request.user.highest_score = max(a.score for a in user_attempts)
-            request.user.save()
 
-        # 🔥 FINAL accurate calculation
-        total_correct = sum(a.score for a in QuizAttempt.objects.filter(user=request.user))
-        total_questions_done = sum(a.total for a in QuizAttempt.objects.filter(user=request.user))
+        lb.save()
+        request.user.save()
+
         leaderboard = LeaderboardProfile.objects.select_related('user').filter(
             Q(user__quizattempt__isnull=False)
         ).distinct().order_by('-average_rating')
-        lb.accuracy = round((total_correct / total_questions_done) * 100, 2) if total_questions_done else 0
-        lb.save()
 
-        if request.user.is_authenticated:
-            attempts = QuizAttempt.objects.filter(user=request.user)
-            request.user.quiz_attempts = attempts.count()
-            request.user.highest_score = max(a.score for a in attempts) if attempts.exists() else 0
-            request.user.save()
+        # 🏆 Leaderboard Achievements
+        # 🏆 Leaderboard Achievements
+        try:
+            ranked_leaderboard = list(leaderboard)
+            rank = ranked_leaderboard.index(next(lb for lb in leaderboard if lb.user == request.user)) + 1
+
+            if rank <= 10:
+                award("Top 10 Player")
+
+            appeared_before = request.user.userachievement_set.filter(achievement__name="Leaderboard Debut").exists()
+            if not appeared_before:
+                award("Leaderboard Debut")
+
+    # 🆕 Consistent Performer (in top 50 for at least 3 attempts)
+            past_ranks = request.session.get('past_ranks', [])
+            if rank <= 50:
+                past_ranks.append(rank)
+                request.session['past_ranks'] = past_ranks[-5:]  # keep last 5
+
+                if len([r for r in past_ranks if r <= 50]) >= 3:
+                    award("Consistent Performer")
+
+    # 🆕 Rating Machine
+            if lb.average_rating >= 80 and lb.quizzes_taken >= 5:
+                award("Rating Machine")
+
+    # 🆕 Climbing Fast (optional: store previous rank in session or DB)
+            prev_rank = request.session.get('last_rank')
+            if prev_rank and prev_rank - rank >= 5:
+                award("Climbing Fast")
+
+            request.session['last_rank'] = rank
+
+        except StopIteration:
+            pass
+
 
         request.session['attempted_questions'] = attempted_question_ids
+
+        if percentage >= 90:
+            performance_level = "Legend"
+        elif percentage >= 75:
+            performance_level = "Pro"
+        elif percentage >= 50:
+            performance_level = "Intermediate"
+        else:
+            performance_level = "Beginner"
 
         return render(request, 'quiz/result.html', {
             'score': score,
@@ -312,7 +352,5 @@ def submit_quiz(request):
             'performance_level': performance_level,
             'time_taken': formatted_time_taken,
             'leaderboard': leaderboard,
+            'unlocked_achievements': unlocked,
         })
-
-
-

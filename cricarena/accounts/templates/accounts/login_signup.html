@@ -69,7 +69,18 @@
   </div>
 
   {% if nickname %}
-    <script>alert("Hello {{ nickname }}!");</script>
-  {% endif %}
+  <div class="welcome-toast" id="welcomeToast">
+    👋 Welcome, <strong>{{ nickname }}</strong>!
+  </div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("welcomeToast").classList.add("show");
+      setTimeout(() => {
+        document.getElementById("welcomeToast").classList.remove("show");
+      }, 4000); // visible for 4 sec
+    }, 500);
+  </script>
+{% endif %}
+
 </body>
 </html>

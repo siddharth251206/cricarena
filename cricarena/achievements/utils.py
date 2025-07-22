@@ -6,5 +6,7 @@ def award_achievement(user, achievement_name):
         # Check if already awarded
         if not UserAchievement.objects.filter(user=user, achievement=achievement).exists():
             UserAchievement.objects.create(user=user, achievement=achievement)
+            return achievement.name
     except Achievement.DoesNotExist:
         pass
+    return None

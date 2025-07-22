@@ -19,29 +19,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-    const toggleBtn = document.querySelector(".toggle-btn");
-  const hamburger = document.querySelector(".hamburger");
-  const closeBtn = document.querySelector(".close-btn");
-  const iplToggle = document.querySelector(".hamburger-ipl-toggle");
-  const iplDropdown = document.querySelector(".hamburger .dropdown-menu");
-  const arrow = document.querySelector(".dropdown-arrow");
+   // Hamburger logic
+const toggleBtn = document.querySelector(".toggle-btn");
+const hamburger = document.querySelector(".hamburger");
+const closeBtn = document.querySelector(".close-btn");
+const iplToggle = document.querySelector(".hamburger-ipl-toggle");
+const iplDropdown = document.querySelector(".hamburger .dropdown-menu");
+const arrow = document.querySelector(".dropdown-arrow");
+const profarrow=document.querySelector(".dropdown-arrow-profile");
 
-  toggleBtn?.addEventListener("click", () => {
-    console.log("Opening hamburger");
-    hamburger?.classList.add("open");
-    document.body.style.overflow = 'hidden';
-  });
+toggleBtn?.addEventListener("click", () => {
+  hamburger?.classList.add("open");
+  document.body.style.overflow = 'hidden';
+});
 
-  closeBtn?.addEventListener("click", () => {
-    console.log("Closing hamburger");
-    hamburger?.classList.remove("open");
-    document.body.style.overflow = 'auto';
-  });
+closeBtn?.addEventListener("click", () => {
+  hamburger?.classList.remove("open");
+  document.body.style.overflow = 'auto';
+});
 
-  iplToggle?.addEventListener("click", () => {
-    iplDropdown?.classList.toggle("open");
-    arrow?.classList.toggle("rotate");
-  });
+iplToggle?.addEventListener("click", () => {
+  iplDropdown?.classList.toggle("open");
+  arrow?.classList.toggle("rotate");
+});
+
+// Profile dropdown toggle
+const profileToggle = document.getElementById("profileDropdownToggle");
+const profileDropdown = document.getElementById("profileDropdown");
+
+profileToggle?.addEventListener("click", () => {
+  profarrow?.classList.toggle("rotate");
+  if (profileDropdown.style.display === "none") {
+    profileDropdown.style.display = "flex";
+  } else {
+    profileDropdown.style.display = "none";
+  }
+});
+
 
   let index = 0;
   const slides = document.querySelectorAll(".slide");

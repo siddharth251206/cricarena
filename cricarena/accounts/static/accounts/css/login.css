@@ -184,6 +184,26 @@ label {
   background: rgba(34, 35, 38, 0.99);
   box-shadow: 0 2px 18px 0 rgba(30,217,96,0.13);
 }
+.welcome-toast {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #19e68c;
+  color: #121212;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+.welcome-toast.show {
+  top: 20px;
+  opacity: 1;
+}
 
 @media (max-width: 600px) {
   .container {

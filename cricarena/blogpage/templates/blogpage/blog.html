@@ -45,12 +45,16 @@
       <!-- Posts will be added here -->
        {% for post in posts %}
     <div class="post">
-        <strong>{{ post.author_name }}</strong>
-        <strong>{{ post.team_name }}</strong>
+        {% comment %} <strong>{{ post.author_name }}</strong>
+        <strong>{{ post.team_name }}</strong> {% endcomment %}
+        <span class="author-name">{{ post.author_name }}</span>
         {% if post.is_verified %}
             <span class="verified">✓</span>
         {% endif %}
+        <span class="team-name">( {{ post.team_name }} )</span>
+        <br>
         <p>{{ post.content }}</p>
+        {% comment %} <br> {% endcomment %}
         <small>{{ post.created_at }}</small>
     </div>
 {% endfor %}

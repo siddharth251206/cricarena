@@ -13,18 +13,18 @@ function fetchPosts() {
     });
 }
 
-function addPostToDOM(username, team, content, isVerified) {
-  const postList = document.getElementById("postList");
-  const postHTML = `
-    <div class="post-card">
-      <h3>${username} (${team_name})
-        ${isVerified ? '<span class="verified">✔ Verified</span>' : '<span class="unverified">⚠ Guest</span>'}
-      </h3>
-      <p>${content}</p>
-    </div>
-  `;
-  postList.insertAdjacentHTML("beforeend", postHTML);
-}
+// function addPostToDOM(username, team, content, isVerified) {
+//   const postList = document.getElementById("postList");
+//   const postHTML = `
+//     <div class="post-card">
+//       <h3>${username} (${team_name})
+//         ${isVerified ? '<span class="verified">✔ Verified</span>' : '<span class="unverified">⚠ Guest</span>'}
+//       </h3>
+//       <p>${content}</p>
+//     </div>
+//   `;
+//   postList.insertAdjacentHTML("beforeend", postHTML);
+// }
 
 
 function submitPost() {
@@ -36,7 +36,9 @@ function submitPost() {
 
   const postHTML = `
     <div class="post-card">
-      <h3>${username} (${team_name})
+      <h3>
+        <span class="author-name">${username}</span>
+        <span class="team-name">(${team_name})</span>
         ${isLoggedIn ? '<span class="verified">✔ Verified</span>' : '<span class="unverified">⚠ Guest</span>'}
       </h3>
       <p>${content}</p>

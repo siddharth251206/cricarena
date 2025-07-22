@@ -10,4 +10,5 @@ urlpatterns = [
     path('profile/', profile_view, name='profile'),
     path('change-fav-team/', change_fav_team, name='change_fav_team'),
     path('edit-profile/', views.edit_profile, name='edit_profile'),
+    path('clear-back-url/', views.clear_back_url, name='clear_back_url'), 
 ]

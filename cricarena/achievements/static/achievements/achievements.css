@@ -7,10 +7,14 @@
   --text-muted: #a0a0a0;
   --border-dark: #2c2c2c;
 }
-
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  min-height: 100vh;
   background-color: var(--bg-dark);
   color: var(--text-main);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,9 +45,38 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #19e86c #1f1f1f;
 }
+.profile-page-header {
+  margin-top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 80px 10px;
+  background-color: #0f0f0f;
+  border-bottom: 1px solid #19e68c33;
+  z-index: 1000;
+  width: 100%;
+}
 
+.back-btn {
+  color: #19e68c;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #16c47a;
+}
+.header-title {
+  color: #e0e0e0;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+}
 .achievements-section {
-  max-width: 1200px;
+  flex: 1;
   margin: 60px auto;
   padding: 0 20px;
 }
@@ -187,7 +220,14 @@ body {
   .achievements-heading {
     font-size: 2rem;
   }
-
+.profile-page-header{
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header-title{
+  font-size: 20px;
+}
   .overall-progress-text {
     font-size: 1rem;
   }

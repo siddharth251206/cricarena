@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}CRICARENA{% endblock %}</title>
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    .page-wrapper {
+      transform: translateX(0%);
+      transition: transform 0.5s ease;
+    }
+
+    .slide-out-left {
+      transform: translateX(-100%);
+    }
+
+    .slide-out-right {
+      transform: translateX(100%);
+    }
+
+    .slide-in-left {
+      transform: translateX(-100%);
+      animation: slideInFromLeft 0.5s forwards;
+    }
+
+    .slide-in-right {
+      transform: translateX(100%);
+      animation: slideInFromRight 0.5s forwards;
+    }
+
+    @keyframes slideInFromLeft {
+      to { transform: translateX(0%); }
+    }
+
+    @keyframes slideInFromRight {
+      to { transform: translateX(0%); }
+    }
+  </style>
+
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+  <div class="page-wrapper" id="pageWrapper">
+    {% block content %}{% endblock %}
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.getElementById('pageWrapper');
+      wrapper.classList.add('slide-in-right'); // feel free to change direction
+    });
+
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (
+        href && !href.startsWith('http') &&
+        !href.startsWith('#') && !href.startsWith('mailto:')
+      ) {
+        link.addEventListener('click', function(e) {
+          if (this.target === '_blank') return;
+
+          e.preventDefault();
+
+          const wrapper = document.getElementById('pageWrapper');
+          wrapper.classList.remove('slide-in-right', 'slide-in-left');
+          wrapper.classList.add('slide-out-left'); // change to slide-out-right if needed
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        });
+      }
+    });
+  </script>
+
+  {% block scripts_extra %}{% endblock %}
+</body>
+</html>

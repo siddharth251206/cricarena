@@ -54,12 +54,15 @@
   </ul></div>
   <div class="navbar-right">
   {% if request.user.is_authenticated %}
-    <div class="user-avatar" id="userAvatar">
-      {{ request.user.nickname|default:request.user.username|slice:":1"|upper }}
-    </div>
+    <div class="profile-avatar-img" id="userAvatar" title="{{user.nickname}}">
+  {% if user.avatar %}
+    <img src="{{ user.avatar.url }}" alt="Avatar">
+  {% else %}
+    <span class="avatar-fallback">{{ user.nickname|default:user.username|slice:":1"|upper }}</span>
+  {% endif %}</div>
     <div class="user-dropdown-menu" id="userDropdown">
       <ul>
-        <li><a href="{% url 'profile' %}">My Profile</a></li>
+        <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}">My Profile</a></li>
         <li><a href="/quiz/">My Quizzes</a></li>
         <li><a href="/archives/">My Archives</a></li>
         <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}">My Team</a></li>
@@ -72,7 +75,9 @@
       </ul>
     </div>
   {% else %}
-    <a href="/accounts/" class="login-btn">Login/Signup</a>
+    <div class="logsign">
+    <a href="/accounts/?login=1" class="login-btn">Login</a>
+    <a href="/accounts/?signup=1" class="signup-btn">Sign Up</a></div>
   {% endif %}
 </div>
 <div class="toggle-btn">
@@ -98,24 +103,27 @@
   {% if request.user.is_authenticated %}
   <div class="ham-profile-header fade-in-section">
     <div class="ham-avatar-circle">
-      {{ request.user.nickname|default:request.user.username|slice:":1"|upper }}
+      {% if user.avatar %}
+    <img src="{{ user.avatar.url }}" alt="Avatar">
+  {% else %}
+    {{ user.nickname|default:user.username|slice:":1"|upper }}
+  {% endif %}
     </div>
     <div class="ham-username">{{ request.user.nickname|default:request.user.username }}</div>
     <div class="ham-profile-toggle" id="profileDropdownToggle">Profile Options<span class="dropdown-arrow-profile">▼</span></div>
   </div>
 
   <ul class="ham-profile-links fade-in-section" id="profileDropdown" style="display: none;">
-    <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> My Profile</a></li>
+    <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
     <li><a href="/quiz/"><i class="fa fa-brain"></i> My Quizzes</a></li>
     <li><a href="/archives/"><i class="fa fa-folder"></i> My Archives</a></li>
     <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
   </ul>
   {% else %}
-  <div class="ham-login-container fade-in-section">
-    <a href="/accounts/" class="login-btn">
-      <i class="fa fa-sign-in-alt"></i> Login / Signup
-    </a>
-  </div>
+ <div class="logsign-container">
+    <div class="logsign fade-in-section">
+    <a href="/accounts/?login=1" class="login-btn">Login</a>
+    <a href="/accounts/?signup=1" class="signup-btn">Sign Up</a></div></div>
   {% endif %}
 
   <!-- Main Nav Links -->

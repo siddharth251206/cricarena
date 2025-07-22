@@ -21,7 +21,7 @@
 {% endif %}
 
 <header class="profile-page-header">
-  <a href="javascript:history.back()" class="back-btn" aria-label="Go back">
+  <a href="{{ back_url }}" class="back-btn" onclick="clearBack()" aria-label="Go back">
   <i class="fas fa-arrow-left"></i>
 </a>
   <h1 class="header-title">My Profile</h1>
@@ -250,6 +250,9 @@
 </div>
 
   <script>
+    function clearBack() {
+    fetch('/clear-back-url/');
+  }
     function toggleModal() {
     const modal = document.getElementById("editModal");
     modal.style.display = (modal.style.display === "flex") ? "none" : "flex";

@@ -9,6 +9,7 @@ from achievements.models import UserAchievement
 from accounts.models import IPL_TEAMS
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 @login_required
 def edit_profile(request):
@@ -62,6 +63,11 @@ def profile_view(request):
     quizzes = all_attempts.order_by('-attempted_at')
     total = quizzes.count()
     avg = sum(q.score for q in quizzes) / total if total else 0
+    from_url = request.GET.get('from')
+    if from_url and 'profile' not in from_url:
+        request.session['back_url'] = from_url  # overwrite only if coming from outside
+
+    back_url = request.session.get('back_url', '/')
 
     context = {
         'user': user,
@@ -71,6 +77,7 @@ def profile_view(request):
         'max_score': user.highest_score,
         'fav_team': user.fav_ipl_team,
         'IPL_TEAMS': IPL_TEAMS,
+        'back_url': back_url,
         
         # Achievements
         'achievements': [ua.achievement for ua in user_achievements],  # All achievements
@@ -118,6 +125,10 @@ def login_signup(request):
     signup_form = SignupForm()
     nickname = request.session.get('nickname')
     return render(request, 'accounts/login_signup.html', {'form': form, 'signup_form': signup_form, 'nickname': nickname, 'show_signup': show_signup})
+
+def clear_back_url(request):
+    request.session.pop('back_url', None)
+    return HttpResponse('')
 
 
 # View Function: login_signup(request)

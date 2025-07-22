@@ -148,3 +148,11 @@ CRONJOBS = [
 
 # Site ID for django.contrib.sites (required by some packages like django-social-share)
 SITE_ID = 1
+
+# FOR BLOG PAGE TO CONNECT WITH USER
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    )
+}

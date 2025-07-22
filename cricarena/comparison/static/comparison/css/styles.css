@@ -311,28 +311,37 @@ body::-webkit-scrollbar {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(15, 15, 15, 0.98);
+  background: #0f0f0ffa;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 2000;
   transform: translateX(100%);
-  transition: transform 0.4s ease;
-  padding: 15px 25px; 
+  transition: transform .4s ease;
+  padding: 15px 25px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   overflow-y: auto;
-   font-family: 'Rajdhani', 'Urbanist', sans-serif;
+  font-family: Rajdhani, Urbanist, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
 }
-.ham-top{
+
+.ham-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #19e86c;
+}
+
 .hamburger.open {
-  transform: translateX(0%);
+  transform: translateX(0);
 }
 
 .hamburger ul {
@@ -351,10 +360,9 @@ body::-webkit-scrollbar {
 .hamburger ul li a {
   color: #e0e0e0;
   text-decoration: none;
-  font-size: 22px;
+  font-size: clamp(18px, 4vw, 22px);
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s;
-
+  transition: color .3s ease, transform .2s;
 }
 
 .hamburger ul li a:hover {
@@ -370,8 +378,9 @@ body::-webkit-scrollbar {
   border: none;
   box-shadow: none;
 }
+
 .hamburger-ipl-toggle {
-  font-size: 22px;
+  font-size: clamp(18px, 4vw, 22px);
   font-weight: 500;
   color: #e0e0e0;
   cursor: pointer;
@@ -383,17 +392,15 @@ body::-webkit-scrollbar {
   color: #19e68c;
 }
 
-/* Default hidden state */
 .hamburger .dropdown-menu {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
   padding: 0;
 }
 
-/* Visible state */
 .hamburger .dropdown-menu.open {
   max-height: 100%;
   opacity: 1;
@@ -416,7 +423,7 @@ body::-webkit-scrollbar {
 .dropdown-arrow {
   display: inline-block;
   margin-left: 6px;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 
 .dropdown-arrow.rotate {
@@ -468,9 +475,9 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 12px;
   padding: 10px 16px;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: 500;
-  transition: background 0.3s, transform 0.3s;
+  transition: background .3s, transform .3s;
   position: relative;
 }
 
@@ -483,7 +490,7 @@ body::-webkit-scrollbar {
 }
 
 .dropdown-menu .team-item a:hover {
-  animation: pulseBG 0.4s ease forwards;
+  animation: pulseBG .4s ease forwards;
   color: #000;
 }
 
@@ -1586,6 +1593,8 @@ body::-webkit-scrollbar {
 
   .navbar .nav-toggle-btn {
     display: block;
+    background: none;
+    border: none;
   }
 }
 
@@ -2027,42 +2036,7 @@ body::-webkit-scrollbar {
   opacity: 1;
 }
 
-/* Point Glow Effect */
-@keyframes pointPulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
-}
 
-.point-glow {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 0%, rgba(255,255,255,0) 70%);
-  animation: pointPulse 2s infinite ease-in-out;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Point Animation */
-@keyframes pointPulse {
-  0% { 
-    transform: scale(1); 
-    opacity: 0.7; 
-    box-shadow: 0 0 5px currentColor;
-  }
-  50% { 
-    transform: scale(1.2); 
-    opacity: 1; 
-    box-shadow: 0 0 20px currentColor;
-  }
-  100% { 
-    transform: scale(1); 
-    opacity: 0.7; 
-    box-shadow: 0 0 5px currentColor;
-  }
-}
 
 /* Apply pulse animation to radar points */
 canvas[data-chart="radar"] {
@@ -2073,3 +2047,4 @@ canvas[data-chart="radar"] {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+

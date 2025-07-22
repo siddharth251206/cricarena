@@ -828,7 +828,7 @@ body::-webkit-scrollbar {
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  background: #1f1f1f;
+  background: #181818;
   padding: 1rem;
   gap: 6px;
   max-width: 1400px;
@@ -873,13 +873,13 @@ body::-webkit-scrollbar {
   top: 8px;
   right: 10px;
   font-size: 0.9rem;
-  color: #999;
+  color: #fff;
 }
 
 /* === Match Block Styling === */
 .match {
-  background: #27d964;
-  color: #181818;
+  background: #181818 ;
+  color: #fff;
   border-radius: 8px;
   margin-top: 12px;
   padding: 10px 12px;

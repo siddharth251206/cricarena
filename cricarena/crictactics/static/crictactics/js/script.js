@@ -43,6 +43,13 @@ profileToggle?.addEventListener("click", () => {
     profileDropdown.style.display = "none";
   }
 });
+const userAvatar = document.getElementById("userAvatar");
+const userDropdown = document.getElementById("userDropdown");
+
+if (userAvatar && userDropdown) {
+  userAvatar.addEventListener("click", () => {
+    userDropdown.style.display = userDropdown.style.display === "block" ? "none" : "block";
+  });
 
   // Optional: hide when clicking outside
   document.addEventListener("click", (e) => {
@@ -50,6 +57,7 @@ profileToggle?.addEventListener("click", () => {
       userDropdown.style.display = "none";
     }
   });
+}
    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
   // Show/hide button on scroll

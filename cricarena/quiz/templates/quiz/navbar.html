@@ -60,14 +60,14 @@
   {% endif %}</div>
     <div class="user-dropdown-menu" id="userDropdown">
       <ul>
-        <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}">My Profile</a></li>
-        <li><a href="/quiz/">My Quizzes</a></li>
-        <li><a href="/achievements/my/">My Achievements</a></li>
-        <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}">My Team</a></li>
+        <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
+   <li><a href="/achievements/my/"><i class="fa fa-trophy"></i> My Achievements</a></li>
+    <li><a href="/quiz/leaderboard/"><i class="fa fa-users"></i> Leaderboard</a></li>
+    <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
         <li>
           <form method="post" action="{% url 'logout' %}" style="display:inline;">
             {% csrf_token %}
-            <button type="submit" class="logout-btn">Logout</button>
+             <button type="submit" class="logout-btn"><i class="fa fa-sign-out-alt"></i> Logout</button>
           </form>
         </li>
       </ul>
@@ -115,8 +115,8 @@
 
   <ul class="ham-profile-links fade-in-section" id="profileDropdown" style="display: none;">
     <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
-    <li><a href="/quiz/"><i class="fa fa-brain"></i> My Quizzes</a></li>
-    <li><a href="/archives/"><i class="fa fa-folder"></i> My Archives</a></li>
+   <li><a href="/achievements/my/"><i class="fa fa-trophy"></i> My Achievements</a></li>
+    <li><a href="/quiz/leaderboard/"><i class="fa fa-users"></i> Leaderboard</a></li>
     <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
   </ul>
   {% else %}

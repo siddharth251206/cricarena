@@ -83,7 +83,11 @@
   <div class="team-box">
     <div class="team-logo">
       <img
-        src="https://documents.iplt20.com/ipl/{{ fav_team|upper }}/Logos/Logooutline/{{ fav_team|upper }}outline.png"
+        src="{% if fav_team|upper == 'DC' %}
+           https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png
+         {% else %}
+           https://documents.iplt20.com/ipl/{{ fav_team|upper }}/Logos/Logooutline/{{ fav_team|upper }}outline.png
+         {% endif %}"
         alt="{{ fav_team }} logo"
       >
     </div>

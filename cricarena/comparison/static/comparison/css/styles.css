@@ -131,9 +131,10 @@ body::-webkit-scrollbar {
 }
 
 .user-dropdown-menu li form .logout-btn {
+  color: red;
   background: none;
+  text-transform: uppercase;
   border: none;
-  color: #ddd;
   font: inherit;
   text-align: left;
   width: 100%;
@@ -144,9 +145,8 @@ body::-webkit-scrollbar {
 }
 
 .user-dropdown-menu li form .logout-btn:hover {
-  background-color: #19e68c;
-  color: #141414;
-  border-radius: 4px;
+  background-color: #e84141;
+  color: #fff;
 }
 
 .logout-form {
@@ -155,16 +155,6 @@ body::-webkit-scrollbar {
   padding: 0;
 }
 
-.logout-btn {
-  background: none;
-  border: none;
-  color: #ffffff; /* Match your navbar text color */
-  font: inherit;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 0;
-  transition: color 0.2s ease-in-out;
-}
 .navbar {
   color: #fff;
   display: flex;

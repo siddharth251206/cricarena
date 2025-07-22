@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
   <!-- Navbar -->
 <nav class="navbar">
   <div class="navbar-left">
@@ -58,14 +57,14 @@
 </div>
     <div class="user-dropdown-menu" id="userDropdown">
       <ul>
-        <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}">My Profile</a></li>
-        <li><a href="/quiz/">My Quizzes</a></li>
-        <li><a href="/archives/">My Archives</a></li>
-        <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}">My Team</a></li>
+        <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
+    <li><a href="/achievements/my/"><i class="fa fa-trophy"></i> My Achievements</a></li>
+    <li><a href="/quiz/leaderboard/"><i class="fa fa-users"></i> Leaderboard</a></li>
+    <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
         <li>
           <form method="post" action="{% url 'logout' %}" style="display:inline;">
             {% csrf_token %}
-            <button type="submit" class="logout-btn">Logout</button>
+            <button type="submit" class="logout-btn"><i class="fa fa-sign-out-alt"></i> Logout</button>
           </form>
         </li>
       </ul>
@@ -111,8 +110,8 @@
 
   <ul class="ham-profile-links fade-in-section" id="profileDropdown" style="display: none;">
     <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
-    <li><a href="/quiz/"><i class="fa fa-brain"></i> My Quizzes</a></li>
-    <li><a href="/archives/"><i class="fa fa-folder"></i> My Archives</a></li>
+   <li><a href="/achievements/my/"><i class="fa fa-trophy"></i> My Achievements</a></li>
+    <li><a href="/quiz/leaderboard/"><i class="fa fa-users"></i> Leaderboard</a></li>
     <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
   </ul>
   {% else %}
@@ -356,14 +355,13 @@
           <button type="submit">Subscribe</button>
         </form>
       </div>
-    </div>
     <div class="footer-bottom">
       <p>&copy; 2025 CRICARENA. All rights reserved.</p>
     </div>
   </footer>
 <button id="scrollToTopBtn" class="back-to-top">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
-        </button>
+        </button></div>
   <!-- JavaScript File -->
   <script src="{% static 'js/h_script.js' %}">
   </script>

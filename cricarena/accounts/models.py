@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from achievements.models import Achievement
+from django.utils import timezone
 
 IPL_TEAMS = [
     ('CSK', 'Chennai Super Kings'),
@@ -20,6 +21,8 @@ class CustomUser(AbstractUser):
     fav_ipl_team = models.CharField(max_length=20, choices=IPL_TEAMS, blank=True, null=True)
     quiz_attempts = models.IntegerField(default=0)
     highest_score = models.PositiveIntegerField(default=0)
+    date_joined = models.DateTimeField(default=timezone.now)
+    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
     def __str__(self):
         return self.username
 # accounts/models.py

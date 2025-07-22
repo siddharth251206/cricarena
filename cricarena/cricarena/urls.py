@@ -18,6 +18,8 @@ from entrance.views import entrance_view
 from home.views import home_view
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,4 +38,4 @@ urlpatterns = [
     path('comparison/', include('comparison.urls')),
     path('blogpage/', include('blogpage.urls')),
     path('achievements/', include('achievements.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)    

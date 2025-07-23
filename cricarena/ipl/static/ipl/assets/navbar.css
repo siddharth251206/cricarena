@@ -8,7 +8,6 @@ body {
   font-family: 'Urbanist','Inter', sans-serif;
   background-color: #121212;
   color: #fff;
-  line-height: 1.6;
 }
 body::-webkit-scrollbar {
   display: none;                /* Chrome, Safari */
@@ -216,9 +215,7 @@ body::before {
   transition: color 0.3s ease, transform 0.2s;
 
 }
-.hamburger::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
-}
+
 .hamburger ul li a:hover {
   color: #19e68c;
   transform: scale(1.05);
@@ -287,6 +284,8 @@ body::before {
 .dropdown-arrow-profile.rotate {
   transform: rotate(180deg);
 }
+
+
 
 .hamburger .dropdown-menu li {
   margin: 6px 0;
@@ -392,7 +391,6 @@ body::before {
    object-position: top;
   display: block;
 }
-
 .ham-username {
   color: #e0e0e0;
   font-weight: 600;
@@ -436,6 +434,8 @@ body::before {
   background-color: #19e86c;
   color: #141414;
 }
+
+/* Login Signup block */
 
 /* Main Nav Links */
 .ham-nav-links {
@@ -559,7 +559,7 @@ body::before {
   }
 }
 @media (max-width: 1200px) {
-  .navbar-links, .about-us, .navbar-right{
+  .navbar-links, .about-us, .navbar-right {
     display: none;
   }
 
@@ -620,61 +620,6 @@ body::before {
   border-radius: 50%;
   border: 2px solid #19e68c;
 }
-.user-dropdown-menu {
-  position: absolute;
-  top: 48px;
-  right: 0;
-  background-color: #1e1e1e;
-  border: 1px solid #19e68c;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  display: none;
-  min-width: 180px;
-  z-index: 999;
-}
-
-.user-dropdown-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px 0;
-}
-
-.user-dropdown-menu li a{
-  color: #ddd;
-  text-decoration: none;
-  display: block;
-  padding: 10px 16px;
-  transition: background 0.3s ease;
-}
-
-.user-dropdown-menu li a:hover {
-  background-color: #19e68c;
-  color: #141414;
-  border-radius: 4px;
-}
-.user-dropdown-menu li form {
-  margin: 0;
-  padding: 0;
-}
-
-.user-dropdown-menu li form .logout-btn {
-  color: red;
-  background: none;
-  text-transform: uppercase;
-  border: none;
-  font: inherit;
-  text-align: left;
-  width: 100%;
-  display: block;
-  padding: 10px 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.user-dropdown-menu li form .logout-btn:hover {
-  background-color: #e84141;
-  color: #fff;
-}
 .logsign {
   display: flex;
   gap: 12px;
@@ -685,7 +630,6 @@ body::before {
 /* Base Button Styles */
 .login-btn,
 .signup-btn {
-  line-height: normal;
   padding: 0.50rem 0.75rem;
   border-radius: 8px;
   font-size: 1rem;
@@ -783,6 +727,62 @@ body::before {
 .logsign-container {
   margin: 20px;
 }
+.user-dropdown-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background-color: #1e1e1e;
+  border: 1px solid #19e68c;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.user-dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.user-dropdown-menu li a{
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 10px 16px;
+  transition: background 0.3s ease;
+}
+
+.user-dropdown-menu li a:hover {
+  background-color: #19e68c;
+  color: #141414;
+  border-radius: 4px;
+}
+.user-dropdown-menu li form {
+  margin: 0;
+  padding: 0;
+}
+
+.user-dropdown-menu li form .logout-btn {
+  color: red;
+  background: none;
+  text-transform: uppercase;
+  border: none;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  display: block;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-dropdown-menu li form .logout-btn:hover {
+  background-color: #e84141;
+  color: #fff;
+}
+
 .logout-form {
   display: inline;
   margin: 0;

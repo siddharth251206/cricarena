@@ -418,6 +418,7 @@ box-shadow: 0 0 10px #1db954, 0 0 20px #1db954;
   font-size: 16px;
   transition: color 0.3s ease, transform 0.2s;
   position: relative;
+  white-space: nowrap
 }
 
 .navbar-links li a:hover {

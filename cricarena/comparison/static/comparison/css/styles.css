@@ -1235,17 +1235,33 @@ body::-webkit-scrollbar {
 
 /* Add to your CSS file */
 .cancel-option {
-    color: #e53e3e;
-    font-weight: 500;
-}
-
-.cancel-option:hover {
-    background-color: #fff5f5;
+    color: #ff4d4f; /* Bright red for emphasis */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s ease;
 }
 
 .cancel-option i {
-    color: #e53e3e;
-    margin-right: 8px;
+    color: #ff4d4f;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.cancel-option:hover {
+    background-color: rgba(255, 77, 79, 0.1);
+    color: #fff;
+    border-radius: 6px;
+    transform: scale(1.02);
+}
+
+.cancel-option:hover i {
+    transform: rotate(90deg);
 }
 
 .dropdownComp-divider {

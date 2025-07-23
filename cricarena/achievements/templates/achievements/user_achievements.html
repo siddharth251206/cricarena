@@ -1,12 +1,78 @@
-<h2>Your Achievements</h2>
-<ul>
-  {% for achievement in achievements %}
-    <li>
-      <strong>{{ achievement.title }}</strong> - {{ achievement.description }}
-      <br>
-      <small>Earned on: {{ achievement.date_awarded }}</small>
-    </li>
-  {% empty %}
-    <li>No achievements yet 😶</li>
-  {% endfor %}
-</ul>
+<!-- eslint-disable -->
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Achievements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'achievements/achievements.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <header class="profile-page-header">
+  <a href="javascript:history.back()" class="back-btn" aria-label="Go back">
+  <i class="fas fa-arrow-left"></i>
+</a>
+  <h1 class="header-title">Your Achievements</h1>
+</header>
+<section class="achievements-section">
+  <h2 class="achievements-heading">🏆 Your Achievements</h2>
+
+  <!-- Progress Overview -->
+  <p class="overall-progress-text">
+    Unlocked {{ unlocked_count }} / {{ total_achievements }} Achievements ({{ unlocked_percent }}%)
+  </p>
+
+  <div class="overall-progress-container">
+    <div class="overall-progress-bar" style="width: {{ unlocked_percent }}%;"></div>
+  </div>
+
+  <!-- Unlocked Achievements -->
+  {% if unlocked_achievements %}
+    <h3 class="subsection-heading">✅ Unlocked</h3>
+    <div class="achievements-grid">
+      {% for ua in unlocked_achievements %}
+        <div class="achievement-card">
+          <div class="achievement-icon">{{ ua.achievement.icon|default:"🌟" }}</div>
+          <h3 class="achievement-title">{{ ua.achievement.name }}</h3>
+          <p class="achievement-desc">{{ ua.achievement.description }}</p>
+          <p class="achievement-date">Earned on: {{ ua.date_awarded|date:"M d, Y H:i" }}</p>
+
+          <div class="progress-container">
+            <div class="progress-bar" style="width: {{ ua.progress|default_if_none:100 }}%;"></div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Locked Achievements -->
+  {% if locked_achievements %}
+    <h3 class="subsection-heading">🔒 Locked</h3>
+    <div class="achievements-grid">
+      {% for ach in locked_achievements %}
+        <div class="achievement-card locked">
+          <div class="achievement-icon">{{ ach.icon|default:"🌟" }}</div>
+          <h3 class="achievement-title">{{ ach.name }}</h3>
+          <p class="achievement-desc">{{ ach.description }}</p>
+          <p class="achievement-date">Locked 🔒</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if not unlocked_achievements and not locked_achievements %}
+    <div class="no-achievements">
+      <p>No achievements yet 😶<br>Time to start grinding, champ!</p>
+    </div>
+  {% endif %}
+</section>
+<button id="scrollToTopBtn" class="back-to-top">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
+        </button>
+        <script src="{% static 'achievements/achievements.js' %}"></script>
+</body>
+</html>

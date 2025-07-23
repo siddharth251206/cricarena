@@ -1,0 +1,284 @@
+:root {
+  --bg-dark: #141414;
+  --green: #19e86c;
+  --green-dark: #119f55;
+  --card-dark: #1e1e1e;
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --border-dark: #2c2c2c;
+}
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+/* === Custom Scrollbar === */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f1f1f;  /* Slightly lighter black for contrast */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #19e86c;
+  border-radius: 10px;
+  border: 2px solid #141414; /* For that subtle border look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #23ff80;  /* Slight glow on hover */
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #19e86c #1f1f1f;
+}
+.profile-page-header {
+  margin-top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 80px 10px;
+  background-color: #0f0f0f;
+  border-bottom: 1px solid #19e68c33;
+  z-index: 1000;
+  width: 100%;
+}
+
+.back-btn {
+  color: #19e68c;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #16c47a;
+}
+.header-title {
+  color: #e0e0e0;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+}
+.achievements-section {
+  flex: 1;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.achievements-heading {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--green);
+  text-shadow: 0 0 12px #19e86c88;
+}
+
+.overall-progress-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.overall-progress-container {
+  width: 70%;
+  margin: 0 auto 40px;
+  background: #2a2a2a;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 14px;
+}
+
+.overall-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--green), var(--green-dark));
+  transition: width 0.4s ease-in-out;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.achievement-card {
+  background-color: var(--card-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  box-shadow: 0 0 8px rgba(25, 232, 108, 0.1);
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(25, 232, 108, 0.3);
+}
+
+.locked {
+  opacity: 0.4;
+  filter: grayscale(90%);
+  pointer-events: none;
+}
+
+.achievement-icon {
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+.achievement-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.achievement-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.achievement-date {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.progress-container {
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 10px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--green), #23f97d);
+  width: 100%;
+  transition: width 0.4s ease-in-out;
+}
+
+.no-achievements {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+.no-achievements p {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  padding: 12px 16px;
+  font-size: 24px;
+  /* color: black; */
+  background-color: #141414;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1999;
+  transition: transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
+/* === RESPONSIVENESS === */
+@media (max-width: 768px) {
+  .achievements-heading {
+    font-size: 2rem;
+  }
+.profile-page-header{
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header-title{
+  font-size: 20px;
+}
+  .overall-progress-text {
+    font-size: 1rem;
+  }
+
+  .overall-progress-container {
+    width: 85%;
+  }
+
+  .achievement-title {
+    font-size: 1.15rem;
+  }
+
+  .achievement-desc {
+    font-size: 0.9rem;
+  }
+
+  .achievement-date {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-heading {
+    font-size: 1.9rem;
+  }
+
+  .achievement-icon {
+    font-size: 2rem;
+  }
+
+  .overall-progress-container {
+    width: 90%;
+  }
+
+  .achievement-card {
+    padding: 16px;
+  }
+
+  .achievement-title {
+    font-size: 1rem;
+  }
+
+  .achievement-desc {
+    font-size: 0.85rem;
+  }
+
+  .achievement-date {
+    font-size: 0.7rem;
+  }
+
+  .progress-container {
+    width: 90%;
+  }
+}

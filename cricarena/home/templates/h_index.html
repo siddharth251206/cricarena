@@ -7,10 +7,11 @@
   <title>CRICARENA</title>
   <link rel="stylesheet" href="{% static 'css/h_style.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/png" href="{% static 'ipl/assets/cricarenalogo.png' %}">
 
 </head>
 <body>
-
   <!-- Navbar -->
 <nav class="navbar">
   <div class="navbar-left">
@@ -25,19 +26,17 @@
     <li><a href="/quiz/">Quiz</a></li>
     <li><a href="/sportscal/">Calendar</a></li>
     <li><a href="/comparison/">Comparison</a></li>
-    <li><a href="/tactics/">Tactics</a></li>
+    {% comment %} <li><a href="/tactics/">Tactics</a></li> {% endcomment %}
     <li><a href="/stadium/">Stadiums</a></li>
     <li><a href="/news/">News</a></li>
-    <!-- <li><a href="/accounts/">Login/Signup</a></li> -->
-    <!-- {% if request.user.is_authenticated %}
-      <li class="dropdown user-dropdown">
-        <a href="#" class="user-toggle">{{ request.user.nickname }} ▼</a>
-        <ul class="dropdown-menu">
-          <li><a href="/accounts/logout/">Logout</a></li>
-        </ul>
-      </li>
-    {% endif %} -->
-    
+    {% comment %} <li><a href="/blogpage/">Blog</a></li> {% endcomment %}
+    <li class="dropdown">
+      <a href="#" class="ipl-desktop-toggle">Explore ▼</a>
+      <ul class="dropdown-menu">
+        <li class="team-item"><a href="/blogpage/"> Blog</a></li>
+        <li class="team-item"><a href="/tactics/"> Tactics</a></li>
+      </ul>
+    </li>
 
     <li class="dropdown">
       <a href="#" class="ipl-desktop-toggle">IPL ▼</a>
@@ -56,67 +55,97 @@
     </li>
   </ul></div>
   <div class="navbar-right">
-    {% if request.user.is_authenticated %}
-      <div class="user-avatar" id="userAvatar">
-  {{ request.user.nickname|default:request.user.username|slice:":1"|upper }}
+  {% if request.user.is_authenticated %}
+  <div class="profile-avatar-img" id="userAvatar" title="{{user.nickname}}">
+  {% if user.avatar %}
+    <img src="{{ user.avatar.url }}" alt="Avatar">
+  {% else %}
+    <span class="avatar-fallback">{{ user.nickname|default:user.username|slice:":1"|upper }}</span>
+  {% endif %}
 </div>
-        <div class="user-dropdown-menu" id="userDropdown">
-          <ul>
-            <li><a href="{% url 'profile' %}">My Profile</a></li>
-            <li><a href="/quiz/">My Quizzes</a></li>
-            <li><a href="/archives/">My Archives</a></li>
-            <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}">My Team</a></li>
-            <li><form method="post" action="{% url 'logout' %}" style="display:inline;">
-  {% csrf_token %}
-  <button type="submit" class="logout-btn">Logout</button>
-</form>
-</li>
-          </ul>
-        </div>
-      </div>
-    {% else %}
-      <a href="/accounts/" class="login-btn">Login/Signup</a>
-    {% endif %}
-  </div>
-
-
-  <div class="toggle-btn">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" fill="#19e86c">
-      <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-    </svg>
-  </div>
+    <div class="user-dropdown-menu" id="userDropdown">
+      <ul>
+        <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
+    <li><a href="/achievements/my/"><i class="fa fa-trophy"></i> My Achievements</a></li>
+    <li><a href="/quiz/leaderboard/"><i class="fa fa-users"></i> Leaderboard</a></li>
+    <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
+        <li>
+          <form method="post" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="logout-btn"><i class="fa fa-sign-out-alt"></i> Logout</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  {% else %}
+    <div class="logsign">
+    <a href="/accounts/?login=1" class="login-btn">Login</a>
+    <a href="/accounts/?signup=1" class="signup-btn">Sign Up</a></div>
+  {% endif %}
+</div>
+<div class="toggle-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" fill="#19e86c">
+    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+  </svg>
+</div>
 </nav>
-
 <!-- Hamburger Menu -->
 <div class="hamburger">
-  <div class="ham-top">
+  <!-- Top Logo and Close -->
+  <div class="ham-top fade-in-section">
     <div class="navbar-logo">
-      <a href="#"><img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA</a>
+      <a href="/home/">
+        <img src="/static/ipl/assets/cricarenalogo.png" alt=""> CRICARENA
+      </a>
     </div>
-    <div class="close-btn" style="align-self: flex-end; font-size: 28px; cursor: pointer; color: #19e86c;">✕</div>
+    <div class="close-btn" style="align-self: flex-end; font-size: 20px; cursor: pointer; color: #19e86c; background-color: #1b1b1b;
+    border-radius: 50%; padding: 6px 13px;">✕</div>
   </div>
 
-  <ul>
-    <li><a href="/archives/">Archive</a></li>
-    <li><a href="/quiz/">Quiz</a></li>
-    <li><a href="/sportscal/">Calendar</a></li>
-    <li><a href="/comparison/">Comparison</a></li>
-    <li><a href="/tactics/">Tactics</a></li>
-    <li><a href="/stadium/">Stadiums</a></li>
-    <li><a href="/news/">News</a></li>
-    {% if request.user.is_authenticated %}
-      <li class="dropdown user-dropdown">
-        <a href="#" class="user-toggle">{{ request.user.nickname }} ▼</a>
-        <ul class="dropdown-menu">
-          <li><a href="/accounts/logout/">Logout</a></li>
-        </ul>
-      </li>
-    {% else %}
-      <li><a href="/accounts/">Login/Signup</a></li>
-    {% endif %}
-    <li><a href="/aboutus">About Us</a></li>
-    <li class="dropdown">
-      <div class="hamburger-ipl-toggle">IPL <span class="dropdown-arrow">▼</span></div>
+  <!-- Profile -->
+  {% if request.user.is_authenticated %}
+  <div class="ham-profile-header fade-in-section">
+    <div class="ham-avatar-circle">
+       {% if user.avatar %}
+    <img src="{{ user.avatar.url }}" alt="Avatar">
+  {% else %}
+    {{ user.nickname|default:user.username|slice:":1"|upper }}
+  {% endif %}
+    </div>
+    <div class="ham-username">{{ request.user.nickname|default:request.user.username }}</div>
+    <div class="ham-profile-toggle" id="profileDropdownToggle">Profile Options<span class="dropdown-arrow-profile">▼</span></div>
+  </div>
+
+  <ul class="ham-profile-links fade-in-section" id="profileDropdown" style="display: none;">
+    <li><a href="{% url 'profile' %}?from={{ request.get_full_path }}"><i class="fa fa-user"></i> My Profile</a></li>
+   <li><a href="/achievements/my/"><i class="fa fa-trophy"></i> My Achievements</a></li>
+    <li><a href="/quiz/leaderboard/"><i class="fa fa-users"></i> Leaderboard</a></li>
+    <li><a href="/ipl/?team={{ request.user.fav_ipl_team|lower }}"><i class="fa fa-heart"></i> My Team</a></li>
+  </ul>
+  {% else %}
+  <div class="logsign-container">
+    <div class="logsign fade-in-section">
+    <a href="/accounts/?login=1" class="login-btn">Login</a>
+    <a href="/accounts/?signup=1" class="signup-btn">Sign Up</a></div></div>
+  {% endif %}
+
+  <!-- Main Nav Links -->
+  <ul class="ham-nav-links">
+    <li class="fade-in-section"><a href="/archives/"><i class="fa fa-archive"></i> Archive</a></li>
+    <li class="fade-in-section"><a href="/quiz/"><i class="fa fa-question-circle"></i> Quiz</a></li>
+    <li class="fade-in-section"><a href="/sportscal/"><i class="fa fa-calendar-alt"></i> Calendar</a></li>
+    <li class="fade-in-section"><a href="/comparison/"><i class="fa fa-balance-scale"></i> Comparison</a></li>
+    <li class="fade-in-section"><a href="/tactics/"><i class="fa fa-chess-knight"></i> Tactics</a></li>
+    <li class="fade-in-section"><a href="/stadium/"><i class="fa fa-building"></i> Stadiums</a></li>
+    <li class="fade-in-section"><a href="/news/"><i class="fa fa-newspaper"></i> News</a></li>
+    <li class="fade-in-section"><a href="/blogpage/"><i class="fa fa-blog"></i> Blog</a></li>
+    <li class="fade-in-section"><a href="/aboutus"><i class="fa fa-info-circle"></i> About Us</a></li>
+
+    <!-- IPL Dropdown -->
+    <li class="dropdown fade-in-section">
+      <div class="hamburger-ipl-toggle">
+        <i class="fa-solid fa-baseball-bat-ball"></i>  IPL <span class="dropdown-arrow">▼</span>
+      </div>
       <ul class="dropdown-menu">
         <li class="team-item"><a href="/ipl/?team=csk"><img src="https://documents.iplt20.com/ipl/CSK/Logos/Logooutline/CSKoutline.png" alt=""> CSK</a></li>
         <li class="team-item"><a href="/ipl/?team=mi"><img src="https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png" alt=""> MI</a></li>
@@ -131,11 +160,33 @@
       </ul>
     </li>
   </ul>
+
+  <!-- Logout bottom -->
+  {% if request.user.is_authenticated %}
+  <div class="ham-logout-section fade-in-section">
+    <form method="post" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="logout-btn">
+        <i class="fa fa-sign-out-alt"></i> Logout
+      </button>
+    </form>
+  </div>
+  {% endif %}
 </div>
 
+
 {% if nickname %}
+  <div class="welcome-toast" id="welcomeToast">
+    👋 Welcome, <strong>{{ nickname }}</strong>!
+  </div>
   <script>
-    alert("Hello {{ nickname }}!");
+    setTimeout(() => {
+      const toast = document.getElementById("welcomeToast");
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 5000); // show for 5 sec
+    }, 300); // start animation after slight delay
   </script>
 {% endif %}
 
@@ -313,15 +364,15 @@
           <button type="submit">Subscribe</button>
         </form>
       </div>
-    </div>
     <div class="footer-bottom">
       <p>&copy; 2025 CRICARENA. All rights reserved.</p>
     </div>
   </footer>
 <button id="scrollToTopBtn" class="back-to-top">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
-        </button>
+        </button></div>
   <!-- JavaScript File -->
-  <script src="{% static 'js/h_script.js' %}"></script>
+  <script src="{% static 'js/h_script.js' %}">
+  </script>
 </body>
 </html>

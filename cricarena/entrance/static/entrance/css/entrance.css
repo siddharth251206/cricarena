@@ -271,3 +271,27 @@ body::-webkit-scrollbar {
         font-size: 1rem;
     }
 }
+
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none; /* So it doesn’t block interactions */
+}
+
+#bg-video {
+  opacity: 0;
+  animation: fadeInVideo 2s ease-in-out forwards;
+}
+
+@keyframes fadeInVideo {
+  to {
+    opacity: 1;
+  }
+}

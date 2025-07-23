@@ -7,12 +7,23 @@
   <title>Login / Signup - CricArena</title>
   <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
+    <a href="/home/" class="back-home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20L0 10L10 0L11.775 1.775L3.55 10L11.775 18.225L10 20Z" fill="#19e86c"/>
+      </svg>
+      Back to Home
+    </a>
+    
     {% if show_signup %}
       <div id="signup-form" class="form active">
-        <h2>Sign Up</h2>
+        <div class="header-group">
+          <h2><img src="/static/ipl/assets/cricarenalogo.png" alt="">CRICARENA</h2>
+          <p class="subheading">Sign up to create a new account</p>
+        </div>
         {% if signup_form.errors %}
           <div class="error-messages">
             {{ signup_form.non_field_errors }}
@@ -47,7 +58,10 @@
       </div>
     {% else %}
       <div id="login-form" class="form active">
-        <h2>Login</h2>
+        <div class="header-group">
+          <h2><img src="/static/ipl/assets/cricarenalogo.png" alt="">CRICARENA</h2>
+          <p class="subheading">Log in to your account</p>
+        </div>
         {% if messages %}
           <div class="error-messages">
             {% for message in messages %}
@@ -69,7 +83,17 @@
   </div>
 
   {% if nickname %}
-    <script>alert("Hello {{ nickname }}!");</script>
+  <div class="welcome-toast" id="welcomeToast">
+    👋 Welcome, <strong>{{ nickname }}</strong>!
+  </div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("welcomeToast").classList.add("show");
+      setTimeout(() => {
+        document.getElementById("welcomeToast").classList.remove("show");
+      }, 4000); // visible for 4 sec
+    }, 500);
+  </script>
   {% endif %}
 </body>
 </html>

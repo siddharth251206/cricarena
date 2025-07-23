@@ -19,6 +19,10 @@
 
     <div id="canvas-container"></div>
 
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="{% static 'entrance/video/cricket balls.mp4' %}" type="video/mp4">
+  </video>
+
     <div class="ui-overlay">
         <div class="logo">
             <h1 class="floating">CRICARENA</h1>
@@ -136,10 +140,23 @@
                 <p>Compare stats of your favorite players side by side for deeper insights.</p>
             </div>
 
+            <!-- Feature 9 -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <!-- Blogpage Icon -->
+                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
+                        <path d="M7 8h10M7 12h6M5 17l2-2h10a1 1 0 001-1V7a1 1 0 00-1-1H6a1 1 0 00-1 1v10z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Blogpage</h3>
+                <p>Share your thoughts, give suggestions, and join match-day discussions.</p>
+            </div>
+
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> {% endcomment %}
      <script src="{% static 'entrance/js/entrance.js' %}"></script>
 </body>
 </html>

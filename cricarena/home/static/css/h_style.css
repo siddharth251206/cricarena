@@ -227,10 +227,10 @@ body::-webkit-scrollbar {
 
 }
 
-.hamburger ul li a:hover {
+/* .hamburger ul li a:hover {
   color: #19e68c;
   transform: scale(1.05);
-}
+} */
 
 .hamburger .dropdown-menu {
   position: static;
@@ -249,9 +249,9 @@ body::-webkit-scrollbar {
   transition: color 0.3s ease;
 }
 
-.hamburger-ipl-toggle:hover {
+/* .hamburger-ipl-toggle:hover {
   color: #19e68c;
-}
+} */
 
 /* Default hidden state */
 .hamburger .dropdown-menu {
@@ -436,10 +436,10 @@ body::-webkit-scrollbar {
   margin-right: 10px;
 }
 
-.ham-profile-links li a:hover {
+/* .ham-profile-links li a:hover {
   background-color: #19e86c;
   color: #141414;
-}
+} */
 
 /* Main Nav Links */
 .ham-nav-links {
@@ -463,10 +463,10 @@ body::-webkit-scrollbar {
   background-color: #141414;
 }
 
-.ham-nav-links li a:hover {
+/* .ham-nav-links li a:hover {
   background-color: #19e86c;
   color: #141414;
-}
+} */
 
 .ham-nav-links li a i {
   width: 20px;
@@ -498,11 +498,11 @@ body::-webkit-scrollbar {
   width: 20px;
   text-align: center;
 }
-
+/* 
 .ham-logout-section .logout-btn:hover {
   background-color: #e84141;
   color: #fff;
-}
+} */
 
 /* Animate each child element with fade-slide on hamburger open */
 .hamburger.open .fade-in-section {

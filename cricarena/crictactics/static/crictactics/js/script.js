@@ -1,11 +1,3 @@
-function toggleInfo(id) {
-  const section = document.getElementById(id);
-  if (section.style.display === "block") {
-    section.style.display = "none";
-  } else {
-    section.style.display = "block";
-  }
-}
 document.addEventListener("DOMContentLoaded", () => {
   
     const toggleBtn = document.querySelector(".toggle-btn");
@@ -75,5 +67,27 @@ if (userAvatar && userDropdown) {
       top: 0,
       behavior: "smooth"
     });
+  });
+
+  // Image modal/lightbox logic
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('imgModalContent');
+  const modalCloseBtn = document.querySelector('.img-modal-close');
+  document.querySelectorAll('.enlargeable').forEach(img => {
+    img.addEventListener('click', function() {
+      modal.classList.add('open');
+      modalImg.src = this.getAttribute('data-img');
+      modalImg.alt = this.alt;
+    });
+  });
+  modalCloseBtn.addEventListener('click', function() {
+    modal.classList.remove('open');
+    modalImg.src = '';
+  });
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+      modalImg.src = '';
+    }
   });
 });

@@ -34,12 +34,16 @@ body {
 
 .poll-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-  padding: 0 20px 60px;
-  max-width: 1000px;
-  margin: 0 auto;
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* gap: 50px; */
+  flex-wrap: wrap; /* Allow wrapping to multiple rows */
+  justify-content: center; /* Center horizontally */
+  gap: 30px; /* Space between cards */
+  /* padding: 0 20px 60px; */
+  padding: 40px 20px; /* Optional padding */
+  max-width: 1500px;
+  /* margin: 0 auto; */
   animation: fadeInUp 1.5s ease-in-out;
   text-align: center;
 }
@@ -49,13 +53,20 @@ body {
   box-shadow: 0 0 12px rgba(16, 185, 129, 0.1);
   border-radius: 16px;
   padding: 30px 35px;
-  width: 100%;
+  width: 30%;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
   animation: slideInCard 0.6s ease forwards;
   border: 1px solid #14532d;
+ 
+  flex: 1 1 calc(33.33% - 30px);  /* 3 per row with spacing */
+  max-width: calc(33.33% - 30px); 
+
+  /* flex: 1 1 calc(25% - 30px); 4 per row with spacing */
+  /* max-width: calc(25% - 30px); */
+  box-sizing: border-box;
 }
 
 .poll-card:hover {
@@ -194,3 +205,18 @@ body {
 .poll-card:nth-child(3) { animation-delay: 0.6s; }
 .poll-card:nth-child(4) { animation-delay: 0.8s; }
 .poll-card:nth-child(5) { animation-delay: 1s; }
+
+
+@media (max-width: 992px) {
+  .poll-card {
+    flex: 1 1 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .poll-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

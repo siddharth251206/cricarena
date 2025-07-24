@@ -5,22 +5,57 @@ from .models import Post
 from .serializers import PostSerializer
 
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def blog_page(request):
-    posts = Post.objects.all().order_by('-created_at')  # Fetch posts from database
+    if request.method == 'POST':
+        content = request.POST.get("content", "").strip()
+        if content:
+            if request.user.is_authenticated:
+                author = request.user.username
+                team = getattr(request.user, 'fav_ipl_team', author)
+                verified = True
+            else:
+                author = "Guest"
+                team = "Unknown"
+                verified = False
+
+            Post.objects.create(
+                content=content,
+                author_name=author,
+                team_name=team,
+                is_verified=verified
+            )
+        return redirect('blogpage')  # Prevent duplicate submissions on refresh
+    
+
+    # Handle GET
+    posts = Post.objects.all().order_by('-created_at')
 
     if request.user.is_authenticated:
-        team_name = getattr( request.user, 'fav_ipl_team', request.user.username)
+        team_name = getattr(request.user, 'fav_ipl_team', request.user.username)
     else:
         team_name = "Unknown"
 
-    
     return render(request, 'blogpage/blog.html', {
         'posts': posts,
         'team_name': team_name
-    })      
-    # return render(request, 'blogpage/blog.html', {'posts': posts})
+    })
+
+# def blog_page(request):
+#     posts = Post.objects.all().order_by('-created_at')  # Fetch posts from database
+
+#     if request.user.is_authenticated:
+#         team_name = getattr( request.user, 'fav_ipl_team', request.user.username)
+#     else:
+#         team_name = "Unknown"
+
+    
+#     return render(request, 'blogpage/blog.html', {
+#         'posts': posts,
+#         'team_name': team_name
+#     })      
+#     # return render(request, 'blogpage/blog.html', {'posts': posts})
 
 
 class PostListCreate(APIView):

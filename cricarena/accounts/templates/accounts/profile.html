@@ -197,7 +197,7 @@
 <section class="profile-section fan-wall-section">
   <h2 class="section-heading">Fan Wall</h2>
 
-  <form method="POST" action="" class="fan-wall-form">
+  {% comment %} <form method="POST" action="" class="fan-wall-form">
     {% csrf_token %}
     <textarea
       name="message"
@@ -207,7 +207,19 @@
       required
     ></textarea>
     <button type="submit" class="fan-wall-btn">Post Message</button>
-  </form>
+  </form> {% endcomment %}
+
+  <form method="POST" action="{% url 'blogpage' %}" class="fan-wall-form">
+  {% csrf_token %}
+  <textarea
+    name="content"
+    class="fan-wall-input"
+    placeholder="Write your message to the community..."
+    rows="3"
+    required
+  ></textarea>
+  <button type="submit" class="fan-wall-btn">Post Message</button>
+</form>
 
   <div class="fan-wall-posts">
     {% for message in fan_messages %}
@@ -217,7 +229,7 @@
         <span class="fan-timestamp">{{ message.timestamp|timesince }} ago</span>
       </div>
     {% empty %}
-      <p class="no-posts">No messages yet. Be the first to drop a message!</p>
+      {% comment %} <p class="no-posts">No messages yet. Be the first to drop a message!</p> {% endcomment %}
     {% endfor %}
   </div>
 </section>

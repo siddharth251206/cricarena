@@ -25,7 +25,14 @@
     <li><a href="/quiz/">Quiz</a></li>
     <li><a href="/sportscal/">Calendar</a></li>
     <li><a href="/comparison/">Comparison</a></li>
-    <li><a href="/tactics/">Tactics</a></li>
+    <li class="dropdown">
+      <a href="#" class="ipl-desktop-toggle">Explore ▼</a>
+      <ul class="dropdown-menu">
+        <li class="team-item"><a href="/blogpage/"> Blog</a></li>
+        <li class="team-item"><a href="/tactics/"> Tactics</a></li>
+        <li class="team-item"><a href="/aboutus/"> About Us</a></li>
+      </ul>
+    </li>
     <li><a href="/stadium/">Stadiums</a></li>
     <li><a href="/news/">News</a></li>
 
@@ -130,6 +137,7 @@
     <li class="fade-in-section"><a href="/tactics/"><i class="fa fa-chess-knight"></i> Tactics</a></li>
     <li class="fade-in-section"><a href="/stadium/"><i class="fa fa-building"></i> Stadiums</a></li>
     <li class="fade-in-section"><a href="/news/"><i class="fa fa-newspaper"></i> News</a></li>
+    <li class="fade-in-section"><a href="/blogpage/"><i class="fa fa-blog"></i> Blog</a></li>
     <li class="fade-in-section"><a href="/aboutus"><i class="fa fa-info-circle"></i> About Us</a></li>
 
     <!-- IPL Dropdown -->
@@ -170,9 +178,8 @@
     <!-- Batting Shots -->
     <section class="tactic-section">
       <h2>Batting Shots</h2>
-      <div class="image-box">
-        <img src="{% static 'crictactics/images/shot.jpeg' %}" alt="Batting Shots" class="tactic-img">
-        <button class="toggle-button" onclick="toggleInfo('shots-details')">Show/Hide Details</button>
+      <div class="image-details-row">
+        <img src="{% static 'crictactics/images/shot.jpeg' %}" alt="Batting Shots" class="tactic-img enlargeable" data-img="{% static 'crictactics/images/shot.jpeg' %}">
         <div class="details" id="shots-details">
           <ul>
             <li><strong>Bye Area</strong>: When batter misses the ball and runs are scored as byes.</li>
@@ -194,17 +201,56 @@
     <!-- Fielding Positions -->
     <section class="tactic-section">
       <h2>Fielding Positions</h2>
-      <div class="image-box">
-        <img src="{% static 'crictactics/images/field.png' %}" alt="Fielding Positions" class="tactic-img">
-        <button class="toggle-button" onclick="toggleInfo('field-details')">Show/Hide Details</button>
+      <div class="image-details-row">
+        <img src="{% static 'crictactics/images/field.png' %}" alt="Fielding Positions" class="tactic-img enlargeable" data-img="{% static 'crictactics/images/field.png' %}">
         <div class="details" id="field-details">
           <ul>
-            <li><strong>Slips/Gully</strong>: Catch edges off seamers/spinners.</li>
-            <li><strong>Point/Cover/Mid-off</strong>: Block drives and cut shots on off-side.</li>
-            <li><strong>Square Leg/Fine Leg</strong>: Trap sweep/pull/hook shots.</li>
-            <li><strong>Mid-on/Mid-wicket</strong>: On-side drive intercepts and catches.</li>
-            <li><strong>Deep Fielders</strong>: Positioned near boundary for big shots.</li>
-            <li><strong>Close-in (Silly Point, Short Leg)</strong>: Aggressive catching positions in Tests.</li>
+            <li><strong>Pitch center:</strong> Batter (striker), non-striker, wicket-keeper (WK), bowler, and umpires.</li>
+          </ul>
+          <strong>Field division:</strong>
+          <ul>
+            <li><strong>Off side</strong> (left of batter from their perspective) – positions like Point, Cover, and Third Man.</li>
+            <li><strong>Leg side/On side</strong> (right of batter) – positions like Square Leg, Mid-wicket, and Fine Leg.</li>
+          </ul>
+          <strong>Fielding Positions</strong>
+          <ul>
+            <li><u>Close-in positions (near the batter):</u>
+              <ul>
+                <li>Slips, Gully, Silly Point, Silly Mid-off/on, Short Leg, Leg Gully.</li>
+              </ul>
+            </li>
+            <li><u>Inner ring (inside the 30-yard circle):</u>
+              <ul>
+                <li>Point, Cover, Extra Cover, Mid-off, Mid-on, Mid-wicket, Square Leg.</li>
+              </ul>
+            </li>
+            <li><u>Deep/outfield positions (near boundary):</u>
+              <ul>
+                <li>Third Man, Deep Point, Deep Cover, Long-off, Long-on, Deep Mid-wicket, Deep Square Leg, Fine Leg, Long Leg.</li>
+              </ul>
+            </li>
+            <li><u>Special:</u> Long Stop (directly behind WK, rarely used).</li>
+          </ul>
+          <strong>Glossary</strong>
+          <ul>
+            <li><strong>Short:</strong> Nearer to batter.</li>
+            <li><strong>Silly:</strong> Very close to batter (dangerous positions).</li>
+            <li><strong>Deep:</strong> Farther from batter, near the boundary.</li>
+            <li><strong>Wide:</strong> Farther from the pitch's line.</li>
+            <li><strong>Fine vs Straight vs Square:</strong>
+              <ul>
+                <li><strong>Fine:</strong> Near line of pitch.</li>
+                <li><strong>Straight:</strong> Along batter’s straight hit.</li>
+                <li><strong>Square:</strong> Perpendicular to batter.</li>
+              </ul>
+            </li>
+          </ul>
+          <strong>Other Elements</strong>
+          <ul>
+            <li>Mandatory fielders: Bowler and wicket-keeper.</li>
+            <li>30-yard circle: Marks inner fielding restriction area.</li>
+            <li>Umpires: Main umpire (U) and square leg umpire (Sq L U).</li>
+            <li>Batsmen: Striker (S), non-striker (NS), runner (R).</li>
           </ul>
         </div>
       </div>
@@ -213,9 +259,8 @@
     <!-- Swing Bowling -->
     <section class="tactic-section">
       <h2>Swing Bowling Techniques</h2>
-      <div class="image-box">
-        <img src="{% static 'crictactics/images/swing.webp' %}" alt="Swing Bowling Types" class="tactic-img">
-        <button class="toggle-button" onclick="toggleInfo('swing-details')">Show/Hide Details</button>
+      <div class="image-details-row">
+        <img src="{% static 'crictactics/images/swing.webp' %}" alt="Swing Bowling Types" class="tactic-img enlargeable" data-img="{% static 'crictactics/images/swing.webp' %}">
         <div class="details" id="swing-details">
           <ul>
             <li><strong>Normal Swing</strong>:
@@ -243,7 +288,125 @@
         </div>
       </div>
     </section>
+    <!-- New Section: Rules of Cricket -->
+    <section class="tactic-section">
+      <h2>Rules of Cricket</h2>
+      <div class="rules-content">
+        <ol>
+          <li><strong>The Basics</strong><br>
+            <ul>
+              <li>Objective: Two teams of 11 players each take turns batting and fielding.</li>
+              <li>Goal: Score more runs than the opponent.</li>
+              <li>Match formats: Test matches, One-Day Internationals (ODIs), and T20s, differing mainly in overs and match duration.</li>
+            </ul>
+          </li>
+          <li><strong>The Playing Area</strong><br>
+            <ul>
+              <li>Pitch: 22 yards long, where bowling and batting happen.</li>
+              <li>Field: Circular/oval with a boundary marking.</li>
+              <li>Creases:
+                <ul>
+                  <li>Bowling crease – where the bowler delivers the ball.</li>
+                  <li>Popping crease – where the batter must be to be “safe” from a run-out.</li>
+                  <li>Return creases – keep the bowler within legal limits.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Innings and Overs</strong><br>
+            <ul>
+              <li>Innings: One team bats while the other fields.</li>
+              <li>Over: 6 legal balls bowled by one bowler.</li>
+              <li>Bowlers can’t bowl consecutive overs.</li>
+            </ul>
+          </li>
+          <li><strong>Batting Rules</strong><br>
+            <ul>
+              <li>Batters score runs by:
+                <ul>
+                  <li>Running between the wickets.</li>
+                  <li>Hitting boundaries:
+                    <ul>
+                      <li>4 runs if the ball crosses the boundary after bouncing.</li>
+                      <li>6 runs if it clears the boundary without bouncing.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>Batters can be dismissed by:
+                <ul>
+                  <li>Bowled – Ball hits the stumps.</li>
+                  <li>Caught – Ball caught by fielder before touching the ground.</li>
+                  <li>LBW (Leg Before Wicket) – Ball would hit stumps but strikes batter’s leg/pad.</li>
+                  <li>Run out – Batter outside crease when stumps are broken.</li>
+                  <li>Stumped – Wicket-keeper breaks stumps when batter is out of crease.</li>
+                  <li>Hit wicket, Handled the ball, Obstructing the field, Timed out, Hit the ball twice.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Bowling Rules</strong><br>
+            <ul>
+              <li>Must bowl with a straight arm; throwing is illegal.</li>
+              <li>Must stay behind the bowling crease and within return creases.</li>
+              <li>No-ball: Overstepping, dangerous deliveries, or illegal action → 1 run to batting side and free hit in limited-overs cricket.</li>
+              <li>Wide ball: Too far from batter to hit → 1 run to batting side.</li>
+            </ul>
+          </li>
+          <li><strong>Fielding Rules</strong><br>
+            <ul>
+              <li>Only 11 players on field, including a wicket-keeper.</li>
+              <li>Fielding restrictions:
+                <ul>
+                  <li>In limited-overs: Powerplay overs require a certain number of fielders inside the 30-yard circle.</li>
+                </ul>
+              </li>
+              <li>Catches must be taken cleanly (ball must not touch ground).</li>
+            </ul>
+          </li>
+          <li><strong>Scoring Runs</strong><br>
+            <ul>
+              <li>Batters run between the two sets of stumps after hitting the ball.</li>
+              <li>Runs completed when both batters cross and reach the opposite crease.</li>
+              <li>Extras:
+                <ul>
+                  <li>Byes – runs from balls missed by the batter and wicket-keeper.</li>
+                  <li>Leg byes – runs from ball hitting batter’s body (not bat).</li>
+                  <li>No-balls and Wides add runs without counting in batter’s statistics.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Match Outcomes</strong><br>
+            <ul>
+              <li>Win: Team with most runs after all innings wins.</li>
+              <li>Tie: Both teams score the same runs (rare).</li>
+              <li>Draw: In Test cricket, if time runs out before the match finishes.</li>
+              <li>Super Over: Used to break ties in limited-overs matches.</li>
+            </ul>
+          </li>
+          <li><strong>Umpires and Decisions</strong><br>
+            <ul>
+              <li>On-field umpires oversee play, signal decisions (out, no-ball, wide, boundary, etc.).</li>
+              <li>Third umpire (with video review) for TV replays and close calls.</li>
+              <li>DRS (Decision Review System): Teams can challenge certain umpire decisions.</li>
+            </ul>
+          </li>
+          <li><strong>Spirit of the Game</strong><br>
+            <ul>
+              <li>Players must act within the “Spirit of Cricket” – respect opponents, officials, and rules.</li>
+              <li>Unsportsmanlike behavior (sledging, tampering, etc.) can lead to penalties.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
   </main>
+<!-- Modal for enlarged image -->
+<div id="imgModal" class="img-modal">
+  <span class="img-modal-close">&times;</span>
+  <img class="img-modal-content" id="imgModalContent" alt="">
+</div>
 <button id="scrollToTopBtn" class="back-to-top">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
         </button>

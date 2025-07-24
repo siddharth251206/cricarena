@@ -135,7 +135,16 @@ profileToggle?.addEventListener("click", () => {
       div.style.minWidth = "270px";
 
       const [team1, team2] = match.teamInfo || [];
-      const [score1, score2] = match.score || [];
+      let [score1, score2] = match.score || [];
+
+      // Fix: Ensure score1 matches team1 and score2 matches team2 by comparing team names
+      if (score1 && score2 && team1 && team2) {
+        // Sometimes the API returns scores in the reverse order
+        if (score1.inning && !score1.inning.toLowerCase().includes(team1.shortname?.toLowerCase() || team1.name?.toLowerCase())) {
+          // Swap scores if the first score does not belong to team1
+          [score1, score2] = [score2, score1];
+        }
+      }
 
       div.innerHTML = `
         <div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 5px;">

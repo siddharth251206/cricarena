@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRICARENA - 3D Entrance</title>
 <link rel="stylesheet" href="{% static 'entrance/css/entrance.css' %}" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div class="loading-screen" id="loadingScreen">
@@ -25,9 +26,11 @@
 
     <div class="ui-overlay">
         <div class="logo">
+            <img class="floating" src="/static/ipl/assets/cricarenalogo.png" alt="">
             <h1 class="floating">CRICARENA</h1>
-            <div class="tagline">Where Cricket Comes Alive</div>
+            <div class="tagline">Explore. Compete. Discover Cricket Like Never Before.</div>
            <button class="enter-button" onclick="window.location.href='{% url 'h_index' %}'">Enter Arena</button>
+           <div class="tagline" style="margin-top: 20px;">Scroll below to view the full list of features.</div>
         </div>
         <div class="particles-info"></div>
     </div>
@@ -40,10 +43,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Archive Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M8 7h8v2H8V7zm-1 4h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7zm2 2v3h6v-3H9z" fill="#fff"/>
-                    </svg>
+                    <i class="fa fa-archive"></i>
                 </div>
                 <h3>Archive</h3>
                 <p>Watch highlights of previous IPL finals and relive the best moments in cricket history.</p>
@@ -53,10 +53,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Live Score Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M7 17V7h2v10H7zm4 0V7h2v10h-2zm4 0V7h2v10h-2z" fill="#fff"/>
-                    </svg>
+                    <i class="fa fa-bolt"></i>
                 </div>
                 <h3>Live Score</h3>
                 <p>Get real-time cricket scores, ball-by-ball updates, and match stats instantly.</p>
@@ -66,10 +63,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Calendar Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M7 10h10v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-7zm10-4V5a1 1 0 1 0-2 0v1H9V5a1 1 0 1 0-2 0v1H5v2h14V7h-2z" fill="#fff"/>
-                    </svg>
+                    <i class="fa fa-calendar-alt"></i>
                 </div>
                 <h3>Calendar</h3>
                 <p>See all cricket matches scheduled for this month in a beautiful, interactive calendar.</p>
@@ -79,10 +73,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- News Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" fill="#fff"/>
-                    </svg>
+                   <i class="fa fa-newspaper"></i>
                 </div>
                 <h3>News</h3>
                 <p>Stay updated with the latest cricket news, match reports, and exclusive stories.</p>
@@ -92,10 +83,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Stadium Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M6 17v-2a6 6 0 0 1 12 0v2H6zm6-8a4 4 0 0 1 4 4H8a4 4 0 0 1 4-4z" fill="#fff"/>
-                    </svg>
+                    <i class="fa fa-building"></i>
                 </div>
                 <h3>Stadiums</h3>
                 <p>Explore all major cricket stadiums in India with details and stunning images.</p>
@@ -105,10 +93,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Quiz Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M12 17h.01M12 7a3 3 0 0 1 3 3c0 1.5-2 2-2 4h-2c0-2 2-2.5 2-4a1 1 0 1 0-2 0H9a3 3 0 0 1 3-3z" fill="#fff"/>
-                    </svg>
+                    <i class="fa fa-question-circle"></i>
                 </div>
                 <h3>Quiz</h3>
                 <p>Test your cricket knowledge with fun and challenging quizzes on various topics.</p>
@@ -118,10 +103,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Tactics Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M8 16l8-8M8 8h8v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <i class="fa fa-chess-knight"></i>
                 </div>
                 <h3>Cricket Tactics</h3>
                 <p>Learn about cricket strategies, field placements, and batting techniques with visuals.</p>
@@ -131,10 +113,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Comparison Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M8 17h8M8 7h8M8 12h8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <i class="fa fa-balance-scale"></i>
                 </div>
                 <h3>Player Comparison</h3>
                 <p>Compare stats of your favorite players side by side for deeper insights.</p>
@@ -144,10 +123,7 @@
             <div class="feature-card">
                 <div class="feature-icon">
                     <!-- Blogpage Icon -->
-                    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="12" fill="#1DB954"/>
-                        <path d="M7 8h10M7 12h6M5 17l2-2h10a1 1 0 001-1V7a1 1 0 00-1-1H6a1 1 0 00-1 1v10z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <i class="fa fa-blog"></i>
                 </div>
                 <h3>Blogpage</h3>
                 <p>Share your thoughts, give suggestions, and join match-day discussions.</p>

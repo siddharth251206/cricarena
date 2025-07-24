@@ -287,21 +287,22 @@ async function askGroq() {
 }
 // Scroll Animation using IntersectionObserver
 document.addEventListener("DOMContentLoaded", () => {
-  const revealElements = document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
-        observer.unobserve(entry.target); // Animate only once
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.2
+    threshold: window.innerWidth < 768 ? 0.05 : 0.2,
+    rootMargin: "0px 0px -10% 0px"
   });
 
   revealElements.forEach(el => observer.observe(el));
-  const userAvatar = document.getElementById("userAvatar");
+    const userAvatar = document.getElementById("userAvatar");
 const userDropdown = document.getElementById("userDropdown");
 
 if (userAvatar && userDropdown) {

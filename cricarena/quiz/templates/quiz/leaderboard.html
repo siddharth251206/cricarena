@@ -32,7 +32,14 @@
             {{ forloop.counter }}
           {% endif %}
         </td>
-        <td>{{ entry.user.username }}</td>
+        <td class="user-cell">
+  {% if entry.user.avatar %}
+    <img src="{{ entry.user.avatar.url }}" alt="Avatar" class="avatar-img-leaderboard">
+  {% else %}
+    <span class="avatar-fallback-leaderboard">{{ entry.user.nickname|default:entry.user.username|slice:":1"|upper }}</span>
+  {% endif %}
+  <span class="username-text">{{ entry.user.nickname|default:entry.user.username }}</span>
+</td>
         <td>{{ entry.average_rating|floatformat:2 }}</td>
         <td>{{ entry.accuracy|floatformat:2 }}%</td>
         <td>{{ entry.quizzes_taken }}</td>

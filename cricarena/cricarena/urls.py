@@ -38,4 +38,5 @@ urlpatterns = [
     path('comparison/', include('comparison.urls')),
     path('blogpage/', include('blogpage.urls')),
     path('achievements/', include('achievements.urls')),
+    path('aboutus/', include('aboutus.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)    

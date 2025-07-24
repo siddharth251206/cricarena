@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'blogpage',
     'rest_framework',
     'achievements',
+    'aboutus',
     
     # Third-party
     'django_social_share',
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Kolkata'
@@ -134,6 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'accounts' / 'static',
     BASE_DIR / 'blogpage' / 'static',  
     BASE_DIR / 'achievements' / 'static',  
+    BASE_DIR / 'aboutus' / 'static',  
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

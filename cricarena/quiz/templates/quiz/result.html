@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
   <title>Quiz Results</title>
   <link rel="stylesheet" href="{% static 'quiz/result.css' %}" />
 </head>
@@ -71,7 +74,7 @@
 
     <!-- Try Again Button -->
     <a href="{% url 'cricket_quiz' %}" class="retry-btn">Try Again</a>
-    <a href="{% url 'poll_list' %}" class="explore-polls-btn">🗳️ Explore Fan Polls</a>
+    <a href="{% url 'poll_list' %}" class="explore-polls">🗳️ Explore Fan Polls</a>
 
 
     <!-- Detailed Stats Analysis -->
@@ -127,7 +130,7 @@
   </div></div>
    <div class="right-panel">
     <div class="leaderboard-block">
-      <h2>🏆 Top 5 on Leaderboard</h2>
+      <h2 style="margin-bottom: 10px;">🏆 Top 5 on Leaderboard</h2>
       <table>
         <thead>
           <tr>
@@ -146,7 +149,14 @@
               {% else %} {{ forloop.counter }}
               {% endif %}
             </td>
-            <td>{{ entry.user.username }}</td>
+            <td class="user-cell">
+  {% if entry.user.avatar %}
+    <img src="{{ entry.user.avatar.url }}" alt="Avatar" class="avatar-img-leaderboard">
+  {% else %}
+    <span class="avatar-fallback-leaderboard">{{ entry.user.nickname|default:entry.user.username|slice:":1"|upper }}</span>
+  {% endif %}
+  <span class="username-text">{{ entry.user.nickname|default:entry.user.username }}</span>
+</td>
             <td>{{ entry.average_rating|floatformat:2 }}</td>
           </tr>
           {% endfor %}
@@ -155,16 +165,35 @@
       <a href="{% url 'leaderboard' %}" class="view-full-btn">View Full Leaderboard →</a>
     </div>
 
-    <div class="unique-block">
-      <h2>📊 Your Performance</h2>
-      <p><strong>User:</strong> {{ request.user.username }}</p>
-      <p><strong>Accuracy:</strong> {{ percentage }}%</p>
-      <p><strong>Time:</strong> {{ time_taken }}</p>
-      <p><strong>Level:</strong> {{ performance_level }}</p>
-      <p><strong>Difficulty:</strong> {{ selected_difficulty }}</p>
-      <p><strong>Quizzes Taken:</strong> {{ quizzes_taken }}</p>
-      <p><strong>Average Rating:</strong> {{ average_rating }}</p>
+<div class="review-box">
+  <h2>📝 Share Your Thoughts</h2>
+
+  <form method="post" action="{% url 'submit_review' %}">
+    {% csrf_token %}
+
+    <label for="review_type">Review For:</label>
+    <select name="review_type" id="review_type" required>
+      <option value="quiz">This Quiz</option>
+      <option value="site">The Whole Site</option>
+      <option value="both">Both</option>
+    </select>
+
+    <label for="rating">Your Rating:</label>
+    <div class="rating-options">
+      <label><input type="radio" name="rating" value="5"> 😍</label>
+      <label><input type="radio" name="rating" value="4"> 😀</label>
+      <label><input type="radio" name="rating" value="3"> 😐</label>
+      <label><input type="radio" name="rating" value="2"> 😕</label>
+      <label><input type="radio" name="rating" value="1"> 😡</label>
     </div>
+
+    <label for="feedback">Feedback:</label>
+    <textarea name="feedback" id="feedback" rows="4" placeholder="What did you like? What could be better?" required></textarea>
+
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
+
   </div></div>
 
   <!-- Progress Bar Script -->
@@ -183,6 +212,19 @@
       setTimeout(() => toast.remove(), 600);
     }
   }, 5000);
+  window.history.replaceState(null, "", "/quiz/");
+
+  // If user clicks Back or navigates with back/forward buttons
+  window.addEventListener("popstate", function () {
+    window.location.href = "/quiz/";
+  });
+
+  // Also handle page being restored from cache (e.g. Safari/Firefox back button)
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      window.location.href = "/quiz/";
+    }
+  });
     });
   </script>
 

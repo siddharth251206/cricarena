@@ -44,6 +44,26 @@
   margin: 0;
   font-family: 'Rajdhani', sans-serif;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  padding: 12px 16px;
+  font-size: 24px;
+  /* color: black; */
+  background-color: #141414;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1999;
+  transition: transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
+
 @media(max-width:768px){
     .profile-page-header{
         padding: 20px 40px 10px;
@@ -61,5 +81,28 @@
 </header>
 <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <button id="scrollToTopBtn" class="back-to-top">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
+        </button>
+        <script>
+   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  // Show/hide button on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  // Smooth scroll to top
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+        </script>
 </body>
 </html> 

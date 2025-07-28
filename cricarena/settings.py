@@ -23,12 +23,14 @@ SECRET_KEY = 'django-insecure-ve4mrh*#cx5@ud+@+*y6(0!l!99i5q!0(127(@6vxk+*(4pkxf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://cricarena.onrender.com', 'api.yourdomain.com', 'localhost']
+
 # Example for production:
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1']
 
 # Application definition
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,6 +64,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://your-frontend-site.com",
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'cricarena.urls'

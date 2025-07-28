@@ -1,0 +1,2327 @@
+{
+  "gt": {
+    "name": "Gujarat Titans",
+    "logo":"https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png",
+    "theme": {
+      "gradient": "url('https://static.vecteezy.com/system/resources/previews/006/869/351/non_2x/luxurious-navy-background-with-golden-lines-vector.jpg')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Shubman Gill",
+  "role": "Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/62.png",
+  "trophies": 1,
+  "years": [2022]
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "Shubman Gill",
+          "role": "Batter",
+          "dob": "08 September 1999",
+          "iplDebut": "2018",
+          "specialization": "Opening Batter",
+          "totalMatches": 118,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/62.png"
+        },
+        {
+          "name": "Kumar Kushagra",
+          "role": "Batter",
+          "dob": "23 October 2004",
+          "iplDebut": "2024",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 4,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3101.png"
+        },
+        {
+          "name": "Anuj Rawat",
+          "role": "Batter",
+          "dob": "17 October 1999",
+          "iplDebut": "2021",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 24,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/534.png"
+        },
+        {
+          "name": "Sherfane Rutherford",
+          "role": "Batter",
+          "dob": "15 August 1998",
+          "iplDebut": "2019",
+          "specialization": "Batter",
+          "totalMatches": 23,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/122.png"
+        },
+        {
+          "name": "Kusal Mendis",
+          "role": "Batter",
+          "dob": "02 February 1995",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/276.png"
+        }
+      ],
+      "All Rounders": [
+        {
+          "name": "Sai Kishore",
+          "role": "All-Rounder",
+          "dob": "06 November 1996",
+          "iplDebut": "2022",
+          "specialization": "Left-arm Orthodox + Lower-order Bat",
+          "totalMatches": 25,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/544.png"
+        },
+        {
+          "name": "Mohd. Arshad Khan",
+          "role": "All-Rounder",
+          "dob": "20 December 1997",
+          "iplDebut": "2023",
+          "specialization": "Left-arm Medium + Handy Bat",
+          "totalMatches": 19,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/988.png"
+        },
+         {
+          "name": "Nishant Sindhu",
+          "role": "All-Rounder",
+          "dob": "09 April 2004",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/791.png"
+        }, {
+          "name": "Mahipal Lomror",
+          "role": "All-Rounder",
+          "dob": "16 November 1999",
+          "iplDebut": "2018",
+          "specialization": "Left-arm Medium + Handy Bat",
+          "totalMatches": 40,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/184.png"
+        }, {
+          "name": "Washington Sundar",
+          "role": "All-Rounder",
+          "dob": "05 October 1999",
+          "iplDebut": "2017",
+          "specialization": "All-Rounder",
+          "totalMatches": 66,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/20.png"
+        }, {
+          "name": "Jayant Yadav",
+          "role": "All-Rounder",
+          "dob": "22 January 1990",
+          "iplDebut": "2015",
+          "specialization": "All-Rounder",
+          "totalMatches": 15,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/165.png"
+        }, {
+          "name": "Karim Janat",
+          "role": "All-Rounder",
+          "dob": "11 August 1998",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/247.png"
+        },
+        {
+          "name": "Sai Sudharsan",
+          "role": "All-Rounder",
+          "dob": "15 October 2001",
+          "iplDebut": "2022",
+          "specialization": "All-Rounder",
+          "totalMatches": 40,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/976.png"
+        },
+        {
+          "name": "Dasun shanaka",
+          "role": "All-Rounder",
+          "dob": "09 September 1991",
+          "iplDebut": "2023",
+          "specialization": "All-Rounder",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/375.png"
+        },
+        {
+          "name": "Shahrukh Khan",
+          "role": "All-Rounder",
+          "dob": "27 May 1995",
+          "iplDebut": "2021",
+          "specialization": "All-Rounder",
+          "totalMatches": 55,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/590.png"
+        }
+      ],
+      "Bowlers": [
+        {
+          "name": "Rashid Khan",
+          "role": "Bowler",
+          "dob": "20 September 1998",
+          "iplDebut": "2017",
+          "specialization": "Leg Spinner",
+          "totalMatches": 136,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/218.png"
+        },
+        {
+          "name": "Mohammed Siraj",
+          "role": "Bowler",
+          "dob": "13 March 1994",
+          "iplDebut": "2017",
+          "specialization": "Right-arm Fast",
+          "totalMatches": 108,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/63.png"
+        },
+        {
+          "name": "Prasidh Krishna",
+          "role": "Bowler",
+          "dob": "19 February 1996",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 66,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/150.png"
+        },
+        {
+          "name": "Manav Suthar",
+          "role": "Bowler",
+          "dob": "03 August 2002",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2443.png"
+        },
+        {
+          "name": "Gerald Coetzee",
+          "role": "Bowler",
+          "dob": "02 October 2000",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 14,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2535.png"
+        },
+        {
+          "name": "Gurnoor Singh Brar",
+          "role": "Bowler",
+          "dob": "25 May 2000",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1231.png"
+        },
+        {
+          "name": "Ishant Sharma",
+          "role": "Bowler",
+          "dob": "02 September 1988",
+          "iplDebut": "2008",
+          "specialization": "Bowler",
+          "totalMatches": 117,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/50.png"
+        },
+        {
+          "name": "Kulwant Khejroliya",
+          "role": "Bowler",
+          "dob": "13 March 1992",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 8,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/204.png"
+        },
+        {
+          "name": "Rahul Tewatia",
+          "role": "Bowler",
+          "dob": "20 May 1993",
+          "iplDebut": "2014",
+          "specialization": "Bowler",
+          "totalMatches": 108,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/120.png"
+        },
+        {
+          "name": "Kagiso Rabada",
+          "role": "Bowler",
+          "dob": "25 May 1995",
+          "iplDebut": "2017",
+          "specialization": "Bowler",
+          "totalMatches": 84,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/116.png"
+        }
+      ]
+    }
+  },
+
+  "rcb": {
+    "name": "Royal Challengers Bangalore",
+    "logo":"https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png",
+    "theme": {
+      "gradient": "url('https://png.pngtree.com/background/20210715/original/pngtree-red-and-blue-gradient-low-poly-light-effect-background-picture-image_1285014.jpg')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Rajat Patidar",
+  "role": "Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/597.png",
+  "trophies": 1,
+  "years": [2025]
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "Rajat Patidar",
+          "role": "Batsman",
+          "dob": "01 June 1993",
+          "iplDebut": "2021",
+          "specialization": "Batter",
+          "totalMatches": 42,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/597.png"
+        },
+        {
+          "name": "Virat Kohli",
+          "role": "Batsman",
+          "dob": "05 November 1988",
+          "iplDebut": "2008",
+          "specialization": "Top-order Batter",
+          "totalMatches": 267,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2.png"
+        },
+        {
+          "name": "Phil Salt",
+          "role": "Wk-Batsman",
+          "dob": "28 August 1996",
+          "iplDebut": "2023",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 34,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1220.png"
+        },
+        {
+          "name": "Jitesh Sharma",
+          "role": "Batsman",
+          "dob": "22 October 1993",
+          "iplDebut": "2022",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 55,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1000.png"
+        },
+        {
+          "name": "Swastik Chhikara",
+          "role": "Batsman",
+          "dob": "15 September 2004",
+          "iplDebut": "-",
+          "specialization": "Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3102.png"
+        },
+        {
+          "name": "Tim Seifert",
+          "role": "Wk-Batsman",
+          "dob": "14 December 1994",
+          "iplDebut": "2021",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/82.png"
+        },
+        {
+          "name": "Mayank Agarwal",
+          "role": "Batsman",
+          "dob": "18 February 1991",
+          "iplDebut": "2011",
+          "specialization": "Batter",
+          "totalMatches": 131,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/55.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Liam Livingstone",
+          "role": "All Rounder",
+          "dob": "04 August 1993",
+          "iplDebut": "2019",
+          "specialization": "All-Rounder",
+          "totalMatches": 49,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/183.png"
+        },
+        {
+          "name": "Krunal Pandya",
+          "role": "All Rounder",
+          "dob": "24 March 1991",
+          "iplDebut": "2016",
+          "specialization": "All-Rounder",
+          "totalMatches": 142,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/17.png"
+        },
+        {
+          "name": "Swapnil Singh",
+          "role": "All Rounder",
+          "dob": "22 January 1991",
+          "iplDebut": "2016",
+          "specialization": "All-Rounder",
+          "totalMatches": 14,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1483.png"
+        },
+        {
+          "name": "Tim David",
+          "role": "All Rounder",
+          "dob": "16 March 1996",
+          "iplDebut": "2021",
+          "specialization": "All-Rounder",
+          "totalMatches": 50,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/636.png"
+        },
+        {
+          "name": "Romario Shepherd",
+          "role": "All Rounder",
+          "dob": "26 November 1994",
+          "iplDebut": "2022",
+          "specialization": "All-Rounder",
+          "totalMatches":18,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/371.png"
+        },
+        {
+          "name": "Manoj Bhandage",
+          "role": "All Rounder",
+          "dob": "05 October 1998",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1485.png"
+        }
+      ],
+      "Bowlers": [
+         {
+          "name": "Blessing Muzarabani",
+          "role": "Bowler",
+          "dob": "02 October 1996",
+          "iplDebut": "-",
+          "specialization": "Bowler",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/827.png"
+        },
+         {
+          "name": "Josh Hazlewood",
+          "role": "Bowler",
+          "dob": "08 January 1991",
+          "iplDebut": "2020",
+          "specialization": "Bowler",
+          "totalMatches": 39,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/36.png"
+        },
+         {
+          "name": "Rasikh Dar",
+          "role": "Bowler",
+          "dob": "05 April 2000",
+          "iplDebut": "2019",
+          "specialization": "Bowler",
+          "totalMatches": 13,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/172.png"
+        },
+         {
+          "name": "Suyash Sharma",
+          "role": "Bowler",
+          "dob": "15 May 2003",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 27,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1932.png"
+        },
+         {
+          "name": "Bhuvneshwar Kumar",
+          "role": "Bowler",
+          "dob": "05 February 1990",
+          "iplDebut": "2011",
+          "specialization": "Bowler",
+          "totalMatches": 190,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/15.png"
+        },
+         {
+          "name": "Nuwan Thushara",
+          "role": "Bowler",
+          "dob": "06 August 1994",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 8,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/813.png"
+        },
+         {
+          "name": "Lungisani Ngidi",
+          "role": "Bowler",
+          "dob": "29 March 1996",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 16,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/99.png"
+        },
+         {
+          "name": "Abhinandan Singh",
+          "role": "Bowler",
+          "dob": "30 March 1997",
+          "iplDebut": "-",
+          "specialization": "Bowler",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3574.png"
+        },
+         {
+          "name": "Mohit Rathee",
+          "role": "Bowler",
+          "dob": "13 January 1999",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1935.png"
+        },
+         {
+          "name": "Yash Dayal",
+          "role": "Bowler",
+          "dob": "13 December 1997",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 43,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/978.png"
+        }
+      ]
+    }
+  },
+  "mi": {
+    "name": "Mumbai Indians",
+    "logo":"https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png",
+    "theme": {
+      "gradient": "url('https://png.pngtree.com/thumb_back/fh260/background/20211104/pngtree-modern-black-and-blue-abstract-background-image_914631.png')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+    "name": "Hardik Pandya",
+    "role": "Batter",
+    "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/54.png",
+    "trophies": 5,
+    "years": [2013, 2015, 2017, 2019, 2020]
+  },
+    "players": {
+      "Batters": [
+        {
+          "name": "Rohit Sharma",
+          "role": "Batsman",
+          "dob": "30 April 1987",
+          "iplDebut": "2008",
+          "specialization": "Batter",
+          "totalMatches": 272,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/6.png"
+        },
+        {
+          "name": "Surya Kumar Yadav",
+          "role": "Batsman",
+          "dob": "14 September 1990",
+          "iplDebut": "2012",
+          "specialization": "Batter",
+          "totalMatches": 166,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/174.png"
+        },
+        {
+          "name": "Robin Minz",
+          "role": "Wk-Batsman",
+          "dob": "13 September 2002",
+          "iplDebut": "2025",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 2,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3103.png"
+        },
+        {
+          "name": "Shrijith Krishnan",
+          "role": "Wk-Batsman",
+          "dob": "12 August 1996",
+          "iplDebut": "-",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3570.png"
+        },
+        {
+          "name": "Bevon Jacobs",
+          "role": "Batsman",
+          "dob": "06 May 2002",
+          "iplDebut": "-",
+          "specialization": "Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3567.png"
+        },
+        {
+          "name": "Jonny Bairstow",
+          "role": "Wk-Batsman",
+          "dob": "26 September 1989",
+          "iplDebut": "2019",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 52,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/216.png"
+        },
+        {
+          "name": "N. Tilak Varma",
+          "role": "Batsman",
+          "dob": "08 November 2002",
+          "iplDebut": "2022",
+          "specialization": "Batter",
+          "totalMatches": 54,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/993.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Hardik Pandya",
+          "role": "All Rounder",
+          "dob": "11 October 1993",
+          "iplDebut": "2015",
+          "specialization": "All-Rounder",
+          "totalMatches": 152,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/54.png"
+        },
+        {
+          "name": "Naman Dhir",
+          "role": "All Rounder",
+          "dob": "31 December 1999",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches": 23,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3107.png"
+        },
+        {
+          "name": "Mitchell Santner",
+          "role": "All Rounder",
+          "dob": "Mitchell Santner",
+          "iplDebut": "2019",
+          "specialization": "All-Rounder",
+          "totalMatches": 31,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/75.png"
+        },
+        {
+          "name": "Raj Angad Bawa",
+          "role": "All Rounder",
+          "dob": "12 November 2002",
+          "iplDebut": "2022",
+          "specialization": "All-Rounder",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/781.png"
+        }
+      ],
+      "Bowlers": [
+         {
+          "name": "Trent Boult",
+          "role": "Bowler",
+          "dob": "22 July 1989",
+          "iplDebut": "2015",
+          "specialization": "Bowler",
+          "totalMatches": 120,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/66.png"
+        },
+         {
+          "name": "Jasprit Bumrah",
+          "role": "Bowler",
+          "dob": "06 December 1993",
+          "iplDebut": "2013",
+          "specialization": "Bowler",
+          "totalMatches": 145,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/9.png"
+        },
+         {
+          "name": "Karn Sharma",
+          "role": "Bowler",
+          "dob": "23 October 1987",
+          "iplDebut": "2009",
+          "specialization": "Bowler",
+          "totalMatches": 90,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/98.png"
+        },
+         {
+          "name": "Deepak Chahar",
+          "role": "Bowler",
+          "dob": "07 August 1992",
+          "iplDebut": "2016",
+          "specialization": "Bowler",
+          "totalMatches": 95,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/91.png"
+        },
+         {
+          "name": "Ashwani Kumar",
+          "role": "Bowler",
+          "dob": "29 August 2001",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 7,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3569.png"
+        },
+         {
+          "name": "Reece Topley",
+          "role": "Bowler",
+          "dob": "21 February 1994",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 6,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/574.png"
+        },
+         {
+          "name": "V.Satyanarayana Penmetsa",
+          "role": "Bowler",
+          "dob": "10 July 1999",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 2,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3568.png"
+        },
+         {
+          "name": "Arjun Tendulkar",
+          "role": "Bowler",
+          "dob": "24 September 1999",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/585.png"
+        },
+         {
+          "name": "Mujeeb-ur-Rahman",
+          "role": "Bowler",
+          "dob": "28 March 2001",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 20,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/134.png"
+        },
+         {
+          "name": "Raghu Sharma",
+          "role": "Bowler",
+          "dob": "11 March 1993",
+          "iplDebut": "-",
+          "specialization": "Bowler",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3869.png"
+        },
+        {
+          "name": "Charith Asalanka",
+          "role": "Bowler",
+          "dob": "29 June 1997",
+          "iplDebut": "-",
+          "specialization": "Bowler",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/605.png"
+        },
+        {
+          "name": "Richard Gleeson",
+          "role": "Bowler",
+          "dob": "02 December 1987",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1219.png"
+        }
+      ]
+    }
+  },
+  "pbks": {
+    "name": "Punjab Kings",
+    "logo":"https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png",
+    "theme": {
+      "gradient": "url('https://img.freepik.com/free-vector/gradient-burgundy-gold-background_52683-150346.jpg')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Shreyas Iyer",
+  "role": "Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/12.png",
+  "trophies": 0,
+  "years": []
+}
+,
+    "players": {
+      "Batters": [
+        {
+          "name": "Shreyas Iyer",
+          "role": "Batsman",
+          "dob": "06 December 1994",
+          "iplDebut": "2015",
+          "specialization": "Batter",
+          "totalMatches": 133,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/12.png"
+        },
+        {
+          "name": "Nehal Wadhera",
+          "role": "Batsman",
+          "dob": "04 September 2000",
+          "iplDebut": "2023",
+          "specialization": "Batter",
+          "totalMatches": 36,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1541.png"
+        },
+        {
+          "name": "Vishnu Vinod",
+          "role": "Wk-Batsman",
+          "dob": "02 December 1993",
+          "iplDebut": "2017",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 6,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/581.png"
+        },
+        {
+          "name": "Josh Ingis",
+          "role": "Wk-Batsman",
+          "dob": "04 March 1995",
+          "iplDebut": "2025",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 11,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/647.png"
+        },
+        {
+          "name": "Harnoor Pannu",
+          "role": "Batsman",
+          "dob": "30 January 2003",
+          "iplDebut": "-",
+          "specialization": "Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/784.png"
+        },
+        {
+          "name": "Pyla Avinash",
+          "role": "Batsman",
+          "dob": "07 July 2000",
+          "iplDebut": "-",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3573.png"
+        },
+        {
+          "name": "Shashank Singh",
+          "role": "Batsman",
+          "dob": "21 November 1991",
+          "iplDebut": "2022",
+          "specialization": "Batter",
+          "totalMatches": 41,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/191.png"
+        },
+        {
+          "name": "Prabhsimran",
+          "role": "Wk-Batsman",
+          "dob": "10 August 2000",
+          "iplDebut": "2019",
+          "specialization": "Batter",
+          "totalMatches": 51,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/137.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Marcus Stoinis",
+          "role": "All Rounder",
+          "dob": "16 August 1989",
+          "iplDebut": "2016",
+          "specialization": "All-Rounder",
+          "totalMatches": 109,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/23.png"
+        },
+        {
+          "name": "Harpreet Brar",
+          "role": "All Rounder",
+          "dob": "16 September 1995",
+          "iplDebut": "2019",
+          "specialization": "All-Rounder",
+          "totalMatches": 49,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/130.png"
+        },
+        {
+          "name": "Marco Jansen",
+          "role": "All Rounder",
+          "dob": "01 May 2000",
+          "iplDebut": "2021",
+          "specialization": "All-Rounder",
+          "totalMatches": 35,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/586.png"
+        },
+        {
+          "name": "Azmatullah Omarzai",
+          "role": "All Rounder",
+          "dob": "24 March 2000",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches": 16,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1354.png"
+        },
+        {
+          "name": "Priyansh Arya",
+          "role": "All Rounder",
+          "dob": "18 September 2001",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches":17,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3571.png"
+        },
+        {
+          "name": "Aaron Hardie",
+          "role": "All Rounder",
+          "dob": "07 January 1999",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2704.png"
+        
+        },
+        {
+          "name": "Musheer Khan",
+          "role": "All Rounder",
+          "dob": "27 February 2005",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2813.png"
+        
+        },
+        {
+          "name": "Suryansh Shedge",
+          "role": "All Rounder",
+          "dob": "29 January 2003",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2146.png"
+        
+        },
+        {
+          "name": "Mitch Owen",
+          "role": "All Rounder",
+          "dob": "16 September 2001",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3870.png"
+        }
+      ],
+      "Bowlers": [
+         {
+          "name": "Arshdeep Singh",
+          "role": "Bowler",
+          "dob": "05 February 1999",
+          "iplDebut": "2019",
+          "specialization": "Bowler",
+          "totalMatches": 82,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/125.png"
+        },
+         {
+          "name": "Yuzvendra Chahal",
+          "role": "Bowler",
+          "dob": "23 July 1990",
+          "iplDebut": "2013",
+          "specialization": "Bowler",
+          "totalMatches": 174,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/10.png"
+        },
+         {
+          "name": "Vyshak Vijaykumar",
+          "role": "Bowler",
+          "dob": "31 January 1997",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 16,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2034.png"
+        },
+         {
+          "name": "Yash Thakur",
+          "role": "Bowler",
+          "dob": "28 December 1998",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 21,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1550.png"
+        },
+         {
+          "name": "Kuldeep Sen",
+          "role": "Bowler",
+          "dob": "22 October 1996",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 12,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1005.png"
+        },
+         {
+          "name": "Xavier Bartlett",
+          "role": "Bowler",
+          "dob": "17 December 1998",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 4,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3572.png"
+        },
+         {
+          "name": "Pravin Dubey",
+          "role": "Bowler",
+          "dob": "01 July 1993",
+          "iplDebut": "2020",
+          "specialization": "Bowler",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/548.png"
+        },
+         {
+          "name": "Kyle Jamieson",
+          "role": "Bowler",
+          "dob": "30 December 1994",
+          "iplDebut": "2021",
+          "specialization": "Bowler",
+          "totalMatches": 13,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/382.png"
+        }
+         
+      ]
+    }
+  },
+
+  "srh": {
+    "name": "Sunrisers Hyderabad",
+    "logo":"https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png",
+    "theme": {
+      "gradient": "url('https://img.freepik.com/free-vector/background-wave-red-abstractswith-gradient-modern-style_343694-3280.jpg')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Pat Cummins",
+  "role": "Bowler",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/33.png",
+  "trophies": 1,
+  "years": [2016]
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "Ishan Kishan",
+          "role": "Wk-Batsman",
+          "dob": "18 July 1998",
+          "iplDebut": "2016",
+          "specialization": "Batter",
+          "totalMatches": 119,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/164.png"
+        },
+        {
+          "name": "Atharva Taide",
+          "role": "Batsman",
+          "dob": "26 April 2000",
+          "iplDebut": "2023",
+          "specialization": "Batter",
+          "totalMatches": 10,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1001.png"
+        },
+        {
+          "name": "Abhinav Manohar",
+          "role": "Batsman",
+          "dob": "16 September 1994",
+          "iplDebut": "2022",
+          "specialization": "Batter",
+          "totalMatches": 27,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/974.png"
+        },
+        {
+          "name": "Aniket Verma",
+          "role": "Batsman",
+          "dob": "05 February 2002",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 14,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3576.png"
+        },
+        {
+          "name": "Sachin Baby",
+          "role": "Batsman",
+          "dob": "18 December 1988",
+          "iplDebut": "2013",
+          "specialization": "Batter",
+          "totalMatches": 20,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/599.png"
+        },
+        {
+          "name": "Smaran Ravichandran",
+          "role": "Batsman",
+          "dob": "05 May 2003",
+          "iplDebut": "-",
+          "specialization": "Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3752.png"
+        },
+        {
+          "name": "Heinrich Klaasen",
+          "role": "Wk-Batsman",
+          "dob": "30 July 1991",
+          "iplDebut": "2018",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 49,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/202.png"
+        },
+        {
+          "name": "Travis Head",
+          "role": "Batsman",
+          "dob": "29 December 1993",
+          "iplDebut": "2016",
+          "specialization": "Batter",
+          "totalMatches": 38,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/37.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Harshal Patel",
+          "role": "All Rounder",
+          "dob": "23 November 1990",
+          "iplDebut": "2012",
+          "specialization": "All-Rounder",
+          "totalMatches": 119,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/114.png"
+        },
+        {
+          "name": "Kamindu Mendis",
+          "role": "All Rounder",
+          "dob": "30 September 1998",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/627.png"
+        },
+        {
+          "name": "Wiaan Mulder",
+          "role": "All Rounder",
+          "dob": "19 February 1998",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/630.png"
+        },
+        {
+          "name": "Harsh Dubey",
+          "role": "All Rounder",
+          "dob": "13 July 2002",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1494.png"
+        },
+        {
+          "name": "Abhishek Sharma",
+          "role": "All Rounder",
+          "dob": "04 September 2000",
+          "iplDebut": "2018",
+          "specialization": "All-Rounder",
+          "totalMatches":77,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/212.png"
+        },
+        {
+          "name": "Nitish Kumar Reddy",
+          "role": "All Rounder",
+          "dob": "26 May 2003",
+          "iplDebut": "2013",
+          "specialization": "All-Rounder",
+          "totalMatches": 28,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1944.png"
+        
+        }
+      ],
+      "Bowlers": [
+
+         {
+          "name": "Pat Cummins",
+          "role": "Bowler",
+          "dob": "08 May 1993",
+          "iplDebut": "2014",
+          "specialization": "Bowler",
+          "totalMatches": 72,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/33.png"
+        },
+         {
+          "name": "Mohammad Shami",
+          "role": "Bowler",
+          "dob": "23 July 1990",
+          "iplDebut": "2013",
+          "specialization": "Bowler",
+          "totalMatches": 119,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/47.png"
+        },
+         {
+          "name": "Rahul Chahar",
+          "role": "Bowler",
+          "dob": "04 August 1999",
+          "iplDebut": "2017",
+          "specialization": "Bowler",
+          "totalMatches": 79,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/171.png"
+        },
+         {
+          "name": "Simarjeet Singh",
+          "role": "Bowler",
+          "dob": "17 January 1998",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 14,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/622.png"
+        },
+         {
+          "name": "Zeeshan Ansari",
+          "role": "Bowler",
+          "dob": "16 December 1999",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 10,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3575.png"
+        },
+         {
+          "name": "Jaydev Unadkat",
+          "role": "Bowler",
+          "dob": "18 October 1991",
+          "iplDebut": "2010",
+          "specialization": "Bowler",
+          "totalMatches": 112,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/180.png"
+        },
+         {
+          "name": "Eshan Malinga",
+          "role": "Bowler",
+          "dob": "04 February 2001",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 7,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3339.png"
+        }
+         
+      ]
+    }
+  },
+  "csk": {
+    "name": "Chennai Super Kings",
+    "logo":"https://documents.iplt20.com/ipl/CSK/logos/Logooutline/CSKoutline.png",
+    "theme": {
+      "gradient": "url('https://img.freepik.com/free-vector/copy-space-gradient-yellow-background_23-2148845472.jpg')",
+      "textColor": "#000000"
+    },
+    "captain": {
+  "name": "MS Dhoni",
+  "role": "Wicket-Keeper Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/57.png",
+  "trophies": 5,
+  "years": [2010, 2011, 2018, 2021, 2023]
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "MS Dhoni",
+          "role": "Wk-Batsman",
+          "dob": "07 July 1981",
+          "iplDebut": "2008",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 278,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/57.png"
+        },
+        {
+          "name": "Dewald Brevis",
+          "role": "Batsman",
+          "dob": "29 April 2003",
+          "iplDebut": "2022",
+          "specialization": "Batter",
+          "totalMatches": 16,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/797.png"
+        },
+        {
+          "name": "Devon Conway",
+          "role": "Batsman",
+          "dob": "08 July 1991",
+          "iplDebut": "2022",
+          "specialization": "Batter",
+          "totalMatches": 29,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/601.png"
+        },
+        {
+          "name": "Rahul Tripathi",
+          "role": "Batsman",
+          "dob": "02 March 1991",
+          "iplDebut": "2017",
+          "specialization": "Batter",
+          "totalMatches": 100,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/188.png"
+        },
+        {
+          "name": "Shaik Rasheed",
+          "role": "Batsman",
+          "dob": "24 September 2004",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/778.png"
+        },
+        {
+          "name": "Vansh Bedi",
+          "role": "Wk-Batsman",
+          "dob": "23 December 2002",
+          "iplDebut": "-",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3558.png"
+        },
+        {
+          "name": "Andre Siddharth",
+          "role": "Batsman",
+          "dob": "28 August 2006",
+          "iplDebut": "-",
+          "specialization": "Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3157.png"
+        },
+        {
+          "name": "Ayush Mhatre",
+          "role": "Batsman",
+          "dob": "16 July 2007",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 7,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3497.png"
+        },
+        {
+          "name": "Urvil Patel",
+          "role": "Batsman",
+          "dob": "17 October 1998",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1486.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Rachin Ravindra",
+          "role": "All Rounder",
+          "dob": "18 November 1999",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches": 18,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/724.png"
+        },
+        {
+          "name": "Ravichandran Ashwin",
+          "role": "All Rounder",
+          "dob": "17 September 1986",
+          "iplDebut": "2009",
+          "specialization": "All-Rounder",
+          "totalMatches": 221,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/45.png"
+        },
+        {
+          "name": "Vijay Shankar",
+          "role": "All Rounder",
+          "dob": "26 January 1991",
+          "iplDebut": "2014",
+          "specialization": "All-Rounder",
+          "totalMatches": 78,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/61.png"
+        },
+        {
+          "name": "Sam Curran",
+          "role": "All Rounder",
+          "dob": "13 July 2002",
+          "iplDebut": "2019",
+          "specialization": "All-Rounder",
+          "totalMatches": 64,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/138.png"
+        },
+        {
+          "name": "Anshul Kamboj",
+          "role": "All Rounder",
+          "dob": "06 December 2000",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches":11,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3106.png"
+        },
+        {
+          "name": "Jamie Overton",
+          "role": "All Rounder",
+          "dob": "10 April 1994",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1216.png" 
+        },
+        {
+          "name": "Kamlesh Nagarkoti",
+          "role": "All Rounder",
+          "dob": "28 December 1999",
+          "iplDebut": "2020",
+          "specialization": "All-Rounder",
+          "totalMatches": 12,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/146.png" 
+        },
+        {
+          "name": "Deepak Hooda",
+          "role": "All Rounder",
+          "dob": "19 April 1995",
+          "iplDebut": "2015",
+          "specialization": "All-Rounder",
+          "totalMatches": 125,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/215.png" 
+        },
+        {
+          "name": "Ramakrishna Ghosh",
+          "role": "All Rounder",
+          "dob": "28 August 1997",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3559.png" 
+        },
+        {
+          "name": "Ravindra Jadeja",
+          "role": "All Rounder",
+          "dob": "06 December 1988",
+          "iplDebut": "2008",
+          "specialization": "All-Rounder",
+          "totalMatches": 254,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/46.png" 
+        },
+        {
+          "name": "Shivam Dube",
+          "role": "All Rounder",
+          "dob": "26 June 1993",
+          "iplDebut": "2019",
+          "specialization": "All-Rounder",
+          "totalMatches": 79,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/211.png" 
+        }
+      ],
+      "Bowlers": [
+
+         {
+          "name": "Khaleel Ahmed",
+          "role": "Bowler",
+          "dob": "05 December 1997",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 71,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/8.png"
+        },
+         {
+          "name": "Noor Ahmad",
+          "role": "Bowler",
+          "dob": "03 January 2005",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 37,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/975.png"
+        },
+         {
+          "name": "Mukesh Choudhary",
+          "role": "Bowler",
+          "dob": "06 July 1996",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 16,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/970.png"
+        },
+         {
+          "name": "Nathan Ellis",
+          "role": "Bowler",
+          "dob": "22 September 1994",
+          "iplDebut": "2021",
+          "specialization": "Bowler",
+          "totalMatches": 17,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/633.png"
+        },
+         {
+          "name": "Shreyas Gopal",
+          "role": "Bowler",
+          "dob": "04 September 1993",
+          "iplDebut": "2014",
+          "specialization": "Bowler",
+          "totalMatches": 52,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/192.png"
+        },
+         {
+          "name": "Matheesha Pathirana",
+          "role": "Bowler",
+          "dob": "18 December 2002",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 32,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1014.png"
+        }
+     
+      ]
+    }
+  },
+  "rr": {
+    "name": "Rajasthan Royals",
+    "logo":"https://documents.iplt20.com/ipl/RR/Logos/RR_Logo.png",
+    "theme": {
+      "gradient": "url('https://static.vecteezy.com/system/resources/previews/001/872/840/non_2x/abstract-technology-concept-triangle-blue-and-pink-dark-background-free-vector.jpg')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Sanju Samson",
+  "role": "Wicket-Keeper Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/190.png",
+  "trophies": 1,
+  "years": [2008]
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "Sanju Samson",
+          "role": "Wk-Batsman",
+          "dob": "11 November 1994",
+          "iplDebut": "2013",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 177,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/190.png"
+        },
+        {
+          "name": "Shubham Dubey",
+          "role": "Batsman",
+          "dob": "27 August 1994",
+          "iplDebut": "2024",
+          "specialization": "Batter",
+          "totalMatches": 13,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3112.png"
+        },
+        {
+          "name": "Vaibhav Suryavanshi",
+          "role": "Batsman",
+          "dob": "27 March 2011",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 7,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3498.png"
+        },
+        {
+          "name": "Kunal Rathore",
+          "role": "Wk-Batsman",
+          "dob": "09 October 2002",
+          "iplDebut": "2025",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1540.png"
+        },
+        {
+          "name": "Lhuan-dre Pretorius",
+          "role": "Batsman",
+          "dob": "28 March 2006",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2827.png"
+        },
+        {
+          "name": "Shimron Hetmyer",
+          "role": "Batsman",
+          "dob": "26 December 1996",
+          "iplDebut": "2019",
+          "specialization": "Batter",
+          "totalMatches": 86,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/210.png"
+        },
+        {
+          "name": "Yashasvi Jaiswal",
+          "role": "Batsman",
+          "dob": "28 December 2001",
+          "iplDebut": "2020",
+          "specialization": "Batter",
+          "totalMatches": 67,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/533.png"
+        },
+        {
+          "name": "Dhruv Jurel",
+          "role": "Wk-Batsman",
+          "dob": "21 January 2001",
+          "iplDebut": "2023",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 42,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1004.png"
+        },
+        {
+          "name": "Riyan Parag",
+          "role": "Batsman",
+          "dob": "10 November 2001",
+          "iplDebut": "2019",
+          "specialization": "Batter",
+          "totalMatches": 84,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/189.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Yudhvir Singh Charak",
+          "role": "All Rounder",
+          "dob": "13 September 1997",
+          "iplDebut": "2023",
+          "specialization": "All-Rounder",
+          "totalMatches": 9,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/587.png"
+        }
+      ],
+      "Bowlers": [
+         {
+          "name": "Jofra Archer",
+          "role": "Bowler",
+          "dob": "01 April 1995",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 52,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/181.png"
+        },
+         {
+          "name": "Maheesh Theekshana",
+          "role": "Bowler",
+          "dob": "01 August 2000",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 38,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/629.png"
+        },
+         {
+          "name": "Wanindu Hasaranga",
+          "role": "Bowler",
+          "dob": "29 July 1997",
+          "iplDebut": "2021",
+          "specialization": "Bowler",
+          "totalMatches": 37,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/377.png"
+        },
+         {
+          "name": "Akash Madhwal",
+          "role": "Bowler",
+          "dob": "25 November 1993",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 17,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1045.png"
+        },
+         {
+          "name": "Kumar Kartikeya Singh",
+          "role": "Bowler",
+          "dob": "26 December 1997",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 16,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1015.png"
+        },
+         {
+          "name": "Tushar Deshpande",
+          "role": "Bowler",
+          "dob": "15 May 1995",
+          "iplDebut": "2020",
+          "specialization": "Bowler",
+          "totalMatches": 46,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/539.png"
+        },
+         {
+          "name": "Fazalhaq Farooqi",
+          "role": "Bowler",
+          "dob": "22 September 2000",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 12,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1011.png"
+        },
+         {
+          "name": "Kwena Maphaka",
+          "role": "Bowler",
+          "dob": "08 April 2006",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 4,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/801.png"
+        },
+         {
+          "name": "Ashok Sharma",
+          "role": "Bowler",
+          "dob": "17 June 2002",
+          "iplDebut": "-",
+          "specialization": "Bowler",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/980.png"
+        },
+         {
+          "name": "Nandre Burger",
+          "role": "Bowler",
+          "dob": "11 August 1995",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 6,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2024/2806.png"
+        }
+     
+      ]
+    }
+  },
+  "kkr": {
+    "name": "Kolkata Knight Riders",
+    "logo":"https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png",
+    "theme": {
+      "gradient": "url('https://img.pikbest.com/backgrounds/20250204/elegant-purple-and-gold-abstract-background-with-flowing-textures_11494121.jpg!bw700')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Ajinkya Rahane",
+  "role": "Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/44.png",
+  "trophies": 3,
+  "years": [2012, 2014, 2024]
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "Ajinkya Rahane",
+          "role": "Batsman",
+          "dob": "06 June 1988",
+          "iplDebut": "2008",
+          "specialization": "Batter",
+          "totalMatches": 198,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/44.png"
+        },
+        {
+          "name": "Rinku Singh",
+          "role": "Batsman",
+          "dob": "12 October 1997",
+          "iplDebut": "2018",
+          "specialization": "Batter",
+          "totalMatches": 59,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/152.png"
+        },
+        {
+          "name": "Quinton de Kock",
+          "role": "Wk-Batsman",
+          "dob": "17 December 1992",
+          "iplDebut": "2013",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 115,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/170.png"
+        },
+        {
+          "name": "Rahmanullah Gurbaz",
+          "role": "Wk-Batsman",
+          "dob": "28 November 2001",
+          "iplDebut": "2023",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 19,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/641.png"
+        },
+        {
+          "name": "Angkrish Raghuvanshi",
+          "role": "Batsman",
+          "dob": "05 June 2005",
+          "iplDebut": "2024",
+          "specialization": "Batter",
+          "totalMatches": 22,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/787.png"
+        },
+        {
+          "name": "Manish Pandey",
+          "role": "Batsman",
+          "dob": "10 September 1989",
+          "iplDebut": "2008",
+          "specialization": "Batter",
+          "totalMatches": 174,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/16.png"
+        },
+        {
+          "name": "Luvnith Sisodia",
+          "role": "Wk-Batsman",
+          "dob": "15 January 2000",
+          "iplDebut": "-",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1009.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Venkatesh Iyer",
+          "role": "All Rounder",
+          "dob": "25 December 1994",
+          "iplDebut": "2021",
+          "specialization": "All-Rounder",
+          "totalMatches": 62,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/584.png"
+        },
+        {
+          "name": "Anukul Roy",
+          "role": "All Rounder",
+          "dob": "30 November 1998",
+          "iplDebut": "2019",
+          "specialization": "All-Rounder",
+          "totalMatches": 12,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/160.png"
+        },
+        {
+          "name": "Moeen Ali",
+          "role": "All Rounder",
+          "dob": "18 June 1987",
+          "iplDebut": "2018",
+          "specialization": "All-Rounder",
+          "totalMatches": 73,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/206.png"
+        },
+        {
+          "name": "Ramandeep Singh",
+          "role": "All Rounder",
+          "dob": "13 April 1997",
+          "iplDebut": "2022",
+          "specialization": "All-Rounder",
+          "totalMatches": 31,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/991.png"
+        },
+        {
+          "name": "Andre Russell",
+          "role": "All Rounder",
+          "dob": "29 April 1988",
+          "iplDebut": "2012",
+          "specialization": "All-Rounder",
+          "totalMatches": 140,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/141.png"
+        }
+      ],
+      "Bowlers": [
+         {
+          "name": "Anrich Nortje",
+          "role": "Bowler",
+          "dob": "16 November 1993",
+          "iplDebut": "2020",
+          "specialization": "Bowler",
+          "totalMatches": 48,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/142.png"
+        },
+         {
+          "name": "Vaibhav Arora",
+          "role": "Bowler",
+          "dob": "14 December 1997",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 32,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/583.png"
+        },
+         {
+          "name": "Mayank Markande",
+          "role": "Bowler",
+          "dob": "11 November 1997",
+          "iplDebut": "2018",
+          "specialization": "Bowler",
+          "totalMatches": 37,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/87.png"
+        },
+         {
+          "name": "Spencer Johnson",
+          "role": "Bowler",
+          "dob": "16 December 1995",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 9,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2518.png"
+        },
+         {
+          "name": "Shivam Shukla",
+          "role": "Bowler",
+          "dob": "11 December 1995",
+          "iplDebut": "-",
+          "specialization": "Bowler",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/assets/images/Default-Men.png"
+        },
+         {
+          "name": "Harshit Rana",
+          "role": "Bowler",
+          "dob": "22 December 2001",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 34,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1013.png"
+        },
+         {
+          "name": "Sunil Narine",
+          "role": "Bowler",
+          "dob": "26 May 1988",
+          "iplDebut": "2012",
+          "specialization": "Bowler",
+          "totalMatches": 189,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/156.png"
+        },
+         {
+          "name": "Varun Chakaravarthy",
+          "role": "Bowler",
+          "dob": "29 August 1991",
+          "iplDebut": "2019",
+          "specialization": "Bowler",
+          "totalMatches": 84,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/140.png"
+        },
+         {
+          "name": "Chetan Sakariya",
+          "role": "Bowler",
+          "dob": "28 February 1998",
+          "iplDebut": "2021",
+          "specialization": "Bowler",
+          "totalMatches": 20,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/592.png"
+        }
+      ]
+    }
+  },
+  "lsg": {
+    "name": "Lucknow Super Giants",
+    "logo":"https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png",
+    "theme": {
+      "gradient": "url('https://asset.gecdesigns.com/img/background-templates/modern-blue-orange-illusion-background-template-1658747371283-cover.webp')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Rishabh Pant",
+  "role": "Wicket-Keeper Batsman",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/18.png",
+  "trophies": 0,
+  "years": []
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "Rishabh Pant",
+          "role": "Wk-Batsman",
+          "dob": "04 October 1997",
+          "iplDebut": "2016",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 125,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/18.png"
+        },
+        {
+          "name": "David Miller",
+          "role": "Batsman",
+          "dob": "10 June 1989",
+          "iplDebut": "2012",
+          "specialization": "Batter",
+          "totalMatches": 141,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/128.png"
+        },
+        {
+          "name": "Aiden Markram",
+          "role": "Batsman",
+          "dob": "04 October 1994",
+          "iplDebut": "2021",
+          "specialization": "Batter",
+          "totalMatches": 57,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/287.png"
+        },
+        {
+          "name": "Aryan Juyal",
+          "role": "Wk-Batsman",
+          "dob": "11 November 2001",
+          "iplDebut": "-",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/990.png"
+        },
+        {
+          "name": "Himmat Singh",
+          "role": "Batsman",
+          "dob": "08 November 1996",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/203.png"
+        },
+        {
+          "name": "Matthew Breetzke",
+          "role": "Batsman",
+          "dob": "03 November 1998",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2805.png"
+        },
+        {
+          "name": "Nicholas Pooran",
+          "role": "Wk-Batsman",
+          "dob": "02 October 1995",
+          "iplDebut": "2019",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 90,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/136.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Mitchell Marsh",
+          "role": "All Rounder",
+          "dob": "20 October 1991",
+          "iplDebut": "2010",
+          "specialization": "All-Rounder",
+          "totalMatches": 55,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/40.png"
+        },
+        {
+          "name": "Abdul Samad",
+          "role": "All Rounder",
+          "dob": "28 October 2001",
+          "iplDebut": "2020",
+          "specialization": "All-Rounder",
+          "totalMatches": 63,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/525.png"
+        },
+        {
+          "name": "Shahbaz Ahamad",
+          "role": "All Rounder",
+          "dob": "11 December 1994",
+          "iplDebut": "2020",
+          "specialization": "All-Rounder",
+          "totalMatches": 58,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/523.png"
+        },
+        {
+          "name": "Yuvraj Chaudhary",
+          "role": "All Rounder",
+          "dob": "06 October 2001",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3564.png"
+        },
+        {
+          "name": "Rajvardhan Hangargekar",
+          "role": "All Rounder",
+          "dob": "10 November 2002",
+          "iplDebut": "2023",
+          "specialization": "All-Rounder",
+          "totalMatches":2,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/783.png"
+        },
+        {
+          "name": "Arshin Kulkarni",
+          "role": "All Rounder",
+          "dob": "15 February 2005",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches": 2,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2788.png"
+        
+        },
+        {
+          "name": "Ayush Badoni",
+          "role": "All Rounder",
+          "dob": "03 December 1999",
+          "iplDebut": "2022",
+          "specialization": "All-Rounder",
+          "totalMatches": 56,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/985.png"
+        
+        },
+        {
+          "name": "Shardul Thakur",
+          "role": "All Rounder",
+          "dob": "16 October 1991",
+          "iplDebut": "2015",
+          "specialization": "All-Rounder",
+          "totalMatches": 105,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/105.png"
+        
+        }
+      ],
+      "Bowlers": [
+
+         {
+          "name": "Avesh Khan",
+          "role": "Bowler",
+          "dob": "13 December 1996",
+          "iplDebut": "2017",
+          "specialization": "Bowler",
+          "totalMatches": 76,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/109.png"
+        },
+         {
+          "name": "Akash Deep",
+          "role": "Bowler",
+          "dob": "15 December 1996",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 14,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1007.png"
+        },
+         {
+          "name": "M. Siddharth",
+          "role": "Bowler",
+          "dob": "03 July 1998",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 5,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/532.png"
+        },
+         {
+          "name": "Digvesh Singh",
+          "role": "Bowler",
+          "dob": "15 December 1999",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 13,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3565.png"
+        },
+         {
+          "name": "Akash Singh",
+          "role": "Bowler",
+          "dob": "26 April 2002",
+          "iplDebut": "2021",
+          "specialization": "Bowler",
+          "totalMatches": 10,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/535.png"
+        },
+         {
+          "name": "Shamar Joseph",
+          "role": "Bowler",
+          "dob": "31 August 1999",
+          "iplDebut": "2024",
+          "specialization": "Bowler",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3105.png"
+        },
+         {
+          "name": "Prince Yadav",
+          "role": "Bowler",
+          "dob": "12 December 2001",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 6,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1225.png"
+        },
+         {
+          "name": "William O’Rourke",
+          "role": "Bowler",
+          "dob": "06 August 2001",
+          "iplDebut": "2025",
+          "specialization": "Bowler",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3398.png"
+        },
+         {
+          "name": "Ravi Bishnoi",
+          "role": "Bowler",
+          "dob": "05 September 2000",
+          "iplDebut": "2020",
+          "specialization": "Bowler",
+          "totalMatches": 77,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/520.png"
+        }
+         
+      ]
+    }
+  },
+  "dc": {
+    "name": "Delhi Capitals",
+    "logo": "https://documents.iplt20.com/ipl/DC/Logos/LogoOutline/DCoutline.png",
+    "theme": {
+      "gradient": "url('https://png.pngtree.com/thumb_back/fh260/background/20210124/pngtree-colorful-neon-lights-wallpaper-free-vector-design-image_540765.jpg')",
+      "textColor": "#ffffff"
+    },
+    "captain": {
+  "name": "Axar Patel",
+  "role": "All-Rounder",
+  "image": "https://documents.iplt20.com/ipl/IPLHeadshot2025/110.png",
+  "trophies": 0,
+  "years": []
+},
+    "players": {
+      "Batters": [
+        {
+          "name": "KL Rahul",
+          "role": "Wk-Batsman",
+          "dob": "18 April 1992",
+          "iplDebut": "2013",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 145,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/19.png"
+        },
+        {
+          "name": "Karun Nair",
+          "role": "Batsman",
+          "dob": "06 December 1991",
+          "iplDebut": "2013",
+          "specialization": "Batter",
+          "totalMatches": 84,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/131.png"
+        },
+        {
+          "name": "Faf du Plessis",
+          "role": "Batsman",
+          "dob": "13 July 1984",
+          "iplDebut": "2012",
+          "specialization": "Batter",
+          "totalMatches": 154,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/94.png"
+        },
+        {
+          "name": "Donovan Ferreira",
+          "role": "Wk-Batsman",
+          "dob": "21 July 1998",
+          "iplDebut": "2024",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 3,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/2033.png"
+        },
+        {
+          "name": "Sediqullah Atal",
+          "role": "Batsman",
+          "dob": "12 August 2001",
+          "iplDebut": "2025",
+          "specialization": "Batter",
+          "totalMatches": 1,
+          "img": "https://www.delhicapitals.in/static-assets/images/players/ipl/70227.png?v=1.99"
+        },
+        {
+          "name": "Abishek Porel",
+          "role": "Wk-Batsman",
+          "dob": "17 October 2002",
+          "iplDebut": "2023",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 31,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1580.png"
+        },
+        {
+          "name": "Tristan Stubbs",
+          "role": "Wk-Batsman",
+          "dob": "14 August 2000",
+          "iplDebut": "2022",
+          "specialization": "Wicketkeeper Batter",
+          "totalMatches": 32,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1017.png"
+        }
+      ],
+      "All Rounders": [{
+          "name": "Axar Patel",
+          "role": "All Rounder",
+          "dob": "20 January 1994",
+          "iplDebut": "2014",
+          "specialization": "All-Rounder",
+          "totalMatches": 162,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/110.png"
+        },
+        {
+          "name": "Ashutosh Sharma",
+          "role": "All Rounder",
+          "dob": "15 September 1998",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches": 24,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3109.png"
+        },
+        {
+          "name": "Sameer Rizvi",
+          "role": "All Rounder",
+          "dob": "06 December 2003",
+          "iplDebut": "2024",
+          "specialization": "All-Rounder",
+          "totalMatches": 13,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1229.png"
+        },
+        {
+          "name": "Darshan Nalkande",
+          "role": "All Rounder",
+          "dob": "04 October 1998",
+          "iplDebut": "2022",
+          "specialization": "All-Rounder",
+          "totalMatches": 6,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/127.png"
+        },
+        {
+          "name": "Vipraj Nigam",
+          "role": "All Rounder",
+          "dob": "28 July 2004",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 14,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3560.png"
+        },
+        {
+          "name": "Ajay Mandal",
+          "role": "All Rounder",
+          "dob": "25 February 1996",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1931.png"
+        
+        },
+        {
+          "name": "Manvanth Kumar",
+          "role": "All Rounder",
+          "dob": "11 January 2004",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3562.png"
+        
+        },
+        {
+          "name": "Tripurana Vijay",
+          "role": "All Rounder",
+          "dob": "05 September 2001",
+          "iplDebut": "-",
+          "specialization": "All-Rounder",
+          "totalMatches": 0,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3563.png"
+        
+        },
+        {
+          "name": "Madhav Tiwari",
+          "role": "All Rounder",
+          "dob": "28 September 2003",
+          "iplDebut": "2025",
+          "specialization": "All-Rounder",
+          "totalMatches": 1,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/3561.png"
+        
+        }
+      ],
+      "Bowlers": [
+
+         {
+          "name": "Mitchell Starc",
+          "role": "Bowler",
+          "dob": "30 January 1990",
+          "iplDebut": "2014",
+          "specialization": "Bowler",
+          "totalMatches": 52,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/31.png"
+        },
+         {
+          "name": "T. Natarajan",
+          "role": "Bowler",
+          "dob": "27 May 1991",
+          "iplDebut": "2017",
+          "specialization": "Bowler",
+          "totalMatches": 63,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/224.png"
+        },
+         {
+          "name": "Mohit Sharma",
+          "role": "Bowler",
+          "dob": "18 September 1998",
+          "iplDebut": "2013",
+          "specialization": "Bowler",
+          "totalMatches": 120,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/100.png"
+        },
+         {
+          "name": "Mukesh Kumar",
+          "role": "Bowler",
+          "dob": "12 October 1993",
+          "iplDebut": "2023",
+          "specialization": "Bowler",
+          "totalMatches": 32,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/1462.png"
+        },
+         {
+          "name": "Dushmantha Chameera",
+          "role": "Bowler",
+          "dob": "11 January 1992",
+          "iplDebut": "2022",
+          "specialization": "Bowler",
+          "totalMatches": 19,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/608.png"
+        },
+         {
+          "name": "Kuldeep Yadav",
+          "role": "Bowler",
+          "dob": "14 December 1994",
+          "iplDebut": "2016",
+          "specialization": "Bowler",
+          "totalMatches": 98,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/14.png"
+        },
+         {
+          "name": "Mustafizur Rahman",
+          "role": "Bowler",
+          "dob": "Mustafizur Rahman",
+          "iplDebut": "2016",
+          "specialization": "Bowler",
+          "totalMatches": 60,
+          "img": "https://documents.iplt20.com/ipl/IPLHeadshot2025/258.png"
+        }
+         
+      ]
+    }
+  }
+
+
+}
+
+
+

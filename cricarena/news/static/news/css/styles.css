@@ -36,8 +36,8 @@ body::-webkit-scrollbar {
 }
 
 .profile-avatar-img {
-  width: 36px;
-  height: 36px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;

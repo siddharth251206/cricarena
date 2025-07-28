@@ -5,12 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IPL Teams</title>
-    <script type="module" crossorigin src="/static/ipl/assets/index-CDswlBlk.js"></script>
-    <link rel="stylesheet" crossorigin href="/static/ipl/assets/index-jG0OqbXS.css">
+    <script type="module" crossorigin src="/static/ipl/assets/index-CAWK6bhg.js"></script>
+    <link rel="stylesheet" crossorigin href="/static/ipl/assets/index-CaB9rsUO.css">
     <link rel="stylesheet" crossorigin href="/static/ipl/assets/navbar.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="mainnavbar">
     <nav class="navbar">
   <div class="navbar-left">
     <div class="navbar-logo">
@@ -25,16 +26,16 @@
     <li><a href="/quiz/">Quiz</a></li>
     <li><a href="/sportscal/">Calendar</a></li>
     <li><a href="/comparison/">Comparison</a></li>
+    <li><a href="/news/">News</a></li>
     <li class="dropdown">
       <a href="#" class="ipl-desktop-toggle">Explore ▼</a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu" style="left: -50%;">
+        <li class="team-item"><a href="/stadium/">Stadiums</a></li>
         <li class="team-item"><a href="/blogpage/"> Blog</a></li>
         <li class="team-item"><a href="/tactics/"> Tactics</a></li>
         <li class="team-item"><a href="/aboutus/"> About Us</a></li>
       </ul>
     </li>
-    <li><a href="/stadium/">Stadiums</a></li>
-    <li><a href="/news/">News</a></li>
 
     <li class="dropdown">
       <a href="#" class="ipl-desktop-toggle">IPL ▼</a>
@@ -53,6 +54,7 @@
     </li>
   </ul></div>
  <div class="navbar-right">
+  <i class="fas fa-search search-toggle" id="searchBtn" title="Search Players"></i>
   {% if request.user.is_authenticated %}
     <div class="profile-avatar-img" id="userAvatar" title="{{user.nickname}}">
   {% if user.avatar %}
@@ -80,7 +82,6 @@
     <a href="/accounts/?signup=1" class="signup-btn">Sign Up</a></div>
   {% endif %}
 </div>
-
 <!-- ✅ NOW Place this OUTSIDE the if-else block -->
 <div class="toggle-btn">
   <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 -960 960 960" fill="#19e86c">
@@ -88,6 +89,24 @@
   </svg>
 </div>
 </nav>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="text" id="playerSearch" placeholder="Search players...">
+    <i class="fas fa-times close-search" id="closeSearch"></i>
+  </div>
+  <ul class="search-dropdown" id="searchResults"></ul>
+</div>
+<div class="mobile-search-wrapper">
+  <input
+    type="text"
+    placeholder="Search players..."
+    id="mobileSearchInput"
+  />
+
+  <ul class="search-dropdown" id="mobileSearchResults"></ul>
+</div>
+
 <!-- Hamburger Menu -->
 <div class="hamburger">
   <!-- Top Logo and Close -->
@@ -179,7 +198,219 @@
 <div id="root"></div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-  
+ const searchBtn = document.getElementById("searchBtn");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const closeSearch = document.getElementById("closeSearch");
+  const searchInput = document.getElementById("playerSearch");
+  const searchResultsContainer = document.getElementById("searchResults");
+
+  const mobileInput = document.getElementById("mobileSearchInput");
+  const mobileResultsBox = document.getElementById("mobileSearchResults");
+
+  let allPlayers = [];
+
+  fetch('/static/ipl/assets/squadData.json')
+    .then(res => res.json())
+    .then(data => {
+      allPlayers = flattenPlayers(data);
+    })
+    .catch(err => {
+      console.error("Error loading squadData.json", err);
+    });
+
+  function flattenPlayers(squadData) {
+    const players = [];
+    for (const [teamId, teamData] of Object.entries(squadData)) {
+      const teamName = teamData.name;
+      const playerRoles = teamData.players;
+
+      for (const roleGroup in playerRoles) {
+        playerRoles[roleGroup].forEach(player => {
+          players.push({
+            ...player,
+            teamId,
+            teamName
+          });
+        });
+      }
+
+      if (teamData.captain && !players.some(p => p.name === teamData.captain.name)) {
+        players.push({
+          ...teamData.captain,
+          img: teamData.captain.image,
+          teamId,
+          teamName
+        });
+      }
+    }
+    return players;
+  }
+
+  // ===================== DESKTOP SEARCH =====================
+  let searchResults = [];
+  let highlightedIndex = 0;
+const navbar = document.getElementById("mainnavbar");
+  if (searchBtn && searchInput && closeSearch) {
+    searchBtn.addEventListener("click", () => {
+      searchOverlay.classList.add("active");
+      searchInput.focus();
+      if (navbar) {
+    navbar.style.display = "none";
+  }
+    });
+
+    closeSearch.addEventListener("click", () => {
+      searchOverlay.classList.remove("active");
+      searchInput.value = "";
+      searchResults = [];
+      renderDropdown();
+      if (navbar) {
+    navbar.style.display = "block";
+  }
+    });
+
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase();
+      if (!value) {
+        searchResults = [];
+        renderDropdown();
+        return;
+      }
+
+      const startsWith = allPlayers.filter(p =>
+        p.name.toLowerCase().startsWith(value)
+      );
+      const contains = allPlayers.filter(p =>
+        !p.name.toLowerCase().startsWith(value) &&
+        p.name.toLowerCase().includes(value)
+      );
+
+      searchResults = [...startsWith, ...contains];
+      highlightedIndex = 0;
+      renderDropdown();
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        highlightedIndex = (highlightedIndex + 1) % searchResults.length;
+        renderDropdown();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        highlightedIndex = highlightedIndex > 0 ? highlightedIndex - 1 : 0;
+        renderDropdown();
+      } else if (e.key === "Enter") {
+        if (searchResults[highlightedIndex]) {
+          selectPlayer(searchResults[highlightedIndex]);
+        }
+      }
+    });
+
+    function renderDropdown() {
+  const inputVal = searchInput.value.trim();
+
+  // 🛑 If nothing typed, hide the dropdown completely
+  if (!inputVal) {
+    searchResultsContainer.innerHTML = "";
+    searchResultsContainer.style.display = "none";
+    return;
+  }
+
+  // 🎯 If results found, show them
+  if (searchResults.length === 0) {
+    searchResultsContainer.style.display = "block";
+    searchResultsContainer.innerHTML =
+      '<li class="no-results">No players found</li>';
+    return;
+  }
+
+  searchResultsContainer.innerHTML = "";
+  searchResultsContainer.style.display = "block";
+
+  searchResults.forEach((player, index) => {
+    const li = document.createElement("li");
+    li.className = index === highlightedIndex ? "highlighted" : "";
+    li.innerHTML = `
+      <img src="${player.img}" alt="${player.name}">
+      <span>${player.name}</span>
+      <small>(${player.teamName})</small>
+    `;
+    li.addEventListener("click", () => selectPlayer(player));
+    searchResultsContainer.appendChild(li);
+  });
+}
+  }
+
+  // ===================== MOBILE SEARCH =====================
+  let mobileSearchResults = [];
+  let mobileHighlightedIndex = 0;
+
+  if (mobileInput && mobileResultsBox) {
+    mobileInput.addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase();
+      if (!value) {
+        mobileResultsBox.innerHTML = "";
+        mobileResultsBox.style.display = "none";
+        return;
+      }
+
+      const startsWith = allPlayers.filter((p) =>
+        p.name.toLowerCase().startsWith(value)
+      );
+      const contains = allPlayers.filter(
+        (p) =>
+          !p.name.toLowerCase().startsWith(value) &&
+          p.name.toLowerCase().includes(value)
+      );
+
+      mobileSearchResults = [...startsWith, ...contains];
+      mobileHighlightedIndex = 0;
+      renderMobileDropdown();
+    });
+
+    mobileInput.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        mobileHighlightedIndex = (mobileHighlightedIndex + 1) % mobileSearchResults.length;
+        renderMobileDropdown();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        mobileHighlightedIndex = mobileHighlightedIndex > 0 ? mobileHighlightedIndex - 1 : 0;
+        renderMobileDropdown();
+      } else if (e.key === "Enter") {
+        if (mobileSearchResults[mobileHighlightedIndex]) {
+          selectPlayer(mobileSearchResults[mobileHighlightedIndex]);
+        }
+      }
+    });
+
+    function renderMobileDropdown() {
+      mobileResultsBox.innerHTML = "";
+      if (mobileSearchResults.length === 0 && mobileInput.value) {
+        mobileResultsBox.style.display = "block";
+        mobileResultsBox.innerHTML = '<li class="no-results">No players found</li>';
+        return;
+      }
+
+      mobileSearchResults.forEach((player, index) => {
+        const li = document.createElement("li");
+        li.className = index === mobileHighlightedIndex ? "highlighted" : "";
+        li.innerHTML = `
+          <img src="${player.img}" alt="${player.name}">
+          <span>${player.name}</span>
+          <small>(${player.teamName})</small>
+        `;
+        li.addEventListener("click", () => selectPlayer(player));
+        mobileResultsBox.appendChild(li);
+      });
+      mobileResultsBox.style.display = "block";
+    }
+  }
+
+  function selectPlayer(player) {
+    // 🔥 This triggers modal on React side
+    window.location.href = `/ipl/?team=${player.teamId}&player=${encodeURIComponent(player.name)}`;
+  }
     const toggleBtn = document.querySelector(".toggle-btn");
 const hamburger = document.querySelector(".hamburger");
 const closeBtn = document.querySelector(".close-btn");

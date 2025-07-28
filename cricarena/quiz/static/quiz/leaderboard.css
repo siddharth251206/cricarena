@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Urbanist','Inter', sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: #ffffff;
   margin: 0;
@@ -74,13 +78,44 @@ body {
   }
 }
 
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-img-leaderboard{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+   object-position: top;
+  border: 2px solid #19e86c;
+}
+
+.avatar-fallback-leaderboard{
+  width: 32px;
+  height: 32px;
+  background: #19e86c;
+  color: #141414;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #19e86c;
+}
+
+.username-text {
+  font-weight: 600;
+}
 @media (max-width: 480px) {
   .leaderboard-title {
     font-size: 22px;
   }
-
   .leaderboard-table th,
-  .leaderboard-table td {
+  .leaderboard-table td{
     padding: 10px 10px;
     font-size: 12px 8px;
   }

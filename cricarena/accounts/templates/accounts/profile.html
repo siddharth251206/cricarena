@@ -143,7 +143,7 @@
     </div>
 
     <div class="view-all-wrapper">
-      <a href="{% url 'achievements:user_achievements' %}" class="view-all-link">View Full Achievements</a>
+      <a href="{% url 'achievements:user_achievements' %}" class="view-all-link">View All Achievements</a>
     </div>
   {% else %}
     <p class="no-achievements-msg">No achievements unlocked yet.</p>
@@ -229,7 +229,7 @@
         <span class="fan-timestamp">{{ message.timestamp|timesince }} ago</span>
       </div>
     {% empty %}
-      {% comment %} <p class="no-posts">No messages yet. Be the first to drop a message!</p> {% endcomment %}
+      <p class="no-posts">Be a part of the CRICARENA community!!</p>
     {% endfor %}
   </div>
 </section>

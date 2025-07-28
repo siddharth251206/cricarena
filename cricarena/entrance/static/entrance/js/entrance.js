@@ -10,6 +10,7 @@ const loadingInterval = setInterval(() => {
         }, 500);
     }
     document.getElementById('loadingProgress').style.width = loadingProgress + '%';
+    document.getElementById('loadingText').innerText = `Loading CRICARENA... ${Math.floor(loadingProgress)}%`;
 }, 100);
 
 

@@ -11,4 +11,6 @@ path('poll/', views.poll_list, name='poll_list'),
     path('submit/', submit_quiz, name='submit_quiz'),  # Quiz submission
     path('quiz/start/', views.cricket_quiz, name='start_quiz'),
     path('leaderboard/', views.leaderboard_view, name='leaderboard'),
+    path("submit-review/", views.submit_review, name="submit_review"),
+    path('result/', views.quiz_result_page, name='quiz_result_page'),
 ]

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 :root {
   --primary: #ffffff;
   --secondary: #f59e0b;
@@ -13,13 +17,14 @@
   box-sizing: border-box;
 }
 html,body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Urbanist','Inter', sans-serif;
   background-color: var(--bg);
   color: var(--dark);
   margin: 0;
   height: 100vh;
 }
 .results-container {
+  font-family: 'Urbanist','Inter', sans-serif;
   width: 100%;
   background: var(--light);
   border-radius: 16px;
@@ -73,11 +78,11 @@ h1 {
   font-style: italic;
 }
 
-.retry-btn {
+.retry-btn, .explore-polls {
   display: inline-block;
   padding: 12px 30px;
   background-color: #1ec358;
-  color: white;
+  color: black;
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -88,7 +93,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.retry-btn:hover {
+.retry-btn, .explore-polls:hover {
   background-color: #1aa147;
 }
 
@@ -248,22 +253,6 @@ h1 {
     transform: translateY(0);
   }
 }
-.explore-polls-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.7rem 1.4rem;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #19e86c, #141414);
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.explore-polls-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #141414, #19e86c);
-}
 
 .result-page-layout {
   width: 100%;
@@ -290,9 +279,27 @@ h1 {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   overflow-y: auto;
   z-index: 999;
+}
+.right-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right-panel::-webkit-scrollbar-track {
+  background: #141414;
+  border-radius: 8px;
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+  background: #19e86c;
+  border-radius: 8px;
+  border: 2px solid #141414;
+}
+
+.right-panel::-webkit-scrollbar-thumb:hover {
+  background: #23ff8e;
 }
 
 .result-page-layout::after {
@@ -326,7 +333,7 @@ h1 {
   padding: 10px;
   font-size: 14px;
   border-bottom: 1px solid #333;
-  text-align: center;
+  text-align: left;
 }
 
 .view-full-btn {
@@ -339,15 +346,63 @@ h1 {
 }
 
 /* Unique Block */
-.unique-block {
-  background-color: #0f172a;
-  border-radius: 16px;
+.review-box {
+  background-color: #1e1e1e;
+  border: 1px solid #19e86c80;
   padding: 25px;
-  box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
-  font-size: 15px;
-  line-height: 1.7;
-  flex: 1;
+  border-radius: 10px;
+  color: #e0fbe3;
 }
+
+.review-box h2 {
+  color: #19e86c;
+  margin-bottom: 15px;
+}
+
+.review-box label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.review-box select,
+.review-box textarea {
+  width: 100%;
+  padding: 10px;
+  background: #141414;
+  color: #e0fbe3;
+  border: 1px solid #19e86c50;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.rating-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.rating-options label {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.review-box button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #19e86c;
+  color: #141414;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.review-box button:hover {
+  background-color: #23ff8e;
+}
+
 .toast-container{
   position: fixed;
   top: 60px;
@@ -412,6 +467,38 @@ h1 {
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
   animation: strokeCheck 0.4s 0.6s ease-out forwards;
+}
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-img-leaderboard{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+   object-position: top;
+  border: 2px solid #19e86c;
+}
+
+.avatar-fallback-leaderboard{
+  width: 32px;
+  height: 32px;
+  background: #19e86c;
+  color: #141414;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #19e86c;
+}
+
+.username-text {
+  font-weight: 600;
 }
 
 /* ✅ Slide animation */

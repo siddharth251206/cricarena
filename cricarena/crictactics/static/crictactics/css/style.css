@@ -144,8 +144,8 @@ box-shadow: 0 0 10px #1db954, 0 0 20px #1db954;
 }
 
 .profile-avatar-img {
-  width: 36px;
-  height: 36px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;

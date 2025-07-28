@@ -12,6 +12,36 @@ import random
 from django.db.models import Q
 from achievements.utils import award_achievement
 from django.db.models import F
+from django.core.mail import send_mail
+from django.conf import settings
+from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.cache import never_cache
+
+@csrf_exempt
+def submit_review(request):
+    if request.method == "POST":
+        review_type = request.POST.get("review_type")
+        rating = request.POST.get("rating")
+        feedback = request.POST.get("feedback")
+        user = request.user.username if request.user.is_authenticated else "Anonymous"
+
+        message = f"""
+🧑‍💻 User: {user}
+📝 Review Type: {review_type}
+⭐ Rating: {rating}
+💬 Feedback: {feedback}
+        """
+
+        send_mail(
+            subject=f"[CRICARENA] New {review_type.capitalize()} Review",
+            message=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=["shsheth2006@gmail.com"],  # Replace with your Gmail
+        )
+
+    return redirect("/home/")  # or redirect back to results page
+
 
     # existing quiz logic
 
@@ -91,10 +121,15 @@ def calculate_quiz_rating(score, total, time_taken, difficulty):
 # QUIZ
 
 def quiz_home(request):
+    request.session.pop('quiz_submitted', None) 
     return render(request, 'quiz/landing.html')
 
+@never_cache
 @login_required
 def cricket_quiz(request):
+    if request.session.get('quiz_submitted'):
+        return redirect('quiz_home')
+    
     if request.method == 'POST':
         selected_difficulty = request.POST.get('difficulty')
         request.session['selected_difficulty'] = selected_difficulty
@@ -149,7 +184,6 @@ def leaderboard_view(request):
     return render(request, 'quiz/leaderboard.html', {
         'leaderboard': leaderboard,
     })
-
 
 
 @login_required
@@ -340,17 +374,31 @@ def submit_quiz(request):
             performance_level = "Intermediate"
         else:
             performance_level = "Beginner"
+        request.session['quiz_submitted'] = True
+        request.session['quiz_result_context'] = {
+    'score': score,
+    'total_questions': total_questions,
+    'correct_answers': correct_answers,
+    'wrong_answers': wrong_answers,
+    'selected_difficulty': difficulty,
+    'percentage': percentage,
+    'results': results,
+    'performance_level': performance_level,
+    'time_taken': formatted_time_taken,
+    'unlocked_achievements': unlocked,
+}
+        return redirect('quiz_result_page')
 
-        return render(request, 'quiz/result.html', {
-            'score': score,
-            'total_questions': total_questions,
-            'correct_answers': correct_answers,
-            'wrong_answers': wrong_answers,
-            'selected_difficulty': difficulty,
-            'percentage': percentage,
-            'results': results,
-            'performance_level': performance_level,
-            'time_taken': formatted_time_taken,
-            'leaderboard': leaderboard,
-            'unlocked_achievements': unlocked,
-        })
+    return redirect('quiz_home')
+@login_required
+def quiz_result_page(request):
+    context = request.session.pop('quiz_result_context', None)
+    if not context:
+        return redirect('quiz_home')
+
+    leaderboard = LeaderboardProfile.objects.select_related('user').filter(
+        Q(user__quizattempt__isnull=False)
+    ).distinct().order_by('-average_rating')
+
+    context['leaderboard'] = leaderboard
+    return render(request, 'quiz/result.html', context)

@@ -205,6 +205,10 @@
   <!-- Image Carousel -->
   <div class="carousel reveal">
     <div class="slides">
+      <div class="slide">
+        <img src="{% static 'images/new1.png' %}" alt="New Slide" />
+      </div>
+
       <div class="slide active">
         <img src="{% static 'images/1.png' %}" alt="SA win" />
       </div>
@@ -214,6 +218,7 @@
       <div class="slide">
         <img src="{% static 'images/3.png' %}" alt="India T20" />
       </div>
+      
       <div class="slide">
         <img src="{% static 'images/4.png' %}" alt="New Slide" />
       </div>
@@ -325,14 +330,21 @@
   <section class="gallery-section reveal">
     <h2>Gallery</h2>
     <div class="gallery">
-      <div class="gallery-item"><img src="{% static 'images/82.jpg' %}" alt="SA Win" /></div>
-      <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="RCB Win" /></div>
-      <div class="gallery-item"><img src="{% static 'images/maxi.webp' %}" alt="India T20" /></div>
-      <div class="gallery-item"><img src="{% static 'images/eng.jpg' %}" alt="ENG WC" /></div>
-      <div class="gallery-item"><img src="{% static 'images/rohirat.webp' %}" alt="Stokes" /></div>
-      <div class="gallery-item"><img src="{% static 'images/2011.jpeg' %}" alt="India 2011" /></div>
+      <div class="gallery-item"><img src="{% static 'images/82.jpg' %}" alt="SA Win" onclick="openModal(this)" /></div>
+      <div class="gallery-item"><img src="{% static 'images/stokes.jpg' %}" alt="RCB Win" onclick="openModal(this)" /></div>
+      <div class="gallery-item"><img src="{% static 'images/maxi.webp' %}" alt="India T20" onclick="openModal(this)" /></div>
+      <div class="gallery-item"><img src="{% static 'images/eng.jpg' %}" alt="ENG WC" onclick="openModal(this)" /></div>
+      <div class="gallery-item"><img src="{% static 'images/rohirat.webp' %}" alt="Stokes" onclick="openModal(this)" /></div>
+      <div class="gallery-item"><img src="{% static 'images/2011.jpeg' %}" alt="India 2011" onclick="openModal(this)" /></div>
     </div>
   </section>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer reveal">

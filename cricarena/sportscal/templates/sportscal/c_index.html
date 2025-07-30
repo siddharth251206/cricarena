@@ -57,7 +57,11 @@
         font-size: 0.98em;
       }
       .date-number {
-        font-size: 1em;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fff !important;
+        margin-bottom: 8px;
+        text-align: center;
       }
     }
     @media (max-width: 480px) {
@@ -74,7 +78,11 @@
         font-size: 0.93em;
       }
       .date-number {
-        font-size: 0.95em;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #fff !important;
+        margin-bottom: 8px;
+        text-align: center;
       }
     }
   </style>
@@ -328,46 +336,18 @@ if (userAvatar && userDropdown) {
 });
   </script>
   <script>
-    // Event data for July and August
-    const events = [
-      { start: '2025-07-02', end: '2025-07-02', name: 'India vs England – 2nd Test' },
-      { start: '2025-07-05', end: '2025-07-13', name: 'Malawi 4‑nation T20I' },
-      { start: '2025-07-06', end: '2025-07-13', name: 'Indonesia Tri‑Series (T20I)' },
-      { start: '2025-07-10', end: '2025-07-13', name: 'Bulgaria Tri‑Series (T20I)' },
-      { start: '2025-07-10', end: '2025-07-14', name: 'India vs England – 3rd Test' },
-      { start: '2025-07-14', end: '2025-07-26', name: 'Zimbabwe T20I Tri‑Series' },
-      { start: '2025-07-17', end: '2025-07-27', name: 'Pearl of Africa T20I Series' },
-      { start: '2025-07-18', end: '2025-07-23', name: 'Saudi Arabia vs Qatar T20Is' },
-      { start: '2025-07-18', end: '2025-07-26', name: 'Asia Pacific Champions Trophy' },
-      { start: '2025-07-20', end: '2025-07-24', name: 'Pakistan vs Bangladesh – T20Is' },
-      { start: '2025-07-23', end: '2025-07-27', name: 'India vs England – 4th Test' },
-      { start: '2025-07-25', end: '2025-07-27', name: 'Finland vs Estonia T20Is' },
-      { start: '2025-07-30', end: '2025-08-11', name: 'New Zealand in Zimbabwe Tests' },
-      { start: '2025-07-31', end: '2025-08-04', name: 'India vs England – 5th Test continues' },
-      { start: '2025-08-01', end: '2025-08-12', name: 'Pakistan in West Indies (3 T20Is, 3 ODIs)' },
-      { start: '2025-08-06', end: '2025-08-10', name: 'Pakistan women in Ireland (3 WT20Is)' },
-      { start: '2025-08-07', end: '2025-08-11', name: 'NZ Tests in Zimbabwe (2 Tests)' },
-      { start: '2025-08-10', end: '2025-08-24', name: 'South Africa tour of Australia (3 T20Is, 3 ODIs)' },
-      { start: '2025-08-17', end: '2025-08-31', name: 'India in Bangladesh (3 ODIs, 3 T20Is; see note on possible postponement)' },
-      { start: '2025-08-29', end: '2025-08-31', name: 'Sri Lanka in Zimbabwe (2 ODIs)' },
-      { start: '2025-09-03', end: '2025-09-07', name: 'Sri Lanka/Zimbabwe T20Is continue' },
-    ];
-    const months = [
-      { name: 'July 2025', year: 2025, month: 7, days: 31 },
-      { name: 'August 2025', year: 2025, month: 8, days: 31 },
-    ];
-    let currentMonthIdx = 0;
-    function getEventsForDay(year, month, day) {
-      const dateStr = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-      return events.filter(ev => dateStr >= ev.start && dateStr <= ev.end).map(ev => ev.name);
-    }
+    // Calendar data from Django backend
+    const calendarData = JSON.parse('{{ calendar_data_json|escapejs }}');
+
     function renderCalendar() {
       const grid = document.getElementById('calendarGrid');
       const label = document.getElementById('monthLabel');
-      const { name, year, month, days } = months[currentMonthIdx];
-      label.textContent = name;
+      
+      label.textContent = calendarData.monthName + ' ' + calendarData.year;
+      
       // Clear grid
       grid.innerHTML = '';
+      
       // Day headers
       ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(h => {
         const dh = document.createElement('div');
@@ -375,56 +355,103 @@ if (userAvatar && userDropdown) {
         dh.textContent = h;
         grid.appendChild(dh);
       });
-      // First day of month
-      const firstDay = new Date(year, month-1, 1).getDay();
-      for(let i=0;i<firstDay;i++) {
-        const empty = document.createElement('div');
-        empty.className = 'day';
-        grid.appendChild(empty);
-      }
-      // Days
-      for(let d=1;d<=days;d++) {
+      
+      // Calendar days
+      calendarData.calendarDays.forEach(dayData => {
         const dayBox = document.createElement('div');
         dayBox.className = 'day';
-        const num = document.createElement('div');
-        num.className = 'date-number';
-        num.textContent = d;
-        dayBox.appendChild(num);
-        const evs = getEventsForDay(year, month, d);
-        if(evs.length) {
-          evs.forEach((ev, idx) => {
-            const m = document.createElement('div');
-            m.className = 'match';
-            if(idx === 0) {
-              const dateLabel = document.createElement('div');
-              dateLabel.textContent = `${name.split(' ')[0].slice(0,3)} ${d}`;
-              dateLabel.style.fontSize = '0.85em';
-              dateLabel.style.fontWeight = 'bold';
-              dateLabel.style.color = '#fff';
-              dateLabel.style.marginBottom = '2px';
-              m.appendChild(dateLabel);
-            }
-            m.appendChild(document.createTextNode(ev));
-            dayBox.appendChild(m);
-          });
+        
+        if (dayData) {
+          const num = document.createElement('div');
+          num.className = 'date-number';
+          num.textContent = dayData.day;
+          dayBox.appendChild(num);
+          
+          // Check for matches on this day
+          const matches = calendarData.matchDays[dayData.date] || [];
+          if (matches.length > 0) {
+            matches.forEach((match, idx) => {
+              const m = document.createElement('div');
+              m.className = 'match';
+              
+              if (idx === 0) {
+                const dateLabel = document.createElement('div');
+                dateLabel.textContent = `${calendarData.monthName.slice(0,3)} ${dayData.day}`;
+                dateLabel.style.fontSize = window.innerWidth <= 480 ? '1.1em' : window.innerWidth <= 768 ? '0.95em' : '0.85em';
+                dateLabel.style.fontWeight = 'bold';
+                dateLabel.style.color = '#fff';
+                dateLabel.style.marginBottom = '2px';
+                dateLabel.style.textAlign = 'center';
+                m.appendChild(dateLabel);
+              }
+              
+              // Add match title
+              const matchTitle = document.createElement('div');
+              matchTitle.textContent = match.teams;
+              matchTitle.style.fontWeight = 'bold';
+              m.appendChild(matchTitle);
+              
+              // Add venue if available
+              if (match.venue) {
+                const venueDiv = document.createElement('div');
+                venueDiv.textContent = match.venue;
+                venueDiv.style.fontSize = '0.8em';
+                venueDiv.style.color = '#ccc';
+                venueDiv.style.marginTop = '2px';
+                m.appendChild(venueDiv);
+              }
+              
+              // Add status if available
+              if (match.status) {
+                const statusDiv = document.createElement('div');
+                statusDiv.textContent = match.status;
+                statusDiv.style.fontSize = '0.75em';
+                statusDiv.style.color = match.status === 'Scheduled' ? '#4CAF50' : 
+                                      match.status === 'Postponed' ? '#FF9800' : '#FF5722';
+                statusDiv.style.marginTop = '2px';
+                m.appendChild(statusDiv);
+              }
+              
+              dayBox.appendChild(m);
+            });
+          }
         }
+        
         grid.appendChild(dayBox);
-      }
-      // Fill out last week
-      const total = firstDay + days;
-      const rem = (7 - (total % 7)) % 7;
-      for(let i=0;i<rem;i++) {
-        const empty = document.createElement('div');
-        empty.className = 'day';
-        grid.appendChild(empty);
-      }
+      });
     }
+
+    // Navigation functions
     document.getElementById('prevMonthBtn').onclick = () => {
-      if(currentMonthIdx > 0) { currentMonthIdx--; renderCalendar(); }
+      const currentUrl = new URL(window.location);
+      let year = parseInt(currentUrl.searchParams.get('year') || calendarData.year);
+      let month = parseInt(currentUrl.searchParams.get('month') || calendarData.month);
+      
+      month--;
+      if (month < 1) {
+        month = 12;
+        year--;
+      }
+      
+      // Navigate to the new month
+      window.location.href = `/sportscal/${year}/${month}/`;
     };
+
     document.getElementById('nextMonthBtn').onclick = () => {
-      if(currentMonthIdx < months.length-1) { currentMonthIdx++; renderCalendar(); }
+      const currentUrl = new URL(window.location);
+      let year = parseInt(currentUrl.searchParams.get('year') || calendarData.year);
+      let month = parseInt(currentUrl.searchParams.get('month') || calendarData.month);
+      
+      month++;
+      if (month > 12) {
+        month = 1;
+        year++;
+      }
+      
+      // Navigate to the new month
+      window.location.href = `/sportscal/${year}/${month}/`;
     };
+
     renderCalendar();
   </script>
 </body>

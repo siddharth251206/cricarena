@@ -1346,7 +1346,7 @@ body::-webkit-scrollbar {
     height: 100%;
     position: absolute;
     top: 0;
-    transition: all 1s ease-out;
+    transition: all 5s ease-out;
     border-radius: 9999px;
     background-color: #19e68c; /* Accent color */
 }

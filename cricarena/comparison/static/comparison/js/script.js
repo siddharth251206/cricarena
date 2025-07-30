@@ -853,7 +853,7 @@ class IPLComparison {
       <div class="comparison-card">
       <div class="chart-toggle compare-toggle">
     <button id="compare-bars-btn" class="toggle-btn active"><i class="fas fa-chart-bar"></i> Bars</button>
-    <button id="compare-radar-btn" class="toggle-btn"><i class="fas fa-chart-radar"></i> Radar</button>
+    <button id="compare-radar-btn" class="toggle-btn"><i class="fas fa-chart"></i>Graph</button>
   </div>
         <div class="comparison-header">
           <div class="comparison-players">

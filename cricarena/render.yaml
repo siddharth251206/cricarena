@@ -1,0 +1,23 @@
+# services:
+#   - type: web
+#     name: cricarena
+#     runtime: python
+#     buildCommand: pip install -r requirements.txt
+#     startCommand: python manage.py runserver 0.0.0.0:8000
+#     envVars:
+#       - key: DJANGO_SETTINGS_MODULE
+#         value: cricarena.settings
+#       - key: PYTHON_VERSION
+#         value: 3.10
+
+
+services:
+  - type: web
+    name: cricarena
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py runserver 0.0.0.0:8000
+    plan: free
+    branch: main
+    autoDeploy: true
+    rootDir: .

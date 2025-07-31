@@ -21,9 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ve4mrh*#cx5@ud+@+*y6(0!l!99i5q!0(127(@6vxk+*(4pkxf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://cricarena.onrender.com', 'api.yourdomain.com', 'localhost']
+
+ALLOWED_HOSTS = ['*']
+
 
 # Example for production:
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1']
@@ -65,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add here
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -170,3 +173,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     )
 }
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

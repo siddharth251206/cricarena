@@ -21,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ve4mrh*#cx5@ud+@+*y6(0!l!99i5q!0(127(@6vxk+*(4pkxf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['suraj06shah.pythonanywhere.com', 'www.cricarena.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.31.1']
 # Example for production:
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1']
 
@@ -143,7 +143,7 @@ LOGIN_REDIRECT_URL = '/home/'
 LOGOUT_REDIRECT_URL = '/home/'
 
 TEMPLATES[0]['DIRS'] += [BASE_DIR / 'stadium' / 'templates']
-STATIC_ROOT = '/home/suraj06shah/cricarena/static'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files
 MEDIA_URL = '/media/'

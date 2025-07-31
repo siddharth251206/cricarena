@@ -15,7 +15,7 @@ services:
   - type: web
     name: cricarena
     runtime: python
-    buildCommand: pip install -r cricarena.requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn cricarena.wsgi:application
     workingDir: .
     envVars:

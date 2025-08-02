@@ -195,53 +195,20 @@ profileToggle?.addEventListener("click", () => {
 
   loadMatches();
 });
-
-// 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
 async function askGroq() {
-  //prompt thi user input lidhu 
+  // prompt thi user input lidhu 
   const prompt = document.getElementById("groqPrompt").value.trim();
-  //groq na response ne responseDiv ma store karva mate
+  // groq na response ne responseDiv ma store karva mate
   const responseDiv = document.getElementById("groqResponse");
-//aa keywords cricket na related hoy te check karva mate
-  const cricketKeywords = ["cricket", "odi", "t20", "ipl", "test", "batsman", "bowler", "world cup", "innings", "wicket","Virat Kohli","Rohit Sharma","MS Dhoni","Sachin Tendulkar","AB de Villiers",
-"Jacques Kallis","Kane Williamson","Steve Smith","Joe Root","Babar Azam",
-"Shubman Gill","Ruturaj Gaikwad","Faf du Plessis","David Warner","Ricky Ponting",
-"Glenn Maxwell","Yuvraj Singh","Rahul Dravid","Suresh Raina","Hardik Pandya",
-"Ben Stokes","Jos Buttler","KL Rahul","Quinton de Kock","Mohammad Rizwan",
-"Suryakumar Yadav","Rashid Khan","Sanju Samson","Dinesh Karthik","Andre Russell",
-"Kieron Pollard","Shakib Al Hasan","Mohammed Shami","Jasprit Bumrah","Trent Boult",
-"Pat Cummins","Shaheen Afridi","Mitchell Starc","Brett Lee","Zaheer Khan",
-"Irfan Pathan","Wasim Akram","Muttiah Muralitharan","Shane Warne","Anil Kumble",
-"Ravindra Jadeja","Yuzvendra Chahal","Ravi Bishnoi","Kuldeep Yadav","Harbhajan Singh",
-"Varun Chakravarthy","Umesh Yadav","Bhuvneshwar Kumar","Lungi Ngidi","Kagiso Rabada",
-"Tim Southee","James Anderson","Stuart Broad","Nathan Lyon","R Ashwin",
-"Alastair Cook","Hashim Amla","Michael Hussey","Matthew Hayden","Adam Gilchrist",
-"Kumar Sangakkara","Mahela Jayawardene","Inzamam-ul-Haq","Shoaib Malik","Imran Khan",
-"Saqlain Mushtaq","Ajinkya Rahane","Cheteshwar Pujara","Marnus Labuschagne","Usman Khawaja",
-"Dean Elgar","Tamim Iqbal","Fakhar Zaman","Imam-ul-Haq","Litton Das",
-"Paul Stirling","Mohammad Nabi","Najibullah Zadran","Hazratullah Zazai","Sam Curran",
-"Chris Woakes","Mark Wood","Jonny Bairstow","Rassie van der Dussen","Heinrich Klaasen",
-"Rilee Rossouw","David Miller","Tim David","Marcus Stoinis","Mitchell Marsh",
-"Aaron Finch","Jason Roy","Alex Hales","Phil Salt","Liam Livingstone","cricket","bat","ball","wicket","umpire","batsman","bowler","allrounder","fielder","catch",
-"run","boundary","six","four","over","maiden","no ball","wide","free hit","innings",
-"powerplay","super over","duck","golden duck","century","half-century","double century","not out","strike rate","average",
-"economy rate","yorker","bouncer","googly","doosra","leg spin","off spin","arm ball","reverse swing","seam",
-"slip","gully","point","cover","mid off","mid on","long off","long on","third man","fine leg",
-"square leg","deep mid wicket","deep cover","silly point","short leg","wicketkeeper","stumps","bails","crease","pitch",
-"leg side","off side","front foot","back foot","lbw","appeal","review","DRS","umpire's call","ball tracking",
-"hotspot","snickometer","helmet","pads","gloves","jersey","match","toss","captain","vice-captain",
-"team","scorecard","live score","scoreboard","runs per over","overs remaining","required run rate","net run rate","test match","odi",
-"t20","ipl","bbl","psl","cpl","asia cup","world cup","super six","qualifier","eliminator","trophies","trophy","age","birthday","birthdate"
-
-];
-//If none match, it shows a warning and exits the function early using return
-  if (!cricketKeywords.some(word => prompt.toLowerCase().includes(word))) {
-    responseDiv.innerHTML = "❌ Please ask only cricket-related questions.";
+  
+  // agar user e khali prompt aapi hoy to error message show karva mate
+  if (!prompt) {
+    responseDiv.innerHTML = "❌ Please enter a question.";
     return;
   }
 
   // aa aapdi api key chhe je aa project ne groq saathe connect karva mate use thase
-  const API_KEY = "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";  
+  const API_KEY = "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";  
 
   const headers = {
     "Content-Type": "application/json",
@@ -258,7 +225,9 @@ async function askGroq() {
     messages: [
       {
         role: "system",
-        content: "You are a cricket expert. Only answer cricket-related questions. If the question is not about cricket, politely refuse."
+        content: `You are a cricket expert. 
+        Only answer cricket-related questions. 
+        If the question is not about cricket, reply: "❌ Please ask only cricket-related questions."`
       },
       {
         role: "user",
@@ -270,8 +239,8 @@ async function askGroq() {
   // Display a loading message while waiting for the response
   responseDiv.innerHTML = "⏳ Thinking...";
 
-  //api post request kare groq ai ne
-  //ema headers and body pass karva ma aavse as request
+  // api post request kare groq ai ne
+  // ema headers and body pass karva ma aavse as request
   try {
     const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
@@ -279,21 +248,28 @@ async function askGroq() {
       body: JSON.stringify(body)
     });
 
-    //je response aave ene data variable ma store karva ma aavse
+    // je response aave ene data variable ma store karva ma aavse
     const data = await res.json();
     console.log("Groq response:", data);
 
-    //agar aapde response ma content chhe to ene answer variable ma store karva ma aavse
+    // Check for API error
+    if (data.error) {
+      responseDiv.innerHTML = `❌ Error: ${data.error.message}`;
+      return;
+    }
+
+    // agar aapde response ma content chhe to ene answer variable ma store karva ma aavse
     const answer = data?.choices?.[0]?.message?.content;
 
-    //agar answer variable ma koi value hoy to ene responseDiv ma store karva ma aavse
-    //nahi to "No response" message aavse
-    responseDiv.innerHTML = answer || "❌ No response.";
+    // agar answer variable ma koi value hoy to ene responseDiv ma store karva ma aavse
+    // nahi to "No response" message aavse
+    responseDiv.innerHTML = answer || "❌ No response from AI.";
   } catch (err) {
     console.error("Groq error:", err);
     responseDiv.innerHTML = "❌ Error talking to Groq AI.";
   }
 }
+
 // Scroll Animation using IntersectionObserver
 document.addEventListener("DOMContentLoaded", () => {
 const revealElements = document.querySelectorAll(".reveal");

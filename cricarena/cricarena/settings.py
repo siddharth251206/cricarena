@@ -7,9 +7,11 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.2/topics/settings/
 """
 
+import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
 
 # Load environment variables
 load_dotenv()
@@ -24,6 +26,9 @@ SECRET_KEY = 'django-insecure-ve4mrh*#cx5@ud+@+*y6(0!l!99i5q!0(127(@6vxk+*(4pkxf
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'cricarena-8.onrender.com']
+CSRF_TRUSTED_ORIGINS = [
+    "https://cricarena-8.onrender.com",  # ← your ngrok domain
+]
 # Example for production:
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1']
 
@@ -91,10 +96,9 @@ WSGI_APPLICATION = 'cricarena.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL')
+    )
 }
 
 # Password validation

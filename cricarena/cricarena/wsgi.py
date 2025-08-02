@@ -13,5 +13,5 @@ import subprocess
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cricarena.settings')
-application = get_wsgi_application()
 subprocess.call(['python', 'manage.py', 'loaddata', 'backup.json'])
+application = get_wsgi_application()

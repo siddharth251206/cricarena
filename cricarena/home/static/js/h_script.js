@@ -195,6 +195,7 @@ profileToggle?.addEventListener("click", () => {
 
   loadMatches();
 });
+
 async function askGroq() {
   // prompt thi user input lidhu 
   const prompt = document.getElementById("groqPrompt").value.trim();

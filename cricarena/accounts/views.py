@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login
 from django.contrib import messages
 from .forms import LoginForm, SignupForm
 from .models import CustomUser
@@ -7,9 +7,9 @@ from django.contrib.auth.decorators import login_required
 from quiz.models import QuizAttempt
 from achievements.models import UserAchievement
 from accounts.models import IPL_TEAMS
-from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+
 
 @login_required
 def edit_profile(request):
@@ -26,7 +26,6 @@ def edit_profile(request):
         if remove_avatar:
             user.avatar.delete(save=False)
             user.avatar = None
-
         elif avatar:
             user.avatar = avatar
 
@@ -34,28 +33,27 @@ def edit_profile(request):
         messages.success(request, "Profile updated.")
         return redirect('profile')
 
-    
+
 @login_required
 def change_fav_team(request):
     if request.method == "POST":
         new_team = request.POST.get("new_team")
-        if new_team in dict(IPL_TEAMS):  # Validate team code
+        if new_team in dict(IPL_TEAMS):
             request.user.fav_ipl_team = new_team
             request.user.save()
             messages.success(request, f"Your favorite team has been updated to {new_team}.")
         else:
             messages.error(request, "Invalid team selected.")
-    return redirect('profile')  # use your profile view's URL name
+    return redirect('profile')
+
 
 @login_required
 def profile_view(request):
     user = request.user
     all_attempts = QuizAttempt.objects.filter(user=user)
 
-    # Fetch all achievements with date_awarded
     user_achievements = UserAchievement.objects.filter(user=user).select_related('achievement').order_by('-date_awarded')
 
-    # Update stats
     user.quiz_attempts = all_attempts.count()
     user.highest_score = max((a.score for a in all_attempts), default=0)
     user.save()
@@ -65,7 +63,7 @@ def profile_view(request):
     avg = sum(q.score for q in quizzes) / total if total else 0
     from_url = request.GET.get('from')
     if from_url and 'profile' not in from_url:
-        request.session['back_url'] = from_url  # overwrite only if coming from outside
+        request.session['back_url'] = from_url
 
     back_url = request.session.get('back_url', '/')
 
@@ -78,14 +76,13 @@ def profile_view(request):
         'fav_team': user.fav_ipl_team,
         'IPL_TEAMS': IPL_TEAMS,
         'back_url': back_url,
-        
-        # Achievements
-        'achievements': [ua.achievement for ua in user_achievements],  # All achievements
-        'recent_achievements': user_achievements[:4],  # Last 4
+        'achievements': [ua.achievement for ua in user_achievements],
+        'recent_achievements': user_achievements[:4],
         'total_achievements': user_achievements.count(),
     }
 
-    return render(request, 'accounts/profile.html', context)    
+    return render(request, 'accounts/profile.html', context)
+
 
 def login_signup(request):
     show_signup = False
@@ -99,9 +96,8 @@ def login_signup(request):
                 request.session['nickname'] = user.nickname
                 next_url = request.GET.get('next') or request.POST.get('next') or '/home/'
                 return redirect(next_url)
-
             else:
-                messages.error(request, "Already registered or invalid info.")
+                messages.error(request, "Please correct the errors below.")
         else:
             form = LoginForm(request, data=request.POST)
             if form.is_valid():
@@ -110,7 +106,6 @@ def login_signup(request):
                 request.session['nickname'] = user.nickname
                 next_url = request.GET.get('next') or request.POST.get('next') or '/home/'
                 return redirect(next_url)
-
             else:
                 messages.error(request, "Invalid credentials.")
     else:
@@ -119,51 +114,17 @@ def login_signup(request):
             show_signup = True
         elif request.GET.get('login') == '1':
             show_signup = False
-        elif 'signup' in request.POST or (hasattr(request, 'POST') and request.POST.get('signup')):
-            show_signup = True
 
     signup_form = SignupForm()
     nickname = request.session.get('nickname')
-    return render(request, 'accounts/login_signup.html', {'form': form, 'signup_form': signup_form, 'nickname': nickname, 'show_signup': show_signup})
+    return render(request, 'accounts/login_signup.html', {
+        'form': form,
+        'signup_form': signup_form,
+        'nickname': nickname,
+        'show_signup': show_signup
+    })
+
 
 def clear_back_url(request):
     request.session.pop('back_url', None)
     return HttpResponse('')
-
-
-# View Function: login_signup(request)
-# Handles two modes:
-# Login: Authenticates existing users.
-
-# Signup: Registers new users using a custom user model (CustomUser).
-
-# Key Logic:
-# If POST request (form submitted):
-
-# Checks if it's a signup:
-
-# Uses SignupForm, saves the user if valid, logs them in, stores nickname in session, redirects to homepage.
-
-# If invalid, shows an error.
-
-# Otherwise, assumes it's a login:
-
-# Uses LoginForm, logs user in if valid, stores nickname in session, redirects to homepage.
-
-# If invalid, shows an error.
-
-# If GET request (initial page load or toggle):
-
-# Displays login form by default.
-
-# If query string has ?signup=1, shows signup form.
-
-# Data Passed to Template:
-# form: the current login or signup form
-
-# signup_form: empty signup form (for toggling)
-
-# nickname: popped from session (used for greeting popup)
-
-# show_signup: flag to toggle between login and signup views in the HTML
-

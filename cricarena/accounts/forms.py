@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import CustomUser, IPL_TEAMS
-
+import re
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
@@ -20,6 +20,14 @@ class SignupForm(UserCreationForm):
         model = CustomUser
         fields = ('username', 'nickname', 'email', 'password1', 'password2', 'fav_ipl_team')
 
+def clean_password1(self):
+    password1 = self.cleaned_data.get('password1')
+
+    # Password must contain at least one number
+    if not re.search(r'\d', password1):
+        raise forms.ValidationError("Password must contain at least one number.")
+
+    return password1
 
 # This file defines two custom forms used for user login and signup in your project.
 

@@ -1,4 +1,7 @@
-![Logo Screenshot](https://raw.githubusercontent.com/Pratham722007/cricarena/refs/heads/main/cricarena/screenshots/logo2%20.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Pratham722007/cricarena/refs/heads/main/cricarena/screenshots/logo2%20.png" alt="Logo" width="300"/>
+</p>
 
 # 🏏 CricArena - All-in-One Cricket Platform
 

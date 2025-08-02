@@ -25,7 +25,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'cricarena-8.onrender.com','cricarena.onrender.com']
 CSRF_TRUSTED_ORIGINS = [
-    "https://cricarena-8.onrender.com",  # ← your ngrok domain
+    "https://cricarena-8.onrender.com", "https://cricarena.onrender.com"  # ← your ngrok domain
 ]
 # Example for production:
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1']

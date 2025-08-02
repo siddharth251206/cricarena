@@ -363,10 +363,8 @@
       <div class="footer-section social">
         <h4>Follow Us</h4>
         <div class="social-icons">
-          <a href="#"><img src="{% static 'images/facebook.png' %}" alt="Facebook" /></a>
-          <a href="#"><img src="{% static 'images/instagram.png' %}" alt="Instagram" /></a>
-          <a href="#"><img src="{% static 'images/x.png' %}" alt="Twitter" /></a>
-          <a href="#"><img src="{% static 'images/youtube.png' %}" alt="YouTube" /></a>
+          <a href="https://github.com/Pratham722007/cricarena"><img src="{% static 'images/git.png' %}" alt="Github" /></a>
+
         </div>
       </div>
       <div class="footer-section contact">
@@ -381,6 +379,14 @@
           <button type="submit">Subscribe</button>
         </form>
       </div>
+      <script>
+  document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Stop the page from refreshing
+    const button = document.getElementById("subscribeBtn");
+    button.textContent = "Submitted"; // Change button text
+    button.disabled = true; // Disable button to prevent multiple clicks
+  });
+</script>
     </footer>
     <div class="footer-bottom">
       <p>&copy; 2025 CRICARENA. All rights reserved.</p>

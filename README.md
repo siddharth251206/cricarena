@@ -1,4 +1,4 @@
-![Logo Screenshot](./screenshots/logo2.png)
+![Logo Screenshot](https://raw.githubusercontent.com/Pratham722007/cricarena/refs/heads/main/cricarena/screenshots/logo2%20.png)
 
 # 🏏 CricArena - All-in-One Cricket Platform
 

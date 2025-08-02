@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ve4mrh*#cx5@ud+@+*y6(0!l!99i5q!0(127(@6vxk+*(4pkxf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'cricarena-8.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'cricarena-8.onrender.com','cricarena.onrender.com']
 CSRF_TRUSTED_ORIGINS = [
     "https://cricarena-8.onrender.com",  # ← your ngrok domain
 ]

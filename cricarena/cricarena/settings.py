@@ -11,7 +11,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
-
+import django_heroku
 # Load environment variables
 load_dotenv()
 
@@ -19,12 +19,14 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ve4mrh*#cx5@ud+@+*y6(0!l!99i5q!0(127(@6vxk+*(4pkxf'
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'cricarena-8.onrender.com','cricarena.onrender.com']
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 CSRF_TRUSTED_ORIGINS = [
     "https://cricarena-8.onrender.com", "https://cricarena.onrender.com"  # ← your ngrok domain
 ]
@@ -101,9 +103,10 @@ WSGI_APPLICATION = 'cricarena.wsgi.application'
 #     }
 # }
 # DATABASES['default'] = dj_database_url.parse("postgresql://cricarena_psql_db_user:fQnle6ihxlFnMZ8orygYpL8HDk8Md3qJ@dpg-d29377hr0fns73f0kml0-a.oregon-postgres.render.com/cricarena_psql_db")
+
 DATABASES = {
     'default': dj_database_url.parse(
-        "postgresql://cricarena_psql_db_user:fQnle6ihxlFnMZ8orygYpL8HDk8Md3qJ@dpg-d29377hr0fns73f0kml0-a.oregon-postgres.render.com/cricarena_psql_db",
+        os.getenv("DATABASE_URL"),
         conn_max_age=600,
         ssl_require=True
     )
@@ -174,3 +177,5 @@ CRONJOBS = [
 
 # Site ID for django.contrib.sites (required by some packages like django-social-share)
 SITE_ID = 1
+
+django_heroku.settings(locals(), staticfiles=False)

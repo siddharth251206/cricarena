@@ -11,7 +11,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
-import django_heroku
 # Load environment variables
 load_dotenv()
 
@@ -178,4 +177,3 @@ CRONJOBS = [
 # Site ID for django.contrib.sites (required by some packages like django-social-share)
 SITE_ID = 1
 
-django_heroku.settings(locals(), staticfiles=False)

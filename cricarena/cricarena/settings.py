@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 # Load environment variables
 load_dotenv()
@@ -93,13 +94,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cricarena.wsgi.application'
 
 # Database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# DATABASES['default'] = dj_database_url.parse("postgresql://cricarena_psql_db_user:fQnle6ihxlFnMZ8orygYpL8HDk8Md3qJ@dpg-d29377hr0fns73f0kml0-a.oregon-postgres.render.com/cricarena_psql_db")
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+        "postgresql://cricarena_psql_db_user:fQnle6ihxlFnMZ8orygYpL8HDk8Md3qJ@dpg-d29377hr0fns73f0kml0-a.oregon-postgres.render.com/cricarena_psql_db",
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
-
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {

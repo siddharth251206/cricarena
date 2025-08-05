@@ -12,11 +12,10 @@ class QuizResult(models.Model):
     total = models.IntegerField()
     difficulty = models.CharField(max_length=20, default='Medium')
     time_taken = models.DurationField(null=True, blank=True)
-    attempted_at = models.DateTimeField(auto_now_add=True)
+    # attempted_at = models.DateTimeField(auto_now_add=True)
 
     def percentage(self):
         return (self.score / self.total) * 100
-
 
 
 

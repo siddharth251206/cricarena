@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from quiz.models import QuizAttempt
 from achievements.models import UserAchievement
 from accounts.models import IPL_TEAMS
-from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
 
@@ -61,6 +60,7 @@ def profile_view(request):
     quizzes = all_attempts.order_by('-attempted_at')
     total = quizzes.count()
     avg = sum(q.score for q in quizzes) / total if total else 0
+
     from_url = request.GET.get('from')
     if from_url and 'profile' not in from_url:
         request.session['back_url'] = from_url
@@ -86,6 +86,8 @@ def profile_view(request):
 
 def login_signup(request):
     show_signup = False
+    form = None  # Initialize
+
     if request.method == 'POST':
         if 'signup' in request.POST:
             form = SignupForm(request.POST)
@@ -115,8 +117,14 @@ def login_signup(request):
         elif request.GET.get('login') == '1':
             show_signup = False
 
-    signup_form = SignupForm()
+    # Fix: preserve signup form with errors if present
+    if show_signup and request.method == 'POST' and isinstance(form, SignupForm):
+        signup_form = form
+    else:
+        signup_form = SignupForm()
+
     nickname = request.session.get('nickname')
+
     return render(request, 'accounts/login_signup.html', {
         'form': form,
         'signup_form': signup_form,

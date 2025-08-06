@@ -196,78 +196,61 @@ profileToggle?.addEventListener("click", () => {
   loadMatches();
 });
 
-async function askGroq() {
-  // prompt thi user input lidhu 
-  const prompt = document.getElementById("groqPrompt").value.trim();
-  // groq na response ne responseDiv ma store karva mate
-  const responseDiv = document.getElementById("groqResponse");
-  
-  // agar user e khali prompt aapi hoy to error message show karva mate
+async function askGemini() {
+  const prompt = document.getElementById("geminiPrompt").value.trim();
+  const responseDiv = document.getElementById("geminiResponse");
+
   if (!prompt) {
     responseDiv.innerHTML = "❌ Please enter a question.";
     return;
   }
 
-  // aa aapdi api key chhe je aa project ne groq saathe connect karva mate use thase
-  const API_KEY = "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";  
+  const API_KEY = "AIzaSyDM96fK4qToFjS0vqxt_1mXlg0TgGAb4PE"; // Replace with your Gemini API key
 
   const headers = {
     "Content-Type": "application/json",
-    "Authorization": `Bearer ${API_KEY}`
+    "x-goog-api-key": API_KEY
   };
 
-  // model: Chooses the model (llama3-70b-8192) from Groq.
-  // messages: Standard Chat API format:
-  // system: Sets up the behavior of the assistant.
-  // user: Sends the user's question.
-
+  // Gemini expects this format
   const body = {
-    model: "llama3-70b-8192",
-    messages: [
-      {
-        role: "system",
-        content: `You are a cricket expert. 
-        Only answer cricket-related questions. 
-        If the question is not about cricket, reply: "❌ Please ask only cricket-related questions."`
-      },
-      {
-        role: "user",
-        content: prompt
-      }
-    ]
+    contents: [{
+      parts: [{
+        text: `You are a cricket expert. 
+Only answer cricket-related questions. 
+If the question is not about cricket, reply: "❌ Please ask only cricket-related questions."
+
+User question: ${prompt}`
+      }]
+    }]
   };
 
-  // Display a loading message while waiting for the response
   responseDiv.innerHTML = "⏳ Thinking...";
 
-  // api post request kare groq ai ne
-  // ema headers and body pass karva ma aavse as request
   try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers,
-      body: JSON.stringify(body)
-    });
+    const res = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemma-3n-e4b-it:generateContent",
+      {
+        method: "POST",
+        headers,
+        body: JSON.stringify(body)
+      }
+    );
 
-    // je response aave ene data variable ma store karva ma aavse
     const data = await res.json();
-    console.log("Groq response:", data);
+    console.log("Gemini response:", data);
 
-    // Check for API error
     if (data.error) {
       responseDiv.innerHTML = `❌ Error: ${data.error.message}`;
       return;
     }
 
-    // agar aapde response ma content chhe to ene answer variable ma store karva ma aavse
-    const answer = data?.choices?.[0]?.message?.content;
+    const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    // agar answer variable ma koi value hoy to ene responseDiv ma store karva ma aavse
-    // nahi to "No response" message aavse
-    responseDiv.innerHTML = answer || "❌ No response from AI.";
+    responseDiv.innerHTML = answer || "❌ No response from Gemini.";
   } catch (err) {
-    console.error("Groq error:", err);
-    responseDiv.innerHTML = "❌ Error talking to Groq AI.";
+    console.error("Gemini error:", err);
+    responseDiv.innerHTML = "❌ Error talking to Gemini AI.";
   }
 }
 

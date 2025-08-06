@@ -24,47 +24,61 @@
           <h2><img src="/static/ipl/assets/cricarenalogo.png" alt="">CRICARENA</h2>
           <p class="subheading">Sign up to create a new account</p>
         </div>
+
         {% if signup_form.errors %}
           <div class="error-messages">
-            {% for field in signup_form %}
-              {% for error in field.errors %}
-                <p>{{ error }}</p>
+            <ul>
+              {% for field in signup_form %}
+                {% for error in field.errors %}
+                  <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                {% endfor %}
               {% endfor %}
-            {% endfor %}
-            {% for error in signup_form.non_field_errors %}
-              <p>{{ error }}</p>
-            {% endfor %}
+              {% for error in signup_form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
           </div>
         {% endif %}
+
         <form method="post">
           {% csrf_token %}
           <label for="id_username">Username</label>
           {{ signup_form.username }}
+
           <label for="id_nickname">Nickname</label>
           {{ signup_form.nickname }}
+
           <label for="id_email">Email</label>
           {{ signup_form.email }}
+
           <label for="id_password1">Password</label>
           {{ signup_form.password1 }}
-          <small class="hint">Password must contain at least one number.</small>
+          {% if signup_form.password1.help_text %}
+            <small class="hint">{{ signup_form.password1.help_text }}</small>
+          {% endif %}
+
           <label for="id_password2">Confirm Password</label>
           {{ signup_form.password2 }}
+
           <label>Favorite IPL Team:</label>
           <div class="card-radio-group">
             {% for radio in signup_form.fav_ipl_team %}
               <label class="card-radio-label">{{ radio.tag }}<span>{{ radio.choice_label }}</span></label>
             {% endfor %}
           </div>
+
           <button type="submit" name="signup">Sign Up</button>
         </form>
         <p class="toggle-text">Already registered? <a href="?login=1" class="toggle">Login</a></p>
       </div>
+
     {% else %}
       <div id="login-form" class="form active">
         <div class="header-group">
           <h2><img src="/static/ipl/assets/cricarenalogo.png" alt="">CRICARENA</h2>
           <p class="subheading">Log in to your account</p>
         </div>
+
         {% if messages %}
           <div class="error-messages">
             {% for message in messages %}
@@ -72,12 +86,15 @@
             {% endfor %}
           </div>
         {% endif %}
+
         <form method="post">
           {% csrf_token %}
           <label for="id_username">Username</label>
           {{ form.username }}
+
           <label for="id_password">Password</label>
           {{ form.password }}
+
           <button type="submit" name="login">Login</button>
         </form>
         <p class="toggle-text">Not a user? <a href="?signup=1" class="toggle">Sign up</a></p>

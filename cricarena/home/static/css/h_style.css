@@ -1711,7 +1711,7 @@ body::-webkit-scrollbar {
     {
       background-color: #141414;
     }
-    .groq-section {
+.gemini-section {
   background-color: #1e1e1e;
   color: #fff;
   padding: 40px 20px;
@@ -1720,7 +1720,7 @@ body::-webkit-scrollbar {
   border-bottom: 2px solid #19e68c;
 }
 
-.groq-box {
+.gemini-box {
   max-width: 600px;
   margin: 20px auto;
   display: flex;
@@ -1728,7 +1728,7 @@ body::-webkit-scrollbar {
   gap: 10px;
 }
 
-.groq-box input {
+.gemini-box input {
   padding: 12px;
   border-radius: 8px;
   border: none;
@@ -1738,7 +1738,7 @@ body::-webkit-scrollbar {
   color: #fff;
 }
 
-.groq-box button {
+.gemini-box button {
   background-color: #19e68c;
   color: #000;
   padding: 12px;
@@ -1749,11 +1749,11 @@ body::-webkit-scrollbar {
   transition: background 0.3s;
 }
 
-.groq-box button:hover {
+.gemini-box button:hover {
   background-color: #19e68c;
 }
 
-#groqResponse {
+#geminiResponse {
   margin-top: 20px;
   background-color: #2c2c2c;
   padding: 20px;
@@ -1762,17 +1762,18 @@ body::-webkit-scrollbar {
   color: #ffffff;
   white-space: pre-wrap;
 }
+
+/* Reveal animation (same as before) */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease-out;
-} 
+}
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
-
 .live-carousel, .gallery-section, .ranking-section, .footer, .groq-section {
   will-change: transform, opacity;
 }

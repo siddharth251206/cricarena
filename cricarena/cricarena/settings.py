@@ -27,7 +27,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 CSRF_TRUSTED_ORIGINS = [
-    "https://cricarena-8.onrender.com", "https://cricarena.onrender.com"  # ← your ngrok domain
+    "https://cricarena-mr9r.onrender.com"  # ← your ngrok domain
 ]
 # Example for production:
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '::1']
@@ -175,4 +175,6 @@ CRONJOBS = [
 
 # Site ID for django.contrib.sites (required by some packages like django-social-share)
 SITE_ID = 1
-
+CORS_ALLOWED_ORIGINS = [
+    'https://cricarena-mr9r.onrender.com',
+]

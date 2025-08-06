@@ -11,6 +11,6 @@ with open("all_data.json", "w", encoding="utf-8") as f:
     call_command(
         "dumpdata",
         indent=2,
-        exclude=["contenttypes", "auth.permission", "sessions"],
+        exclude=["contenttypes", "sessions"], 
         stdout=f
     )

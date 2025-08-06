@@ -2668,7 +2668,7 @@
   "model": "admin.logentry",
   "pk": 206,
   "fields": {
-    "action_time": "2025-07-19T10:50:53.000Z",
+    "action_time": "2025-07-19T10:50:53Z",
     "user": 2,
     "content_type": 10,
     "object_id": "87",
@@ -4849,1728 +4849,759 @@
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 1,
   "fields": {
-    "title": "Ecclestone, Jones help England level series with rain-affected win",
-    "description": "India trip up against spinners in shortened game before hosts ease home on damp evening at Lord's",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495938.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403948.jpg",
-    "video_url": null,
-    "published": "2025-07-19T20:03:14Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 2,
   "fields": {
-    "title": "Litton Das and Salman Agha steel themselves for Dhaka's surprises",
-    "description": "Once again the pitch at the Shere Bangla National Stadium is in focus",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495941.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403944.jpg",
-    "video_url": null,
-    "published": "2025-07-19T15:54:28Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 3,
   "fields": {
-    "title": "Bangladesh take Sri Lanka momentum into contest against bogey team Pakistan",
-    "description": "Pakistan have dominated Bangladesh in T20Is, but the hosts will take confidence from their series win over Sri Lanka",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495905.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403944.jpg",
-    "video_url": null,
-    "published": "2025-07-19T15:05:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 4,
   "fields": {
-    "title": "Russell takes his leave as T20 World Cup preparation comes into focus",
-    "description": "Both sides could hand out debuts during the series as they look to firm up combinations ahead of next year's main event",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495939.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/383400/383481.jpg",
-    "video_url": null,
-    "published": "2025-07-20T09:08:18Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 5,
   "fields": {
-    "title": "Van der Dussen sees proof of South African change after WTC win",
-    "description": "He says there is freedom in the way they are approaching the game, and the idea of failure in particular",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495936.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/397600/397669.jpg",
-    "video_url": null,
-    "published": "2025-07-19T14:31:39Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 6,
   "fields": {
-    "title": "Russell rates 2016 T20 World Cup innings against India as his best moment",
-    "description": "The allrounder has termed Sabina Park as the \"perfect ground\" in which to bid farewell to international cricket",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495916.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/239000/239085.jpg",
-    "video_url": null,
-    "published": "2025-07-19T12:36:20Z",
-    "likes": 6,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 7,
   "fields": {
-    "title": "Zimbabwe cricket boss Mukuhlani elected Africa Cricket Association chair",
-    "description": "Among the association's next tasks is the establishment of an Africa T20 competition, the resumption of the Afro-Asia Cup, and the inclusion of cricket at the Africa Games",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495925.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/391900/391943.jpg",
-    "video_url": null,
-    "published": "2025-07-19T10:12:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 8,
   "fields": {
-    "title": "Gaikwad pulls out of county deal with Yorkshire due to personal reasons",
-    "description": "Gaikwad was due to debut at North Marine Road against Surrey on July 22 and remain with Yorkshire until the end of the season",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495909.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/390000/390066.jpg",
-    "video_url": null,
-    "published": "2025-07-20T11:31:51Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 9,
   "fields": {
-    "title": "Shami included in Bengal's list of probables for 2025-26 domestic season",
-    "description": "Mohammed Shami hasn't been in action since IPL 2025, where he wasn't among the wickets much and proved quite expensive for Sunrisers Hyderabad",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495904.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/390900/390967.jpg",
-    "video_url": null,
-    "published": "2025-07-19T05:58:20Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 10,
   "fields": {
-    "title": "Gurbaz, Charles 60s and Pretorius three-for carry Amazon Warriors to GSL 2025 title",
-    "description": "Rangpur Riders, the defending champions, fell 32 runs short of the target after Guyana Amazon Warriors had put up a solid 196 for 4",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495898.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403933.jpg",
-    "video_url": null,
-    "published": "2025-07-19T03:34:26Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 11,
   "fields": {
-    "title": "Farhan five-for, Moores pyrotechnics claim spoils for Notts",
-    "description": "Lancashire collapse to 126 all out but had already guaranteed their place in quarter-finals",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495875.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403921.jpg",
-    "video_url": null,
-    "published": "2025-07-19T13:54:39Z",
-    "likes": 5,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 12,
   "fields": {
-    "title": "UAE likely to host Afghanistan-Bangladesh white-ball series in October",
-    "description": "If it goes ahead, the series will complete the second part of what was originally supposed to be an all-format engagement in July 2024",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495860.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/383700/383721.jpg",
-    "video_url": null,
-    "published": "2025-07-19T09:36:18Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 13,
   "fields": {
-    "title": "Matt Milnes magic means Yorkshire avoid wooden spoon",
-    "description": "Foxes miss quarter-finals after Abdullah Shafique, Matthew Revis share fifth-wicket stand of 122",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495880.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403925.jpg",
-    "video_url": null,
-    "published": "2025-07-18T22:06:24Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 14,
   "fields": {
-    "title": "Griffith leads Essex to consolation win over Durham",
-    "description": "Spinners Smale and Maqsood strangle chase as visitors fall narrowly short",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495865.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403926.jpg",
-    "video_url": null,
-    "published": "2025-07-18T22:05:41Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 15,
   "fields": {
-    "title": "Jacks, Sam Curran combine to deny Sussex last-eight berth",
-    "description": "Blistering 58-ball century, allied to figures of 4 for 18, prove enough for South Group's dominant force",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495881.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403919.jpg",
-    "video_url": null,
-    "published": "2025-07-18T21:59:53Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 16,
   "fields": {
-    "title": "Carlson, Douthwaite seal convincing win but Glamorgan fall short",
-    "description": "Middlesex end miserable campaign with heavy defeat despite Kane Williamson's fifty",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495877.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403924.png",
-    "video_url": null,
-    "published": "2025-07-18T21:50:36Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 17,
   "fields": {
-    "title": "Alex Lees scores maiden T20 ton to secure Durham's quarter-final place",
-    "description": "He and Graham Clark put on 181 together to break their own record for Durham's highest T20 stand",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495878.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403923.jpg",
-    "video_url": null,
-    "published": "2025-07-18T21:41:26Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 18,
   "fields": {
-    "title": "Kent march into quarter-finals with tense win over Essex",
-    "description": "Muyeye and Finch the heroes with century stand before Billings knocks off winning runs",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495872.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/402400/402420.jpg",
-    "video_url": null,
-    "published": "2025-07-18T21:22:38Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 19,
   "fields": {
-    "title": "Chathli takes command as Surrey outmuscle Bears",
-    "description": "Table-toppers strike psychological blow ahead of potential Finals Day encounter",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495866.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403300/403311.jpg",
-    "video_url": null,
-    "published": "2025-07-18T21:13:23Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 20,
   "fields": {
-    "title": "Ben Green stars as Somerset claim west country bragging rights",
-    "description": "Allrounder's batting cameo at the death helps take home side beyond Gloucestershire's reach",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495874.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403922.jpg",
-    "video_url": null,
-    "published": "2025-07-18T21:07:32Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 21,
   "fields": {
-    "title": "Georgia Elwiss, Marie Kelly anchor victory for The Blaze",
-    "description": "Duo both pass fifty in 102-run opening stand as Elwiss makes winning return to former home",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495869.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403918.jpg",
-    "video_url": null,
-    "published": "2025-07-18T20:42:32Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add team",
+    "content_type": 6,
+    "codename": "add_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 22,
   "fields": {
-    "title": "Latham hundred leads Bears mauling of Derbyshire",
-    "description": "Opening partnership with Alex Davies decisive as Falcons plummet to bottom of North Group",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495876.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403915.jpg",
-    "video_url": null,
-    "published": "2025-07-18T20:36:24Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change team",
+    "content_type": 6,
+    "codename": "change_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 23,
   "fields": {
-    "title": "King six secures tie after Luff, Wellington give Somerset glimpse of victory",
-    "description": "Mahika Gaur claims 3 for 15 to limit visitors but Lancashire comes unstuck before thrilling finale",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495856.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403914.jpg",
-    "video_url": null,
-    "published": "2025-07-18T17:59:02Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete team",
+    "content_type": 6,
+    "codename": "delete_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 24,
   "fields": {
-    "title": "Conway: 'Great to be back in this environment'",
-    "description": "\"Just getting the call-up to come back into the squad is fantastic,\" he said",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495855.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/396300/396385.jpg",
-    "video_url": null,
-    "published": "2025-07-18T15:57:02Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view team",
+    "content_type": 6,
+    "codename": "view_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 25,
   "fields": {
-    "title": "Rawal pulled up for 'avoidable physical contact' in first ODI",
-    "description": "Rawal made contact with Filer and Ecclestone in two separate incidents during India's successful chase against England",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495815.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403800/403851.jpg",
-    "video_url": null,
-    "published": "2025-07-18T15:05:55Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add article",
+    "content_type": 7,
+    "codename": "add_article"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 26,
   "fields": {
-    "title": "Henry's three wickets set up the win as NZ cruise past Zimbabwe",
-    "description": "Half-century from Conway, and all-round display from Ravindra, also helped NZ top the table",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495836.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/394500/394515.jpg",
-    "video_url": null,
-    "published": "2025-07-18T14:38:19Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change article",
+    "content_type": 7,
+    "codename": "change_article"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 27,
   "fields": {
-    "title": "Durham bring back Codi Yusuf for second overseas spell",
-    "description": "South Africa seamer will go straight into squad for Friday's Blast game against Northamptonshire",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495846.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/399800/399885.jpg",
-    "video_url": null,
-    "published": "2025-07-18T13:10:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete article",
+    "content_type": 7,
+    "codename": "delete_article"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 28,
   "fields": {
-    "title": "Glenn Phillips ruled out of Zimbabwe tour with groin injury",
-    "description": "He had sustained the injury during the MLC final on Sunday",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495834.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/396500/396552.jpg",
-    "video_url": null,
-    "published": "2025-07-18T11:27:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view article",
+    "content_type": 7,
+    "codename": "view_article"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 29,
   "fields": {
-    "title": "Pakistan to host South Africa for three ODIs in build-up to 2025 women's World Cup",
-    "description": "The preparation for the T20 World Cup in the middle of next year will be more exhaustive, with a tour of South Africa, home games against Zimbabwe, and a tri-series in Ireland also including West Indies",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495798.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/399400/399426.jpg",
-    "video_url": null,
-    "published": "2025-07-18T09:04:00Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add poll",
+    "content_type": 8,
+    "codename": "add_poll"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 30,
   "fields": {
-    "title": "Players want cut to 12 County Championship games, says PCA",
-    "description": "Move to 12/6 conference-style Championship also favoured by players' union",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495792.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403800/403885.jpg",
-    "video_url": null,
-    "published": "2025-07-18T07:14:51Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change poll",
+    "content_type": 8,
+    "codename": "change_poll"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 31,
   "fields": {
-    "title": "Brook embraces 'no more nice guys' as England seek All Blacks mentality",
-    "description": "Batter enjoyed chance to have a go at India 'in the right manner' during feisty third Test at Lord's",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496144.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404000/404031.jpg",
-    "video_url": null,
-    "published": "2025-07-22T04:04:24Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete poll",
+    "content_type": 8,
+    "codename": "delete_poll"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 32,
   "fields": {
-    "title": "Atkinson in club vs country row after omission from Surrey Championship clash",
-    "description": "Fast bowler will play for second XI in New Malden after Surrey opted not to include him for Yorkshire clash",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496142.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/391800/391813.jpg",
-    "video_url": null,
-    "published": "2025-07-21T18:37:19Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view poll",
+    "content_type": 8,
+    "codename": "view_poll"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 33,
   "fields": {
-    "title": "Bumrah to play fourth Test; Pant on track to keep as well",
-    "description": "The news is a boost for India who had suffered injuries to several players following the Lord's Test",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496113.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403800/403871.jpg",
-    "video_url": null,
-    "published": "2025-07-21T18:30:20Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add option",
+    "content_type": 9,
+    "codename": "add_option"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 34,
   "fields": {
-    "title": "England seek 'momentum shift' in deciding ODI against India",
-    "description": "Charlie Dean says pressure of performing in hard-fought bilateral series can help harden team ahead of World Cup",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496143.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403949.jpg",
-    "video_url": null,
-    "published": "2025-07-21T18:22:54Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change option",
+    "content_type": 9,
+    "codename": "change_option"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 35,
   "fields": {
-    "title": "Liam Dawson recalled for Old Trafford Test after eight-year absence",
-    "description": "Spinner is back as replacement for Bashir in only change from XI that won third Test at Lord's",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496130.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404000/404036.jpg",
-    "video_url": null,
-    "published": "2025-07-21T18:19:48Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete option",
+    "content_type": 9,
+    "codename": "delete_option"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 36,
   "fields": {
-    "title": "Ekansh Singh hundred steadies England U19s on rain-shortened day",
-    "description": "No. 7 continues lower-order fightback before India lose Vaibhav Suryavanshi cheaply at start of reply",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496139.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404000/404039.jpg",
-    "video_url": null,
-    "published": "2025-07-21T18:08:55Z",
-    "likes": 7,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view option",
+    "content_type": 9,
+    "codename": "view_option"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 37,
   "fields": {
-    "title": "Nathan Gilchrist agrees Warwickshire move, Tom Price heading to Sussex",
-    "description": "Kent seamer turned down contract extension but Tawanda Muyeye has agreed new deal",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496103.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/380500/380536.jpg",
-    "video_url": null,
-    "published": "2025-07-21T16:30:08Z",
-    "likes": 9,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add quiz question",
+    "content_type": 10,
+    "codename": "add_quizquestion"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 38,
   "fields": {
-    "title": "Ben Curran and Sikandar Raza in Zimbabwe squad for NZ Tests",
-    "description": "Kaitano, Masvaure, Madhevere and Matigimu have been left out while Brendan Taylor is expected to return",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496109.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/399700/399709.jpg",
-    "video_url": null,
-    "published": "2025-07-21T15:06:51Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change quiz question",
+    "content_type": 10,
+    "codename": "change_quizquestion"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 39,
   "fields": {
-    "title": "Pakistan's batting approach faces litmus test against well-tuned Bangaldesh",
-    "description": "With the series on the line, the hosts go in as favourites with their bowling attack firing as a unit",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496121.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403979.jpg",
-    "video_url": null,
-    "published": "2025-07-21T14:32:22Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete quiz question",
+    "content_type": 10,
+    "codename": "delete_quizquestion"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 40,
   "fields": {
-    "title": "Imam-ul-Haq joins Yorkshire after Ruturaj Gaikwad withdraws from deal",
-    "description": "Opening batter arrives in time for four-day clash with Surrey at Scarborough; Jewell back at Derbyshire in 2026",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496117.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/397000/397089.jpg",
-    "video_url": null,
-    "published": "2025-07-21T14:01:50Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view quiz question",
+    "content_type": 10,
+    "codename": "view_quizquestion"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 41,
   "fields": {
-    "title": "Oval Test to feature 'Day for Thorpey' in commemoration of Graham Thorpe",
-    "description": "Second day of England-India Test would have been former England batter's 56th birthday",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496112.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/387000/387044.jpg",
-    "video_url": null,
-    "published": "2025-07-21T13:20:08Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add quiz attempt",
+    "content_type": 11,
+    "codename": "add_quizattempt"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 42,
   "fields": {
-    "title": "Brydon Carse: Attritional Lord's win proves this England team can adapt",
-    "description": "Fast bowler proud of collective efforts as teams reconvene at Old Trafford in wake of epic third Test",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496097.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403700/403740.jpg",
-    "video_url": null,
-    "published": "2025-07-21T11:16:50Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change quiz attempt",
+    "content_type": 11,
+    "codename": "change_quizattempt"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 43,
   "fields": {
-    "title": "Rathnayake ton leads dominant Sri Lanka A batting display",
-    "description": "Nathan McSweeney, who was opening the batting, fell before the close of play",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496100.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403600/403670.jpg",
-    "video_url": null,
-    "published": "2025-07-21T09:34:14Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete quiz attempt",
+    "content_type": 11,
+    "codename": "delete_quizattempt"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 44,
   "fields": {
-    "title": "Nerves with the ball, calm with the bat, Owen happy with dream debut",
-    "description": "Owen also revealed that his game plan in an unfamiliar role at No. 6 was no different to when he has dominated as a franchise opener",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496079.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403999.jpg",
-    "video_url": null,
-    "published": "2025-07-21T09:21:44Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view quiz attempt",
+    "content_type": 11,
+    "codename": "view_quizattempt"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 45,
   "fields": {
-    "title": "Hermann, van der Dussen fifties knock Zimbabwe out",
-    "description": "South Africa batters made easy work of the 145 chase after Burger and Bosch stifled Zimbabwe with the new ball",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496001.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403984.jpg",
-    "video_url": null,
-    "published": "2025-07-21T07:57:34Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add quiz result",
+    "content_type": 12,
+    "codename": "add_quizresult"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 46,
   "fields": {
-    "title": "Knee injury rules Nitish Reddy out of England tour, Arshdeep out of fourth Test",
-    "description": "ESPNcricinfo understands he suffered the injury while training in the gym on Sunday",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496029.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403400/403445.jpg",
-    "video_url": null,
-    "published": "2025-07-21T06:31:53Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change quiz result",
+    "content_type": 12,
+    "codename": "change_quizresult"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 47,
   "fields": {
-    "title": "Mitchell Owen, Cameron Green fifties put Australia 1-0 up",
-    "description": "Owen impressed on his T20I debut, taking a key wicket before clubbing 50 off 27 which included six sixes",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496046.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403997.jpg",
-    "video_url": null,
-    "published": "2025-07-21T04:15:28Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete quiz result",
+    "content_type": 12,
+    "codename": "delete_quizresult"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 48,
   "fields": {
-    "title": "Rew, Ekansh battle back for England after India's flying start",
-    "description": "Openers rolled for ducks before England battle back on rain-affected day at Chelmsford",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496044.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/395600/395628.png",
-    "video_url": null,
-    "published": "2025-07-20T19:42:30Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view quiz result",
+    "content_type": 12,
+    "codename": "view_quizresult"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 49,
   "fields": {
-    "title": "Hesson slams 'unacceptable' Mirpur pitch",
-    "description": "\"It is still no excuse for some of the decisions we made with the bat. But this pitch is not up to international standards\"",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496039.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403983.jpg",
-    "video_url": null,
-    "published": "2025-07-20T17:36:34Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add leaderboard profile",
+    "content_type": 13,
+    "codename": "add_leaderboardprofile"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 50,
   "fields": {
-    "title": "Pakistan suffer rude awakening at the start of Bangladesh T20Is",
-    "description": "The visitors were bowled out for 110 as Taskin Ahmed and Mustafizur Rahman took five wickets between them",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496004.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403979.jpg",
-    "video_url": null,
-    "published": "2025-07-20T16:34:03Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change leaderboard profile",
+    "content_type": 13,
+    "codename": "change_leaderboardprofile"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 51,
   "fields": {
-    "title": "England confirmed by ICC as host for next three WTC finals",
-    "description": "ECB's 'successful track record in hosting recent finals' cited as reason for keeping showcase event in country",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496012.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/402100/402139.jpg",
-    "video_url": null,
-    "published": "2025-07-20T14:21:31Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete leaderboard profile",
+    "content_type": 13,
+    "codename": "delete_leaderboardprofile"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 52,
   "fields": {
-    "title": "Akash Deep, Arshdeep likely out of fourth Test; Kamboj called-up as cover",
-    "description": "While Arshdeep hurt his bowling hand while training, Akash Deep has picked up a groin niggle",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495995.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/402900/402915.jpg",
-    "video_url": null,
-    "published": "2025-07-20T11:56:34Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view leaderboard profile",
+    "content_type": 13,
+    "codename": "view_leaderboardprofile"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 53,
   "fields": {
-    "title": "Short out of West Indies series as Marsh's bowling remains 'offline'",
-    "description": "The allrounder has picked up a minor side strain during training but is expected to be fit to face South Africa next month",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495993.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/387400/387439.jpg",
-    "video_url": null,
-    "published": "2025-07-20T10:22:19Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add cricket match",
+    "content_type": 14,
+    "codename": "add_cricketmatch"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 54,
   "fields": {
-    "title": "Nuwanidu continues fine form as Australia A attack labours",
-    "description": "Four bowlers struck for the home side but it was tough going on the opening day in Darwin",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495996.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403600/403667.jpg",
-    "video_url": null,
-    "published": "2025-07-20T09:54:38Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change cricket match",
+    "content_type": 14,
+    "codename": "change_cricketmatch"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 55,
   "fields": {
-    "title": "India vs Pakistan called off in veterans' World Championship of Legends",
-    "description": "Dhawan issued a statement which cited the \"current geopolitical situation and prevailing tensions\" as the reason for pulling out",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495968.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/290700/290776.jpg",
-    "video_url": null,
-    "published": "2025-07-20T05:27:52Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete cricket match",
+    "content_type": 14,
+    "codename": "delete_cricketmatch"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 56,
   "fields": {
-    "title": "Beaumont obstructing the field appeal evokes memories of Dean run-out",
-    "description": "Deepti Sharma the bowler as Lord's ODI briefly veers towards controversy again",
-    "link": "https://www.espncricinfo.com/ci/content/story/1495958.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403960.jpg",
-    "video_url": null,
-    "published": "2025-07-20T04:17:47Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view cricket match",
+    "content_type": 14,
+    "codename": "view_cricketmatch"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 57,
   "fields": {
-    "title": "Pant bats with fractured foot to add crucial runs at Old Trafford",
-    "description": "Having retired hurt on the first day, Pant came out on the second morning, hit Archer for a six, completed his fifty and helped India cross 350",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496559.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404200/404201.jpg",
-    "video_url": null,
-    "published": "2025-07-24T17:13:05Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add team",
+    "content_type": 15,
+    "codename": "add_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 58,
   "fields": {
-    "title": "Mirza, Ashraf's new-ball demolition job hands Pakistan consolation win",
-    "description": "Sahibzada Farhan's 63 finished Pakistan's tour with an improved batting performance",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496515.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404200/404217.jpg",
-    "video_url": null,
-    "published": "2025-07-24T17:11:41Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change team",
+    "content_type": 15,
+    "codename": "change_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 59,
   "fields": {
-    "title": "Coles 99* fights for Sussex but Essex close in",
-    "description": "Tom Alsop makes 72 as Critchley chips away for visitors",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496556.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/399400/399485.jpg",
-    "video_url": null,
-    "published": "2025-07-24T17:11:14Z",
-    "likes": 2,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete team",
+    "content_type": 15,
+    "codename": "delete_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 60,
   "fields": {
-    "title": "Armitage century powers Durham past Lancashire",
-    "description": "Alana King fights with three wickets but can't avoid 89-run loss at Chester-le-Street",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496622.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404200/404226.jpg",
-    "video_url": null,
-    "published": "2025-07-24T16:05:34Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view team",
+    "content_type": 15,
+    "codename": "view_team"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 61,
   "fields": {
-    "title": "Holland flattens Essex before rain has final say",
-    "description": "Somerset pile on 312 for 6 in 49.2 overs before the match is washed out",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496608.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/352500/352569.jpg",
-    "video_url": null,
-    "published": "2025-07-24T15:17:04Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add player",
+    "content_type": 16,
+    "codename": "add_player"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 62,
   "fields": {
-    "title": "Duckett, Crawley turn up the heat on India after Stokes five-for",
-    "description": "Earlier, Pant, batting with a fractured right foot, scored a half-century and helped India cross 350",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496606.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404200/404211.jpg",
-    "video_url": null,
-    "published": "2025-07-24T15:04:35Z",
-    "likes": 2,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change player",
+    "content_type": 16,
+    "codename": "change_player"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 63,
   "fields": {
-    "title": "Seifert, Ravindra and Sodhi keep NZ's 100% record intact",
-    "description": "Zimbabwe end their tri-series campaign with no wins in four games with serious questions around their batting depth",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496505.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404199.jpg",
-    "video_url": null,
-    "published": "2025-07-24T15:04:00Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete player",
+    "content_type": 16,
+    "codename": "delete_player"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 64,
   "fields": {
-    "title": "Shreyanka Patil, Priya Mishra ruled out of India A women's tour of Australia",
-    "description": "Dhara Gujjar and Prema Rawat have been added to all three squads, while Yastika Bhatia has also been included in the one-day squad",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496591.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/377500/377543.jpg",
-    "video_url": null,
-    "published": "2025-07-24T14:07:48Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view player",
+    "content_type": 16,
+    "codename": "view_player"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 65,
   "fields": {
-    "title": "Oval to host England Test in June for first time as 2026 fixtures are announced",
-    "description": "India women return for fourth time in six summers for maiden Test at Lord's",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496508.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403800/403885.jpg",
-    "video_url": null,
-    "published": "2025-07-24T13:57:12Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add user",
+    "content_type": 17,
+    "codename": "add_customuser"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 66,
   "fields": {
-    "title": "Pant bats with broken foot as India battle testing conditions",
-    "description": "Archer dismissed Jadeja early on the second day before Washington and Thakur resisted",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496522.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404195.jpg",
-    "video_url": null,
-    "published": "2025-07-24T12:25:52Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change user",
+    "content_type": 17,
+    "codename": "change_customuser"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 67,
   "fields": {
-    "title": "Pant suffers foot fracture, set to miss remainder of series",
-    "description": "He has been ruled out of keeping wicket in the ongoing Test match, and will bat only if required",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496471.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404181.jpg",
-    "video_url": null,
-    "published": "2025-07-24T11:08:10Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete user",
+    "content_type": 17,
+    "codename": "delete_customuser"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 68,
   "fields": {
-    "title": "Markram, Bavuma return for SA's white-ball tour of Australia",
-    "description": "Jansen misses out as he's recovering from surgery to his left thumb while Miller will be playing in the Hundred",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496474.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/401400/401463.jpg",
-    "video_url": null,
-    "published": "2025-07-24T09:30:01Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view user",
+    "content_type": 17,
+    "codename": "view_customuser"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 69,
   "fields": {
-    "title": "Weatherald 'ready' for Test cricket, excitement around teen-prodigy Peake",
-    "description": "Weatherald thinks he is ready for a Test call-up if it comes after posting 183 for Australia A while Peake, 18, impressed with his maturity making 92 against Sri Lanka A",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496461.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404000/404047.jpg",
-    "video_url": null,
-    "published": "2025-07-24T06:29:38Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add post",
+    "content_type": 18,
+    "codename": "add_post"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 70,
   "fields": {
-    "title": "England to play only one Ashes warm-up match, against England Lions",
-    "description": "England Lions will play two more matches on their tour - against CA XI and Australia A, which will run concurrently with the first and second Tests in Perth and Brisbane",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496455.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/392200/392248.jpg",
-    "video_url": null,
-    "published": "2025-07-24T03:39:56Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change post",
+    "content_type": 18,
+    "codename": "change_post"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 71,
   "fields": {
-    "title": "Pant retires hurt after inside-edging a reverse sweep onto his right foot",
-    "description": "He appeared to be in significant pain as he left the field on the back of a golf-style buggy",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496425.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404173.jpg",
-    "video_url": null,
-    "published": "2025-07-24T17:24:29Z",
-    "likes": 1,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete post",
+    "content_type": 18,
+    "codename": "delete_post"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 72,
   "fields": {
-    "title": "Hundreds for Jordan Cox, Matt Critchley strengthen Essex grip",
-    "description": "Jordan Cox makes 132, Matt Critchley 123 as Essex reach 475 for 9 before bad light, rain steal 28 overs",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496397.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/398900/398936.jpg",
-    "video_url": null,
-    "published": "2025-07-24T09:29:53Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view post",
+    "content_type": 18,
+    "codename": "view_post"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 73,
   "fields": {
-    "title": "Can Pakistan save the blushes against rampant Bangladesh?",
-    "description": "Bangladesh are searching for a 3-0 series clean sweep; Pakistan are looking for fixes",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496390.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404000/404087.jpg",
-    "video_url": null,
-    "published": "2025-07-24T05:34:28Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add achievement",
+    "content_type": 19,
+    "codename": "add_achievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 74,
   "fields": {
-    "title": "Asia Cup to be discussed at ACC meeting on Thursday; BCCI to attend virtually",
-    "description": "The BCCI holds the hosting rights for the tournament, which is expected to be held in the UAE in September",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496395.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404132.jpg",
-    "video_url": null,
-    "published": "2025-07-24T04:12:01Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change achievement",
+    "content_type": 19,
+    "codename": "change_achievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 75,
   "fields": {
-    "title": "Eyman Fatima gets maiden T20I call-up for Pakistan's tour of Ireland",
-    "description": "Fatima Sana continues to lead the 15-member squad that does not have Nida Dar, who is on an indefinite break",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496416.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/352600/352617.jpg",
-    "video_url": null,
-    "published": "2025-07-24T03:36:29Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete achievement",
+    "content_type": 19,
+    "codename": "delete_achievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 76,
   "fields": {
-    "title": "Botham hits out at 'appalling' Taunton pitch after Durham's two-day defeat",
-    "description": "Ex-Somerset legend says concerns were raised about conditions that 'reduced game to a farce'",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496453.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404182.jpg",
-    "video_url": null,
-    "published": "2025-07-24T03:26:11Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view achievement",
+    "content_type": 19,
+    "codename": "view_achievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 77,
   "fields": {
-    "title": "Max60 Caribbean plunges into chaos over allegations of unpaid salaries",
-    "description": "Fixtures were cancelled with players going on strike in the final stages of the second season",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496417.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/362000/362091.jpg",
-    "video_url": null,
-    "published": "2025-07-24T03:26:10Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add user achievement",
+    "content_type": 20,
+    "codename": "add_userachievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 78,
   "fields": {
-    "title": "India, England draw second Youth Test after final-day run-fest",
-    "description": "Ayush Mhatre raced to an 80-ball 126 but with all results on the table, rain had the final say again",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496437.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/389300/389338.jpg",
-    "video_url": null,
-    "published": "2025-07-24T03:20:39Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change user achievement",
+    "content_type": 20,
+    "codename": "change_userachievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 79,
   "fields": {
-    "title": "Sai Sudharsan fifty guides India after they lose Pant to injury",
-    "description": "Jaiswal scored his third fifty-plus score on the tour and was involved in a 94-run opening stand with Rahul",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496435.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404167.jpg",
-    "video_url": null,
-    "published": "2025-07-24T02:32:06Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete user achievement",
+    "content_type": 20,
+    "codename": "delete_userachievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 80,
   "fields": {
-    "title": "Ethan Brookes ton leaves Worcestershire pressing for much-needed win",
-    "description": "Khurram Shahzad chimes in with dynamic six-for",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496399.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404104.jpg",
-    "video_url": null,
-    "published": "2025-07-23T18:19:06Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view user achievement",
+    "content_type": 20,
+    "codename": "view_userachievement"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 81,
   "fields": {
-    "title": "Du Plooy, Williamson centuries grind Northamptonshire down",
-    "description": "Visitors rattled in reply to massive 625 for 8 declared, after trio of hundreds",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496403.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/399600/399653.jpg",
-    "video_url": null,
-    "published": "2025-07-23T18:09:51Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can add site",
+    "content_type": 21,
+    "codename": "add_site"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 82,
   "fields": {
-    "title": "James double-century bags maximum batting points for Nottinghamshire",
-    "description": "Hampshire reply with resolve after title-chasers post imposing 578 for 8 declared",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496396.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/341700/341708.jpg",
-    "video_url": null,
-    "published": "2025-07-23T18:00:33Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can change site",
+    "content_type": 21,
+    "codename": "change_site"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 83,
   "fields": {
-    "title": "Hartley, Green star with centuries as Lancashire break batting records",
-    "description": "Gloucestershire reply with gusto through Charlesworth and Phillips but still trail by 378",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496402.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404164.jpg",
-    "video_url": null,
-    "published": "2025-07-23T17:35:50Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can delete site",
+    "content_type": 21,
+    "codename": "delete_site"
   }
 },
 {
-  "model": "news.article",
+  "model": "auth.permission",
   "pk": 84,
   "fields": {
-    "title": "Kellaway, Ingram propel Glamorgan into healthy lead before Kent resist",
-    "description": "Ben Compton digs deep in second innings to reduce deficit to 66",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496400.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/400300/400340.jpg",
-    "video_url": null,
-    "published": "2025-07-23T17:32:32Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 85,
-  "fields": {
-    "title": "Rehan's six of the best puts Leicestershire in total control",
-    "description": "Legspinner takes 6 for 51 as Division Two's leaders tighten grip on contest",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496401.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404179.jpg",
-    "video_url": null,
-    "published": "2025-07-23T17:29:15Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 86,
-  "fields": {
-    "title": "Jack Leach six-for hands Somerset two-day victory",
-    "description": "It was his second six-wicket haul in successive Championship games",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496394.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404100/404165.jpg",
-    "video_url": null,
-    "published": "2025-07-23T16:32:17Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 87,
-  "fields": {
-    "title": "Brendan Taylor's ban ends, set to play second Test against NZ",
-    "description": "He was sanctioned after failing to report an approach, and is now available for second Test against NZ",
-    "link": "https://www.espncricinfo.com/ci/content/story/1496732.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/299800/299895.jpg",
-    "video_url": null,
-    "published": "2025-07-30T08:49:44Z",
-    "likes": 15,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 89,
-  "fields": {
-    "title": "BBL privatisation and later start among recommendations",
-    "description": "A report into the tournament was presented to Cricket Australia this week and will now be considered further",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497294.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/395500/395556.jpg",
-    "video_url": null,
-    "published": "2025-07-30T07:25:31Z",
-    "likes": 2,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 90,
-  "fields": {
-    "title": "Owen earns ODI call-up to face South Africa, Labuschagne retained",
-    "description": "Travis Head and Josh Hazlewood return to both the T20I and ODI squads as does the fit-again Matt Short",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497287.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403900/403999.jpg",
-    "video_url": null,
-    "published": "2025-07-30T01:12:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 91,
-  "fields": {
-    "title": "KKR and head coach Chandrakant Pandit part ways after three seasons",
-    "description": "He was appointed in August 2022 and was at the helm when KKR won their third IPL title in 2024",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497247.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/398500/398582.jpg",
-    "video_url": null,
-    "published": "2025-07-30T06:36:04Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 92,
-  "fields": {
-    "title": "Gambhir involved in altercation with Surrey groundsman",
-    "description": "ESPNcricinfo learned the groundsman was concerned by the presence of a number of Indian players and support staff on the square",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497235.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/402900/402913.jpg",
-    "video_url": null,
-    "published": "2025-07-29T23:37:12Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 93,
-  "fields": {
-    "title": "Bumrah to miss Oval Test against England; Akash Deep likely to replace him",
-    "description": "The BCCI medical team has told him that the decision is in line with safeguarding his back and keeping the long-term in mind",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497282.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404200/404274.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:55:56Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 94,
-  "fields": {
-    "title": "Wharton's catch of the day leaves Sussex struggling by the sea",
-    "description": "Yorkshire on top in Scarborough despite unbroken last-wicket stand for visitors",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497252.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404433.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:46:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 95,
-  "fields": {
-    "title": "Record-breaking Rew and Abell rescue Somerset",
-    "description": "From 25 for 3, James Rew and Tom Abell set a new Somerset record for the fourth wicket",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497254.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/402800/402882.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:44:09Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 96,
-  "fields": {
-    "title": "Middleton, Weatherley lay foundation for Hampshire",
-    "description": "Worcestershire hit back with two late wickets on rain-truncated day",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497253.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/357600/357656.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:44:07Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 97,
-  "fields": {
-    "title": "Rehan Ahmed continues stellar season as Leicestershire take charge",
-    "description": "Allrounder adds another century to deepen Kent misery in clash of top versus bottom",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497258.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/359400/359412.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:33:20Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 98,
-  "fields": {
-    "title": "Lawrence, Patel, Worrall give Surrey the edge on 15-wicket day",
-    "description": "Durham rolled aside for 153 but take five wickets in reply on opening day",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497249.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/358900/358907.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:31:54Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 99,
-  "fields": {
-    "title": "Walter, Westley keep Essex flying high",
-    "description": "Warwickshire bowlers made to toil as home batters cash in on good mood following Hove win",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497250.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404434.jpg",
-    "video_url": null,
-    "published": "2025-07-29T18:20:34Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 100,
-  "fields": {
-    "title": "Chris Green six-for gives Lancashire edge",
-    "description": "Glamorgan squander promising position at 199 for 3 as offspinner finds life in Old Trafford deck",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497257.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404432.jpg",
-    "video_url": null,
-    "published": "2025-07-29T17:49:42Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 101,
-  "fields": {
-    "title": "Martin Andersson keeps Yuzvendra Chahal at bay for third century",
-    "description": "Allrounder's century lifted Derbyshire from ruin after the Indian leg spinner took 3 in 11 balls",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497255.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404429.jpg",
-    "video_url": null,
-    "published": "2025-07-29T17:16:58Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 102,
-  "fields": {
-    "title": "Kane Williamson hundred leads way for Middlesex on rain-shortened day",
-    "description": "Josh De Caires adds another fifty at opener as Gloucestershire bowlers toil",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497256.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404431.jpg",
-    "video_url": null,
-    "published": "2025-07-29T17:11:20Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 103,
-  "fields": {
-    "title": "NZ back in whites sans stars, Zimbabwe seek redemption",
-    "description": "New Zealand, who are playing a Test for the first time this year, are without Latham, Williamson, Phillips and Jamieson",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497245.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/389800/389848.jpg",
-    "video_url": null,
-    "published": "2025-07-29T14:13:19Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 104,
-  "fields": {
-    "title": "Usama Mir signs three-year T20 deal with Worcestershire",
-    "description": "He will play the first year as an overseas cricketer. After that, he will be considered a local",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497246.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/376800/376802.jpg",
-    "video_url": null,
-    "published": "2025-07-29T13:47:57Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 105,
-  "fields": {
-    "title": "Kent hit with eight-point Championship penalty for repeated dissent",
-    "description": "Four transgressions trigger points deduction that leaves club at foot of Second Division",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497236.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/398700/398780.png",
-    "video_url": null,
-    "published": "2025-07-29T12:13:13Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 106,
-  "fields": {
-    "title": "Latham out of first Test against Zimbabwe, Santner to stand in as NZ captain",
-    "description": "Latham suffered the injury while fielding during a Vitality Blast game earlier this month and did not recover in time for the first Test",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497234.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/391800/391875.jpg",
-    "video_url": null,
-    "published": "2025-07-29T10:52:17Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 107,
-  "fields": {
-    "title": "Marsh says 'depth is a privilege' as Australia make T20 statement",
-    "description": "The building blocks of a formidable T20 side are coming together with some big names still to slot in",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497227.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404300/404358.jpg",
-    "video_url": null,
-    "published": "2025-07-29T10:42:56Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 108,
-  "fields": {
-    "title": "Sciver-Brunt displaces Mandhana to become No. 1 ODI batter",
-    "description": "Harmanpreet Kaur also rose ten spots to move to 11th on the list for batters",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497229.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404000/404094.jpg",
-    "video_url": null,
-    "published": "2025-07-29T09:59:32Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 109,
-  "fields": {
-    "title": "Two-day pink-ball Prime Minister's XI match ahead of Ashes day-night Test",
-    "description": "The annual fixture will be played between the first two Tests in Perth and Brisbane",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497221.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/391900/391944.jpg",
-    "video_url": null,
-    "published": "2025-07-29T09:13:06Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 110,
-  "fields": {
-    "title": "Lyon was 'disappointed on a number of levels' after being left out of Jamaica Test",
-    "description": "Although he understands why the decision was made, Lyon said he \"can play a role in any conditions\"",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497225.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/403100/403188.jpg",
-    "video_url": null,
-    "published": "2025-07-29T07:38:03Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 111,
-  "fields": {
-    "title": "Zimbabwe Cricket receives US$ 50,000 sponsorship to support domestic teams",
-    "description": "The funding from CABS, the financial institution, will go directly to the five provincial teams",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497215.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/285600/285640.jpg",
-    "video_url": null,
-    "published": "2025-07-29T06:01:49Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 112,
-  "fields": {
-    "title": "'Batting always one step behind' but captain Shai Hope happy with bowling attack",
-    "description": "Following the 5-0 T20I loss to Australia, the West Indies captain bemoaned his team's consistency",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497216.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404200/404291.jpg",
-    "video_url": null,
-    "published": "2025-07-29T05:59:15Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 113,
-  "fields": {
-    "title": "Dwarshuis, middle-order might power Australia to 5-0 sweep",
-    "description": "Hetmyer scored his first T20I fifty since August 2023 but it wasn't enough",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497187.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404418.jpg",
-    "video_url": null,
-    "published": "2025-07-29T03:35:11Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 114,
-  "fields": {
-    "title": "Grace Harris wins family tussle as Surrey land Blast title",
-    "description": "Australia batter gets the better of her sister en route to 154-run chase at Kia Oval",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497182.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404407.jpg",
-    "video_url": null,
-    "published": "2025-07-28T17:05:24Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 115,
-  "fields": {
-    "title": "'The partnership Rahul and I had ignited the spark' - Gill savours Manchester draw",
-    "description": "India batted 143 overs in the third innings to save the Test, with Gill, Rahul, Washington and Jadeja all contributing",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497178.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404300/404341.jpg",
-    "video_url": null,
-    "published": "2025-07-28T16:06:21Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
-  }
-},
-{
-  "model": "news.article",
-  "pk": 116,
-  "fields": {
-    "title": "Pakistan fan 'asked to cover shirt' during England-India Test",
-    "description": "Lancashire have said they are investigating the incident at Old Trafford",
-    "link": "https://www.espncricinfo.com/ci/content/story/1497175.html?ex_cid=OTC-RSS",
-    "image_url": "http://p.imgci.com/db/PICTURES/CMS/404400/404406.jpg",
-    "video_url": null,
-    "published": "2025-07-28T12:17:37Z",
-    "likes": 0,
-    "category": "cricket",
-    "teams": []
+    "name": "Can view site",
+    "content_type": 21,
+    "codename": "view_site"
   }
 },
 {
@@ -7061,7 +6092,7 @@
   "fields": {
     "poll": 14,
     "text": "Y Chahal",
-    "votes": 20
+    "votes": 21
   }
 },
 {
@@ -7178,7 +6209,7 @@
   "fields": {
     "poll": 20,
     "text": "no",
-    "votes": 39
+    "votes": 40
   }
 },
 {
@@ -7196,7 +6227,7 @@
   "fields": {
     "poll": 21,
     "text": "Harshit Rana",
-    "votes": 31
+    "votes": 32
   }
 },
 {
@@ -9174,7 +8205,7 @@
   "pk": 4,
   "fields": {
     "password": "pbkdf2_sha256$1000000$KKrcKLJ6cJm4fyjuq4NDGT$KNoiq76L4EKJifUghAxbYyhCsqK7J0G6Gze+7KYJqZc=",
-    "last_login": "2025-08-02T12:19:47.564Z",
+    "last_login": "2025-08-05T19:50:13.936Z",
     "is_superuser": true,
     "username": "siddharth2512",
     "first_name": "",
@@ -9590,6 +8621,17 @@
     "is_verified": true,
     "content": "Hey, its live now🥳",
     "created_at": "2025-07-31T14:59:22.173Z"
+  }
+},
+{
+  "model": "blogpage.post",
+  "pk": 29,
+  "fields": {
+    "author_name": "Guest",
+    "team_name": "Unknown",
+    "is_verified": false,
+    "content": "hello everyone",
+    "created_at": "2025-08-06T07:54:16.193Z"
   }
 },
 {

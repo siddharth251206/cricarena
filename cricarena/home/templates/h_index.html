@@ -26,7 +26,7 @@
     <li><a href="/quiz/">Quiz</a></li>
     <li><a href="/sportscal/">Calendar</a></li>
     <li><a href="/comparison/">Comparison</a></li>
-    <li><a href="/news/">News</a></li>
+    <li><a href="/news/" data-page="News">News</a></li>
     <li class="dropdown">
       <a href="#" class="ipl-desktop-toggle">Explore ▼</a>
       <ul class="dropdown-menu" style="left: -50%;">
@@ -191,14 +191,15 @@
 
   <!-- Live Score Carousel -->
   <div class="live-carousel reveal">
-    <button class="live-prev">&#10094;</button>
-    <div class="live-wrapper">
-      <div class="live-track" id="liveTrack">
-        <!-- Injected by JS -->
-      </div>
+  <button class="live-prev">&#10094;</button>
+  <div class="live-container"> <!-- renamed from live-wrapper -->
+    <div class="live-track" id="liveTrack">
+      <!-- Injected by JS -->
     </div>
-    <button class="live-next">&#10095;</button>
   </div>
+  <button class="live-next">&#10095;</button>
+</div>
+
 
   <!-- Image Carousel -->
   <div class="carousel reveal">
@@ -394,7 +395,30 @@
 <button id="scrollToTopBtn" class="back-to-top">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#19e86c"><path d="M412-114v-470L210-383l-96-97 366-366 366 366-96 98-202-202v470H412Z"/></svg>
         </button></div>
+       <div id="page-loader" class="hide"> <!-- start hidden off-screen right -->
+  <div class="loader-content">
+    <div class="logo-container">
+      <img src="/static/ipl/assets/cricarenalogo.png" alt="CRICARENA Logo" class="loader-logo">
+
+      <div class="orbit orbit1"><div class="orbit-ball"></div></div>
+      <div class="orbit orbit2"><div class="orbit-ball"></div></div>
+      <div class="orbit orbit3"><div class="orbit-ball"></div></div>
+      <div class="orbit orbit4"><div class="orbit-ball"></div></div>
+      <div class="orbit orbit5"><div class="orbit-ball"></div></div>
+      <div class="orbit orbit6"><div class="orbit-ball"></div></div>
+    </div>
+
+    <div class="loader-text">Loading <span id="next-page-name">...</span></div>
+  </div>
+</div>
+
+
   <!-- JavaScript File -->
+   <script>
+  document.documentElement.classList.add("js-loader-ready");
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
   <script src="{% static 'js/h_script.js' %}">
   </script>
 </body>

@@ -789,6 +789,122 @@ body::before {
     background-color: #19e68c;
   }
 }
+/* Fullscreen Loader */
+/* Loader container */
+#page-loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #141414;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+   pointer-events: none; 
+}
+
+.js-loader-ready #page-loader {
+  display: flex;
+}
+
+/* Loader visible */
+#page-loader.active {
+  opacity: 1;
+  transform: scale(1);
+   pointer-events: auto;
+}
+
+/* Loader hidden */
+#page-loader.hide {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+/* Loader content */
+.loader-content {
+  text-align: center;
+}
+
+/* Logo container with soft drop shadow */
+.logo-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.loader-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Orbit container */
+.orbit {
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  width: 170px;
+  height: 170px;
+  margin: -85px 0 0 -85px;
+  transform-origin: center;
+}
+
+/* Balls: white with a black stripe */
+.orbit-ball {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.orbit-ball::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  transform: translateY(-50%);
+}
+
+/* Smooth browser-like spinning */
+.orbit1 { animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.orbit2 { animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.2s; }
+.orbit3 { animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.4s; }
+.orbit4 { animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.6s; }
+.orbit5 { animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.8s; }
+.orbit6 { animation: spin 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1s; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Loading text */
+.loader-text {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #eee;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+.loader-text span {
+  color: #19e68c;
+  font-weight: 600;
+}
+
 @media (max-width: 1200px) {
   .navbar-links, .about-us, .navbar-right {
     display: none;

@@ -541,8 +541,7 @@ style.textContent = `
             pointLabels: { 
               color: '#E5E7EB', 
               font: { 
-                size: 13,
-                weight: '600'
+                size: window.innerWidth < 480 ? 9 : 12
               },
               padding: 15
             },
@@ -1180,6 +1179,64 @@ if (userAvatar && userDropdown) {
     }
   });
 }
+const loader = document.getElementById("page-loader");
+const nextPageName = document.getElementById("next-page-name");
+
+// Mark page as JS-ready so CSS flex works
+document.documentElement.classList.add("js-loader-ready");
+
+// Handle link clicks for forward navigation
+document.querySelectorAll("a").forEach(link => {
+  if (
+    link.hostname === window.location.hostname &&
+    link.getAttribute("href") &&
+    !link.href.includes("#")
+  ) {
+    link.addEventListener("click", e => {
+      if (e.ctrlKey || e.metaKey || link.target === "_blank") return;
+
+      e.preventDefault();
+
+      // Set loading page name
+      const pageName = link.getAttribute("data-page") || link.textContent.trim() || "Loading";
+      nextPageName.textContent = pageName;
+
+      // Show loader animation
+      loader.classList.remove("hide");
+      loader.classList.add("active");
+
+      // Navigate after short delay
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 500);
+    });
+  }
+});
+
+// On page load
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loader.classList.add("hide");
+    loader.classList.remove("active");
+  }, 300);
+});
+
+// Detect browser back/forward and disable animation
+window.addEventListener("pageshow", (event) => {
+  if (
+    event.persisted ||
+    performance.getEntriesByType("navigation")[0]?.type === "back_forward"
+  ) {
+    loader.style.transition = "none"; // kill animation
+    loader.classList.add("hide");
+    loader.classList.remove("active");
+    // Restore animation for future forward nav
+    requestAnimationFrame(() => {
+      loader.style.transition = "";
+    });
+  }
+});
+
    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
   // Show/hide button on scroll

@@ -981,10 +981,10 @@ _updateButtonActiveState = function(activeBtn, inactiveBtn) {
       </div>`;
   }
 
-  renderStatRow(stat, c1, c2, index){
+renderStatRow(stat, c1, c2, index){
     const { label, value1, value2, unit='', isReverse=false, format='number' } = stat;
-    const v1 = _num(value1);
-    const v2 = _num(value2);
+    let v1 = _num(value1);
+    let v2 = _num(value2);
     const formatValue = v => {
       if(format==='text' || format==='bestFigures') return v;
       return format==='decimal' ? _num(v).toFixed(2) : String(_num(v));
@@ -1002,9 +1002,13 @@ _updateButtonActiveState = function(activeBtn, inactiveBtn) {
     const better = getBetterPlayer();
     let pct1 = 50;
     if(format==='bestFigures'){
+      // Extract wickets for bar calculation
       const [w1] = String(value1).split('/').map(Number);
       const [w2] = String(value2).split('/').map(Number);
-      const t = (w1||0)+(w2||0); pct1 = t>0?(w1/t)*100:50;
+      const t = (w1||0)+(w2||0); 
+      pct1 = t>0?(w1/t)*100:50;
+      v1 = w1; // Use wickets for bar
+      v2 = w2;
     } else if(isReverse && format!=='text'){
       const inv1 = v1>0?1/v1:0; const inv2 = v2>0?1/v2:0; const t=inv1+inv2; pct1 = t>0?(inv1/t)*100:50;
     } else if(format!=='text'){
@@ -1013,29 +1017,28 @@ _updateButtonActiveState = function(activeBtn, inactiveBtn) {
     const pct2 = 100 - pct1;
     return `
     <div class="stat-row" data-index="${index}">
-      <div class="stat-value ${better===1?'better':'worse'}">${formatValue(v1)}${unit}</div>
+      <div class="stat-value ${better===1?'better':'worse'}">${formatValue(value1)}${unit}</div>
       <div class="stat-progress">
         <div class="stat-label">${label}</div>
-        ${format==='text' || format==='bestFigures' ? `
-          <div class="progress-container" style="height:auto;background:none;box-shadow:none;">
-            <div style="text-align:center;padding:0.5rem;color:#6b7280;font-size:0.875rem;">vs</div>
-          </div>` : `
-          <div class="progress-container">
-            <div class="progress-bar left ${pct1>=100?'full-left':''}" 
-                 style="width:0%; background-color: ${c1}; border-radius: 12px 0 0 12px;" data-width="${Math.min(pct1,100)}"></div>
-            <div class="progress-bar right ${pct2>=100?'full-right':''}" 
-                 style="width:0%; background-color: ${c2}; border-radius: 0 12px 12px 0;" data-width="${Math.min(pct2,100)}"></div>
-            <div class="progress-highlight"></div>
-          </div>
-          <div class="progress-percentages">
-            <span class="progress-percent">${Math.min(pct1,100).toFixed(1)}%</span>
-            <span class="progress-percent right">${Math.min(pct2,100).toFixed(1)}%</span>
-          </div>`}
+        ${format==='text' ? `
+  <div class="progress-container" style="height:auto;background:none;box-shadow:none;">
+    <div style="text-align:center;padding:0.5rem;color:#6b7280;font-size:0.875rem;">vs</div>
+  </div>` : `
+  <div class="progress-container">
+    <div class="progress-bar left ${pct1>=100?'full-left':''}" 
+         style="width:0%; background-color: ${c1}; border-radius: 12px 0 0 12px;" data-width="${Math.min(pct1,100)}"></div>
+    <div class="progress-bar right ${pct2>=100?'full-right':''}" 
+         style="width:0%; background-color: ${c2}; border-radius: 0 12px 12px 0;" data-width="${Math.min(pct2,100)}"></div>
+    <div class="progress-highlight"></div>
+  </div>
+  <div class="progress-percentages">
+    <span class="progress-percent">${Math.min(pct1,100).toFixed(1)}%</span>
+    <span class="progress-percent right">${Math.min(pct2,100).toFixed(1)}%</span>
+  </div>`}
       </div>
-      <div class="stat-value right ${better===2?'better':'worse'}">${formatValue(v2)}${unit}</div>
+      <div class="stat-value right ${better===2?'better':'worse'}">${formatValue(value2)}${unit}</div>
     </div>`;
   }
-
   animateComparison(){
     const statRows = document.querySelectorAll('.stat-row');
     statRows.forEach((row,i)=>{

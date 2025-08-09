@@ -99,8 +99,8 @@ const players = [
                 fiveWickets: 0
             },
             fielding: {
-                catches: 0,
-                stumpings: 0
+                catches: 158,
+                stumpings: 47
             },
         }
     },

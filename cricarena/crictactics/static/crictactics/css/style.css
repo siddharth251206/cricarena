@@ -1429,6 +1429,24 @@ box-shadow: 0 0 10px #1db954, 0 0 20px #1db954;
   color: #19e68c;
   font-weight: 600;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  padding: 12px 16px;
+  font-size: 24px;
+  background-color: #141414;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1999;
+  transition: transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
 
 @media (max-width: 700px) {
   .rules-content {

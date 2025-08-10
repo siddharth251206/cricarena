@@ -409,6 +409,7 @@ max-width: 500px;
 }
 
 .brand-logo {
+  margin-top: 20px;
   max-width: 120px;
   filter: drop-shadow(0 0 10px rgba(25, 232, 108, 0.5));
 }
@@ -642,6 +643,34 @@ max-width: 500px;
   .back-home {
     top: 1rem;
     left: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-height: 750px) {
+  .branding-content {
+    padding: 1rem;
+  }
+
+  .branding-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .features-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-icon {
+    font-size: 1.2rem;
+  }
+
+  .feature-text p {
     font-size: 0.8rem;
   }
 }

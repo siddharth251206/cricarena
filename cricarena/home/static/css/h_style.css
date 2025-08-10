@@ -1028,8 +1028,9 @@ body::-webkit-scrollbar {
 .carousel {
   position: relative;
   width: 100%;
-  max-height: 500px;
+  max-height: 600px;
   margin: 30px auto;
+  margin-bottom: 0;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(25, 230, 140, 0.15);
@@ -1104,7 +1105,7 @@ body::-webkit-scrollbar {
 
 .dots {
   text-align: center;
-  margin-top: 12px;
+  margin: 12px;
 }
 
 .dots span {

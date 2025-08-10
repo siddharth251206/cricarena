@@ -15,6 +15,9 @@
   --card-bg: rgba(24, 24, 28, 0.98);
   --card-hover: rgba(34, 35, 38, 0.99);
   --shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  --feature-icon-color: #19e86c;
+  --divider-color: rgba(255, 255, 255, 0.1);
+  --left-width: 50vw;
 }
 
 * {
@@ -40,13 +43,13 @@ body {
 .container {
   background-color: var(--container-bg);
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 2.5rem;             
   width: 100%;
-  max-width: 420px;
+  max-width: 420px;            
   box-shadow: var(--shadow);
   border: 1px solid var(--border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  position: relative; 
 }
 
 .container:hover {
@@ -346,61 +349,6 @@ label {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .container {
-    padding: 2rem 1.5rem;
-  }
-  
-  .card-radio-group {
-    grid-template-columns: 1fr 1fr;
-  }
-   h2 {
-    gap: 8px;
-  }
-  
-  h2 img {
-    height: 1.3em;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 12px;
-  }
-  
-  .container {
-    padding: 1.75rem 1.25rem;
-    border-radius: 12px;
-  }
-  
-h2 {
-    gap: 6px;
-    font-size: 1.6rem;
-  }
-  
-  h2 img {
-    height: 1.2em;
-  }  
-  .subheading {
-    font-size: 0.85rem;
-  }
-  
-  .card-radio-group {
-    grid-template-columns: 1fr;
-  }
-  
-  button[type="submit"] {
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
-  
-  .back-home {
-    top: 1rem;
-    left: 1rem;
-    font-size: 0.8rem;
-  }
-}
-
 /* Accessibility focus styles */
 :focus-visible {
   outline: 2px solid var(--primary-color);
@@ -427,7 +375,273 @@ button[type="submit"].loading::before {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
+.split-container {
+ position: relative;    /* left is fixed but wrapper still used for semantics */
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+/* Left Panel Styling - Updated to match your reference */
+.left-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--left-width);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+  
+  /* stadium background + dark overlay */
+  background: 
+    linear-gradient(to left, rgba(20,20,20) 0%, rgba(20,20,20,0) 100%),
+    url('https://t4.ftcdn.net/jpg/06/34/70/57/360_F_634705766_xRlKdJ4uNsEqNnkd9YZo6Mm25aEr3DZI.jpg') center/cover no-repeat;
+}
+.branding-content {
+max-width: 500px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 2; /* above the ::after silhouette if needed */
+  animation: fadeInUp 0.7s ease both;
+}
+
+.brand-logo {
+  max-width: 120px;
+  filter: drop-shadow(0 0 10px rgba(25, 232, 108, 0.5));
+}
+
+.branding-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(25, 232, 108, 0.3);
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.features-section {
+  text-align: left;
+}
+
+.features-section h2 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.features-list {
+  list-style: none;
+}
+
+.features-list li {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-icon {
+  color: var(--feature-icon-color);
+  font-size: 1.5rem;
+  min-width: 30px;
+}
+
+.feature-text strong {
+  color: white;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.feature-text p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.divider {
+  height: 1px;
+  background: var(--divider-color);
+  margin: 2rem 0;
+  position: relative;
+}
+
+.divider-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--container-bg);
+  padding: 0 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Right panel adjustments */
+/* Right panel (login form) */
+.right-panel {
+   margin-left: var(--left-width); /* same as left-panel width */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  background-color: var(--bg-color);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Add this to your existing animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animation to features */
+.features-list li {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.features-list li:nth-child(1) { animation-delay: 0.2s; }
+.features-list li:nth-child(2) { animation-delay: 0.4s; }
+.features-list li:nth-child(3) { animation-delay: 0.6s; }
+.features-list li:nth-child(4) { animation-delay: 0.8s; }
+.features-list li:nth-child(5) { animation-delay: 1s; }
+.features-list li:nth-child(6) { animation-delay: 1.2s; }
 
 @keyframes spin {
   to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@media (max-width: 1024px) {
+  body{
+    padding: 0;
+  }
+  :root {
+    --left-width: 100vw;
+  }
+
+  /* Left panel stacked and full width */
+  .left-panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0; /* remove padding entirely */
+    background: 
+      linear-gradient(to top, rgba(20,20,20) 0%, rgba(20,20,20,0) 100%),
+      url('https://t4.ftcdn.net/jpg/06/34/70/57/360_F_634705766_xRlKdJ4uNsEqNnkd9YZo6Mm25aEr3DZI.jpg') center/cover no-repeat;
+    background-position: center 30%;
+  }
+
+  .features-section,
+  .divider {
+    display: none;
+  }
+
+  /* Right panel full width, form centered */
+  .right-panel {
+    margin-left: 0;
+    width: 100%;
+    min-height: auto;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-logo{
+    margin-top: 10px;
+  }
+  /* Container adjustments */
+  .container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .branding-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .card-radio-group {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2 {
+    gap: 8px;
+  }
+  
+  h2 img {
+    height: 1.3em;
+  }
+}
+
+/* Small phone adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  
+  .container {
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
+  }
+  
+  h2 {
+    gap: 6px;
+    font-size: 1.6rem;
+  }
+  
+  h2 img {
+    height: 1.2em;
+  }  
+
+  .subheading {
+    font-size: 0.85rem;
+  }
+  
+  .card-radio-group {
+    grid-template-columns: 1fr;
+  }
+  
+  button[type="submit"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .back-home {
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.8rem;
+  }
 }

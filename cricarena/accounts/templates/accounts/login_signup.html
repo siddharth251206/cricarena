@@ -10,6 +10,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="split-container">
+    <!-- Left Branding Panel -->
+<div class="left-panel">
+  <div class="branding-content">
+    <img src="/static/ipl/assets/cricarenalogo.png" alt="CRICARENA Logo" class="brand-logo">
+    <h1>CRICARENA</h1>
+    <p class="tagline">Compete. Score. Dominate.</p>
+    
+<div class="features-section">
+  <h2>Welcome to the Future of Cricket</h2>
+  <ul class="features-list">
+    <li>
+      <span class="feature-icon">
+        <!-- Coaching Icon -->
+        <svg width="20" height="20" fill="#19e86c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/>
+        </svg>
+      </span>
+      <div class="feature-text">
+        <strong>AI-Powered Coaching</strong>
+        <p>Get personalized training insights and performance analysis</p>
+      </div>
+    </li>
+    <li>
+      <span class="feature-icon">
+        <!-- Profile Icon -->
+        <svg width="20" height="20" fill="#19e86c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Zm0 12a5 5 0 0 1 5 5v3H7v-3a5 5 0 0 1 5-5Z"/>
+        </svg>
+      </span>
+      <div class="feature-text">
+        <strong>Digital Identity</strong>
+        <p>Build your comprehensive cricket profile and showcase your skills</p>
+      </div>
+    </li>
+    <li>
+      <span class="feature-icon">
+        <!-- Quiz Icon -->
+        <svg width="20" height="20" fill="#19e86c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M3 5h18v2H3zm0 6h12v2H3zm0 6h18v2H3z"/>
+        </svg>
+      </span>
+      <div class="feature-text">
+        <strong>Interactive Quizzes</strong>
+        <p>Test your cricket knowledge with curated quizzes across all levels</p>
+      </div>
+    </li>
+    <li>
+      <span class="feature-icon">
+        <!-- Leaderboard Icon -->
+        <svg width="20" height="20" fill="#19e86c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M5 21V10h4v11Zm5 0V3h4v18Zm5 0v-6h4v6Z"/>
+        </svg>
+      </span>
+      <div class="feature-text">
+        <strong>Live Leaderboards</strong>
+        <p>Compete with others and track your rank in real-time after every quiz</p>
+      </div>
+    </li>
+    <li>
+      <span class="feature-icon">
+        <!-- Trophy Icon -->
+        <svg width="20" height="20" fill="#19e86c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M17 4V2H7v2H3v4a5 5 0 0 0 4 4.9V13a5 5 0 0 0 3 4.58V20H8v2h8v-2h-2v-2.42A5 5 0 0 0 17 13v-.1a5 5 0 0 0 4-4.9V4ZM5 8V6h2v4a3 3 0 0 1-2-2Zm14 0a3 3 0 0 1-2 2V6h2Z"/>
+        </svg>
+      </span>
+      <div class="feature-text">
+        <strong>Achievements Showcase</strong>
+        <p>Unlock and display badges as you hit milestones in CRICARENA</p>
+      </div>
+    </li>
+    <li>
+      <span class="feature-icon">
+        <!-- Cricket Icon -->
+        <svg width="20" height="20" fill="#19e86c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M17.5 3a4.5 4.5 0 0 0-3.16 7.66l-8.68 8.68a1 1 0 0 0 1.41 1.41l8.68-8.68A4.5 4.5 0 1 0 17.5 3Z"/>
+        </svg>
+      </span>
+      <div class="feature-text">
+        <strong>IPL Team Tracking</strong>
+        <p>Follow your favorite IPL teams directly from your profile</p>
+      </div>
+    </li>
+  </ul>
+</div>
+    
+    <div class="divider">
+      <span class="divider-text">Explore Our Communities</span>
+    </div>
+  </div>
+</div>    
+ <div class="right-panel">
   <div class="container">
     <a href="/home/" class="back-home">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,13 +192,14 @@
         <p class="toggle-text">Not a user? <a href="?signup=1" class="toggle">Sign up</a></p>
       </div>
     {% endif %}
-  </div>
+  </div></div></div>
 
   {% if nickname %}
   <div class="welcome-toast" id="welcomeToast">
     👋 Welcome, <strong>{{ nickname }}</strong>!
   </div>
   <script>
+    
     setTimeout(() => {
       document.getElementById("welcomeToast").classList.add("show");
       setTimeout(() => {

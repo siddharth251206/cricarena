@@ -82,7 +82,8 @@ class QuizAttempt(models.Model):
     questions = models.ManyToManyField(QuizQuestion, blank=True)  # ✅ THIS LINE ADDED
 
     def __str__(self):
-        return f'{self.user.username} - ({self.score}/{self.total})'
+        username = self.user.username if self.user else 'No User'
+        return f'{username} - ({self.score}/{self.total})'
 
     
 class LeaderboardProfile(models.Model):

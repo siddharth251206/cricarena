@@ -316,7 +316,7 @@ User question: ${prompt}`
       responseDiv.innerHTML = `❌ Error: ${data.error.message}`;
       return;
     }
-
+''
     const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (answer) {

@@ -10,7 +10,6 @@ class Article( models.Model ):
     video_url = models.URLField(null=True, blank=True)
     published = models.DateTimeField(null=True, blank=True)
     likes = models.IntegerField(default=0)
-    teams = models.ManyToManyField('Team', blank=True)  # optional, for filtering
     category = models.CharField(max_length=100, default="cricket")
     # ... any other fields
     def __str__(self): return self.title

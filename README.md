@@ -52,7 +52,7 @@ Follow the steps below to set up the project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Pratham722007/cricarena.git
+   git clone https://github.com/siddharth251206/cricarena.git
    cd cricarena
 2. **Create a virtual environment**
    ```bash
